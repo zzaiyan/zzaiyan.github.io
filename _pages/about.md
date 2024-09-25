@@ -22,9 +22,8 @@ Zaiyan Zhang (张再筵) is currently working toward the B.E. degree in Data Sci
 <!-- My research interest includes image processing, time series analysis, land cover change detection, computer vision, and deep learning. I have published more than 100 papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'>google scholar citations <strong><span id='total_cit'>260000+</span></strong></a> (You can also use google scholar badge <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>). -->
 
 
-<!-- # 🔥 News
-- *2022.02*: &nbsp;🎉🎉 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2022.02*: &nbsp;🎉🎉 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  -->
+# 🔥 News
+- *2022.02*: &nbsp;🎉🎉 Our work **“Image-text mutual retrieval method based on large-scale pre-training CLIP model fine-tuning”** won the **Grand Prize (Top 0.1%)** in the 12th “Teddy Cup” Data Mining Challenge [[link]](https://www.tipdm.org/dsej12/2429.jhtml).
 
 # 📝 Publications 
 
