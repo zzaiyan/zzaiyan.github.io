@@ -7,7 +7,7 @@
 
 # Site Settings
 title                    : "Zaiyan Zhang"
-description              : "Zaiyan Zhang is currently working toward the B.E. degree in Data Science and Big Data Technology with the China University of Geosciences, Wuhan, China. His research interests include image processing, time series analysis, land cover change detection, computer vision, and deep learning. "
+description              : "Undergraduate Computer Science student, focusing on Image Processing, Time Series Analysis, and Computer Vision. "
 repository               : "zzaiyan/zzaiyan.github.io"
 google_scholar_stats_use_cdn : true
 
@@ -22,22 +22,22 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 # Site Author
 author:
   name             : "Zaiyan Zhang"
-  avatar           : "images/android-chrome-512x512.png"
+  avatar           : "images/avatar.jpg"
   bio              : "China University of Geosciences"
   location         : "Wuhan, China"
   employer         :
   pubmed           : 
-  googlescholar    : 
+  googlescholar    : "https://scholar.google.com/citations?user=ZpxXejIAAAAJ&hl=en"
   email            : "1@zzaiyan.com"
   researchgate     :  # e.g., "https://www.researchgate.net/profile/yourprofile"
-  uri              : 
+  uri              : "https://zzaiyan.com"
   bitbucket        :
   codepen          :
   dribbble         :
   flickr           :
   facebook         :
   foursquare       :
-  github           : # e.g., "github username"
+  github           : "zzaiyan"
   google_plus      :
   keybase          :
   instagram        :

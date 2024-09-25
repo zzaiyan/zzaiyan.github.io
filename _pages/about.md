@@ -43,8 +43,9 @@ Zaiyan Zhang is currently working toward the B.E. degree in Data Science and Big
 - [Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet](https://github.com), A, B, C, **CVPR 2020**
 
 # 🎖 Honors and Awards
-- *2021.10* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2021.09* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
+- *2023.12* National Scholarship (Undergraduate), China University of Geosciences, Wuhan.
+- *2023.12* Huawei Scholarship, Ministry of Education & Huawei Corporation.
+- *2023.04* Chow Tai Fook Scholarship - Aperture Program, Chow Tai Fook Jewellery Co., Ltd.
 
 # 📖 Educations
 - *2021.09 - 2025.06 (now)*, B.E. in School of Computer Science, China University of Geosciences, Wuhan. 
