@@ -43,9 +43,9 @@ Zaiyan Zhang (张再筵) is currently working toward the B.E. degree in Data Sci
 - [Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet](https://github.com), A, B, C, **CVPR 2020**
 
 # 🎖 Honors and Awards
-- *2024.06* **"Teddy Cup" Data Mining Challenge, Grand Prize** (Top 0.1%)
+- *2024.06* [**"Teddy Cup" Data Mining Challenge, Grand Prize**](https://www.tipdm.org/dsej12/2429.jhtml) (Top 0.1%)
 - *2023.12* **National Scholarship** (Undergraduate) (Top 1%).
-- *2023.12* **Huawei Scholarship** (40 candidates annually).
+- *2023.12* [**Huawei Scholarship**](https://cs.cug.edu.cn/info/1019/6103.htm) (32 candidates annually).
 - *2023.04* **Chow Tai Fook Scholarship**, (50 candidates annually).
 
 # 📖 Educations
