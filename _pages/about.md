@@ -23,7 +23,7 @@ Zaiyan Zhang (张再筵) is currently working toward the B.E. degree in Data Sci
 
 
 # 🔥 News
-- *2022.02*: &nbsp;🎉🎉 Our work **“Image-text mutual retrieval method based on large-scale pre-training CLIP model fine-tuning”** won the **Grand Prize (Top 0.1%)** in the 12th “Teddy Cup” Data Mining Challenge [[link]](https://www.tipdm.org/dsej12/2429.jhtml).
+- *2024.06*: &nbsp;🎉🎉 Our work “***Image-text mutual retrieval method based on large-scale pre-training CLIP model fine-tuning***” won the **Grand Prize (Top 0.1%)** in the **12th “Teddy Cup” Data Mining Challenge** [[link]](https://www.tipdm.org/dsej12/2429.jhtml).
 
 # 📝 Publications 
 
