@@ -17,7 +17,7 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-Zaiyan Zhang (张再筵) is currently working toward the B.E. degree in Data Science and Big Data Technology (数据科学与大数据技术) with the China University of Geosciences (中国地质大学), Wuhan. His research interest includes image processing, time series analysis, land cover change detection, computer vision, and deep learning.
+Zaiyan Zhang (张再筵) is currently working toward the B.E. degree in Data Science and Big Data Technology (数据科学与大数据技术) with the [**China University of Geosciences (中国地质大学)**](https://www.cug.edu.cn/), Wuhan. His research interest includes image processing, time series analysis, land cover change detection, computer vision, and deep learning.
 
 <!-- My research interest includes image processing, time series analysis, land cover change detection, computer vision, and deep learning. I have published more than 100 papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'>google scholar citations <strong><span id='total_cit'>260000+</span></strong></a> (You can also use google scholar badge <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>). -->
 
@@ -49,7 +49,7 @@ Zaiyan Zhang (张再筵) is currently working toward the B.E. degree in Data Sci
 - *2023.04* **Chow Tai Fook Scholarship**, (50 candidates annually).
 
 # 📖 Educations
-- *2021.09 - 2025.06 (now)*, **B.E.** in School of Computer Science, **China University of Geosciences**, Wuhan. 
+- *2021.09 - 2025.06 (now)*, **B.E.** in [**School of Computer Science**](https://cs.cug.edu.cn/), [**China University of Geosciences**](https://www.cug.edu.cn/), Wuhan. 
 <!-- - *2015.09 - 2019.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  -->
 
 <!-- # 💬 Invited Talks
