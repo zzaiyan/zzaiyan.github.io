@@ -60,6 +60,9 @@ Zaiyan Zhang (张再筵) is currently working toward the B.E. degree in Data Sci
 
 **Kaiming He**, Xiangyu Zhang, Shaoqing Ren, Jian Sun
 
+</div>
+</div>
+
 - *2024.08*, **Remote sensing image sequence restoration method and device, electronic equipment and storage medium**, CN118570103A.
 **Kaiming He**, Xiangyu Zhang, Shaoqing Ren, Jian Sun
 
