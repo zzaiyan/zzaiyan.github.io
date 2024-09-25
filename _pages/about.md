@@ -17,7 +17,7 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-Zaiyan Zhang (张再筵) is currently working toward the B.E. degree in Data Science and Big Data Technology (数据科学与大数据技术) with the [**China University of Geosciences (中国地质大学)**](https://www.cug.edu.cn/), Wuhan. His research interest includes image processing, time series analysis, land cover change detection, computer vision, and deep learning.
+Zaiyan Zhang (张再筵) is currently working toward the B.E. degree in Data Science and Big Data Technology (数据科学与大数据技术) with the [China University of Geosciences (中国地质大学)](https://www.cug.edu.cn/), Wuhan. His research interest includes image processing, time series analysis, land cover change detection, computer vision, and deep learning.
 
 <!-- My research interest includes image processing, time series analysis, land cover change detection, computer vision, and deep learning. I have published more than 100 papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'>google scholar citations <strong><span id='total_cit'>260000+</span></strong></a> (You can also use google scholar badge <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>). -->
 
@@ -43,13 +43,13 @@ Zaiyan Zhang (张再筵) is currently working toward the B.E. degree in Data Sci
 - [Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet](https://github.com), A, B, C, **CVPR 2020**
 
 # 🎖 Honors and Awards
-- *2024.06* [**"Teddy Cup" Data Mining Challenge, Grand Prize**](https://www.tipdm.org/dsej12/2429.jhtml) (Top 0.1%)
+- *2024.06* **"Teddy Cup" Data Mining Challenge, Grand Prize** (Top 0.1%) [[link]](https://www.tipdm.org/dsej12/2429.jhtml).
 - *2023.12* **National Scholarship** (Undergraduate) (Top 1%).
-- *2023.12* [**Huawei Scholarship**](https://cs.cug.edu.cn/info/1019/6103.htm) (32 candidates annually).
+- *2023.12* **Huawei Scholarship** (32 candidates annually) [[link]](https://cs.cug.edu.cn/info/1019/6103.htm).
 - *2023.04* **Chow Tai Fook Scholarship**, (50 candidates annually).
 
 # 📖 Educations
-- *2021.09 - 2025.06 (now)*, **B.E.** in [**School of Computer Science**](https://cs.cug.edu.cn/), [**China University of Geosciences**](https://www.cug.edu.cn/), Wuhan. 
+- *2021.09 - 2025.06 (now)*, **B.E.** in [School of Computer Science](https://cs.cug.edu.cn/), [China University of Geosciences](https://www.cug.edu.cn/), Wuhan, supervised by A.Prof. [Jining Yan](https://grzy.cug.edu.cn/yanjining). 
 <!-- - *2015.09 - 2019.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  -->
 
 <!-- # 💬 Invited Talks
