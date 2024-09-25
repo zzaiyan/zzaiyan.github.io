@@ -55,7 +55,7 @@ Zaiyan Zhang (张再筵) is currently working toward the B.E. degree in Data Sci
 - *2023*,&ensp;**Huawei Scholarship** (32 candidates annually) [[link]](https://cs.cug.edu.cn/info/1019/6103.htm).
 - *2023*,&ensp;**Chow Tai Fook Scholarship** (50 candidates annually).
 - *2022, 2023*,&ensp;**Outstanding Student Model**.
-- *2022*,&ensp;**Excellent Student Scholarship**.
+- *2022*,&ensp;**Outstanding Student Scholarship**.
 
 # 📖 Educations
 - *2021.09 - 2025.06 (now)*, **B.E.** in [School of Computer Science](https://cs.cug.edu.cn/), [China University of Geosciences](https://www.cug.edu.cn/), supervised by A.P. [Jining Yan](https://grzy.cug.edu.cn/yanjining). 
