@@ -23,7 +23,7 @@ Zaiyan Zhang (张再筵) is currently working toward the B.E. degree in Data Sci
 
 
 # 🔥 News
-- *2024.06*: &nbsp;🎉🎉 Our work “***Image-text mutual retrieval method based on large-scale pre-training CLIP model fine-tuning***” won the **Grand Prize (Top 0.1%)** in the **12th “Teddy Cup” Data Mining Challenge** [[link]](https://www.tipdm.org/dsej12/2429.jhtml).
+- *2024.06*:&ensp;🎉🎉 Our work “***Image-text mutual retrieval method based on large-scale pre-training CLIP model fine-tuning***” won the **Grand Prize (Top 0.1%)** in the **12th “Teddy Cup” Data Mining Challenge** [[link]](https://www.tipdm.org/dsej12/2429.jhtml).
 
 # 📝 Publications 
 
@@ -47,14 +47,15 @@ Zaiyan Zhang (张再筵) is currently working toward the B.E. degree in Data Sci
 
 ## Patent
 
-- *2024.09*, ***遥感图像序列的修复方法、装置、电子设备及存储介质***, &ensp;阎继宁, **张再筵**, 王力哲, 李军, 韩伟, 王玥玮.
+- *2024.09*,&ensp;***遥感图像序列的修复方法、装置、电子设备及存储介质***, &ensp;阎继宁, **张再筵**, 王力哲, 李军, 韩伟, 王玥玮.
 
 # 🎖 Honors and Awards
-- *2024.06* **"Teddy Cup" Data Mining Challenge, Grand Prize** (Top 0.1%) [[link]](https://www.tipdm.org/dsej12/2429.jhtml).
-- *2023.12* **National Scholarship** (Undergraduate) (Top 1%).
-- *2023.12* **Huawei Scholarship** (32 candidates annually) [[link]](https://cs.cug.edu.cn/info/1019/6103.htm).
-- *2023.04* **Chow Tai Fook Scholarship** (50 candidates annually).
-- *2022.12* **Excellent Student Scholarship**.
+- *2024*,&ensp;**"Teddy Cup" Data Mining Challenge, Grand Prize** (Top 0.1%) [[link]](https://www.tipdm.org/dsej12/2429.jhtml).
+- *2023*,&ensp;**National Scholarship** (Undergraduate) (Top 1%).
+- *2023*,&ensp;**Huawei Scholarship** (32 candidates annually) [[link]](https://cs.cug.edu.cn/info/1019/6103.htm).
+- *2023*,&ensp;**Chow Tai Fook Scholarship** (50 candidates annually).
+- *2022, 2023*,&ensp;**Outstanding Student Model**.
+- *2022*,&ensp;**Excellent Student Scholarship**.
 
 # 📖 Educations
 - *2021.09 - 2025.06 (now)*, **B.E.** in [School of Computer Science](https://cs.cug.edu.cn/), [China University of Geosciences](https://www.cug.edu.cn/), supervised by A.P. [Jining Yan](https://grzy.cug.edu.cn/yanjining). 
