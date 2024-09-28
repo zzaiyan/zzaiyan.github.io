@@ -43,9 +43,9 @@ Zaiyan Zhang (张再筵) is currently working toward the B.E. degree in Data Sci
 </div>
 </div>
 
-- [Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet](https://github.com), A, B, C, **CVPR 2020**
+<!-- - [Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet](https://github.com), A, B, C, **CVPR 2020** -->
 
-## Patent
+## Patents
 
 - *2024.09*,&ensp;***遥感图像序列的修复方法、装置、电子设备及存储介质***, &ensp;阎继宁, **张再筵**, 王力哲, 李军, 韩伟, 王玥玮.
 
