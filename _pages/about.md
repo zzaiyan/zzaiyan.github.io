@@ -45,6 +45,20 @@ Zaiyan Zhang (张再筵) is currently working toward the B.E. degree in Data Sci
 
 <!-- - [Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet](https://github.com), A, B, C, **CVPR 2020** -->
 
+## Preprints
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">arXiv</div><img src='https://arxiv.org/html/2406.13358v1/x1.png' alt="sym" width="500"></div></div>
+<div class='paper-box-text' markdown="1">
+
+Multi-scale Restoration of Missing Data in Optical Time-series Images with Masked Spatial-Temporal Attention Network
+
+**Zaiyan Zhang**, Jining Yan, Yuanqi Liang, Jiaxin Feng, Haixu He, Wei Han
+
+[[Paper]](https://arxiv.org/abs/2406.13358), [[Code]](https://github.com/zzaiyan/MS2TAN)
+
+</div>
+</div>
+
 ## Patents
 
 - *2024.09*,&ensp;***遥感图像序列的修复方法、装置、电子设备及存储介质***, &ensp;阎继宁, **张再筵**, 王力哲, 李军, 韩伟, 王玥玮.
