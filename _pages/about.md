@@ -31,7 +31,7 @@ Zaiyan Zhang (张再筵) is currently working toward the B.E. degree in Data Sci
 
 ## Conference Papers
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2016</div><img src='images/500x300.png' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2016</div><img src='/images/500x300.png' alt="sym" width="500"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [(Template) Deep Residual Learning for Image Recognition](https://openaccess.thecvf.com/content_cvpr_2016/papers/He_Deep_Residual_Learning_CVPR_2016_paper.pdf)
@@ -50,7 +50,7 @@ Zaiyan Zhang (张再筵) is currently working toward the B.E. degree in Data Sci
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">arXiv</div><img src='https://arxiv.org/html/2406.13358v1/x1.png' alt="sym" width="500"></div></div>
 <div class='paper-box-text' markdown="1">
 
-Multi-scale Restoration of Missing Data in Optical Time-series Images with Masked Spatial-Temporal Attention Network
+*MS$^2$TAN: Multi-scale Restoration of Missing Data in Optical Time-series Images with Masked Spatial-Temporal Attention Network*, arXiv:2406.13358
 
 **Zaiyan Zhang**, Jining Yan, Yuanqi Liang, Jiaxin Feng, Haixu He, Wei Han
 
