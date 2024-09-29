@@ -59,7 +59,8 @@ Zaiyan Zhang (张再筵) is currently working toward the B.E. degree in Data Sci
 - *2022*,&ensp;**Outstanding Student Scholarship**.
 
 # 📖 Educations
-- *2021.09 - 2025.06 (now)*, **B.E.** in [School of Computer Science](https://cs.cug.edu.cn/), [China University of Geosciences](https://www.cug.edu.cn/), supervised by A.P. [Jining Yan](https://grzy.cug.edu.cn/yanjining). 
+- *2025.09 - 20XX.06*, **M.S.** in [Wuhan University](https://www.whu.edu.cn/), supervised by Prof. [Qiangqiang Yuan](https://scholar.google.com/citations?user=aItnA-sAAAAJ).
+- *2021.09 - 2025.06 (now)*, **B.E.** in [China University of Geosciences](https://www.cug.edu.cn/), supervised by A.P. [Jining Yan](https://scholar.google.com/citations?user=iYTHxQcAAAAJ). 
 <!-- - *2015.09 - 2019.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  -->
 
 <!-- # 💬 Invited Talks
