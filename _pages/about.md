@@ -17,7 +17,9 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-Zaiyan Zhang (张再筵) is currently working toward the B.E. degree in Data Science and Big Data Technology (数据科学与大数据技术) with the [China University of Geosciences (中国地质大学)](https://www.cug.edu.cn/), Wuhan. His research interest includes image processing, time series analysis, land cover change detection, computer vision, and deep learning.
+Zaiyan Zhang (张再筵) is currently  working toward a B.E. degree in Data Science and Big Data Technology (数据科学与大数据技术) at [China University of Geosciences (中国地质大学)](https://www.cug.edu.cn/), has also secured admission to pursue a M.E. degree in Photogrammetry and Remote Sensing (摄影测量与遥感) at [Wuhan University (武汉大学)](https://www.whu.edu.cn/).
+
+His research interest includes image processing, time series analysis, land cover change detection, computer vision, and deep learning.
 
 <!-- My research interest includes image processing, time series analysis, land cover change detection, computer vision, and deep learning. I have published more than 100 papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'>google scholar citations <strong><span id='total_cit'>260000+</span></strong></a> (You can also use google scholar badge <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>). -->
 
