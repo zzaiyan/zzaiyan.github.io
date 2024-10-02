@@ -17,7 +17,7 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-Zaiyan Zhang (张再筵) is currently  working toward a B.E. degree in Data Science and Big Data Technology (数据科学与大数据技术) at [China University of Geosciences (中国地质大学)](https://www.cug.edu.cn/), has also secured admission to pursue a M.E. degree in Photogrammetry and Remote Sensing (摄影测量与遥感) at [Wuhan University (武汉大学)](https://www.whu.edu.cn/).
+Zaiyan Zhang (张再筵) is currently working toward a B.E. degree in Data Science and Big Data Technology (数据科学与大数据技术) at [China University of Geosciences (中国地质大学)](https://www.cug.edu.cn/), and has also secured admission to pursue a M.E. degree in Photogrammetry and Remote Sensing (摄影测量与遥感) at [Wuhan University (武汉大学)](https://www.whu.edu.cn/).
 
 His research interest includes image processing, time series analysis, land cover change detection, computer vision, and deep learning.
 
@@ -74,8 +74,8 @@ His research interest includes image processing, time series analysis, land cove
 - *2022, 2023, 2024*,&ensp;**Outstanding Student Model**.
 - *2022*,&ensp;**Outstanding Student Scholarship**.
 
-# 📖 Educations
-- *2025.09 - 20XX.06*, **M.S.** in [Wuhan University](https://www.whu.edu.cn/), supervised by Prof. [Qiangqiang Yuan](https://scholar.google.com/citations?user=aItnA-sAAAAJ).
+# 📖 Experience
+- *2025.09 - 20XX.06*, **M.E.** in [Wuhan University](https://www.whu.edu.cn/), supervised by Prof. [Qiangqiang Yuan](https://scholar.google.com/citations?user=aItnA-sAAAAJ).
 - *2021.09 - 2025.06 (now)*, **B.E.** in [China University of Geosciences](https://www.cug.edu.cn/), supervised by A.P. [Jining Yan](https://scholar.google.com/citations?user=iYTHxQcAAAAJ). 
 <!-- - *2015.09 - 2019.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  -->
 
