@@ -49,12 +49,14 @@ His research interest includes image processing, time series analysis, land cove
 
 ## Preprints
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">arXiv</div><img src='https://arxiv.org/html/2406.13358v1/x1.png' alt="sym" width="500"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">arXiv</div><img src='https://arxiv.org/html/2406.13358v1/x1.png' alt="sym" width="300"></div></div>
 <div class='paper-box-text' markdown="1">
 
-*MS$^2$TAN: Multi-scale Restoration of Missing Data in Optical Time-series Images with Masked Spatial-Temporal Attention Network*, arXiv:2406.13358
+***MS$^2$TAN: Multi-scale Restoration of Missing Data in Optical Time-series Images with Masked Spatial-Temporal Attention Network***
 
 **Zaiyan Zhang**, Jining Yan, Yuanqi Liang, Jiaxin Feng, Haixu He, Wei Han
+
+arXiv:2406.13358
 
 [[Paper]](https://arxiv.org/abs/2406.13358), [[Code]](https://github.com/zzaiyan/MS2TAN)
 
