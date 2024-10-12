@@ -34,7 +34,8 @@ His research interest includes image processing, time series analysis, land cove
 <!-- - *2015.09 - 2019.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  -->
 
 
-# 🎖 Honors and Awards
+<!-- 备选Emoji：🎖🏅💎🏆 -->
+# 🏅 Honors and Awards
 - *2024*,&ensp;**"Teddy Cup" Data Mining Challenge, Grand Prize** (Top 0.1%) [[link]](https://www.tipdm.org/dsej12/2429.jhtml).
 - *2024*,&ensp;**National Encouragement Scholarship**.
 - *2023*,&ensp;**National Scholarship** (Undergraduate).
