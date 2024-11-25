@@ -38,7 +38,7 @@ His research interest includes image processing, time series analysis, land cove
 # 🏅 Honors and Awards
 - *2024*,&ensp;**"Teddy Cup" Data Mining Challenge, Grand Prize** (Top 0.1%) [[link]](https://www.tipdm.org/dsej12/2429.jhtml).
 - *2024*,&ensp;**National Encouragement Scholarship**.
-- *2023*,&ensp;**National Scholarship** (Undergraduate).
+- *2023*,&ensp;**National Scholarship**.
 - *2023*,&ensp;**Huawei Scholarship** (32 candidates annually) [[link]](https://cs.cug.edu.cn/info/1019/6103.htm).
 - *2023*,&ensp;**Chow Tai Fook Scholarship** (50 candidates annually).
 - *2022, 2023, 2024*,&ensp;**Outstanding Student Model**.
@@ -51,18 +51,6 @@ His research interest includes image processing, time series analysis, land cove
 
 ## Conference Papers
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2016</div><img src='/images/500x300.png' alt="sym" width="300"></div></div>
-<div class='paper-box-text' markdown="1">
-
-[(Template) Deep Residual Learning for Image Recognition](https://openaccess.thecvf.com/content_cvpr_2016/papers/He_Deep_Residual_Learning_CVPR_2016_paper.pdf)
-
-**Kaiming He**, Xiangyu Zhang, Shaoqing Ren, Jian Sun
-
-[**Project**](https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=DhtAFkwAAAAJ&citation_for_view=DhtAFkwAAAAJ:ALROH1vI_8AC) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-</div>
-</div>
-
 <!-- - [Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet](https://github.com), A, B, C, **CVPR 2020** -->
 
 ## Preprints
@@ -72,7 +60,7 @@ His research interest includes image processing, time series analysis, land cove
 
 ***MS$^2$TAN: Multi-scale Restoration of Missing Data in Optical Time-series Images with Masked Spatial-Temporal Attention Network***
 
-**Zaiyan Zhang**, Jining Yan, Yuanqi Liang, Jiaxin Feng, Haixu He, Wei Han
+**Zaiyan Zhang**, Jining Yan, Yuanqi Liang, Jiaxin Feng, Haixu He, Li Cao
 
 arXiv:2406.13358
 
