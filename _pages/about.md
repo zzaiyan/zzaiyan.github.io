@@ -47,9 +47,9 @@ His research interest includes image processing, time series analysis, land cove
 
 # 📝 Publications 
 
-## Journal Papers
+<!-- ## Journal Papers -->
 
-## Conference Papers
+<!-- ## Conference Papers -->
 
 <!-- - [Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet](https://github.com), A, B, C, **CVPR 2020** -->
 
@@ -60,7 +60,7 @@ His research interest includes image processing, time series analysis, land cove
 
 ***MS$^2$TAN: Multi-scale Restoration of Missing Data in Optical Time-series Images with Masked Spatial-Temporal Attention Network***
 
-**Zaiyan Zhang**, Jining Yan, Yuanqi Liang, Jiaxin Feng, Haixu He, Li Cao
+**<u>Zaiyan Zhang</u>**, Jining Yan, Yuanqi Liang, Jiaxin Feng, Haixu He, Li Cao
 
 arXiv:2406.13358
 
@@ -71,7 +71,7 @@ arXiv:2406.13358
 
 ## Patents
 
-- *2024.09*,&ensp;***遥感图像序列的修复方法、装置、电子设备及存储介质***, &ensp;阎继宁, **张再筵**, 王力哲, 李军, 韩伟, 王玥玮.
+- *2024.09*,&ensp;***遥感图像序列的修复方法、装置、电子设备及存储介质***, &ensp;阎继宁, **<u>张再筵</u>**, 王力哲, 李军, 韩伟, 王玥玮.
 
 <!-- # 💬 Invited Talks
 - *2021.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
