@@ -71,7 +71,7 @@ arXiv:2406.13358
 
 ## Patents
 
-- *2025.02*, CN118570103A, **遥感图像序列的修复方法、装置、电子设备及存储介质**, &ensp;阎继宁, **<u>张再筵</u>**, 王力哲, 李军, 韩伟, 王玥玮.
+- *2025.02*, ZL202410556414.6, **遥感图像序列的修复方法、装置、电子设备及存储介质**, &ensp;阎继宁, **<u>张再筵</u>**, 王力哲, 李军, 韩伟, 王玥玮.
 
 <!-- # 💬 Invited Talks
 - *2021.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
