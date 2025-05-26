@@ -25,6 +25,7 @@ His research interest includes image processing, time series analysis, land cove
 
 
 # 🔥 News
+- *2025.05*:&ensp;🎉🎉 Our work ***MS$^2$TAN: Multi-scale Restoration of Missing Data in Optical Time-series Images with Masked Spatial-Temporal Attention Network*** was accepted by **IEEE Transactions on Geoscience and Remote Sensing (TGRS)**.
 - *2024.06*:&ensp;🎉🎉 Our work “***Image-text mutual retrieval method based on large-scale pre-training CLIP model fine-tuning***” won the **Grand Prize (Top 0.1%)** in the **12th “Teddy Cup” Data Mining Challenge** [[link]](https://www.tipdm.org/dsej12/2429.jhtml).
 
 
@@ -47,24 +48,24 @@ His research interest includes image processing, time series analysis, land cove
 
 # 📝 Publications 
 
-<!-- ## Journal Papers -->
+## Journal Papers
 
-<!-- ## Conference Papers -->
-
-<!-- - [Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet](https://github.com), A, B, C, **CVPR 2020** -->
-
-## Preprints
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">arXiv</div><img src='https://arxiv.org/html/2406.13358v1/x1.png' alt="sym" width="300"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">IEEE TGRS</div><img src='https://arxiv.org/html/2406.13358v2/x1.png' alt="sym" width="300"></div></div>
 <div class='paper-box-text' markdown="1">
 
 ***MS$^2$TAN: Multi-scale Restoration of Missing Data in Optical Time-series Images with Masked Spatial-Temporal Attention Network***
 
 **<u>Zaiyan Zhang</u>**, Jining Yan, Yuanqi Liang, Jiaxin Feng, Haixu He, Li Cao
 
-arXiv:2406.13358
+中科院一区Top，JCR Q1, IF=7.5, arXiv:2406.13358
 
 [[Paper]](https://arxiv.org/abs/2406.13358), [[Code]](https://github.com/zzaiyan/MS2TAN)
+
+<!-- ## Conference Papers -->
+
+<!-- - [Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet](https://github.com), A, B, C, **CVPR 2020** -->
+
+<!-- ## Preprints -->
 
 </div>
 </div>
