@@ -19,7 +19,7 @@ redirect_from:
 
 Zaiyan Zhang (张再筵) is currently working toward a B.E. degree in Data Science and Big Data Technology (数据科学与大数据技术) at [China University of Geosciences (中国地质大学)](https://www.cug.edu.cn/). Additionally, he has been recommended for admission by [Wuhan University (武汉大学)](https://www.whu.edu.cn/) and is expected to begin his studies in Sep 2025, pursuing a M.E. degree in Photogrammetry and Remote Sensing (摄影测量与遥感).
 
-His research interest includes image processing, time series analysis, land cover change detection, computer vision, and deep learning.
+His research interests include remote sensing image processing, multimodal data fusion, low-level vision, land-cover change detection, and computer vision.
 
 <!-- My research interest includes image processing, time series analysis, land cover change detection, computer vision, and deep learning. I have published more than 100 papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'>google scholar citations <strong><span id='total_cit'>260000+</span></strong></a> (You can also use google scholar badge <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>). -->
 
@@ -50,7 +50,7 @@ His research interest includes image processing, time series analysis, land cove
 
 ## Journal Papers
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">IEEE TGRS</div><img src='https://arxiv.org/html/2406.13358v2/x1.png' alt="sym" width="300"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">IEEE TGRS</div><img src='https://arxiv.org/html/2406.13358v2/x2.png' alt="sym" width="300"></div></div>
 <div class='paper-box-text' markdown="1">
 
 ***MS$^2$TAN: Multi-scale Restoration of Missing Data in Optical Time-series Images with Masked Spatial-Temporal Attention Network***
