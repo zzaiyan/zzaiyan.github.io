@@ -57,9 +57,11 @@ His research interests include remote sensing image processing, multimodal data 
 
 **<u>Zaiyan Zhang</u>**, Jining Yan, Yuanqi Liang, Jiaxin Feng, Haixu He, Li Cao
 
-中科院一区Top，JCR Q1, IF=7.5, arXiv:2406.13358
+*IEEE Transactions on Geoscience and Remote Sensing* (TGRS), 2025
 
-[[Paper]](https://arxiv.org/abs/2406.13358), [[Code]](https://github.com/zzaiyan/MS2TAN)
+中科院一区Top，JCR Q1, IF=7.5. **Multi-Temporal Image Restoration**.
+
+[[Paper]](https://doi.org/10.1109/tgrs.2025.3574799), [[arXiv]](https://arxiv.org/abs/2406.13358), [[Code]](https://github.com/CUG-BEODL/MS2TAN)
 
 <!-- ## Conference Papers -->
 
