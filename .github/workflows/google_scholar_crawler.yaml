@@ -15,6 +15,23 @@ jobs:
         sudo apt-get install python3-setuptools
     - name: Run
       run: |
+        echo "===== Printing commands to be executed ====="
+        echo "cd ./google_scholar_crawler"
+        echo "pip3 install -r requirements.txt"
+        echo "python3 main.py"
+        echo "cd ./results"
+        echo "git init"
+        echo "git config --local user.name \"\${GITHUB_ACTOR}\""
+        echo "export remote_repo=\"https://\${GITHUB_ACTOR}:\${{ secrets.GITHUB_TOKEN }}@github.com/\${GITHUB_REPOSITORY}.git\""
+        echo "git add *.json"
+        echo "git commit -m \"Updated Citation Data\""
+        echo "git push \"\${remote_repo}\" HEAD:google-scholar-stats --force"
+        echo "===== Checking environment variables ====="
+        echo "GITHUB_ACTOR: $GITHUB_ACTOR"
+        echo "GITHUB_REPOSITORY: $GITHUB_REPOSITORY"
+        echo "GOOGLE_SCHOLAR_ID: $GOOGLE_SCHOLAR_ID"
+        echo "GITHUB_TOKEN: ${GITHUB_TOKEN:+[set]}"
+        echo "===== Executing commands ====="
         cd ./google_scholar_crawler
         pip3 install -r requirements.txt
         python3 main.py
