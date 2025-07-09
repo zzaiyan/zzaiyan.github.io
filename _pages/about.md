@@ -30,13 +30,14 @@ His research interests include remote sensing image processing, multimodal data 
 
 
 # 📖 Experience
-- *2025.09 - 20XX.06*, **M.E.** in [Wuhan University](https://www.whu.edu.cn/), supervised by Prof. [Qiangqiang Yuan](https://scholar.google.com/citations?user=aItnA-sAAAAJ).
-- *2021.09 - 2025.06 (now)*, **B.E.** in [China University of Geosciences](https://www.cug.edu.cn/), supervised by A.P. [Jining Yan](https://scholar.google.com/citations?user=iYTHxQcAAAAJ). 
+- *2025.09 - 20XX.06 (now)*, **M.E.** in [Wuhan University](https://www.whu.edu.cn/), supervised by Prof. [Qiangqiang Yuan](https://scholar.google.com/citations?user=aItnA-sAAAAJ).
+- *2021.09 - 2025.06*, **B.E.** in [China University of Geosciences](https://www.cug.edu.cn/), supervised by A.P. [Jining Yan](https://scholar.google.com/citations?user=iYTHxQcAAAAJ). 
 <!-- - *2015.09 - 2019.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  -->
 
 
 <!-- 备选Emoji：🎖🏅💎🏆 -->
 # 🏅 Honors and Awards
+- *2025*,&ensp;**Outstanding Undergraduate Graduate of CUG**.
 - *2024*,&ensp;**"Teddy Cup" Data Mining Challenge, Grand Prize** (Top 0.1%) [[link]](https://www.tipdm.org/dsej12/2429.jhtml).
 - *2024*,&ensp;**National Encouragement Scholarship**.
 - *2023*,&ensp;**National Scholarship**.
