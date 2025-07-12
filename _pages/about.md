@@ -17,7 +17,7 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-Zaiyan Zhang (张再筵) is currently working toward a B.E. degree in Data Science and Big Data Technology (数据科学与大数据技术) at [China University of Geosciences (中国地质大学)](https://www.cug.edu.cn/). Additionally, he has been recommended for admission by [Wuhan University (武汉大学)](https://www.whu.edu.cn/) and is expected to begin his studies in Sep 2025, pursuing a M.E. degree in Photogrammetry and Remote Sensing (摄影测量与遥感).
+Zaiyan Zhang (张再筵) is currently pursuing an M.E. degree in Photogrammetry and Remote Sensing (摄影测量与遥感) at [Wuhan University (武汉大学)](https://www.whu.edu.cn/). Previously, he obtained a B.E. degree in Data Science and Big Data Technology (数据科学与大数据技术) from [China University of Geosciences (中国地质大学)](https://www.cug.edu.cn/).
 
 His research interests include remote sensing image processing, multimodal data fusion, low-level vision, land-cover change detection, and computer vision.
 
