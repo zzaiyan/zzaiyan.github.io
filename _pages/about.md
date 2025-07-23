@@ -113,10 +113,11 @@ function showBibTeX(paperKey) {
       </div>
       <textarea readonly style="width: 100%; height: 200px; font-family: monospace; 
                                 border: 1px solid #ddd; padding: 10px; border-radius: 4px; 
-                                resize: vertical; background: #f9f9f9;" 
+                                resize: vertical; background: #f9f9f9; cursor: text; 
+                                user-select: text; -webkit-user-select: text; -moz-user-select: text;" 
                 id="bibtex-content">${bibtex}</textarea>
       <div style="margin-top: 15px; text-align: right;">
-        <button onclick="copyBibTeX()" 
+        <button onclick="copyBibTeX(event)" 
                 style="background: #007cba; color: white; border: none; padding: 8px 16px; 
                        border-radius: 4px; cursor: pointer; margin-right: 10px;">
           Copy to Clipboard
@@ -146,23 +147,62 @@ function showBibTeX(paperKey) {
   }
 }
 
-function copyBibTeX() {
+function copyBibTeX(event) {
+  event.preventDefault();
+  event.stopPropagation();
+  
   const textarea = document.getElementById('bibtex-content');
+  const button = event.target;
+  
+  // 选中文本内容
   textarea.select();
-  navigator.clipboard.writeText(textarea.value).then(() => {
-    // 显示复制成功提示
-    const button = event.target;
-    const originalText = button.textContent;
-    button.textContent = 'Copied!';
-    button.style.background = '#28a745';
-    setTimeout(() => {
-      button.textContent = originalText;
-      button.style.background = '#007cba';
-    }, 2000);
-  }).catch(err => {
-    console.error('Failed to copy: ', err);
-    alert('Failed to copy to clipboard');
-  });
+  textarea.setSelectionRange(0, 99999); // 对移动设备
+  
+  // 尝试复制
+  try {
+    // 先尝试现代API
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(textarea.value).then(() => {
+        showCopySuccess(button);
+      }).catch(err => {
+        console.error('Clipboard API failed: ', err);
+        // 降级到document.execCommand
+        fallbackCopy(textarea, button);
+      });
+    } else {
+      // 降级到document.execCommand
+      fallbackCopy(textarea, button);
+    }
+  } catch (err) {
+    console.error('Copy failed: ', err);
+    alert('复制失败，请手动选择文本复制');
+  }
+}
+
+function fallbackCopy(textarea, button) {
+  try {
+    textarea.focus();
+    textarea.select();
+    const successful = document.execCommand('copy');
+    if (successful) {
+      showCopySuccess(button);
+    } else {
+      throw new Error('execCommand failed');
+    }
+  } catch (err) {
+    console.error('Fallback copy failed: ', err);
+    alert('复制失败，请手动选择文本复制');
+  }
+}
+
+function showCopySuccess(button) {
+  const originalText = button.textContent;
+  button.textContent = 'Copied!';
+  button.style.background = '#28a745';
+  setTimeout(() => {
+    button.textContent = originalText;
+    button.style.background = '#007cba';
+  }, 2000);
 }
 </script>
 
