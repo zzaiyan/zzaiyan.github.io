@@ -215,7 +215,7 @@
 
     // 初始化BibTeX链接
     init: function() {
-      // 如果DOM还在加载中，等待DOMContentLoaded事件
+      // 如果DOM还在加载中，等待加载完成
       if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', () => {
           this.bindBibtexLinks();
