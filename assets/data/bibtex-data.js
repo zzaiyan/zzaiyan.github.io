@@ -5,7 +5,7 @@
  */
 
 window.BibtexDatabase = {
-  // MS²TAN: Multi-scale Restoration of Missing Data in Optical Time-series Images
+  // MS²TAN: Multiscale Restoration of Missing Data in Optical Time-series Images
   'ms2tan': `@article{zhang2024multi,
   author   = {Zhang, Zaiyan and Yan, Jining and Liang, Yuanqi and Feng, Jiaxin and He, Haixu and Cao, Li},
   journal  = {IEEE Transactions on Geoscience and Remote Sensing},
@@ -13,7 +13,6 @@ window.BibtexDatabase = {
   year     = {2025},
   volume   = {63},
   pages    = {1-15},
-  keywords = {Remote sensing;Image restoration;Feature extraction;Image reconstruction;Spatiotemporal phenomena;Accuracy;Spatial resolution;Mathematical models;Training;Optimization methods;missing data restoration;time-series remote sensing images;masked spatial-temporal attention;multi-scale restoration;multi-objective joint optimization},
   doi      = {10.1109/TGRS.2025.3574799}
 }`,
 
