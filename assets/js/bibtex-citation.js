@@ -215,16 +215,13 @@
 
     // 初始化BibTeX链接
     init: function() {
-      document.addEventListener('DOMContentLoaded', () => {
-        this.bindBibtexLinks();
-      });
-
-      // 如果DOM已经加载完成
+      // 如果DOM还在加载中，等待DOMContentLoaded事件
       if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', () => {
           this.bindBibtexLinks();
         });
       } else {
+        // DOM已经加载完成，直接绑定
         this.bindBibtexLinks();
       }
     },
