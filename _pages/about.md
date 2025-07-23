@@ -62,7 +62,7 @@ His research interests include remote sensing image processing, multimodal data 
 
 中科院一区Top，JCR Q1, IF=7.5. **Multi-Temporal Image Restoration**.
 
-[[Paper]](https://doi.org/10.1109/tgrs.2025.3574799), [[arXiv]](https://arxiv.org/abs/2406.13358), [[Code]](https://github.com/CUG-BEODL/MS2TAN)
+[[Paper]](https://doi.org/10.1109/tgrs.2025.3574799), [[arXiv]](https://arxiv.org/abs/2406.13358), [[Code]](https://github.com/CUG-BEODL/MS2TAN), [[BibTeX]](#bibtex-ms2tan)
 
 <!-- ## Conference Papers -->
 
@@ -72,6 +72,113 @@ His research interests include remote sensing image processing, multimodal data 
 
 </div>
 </div>
+
+<script>
+function showBibTeX(paperKey) {
+  const bibtexData = {
+    'ms2tan': `@article{zhang2024multi,
+  author   = {Zhang, Zaiyan and Yan, Jining and Liang, Yuanqi and Feng, Jiaxin and He, Haixu and Cao, Li},
+  journal  = {IEEE Transactions on Geoscience and Remote Sensing},
+  title    = {Multiscale Restoration of Missing Data in Optical Time-series Images with Masked Spatial-Temporal Attention Network},
+  year     = {2025},
+  volume   = {63},
+  pages    = {1-15},
+  keywords = {Remote sensing;Image restoration;Feature extraction;Image reconstruction;Spatiotemporal phenomena;Accuracy;Spatial resolution;Mathematical models;Training;Optimization methods;missing data restoration;time-series remote sensing images;masked spatial-temporal attention;multi-scale restoration;multi-objective joint optimization},
+  doi      = {10.1109/TGRS.2025.3574799}
+}`
+  };
+  
+  const bibtex = bibtexData[paperKey];
+  if (bibtex) {
+    // 创建模态框
+    const modal = document.createElement('div');
+    modal.style.cssText = `
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+      background: rgba(0,0,0,0.5); z-index: 1000; display: flex; 
+      justify-content: center; align-items: center;
+    `;
+    
+    const content = document.createElement('div');
+    content.style.cssText = `
+      background: white; padding: 20px; border-radius: 8px; 
+      max-width: 600px; width: 90%; max-height: 80%; overflow-y: auto;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    `;
+    
+    content.innerHTML = `
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+        <h3 style="margin: 0; color: #333;">BibTeX Citation</h3>
+        <button onclick="this.parentElement.parentElement.parentElement.remove()" 
+                style="background: none; border: none; font-size: 24px; cursor: pointer; color: #666;">&times;</button>
+      </div>
+      <textarea readonly style="width: 100%; height: 200px; font-family: monospace; 
+                                border: 1px solid #ddd; padding: 10px; border-radius: 4px; 
+                                resize: vertical; background: #f9f9f9;" 
+                id="bibtex-content">${bibtex}</textarea>
+      <div style="margin-top: 15px; text-align: right;">
+        <button onclick="copyBibTeX()" 
+                style="background: #007cba; color: white; border: none; padding: 8px 16px; 
+                       border-radius: 4px; cursor: pointer; margin-right: 10px;">
+          Copy to Clipboard
+        </button>
+        <button onclick="this.parentElement.parentElement.parentElement.remove()" 
+                style="background: #6c757d; color: white; border: none; padding: 8px 16px; 
+                       border-radius: 4px; cursor: pointer;">
+          Close
+        </button>
+      </div>
+    `;
+    
+    modal.appendChild(content);
+    document.body.appendChild(modal);
+    
+    // 自动复制到剪贴板
+    navigator.clipboard.writeText(bibtex).then(() => {
+      console.log('BibTeX copied to clipboard');
+    }).catch(err => {
+      console.error('Failed to copy: ', err);
+    });
+    
+    // 点击模态框外部关闭
+    modal.onclick = (e) => {
+      if (e.target === modal) modal.remove();
+    };
+  }
+}
+
+function copyBibTeX() {
+  const textarea = document.getElementById('bibtex-content');
+  textarea.select();
+  navigator.clipboard.writeText(textarea.value).then(() => {
+    // 显示复制成功提示
+    const button = event.target;
+    const originalText = button.textContent;
+    button.textContent = 'Copied!';
+    button.style.background = '#28a745';
+    setTimeout(() => {
+      button.textContent = originalText;
+      button.style.background = '#007cba';
+    }, 2000);
+  }).catch(err => {
+    console.error('Failed to copy: ', err);
+    alert('Failed to copy to clipboard');
+  });
+}
+</script>
+
+<!-- 添加点击事件处理 -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // 为 BibTeX 链接添加点击事件
+  const bibtexLink = document.querySelector('a[href="#bibtex-ms2tan"]');
+  if (bibtexLink) {
+    bibtexLink.onclick = function(e) {
+      e.preventDefault();
+      showBibTeX('ms2tan');
+    };
+  }
+});
+</script>
 
 ## Patents
 
