@@ -14,7 +14,7 @@
   bottom: 0em;
   height: auto;
   /* sticky footer fix end */
-  margin-top: 3em;
+  margin-top: 5em;
   color: mix(#fff, $gray, 25%);
   -webkit-animation: intro 0.3s both;
           animation: intro 0.3s both;
@@ -30,6 +30,7 @@
     margin-top: 2em;
     max-width: 100%;
     padding: 0 1em 2em;
+    text-align: center;
 
     @include breakpoint($x-large) {
       max-width: $x-large;
@@ -56,13 +57,18 @@
 .page__footer-copyright {
   font-family: $global-font-family;
   font-size: $type-size-7;
+  text-align: center;
 }
 
 .page__footer-follow {
+  text-align: center;
+  margin-bottom: 1em;
+  
   ul {
     margin: 0;
     padding: 0;
     list-style-type: none;
+    display: inline-block;
   }
 
   li {
