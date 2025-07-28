@@ -1,16 +1,61 @@
 <div class="page__footer">
   <footer>
-    <div class="page__footer-container" style="display: flex; align-items: center; justify-content: center; padding: 1rem;">
+    <style>
+      .page__footer-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+      }
+      
+      .page__footer-left {
+        margin-right: 1.5rem;
+        text-align: center;
+        min-width: 300px;
+        min-height: 167px;
+      }
+      
+      .page__footer-right {
+        margin-left: 1.5rem;
+        min-width: 300px;
+      }
+      
+      /* 响应式布局：在窄屏幕上切换为上下布局 */
+      @media (max-width: 768px) {
+        .page__footer-container {
+          flex-direction: column;
+          align-items: center;
+        }
+        
+        .page__footer-left {
+          margin-right: 0;
+          margin-bottom: 2rem;
+          min-width: auto;
+          width: 100%;
+          max-width: 400px;
+        }
+        
+        .page__footer-right {
+          margin-left: 0;
+          min-width: auto;
+          width: 100%;
+          max-width: 400px;
+          text-align: center;
+        }
+      }
+    </style>
+    
+    <div class="page__footer-container">
       
       <!-- Left Column: Visitor Statistics -->
-      <div class="page__footer-left" style="margin-right: 1.5rem; text-align: center; min-width: 250px;">
+      <div class="page__footer-left">
         <div class="page__footer-clustermaps">
           <script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?cl=6f808f&t=tt&d=vaAZzEhnA94ccAwI2G-Ul3ksfJrJSJSF-WJo0zXOvhs&co=f2f3f3&ct=9ba1a6&cmo=e34949"></script>
         </div>
       </div>
 
       <!-- Right Column: Other Content -->
-      <div class="page__footer-right" style="margin-left: 1.5rem; min-width: 250px;">
+      <div class="page__footer-right">
         <div class="page__footer-follow">
           <ul class="social-icons">
             {% if site.author.github %}
