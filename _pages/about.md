@@ -17,7 +17,7 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-Zaiyan Zhang (张再筵) is currently pursuing an M.E. degree in Photogrammetry and Remote Sensing (摄影测量与遥感) at [Wuhan University (武汉大学)](https://www.whu.edu.cn/). Previously, he obtained a B.E. degree in Data Science and Big Data Technology (数据科学与大数据技术) from [China University of Geosciences (中国地质大学)](https://www.cug.edu.cn/).
+Zaiyan Zhang (张再筵) is currently pursuing an M.E. degree in Photogrammetry and Remote Sensing (摄影测量与遥感) at [Wuhan University (武汉大学)](https://www.whu.edu.cn/) since Sep, 2025. He obtained a B.E. degree in Data Science and Big Data Technology (数据科学与大数据技术) from [China University of Geosciences (中国地质大学)](https://www.cug.edu.cn/) in Jun, 2025.
 
 His research interests include remote sensing image processing, multimodal data fusion, low-level vision, land-cover change detection, and computer vision.
 
@@ -60,7 +60,7 @@ His research interests include remote sensing image processing, multimodal data 
 
 *IEEE Transactions on Geoscience and Remote Sensing* **(IEEE TGRS)**, 2025
 
-中科院一区Top，JCR Q1, IF=7.5. **Multi-Temporal Image Restoration**.
+中科院一区 Top，JCR Q1, IF=7.5. **Multi-Temporal Image Inpainting**.
 
 [[Paper]](https://doi.org/10.1109/tgrs.2025.3574799), [[arXiv]](https://arxiv.org/abs/2406.13358), [[Code]](https://github.com/CUG-BEODL/MS2TAN), [[BibTeX]](#bibtex-ms2tan)
 
