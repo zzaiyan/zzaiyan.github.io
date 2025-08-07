@@ -1,5 +1,7 @@
 # Zaiyan Zhang (张再筵)
 
+*"A Research Beginner."* - Always learning, always exploring.
+
 [![GitHub](https://img.shields.io/badge/GitHub-zzaiyan-blue?style=flat&logo=github)](https://github.com/zzaiyan)
 [![Google Scholar](https://img.shields.io/badge/Google%20Scholar-Profile-green?style=flat&logo=google-scholar)](https://scholar.google.com/citations?user=ZpxXejIAAAAJ&hl=en)
 [![Website](https://img.shields.io/badge/Website-zzaiyan.com-orange?style=flat&logo=firefox)](https://zzaiyan.github.io)
@@ -41,7 +43,5 @@ I'm **Zaiyan Zhang (张再筵)**, currently pursuing an M.E. degree in **Photogr
 - **Location**: Wuhan, China -->
 
 ---
-
-*"A Research Beginner."* - Always learning, always exploring.
 
 > 💡 **Note**: This repository contains the source code for my academic personal homepage. Visit [zzaiyan.github.io](https://zzaiyan.github.io) to see the live version!
