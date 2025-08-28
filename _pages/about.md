@@ -17,9 +17,10 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-Zaiyan Zhang (张再筵) is currently pursuing an M.E. degree in Photogrammetry and Remote Sensing (摄影测量与遥感) at [Wuhan University (武汉大学)](https://www.whu.edu.cn/) since Sep, 2025. He obtained a B.E. degree in Data Science and Big Data Technology (数据科学与大数据技术) from [China University of Geosciences (中国地质大学)](https://www.cug.edu.cn/) in Jun, 2025.
+I am Zaiyan Zhang (张再筵), currently pursuing an M.E. degree in Photogrammetry and Remote Sensing (摄影测量与遥感) at [Wuhan University (武汉大学)](https://www.whu.edu.cn/) since Sep. 2025. I obtained a B.E. degree in Data Science and Big Data Technology (数据科学与大数据技术) from [China University of Geosciences (中国地质大学)](https://www.cug.edu.cn/) in Jun. 2025.
 
-His research interests include:
+My research interests include:
+
 
 - **Image Processing**
 - **Remote Sensing**
@@ -36,7 +37,7 @@ His research interests include:
 - *2024.06*:&ensp;🎉🎉 Our work “***Image-text mutual retrieval method based on large-scale pre-training CLIP model fine-tuning***” won the **Grand Prize (Top 0.1%)** in the **12th “Teddy Cup” Data Mining Challenge** [[link]](https://www.tipdm.org/dsej12/2429.jhtml).
 
 
-# 📖 Experience
+# 📖 Education
 - *2025.09 - 20XX.06 (now)*, **M.E.** in [Wuhan University](https://www.whu.edu.cn/), supervised by Prof. [Qiangqiang Yuan](https://scholar.google.com/citations?user=aItnA-sAAAAJ).
 - *2021.09 - 2025.06*, **B.E.** in [China University of Geosciences](https://www.cug.edu.cn/), supervised by A.P. [Jining Yan](https://scholar.google.com/citations?user=iYTHxQcAAAAJ). 
 <!-- - *2015.09 - 2019.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  -->
@@ -50,7 +51,7 @@ His research interests include:
 - *2023*,&ensp;**National Scholarship**.
 - *2023*,&ensp;**Huawei Scholarship** (32 candidates annually) [[link]](https://cs.cug.edu.cn/info/1019/6103.htm).
 - *2023*,&ensp;**Chow Tai Fook Scholarship** (50 candidates annually).
-- *2022, 2023, 2024*,&ensp;**Outstanding Student Model**.
+- *2022, 2023, 2024*,&ensp;**Outstanding Student Award**.
 - *2022*,&ensp;**Outstanding Student Scholarship**.
 
 
