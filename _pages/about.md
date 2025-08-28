@@ -19,13 +19,20 @@ redirect_from:
 
 Zaiyan Zhang (张再筵) is currently pursuing an M.E. degree in Photogrammetry and Remote Sensing (摄影测量与遥感) at [Wuhan University (武汉大学)](https://www.whu.edu.cn/) since Sep, 2025. He obtained a B.E. degree in Data Science and Big Data Technology (数据科学与大数据技术) from [China University of Geosciences (中国地质大学)](https://www.cug.edu.cn/) in Jun, 2025.
 
-His research interests include remote sensing image processing, multimodal data fusion, low-level vision, land-cover change detection, and computer vision.
+His research interests include:
+
+- **Image Processing**
+- **Remote Sensing**
+- **Multimodal Data Fusion**
+- **Computer Vision**
+
+🤝 I welcome collaboration and networking opportunities. Feel free to contact me via email! 📧
 
 <!-- My research interest includes image processing, time series analysis, land cover change detection, computer vision, and deep learning. I have published more than 100 papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'>google scholar citations <strong><span id='total_cit'>260000+</span></strong></a> (You can also use google scholar badge <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>). -->
 
 
 # 🔥 News
-- *2025.05*:&ensp;🎉🎉 Our work ***MS$^2$TAN: Multi-scale Restoration of Missing Data in Optical Time-series Images with Masked Spatial-Temporal Attention Network*** was accepted by **IEEE Transactions on Geoscience and Remote Sensing (TGRS)**.
+- *2025.05*:&ensp;🎉🎉 Our work ***MS$^2$TAN: Multiscale Restoration of Missing Data in Optical Time-series Images with Masked Spatial-Temporal Attention Network*** was accepted by **IEEE Transactions on Geoscience and Remote Sensing (TGRS)**.
 - *2024.06*:&ensp;🎉🎉 Our work “***Image-text mutual retrieval method based on large-scale pre-training CLIP model fine-tuning***” won the **Grand Prize (Top 0.1%)** in the **12th “Teddy Cup” Data Mining Challenge** [[link]](https://www.tipdm.org/dsej12/2429.jhtml).
 
 
@@ -54,7 +61,7 @@ His research interests include remote sensing image processing, multimodal data 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">IEEE TGRS</div><img src='https://arxiv.org/html/2406.13358v2/x2.png' alt="sym" width="300"></div></div>
 <div class='paper-box-text' markdown="1">
 
-***MS$^2$TAN: Multi-scale Restoration of Missing Data in Optical Time-series Images with Masked Spatial-Temporal Attention Network***
+***MS$^2$TAN: Multiscale Restoration of Missing Data in Optical Time-series Images with Masked Spatial-Temporal Attention Network***
 
 **<u>Zaiyan Zhang</u>**, Jining Yan, Yuanqi Liang, Jiaxin Feng, Haixu He, Li Cao
 
