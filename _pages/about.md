@@ -21,7 +21,6 @@ I am Zaiyan Zhang (张再筵), currently pursuing an M.E. degree in Photogrammet
 
 My research interests include:
 
-
 - **Image Processing**
 - **Remote Sensing**
 - **Multimodal Data Fusion**
@@ -40,7 +39,6 @@ My research interests include:
 # 📖 Education
 - *2025.09 - Present*, **M.E.** in [Wuhan University](https://www.whu.edu.cn/), supervised by Prof. [Qiangqiang Yuan](https://scholar.google.com/citations?user=aItnA-sAAAAJ) and A.P. [Jie Li](https://scholar.google.com/citations?user=W4VvnDMAAAAJ).
 - *2021.09 - 2025.06*, **B.E.** in [China University of Geosciences](https://www.cug.edu.cn/), supervised by A.P. [Jining Yan](https://scholar.google.com/citations?user=iYTHxQcAAAAJ). 
-<!-- - *2015.09 - 2019.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  -->
 
 
 <!-- 备选Emoji：🎖🏅💎🏆 -->
@@ -58,14 +56,12 @@ My research interests include:
 # 📝 Publications 
 
 <!-- 显示总引用量 -->
-<span id="total_cit">0</span>
+<!-- <span id="total_cit">0</span> -->
 
 <!-- 显示单篇论文引用量 -->
-<span class="show_paper_citations" data="ZpxXejIAAAAJ:u-x6o8ySG0sC"></span>
-<!-- <span class="show_paper_citations" data="paper_id_2"></span> -->
+<!-- <strong><span class="show_paper_citations" data="ZpxXejIAAAAJ:u-x6o8ySG0sC"></span></strong> -->
 
-<!-- I have published  -->
-
+<!-- 显示总引用量徽章 -->
 <!-- <a href='https://scholar.google.com/citations?user=ZpxXejIAAAAJ'><img src="https://img.shields.io/endpoint?logo=Google%20Scholar&url=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2Fzzaiyan%2Fzzaiyan.github.io@google-scholar-stats%2Fgs_data_shieldsio.json&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a> -->
 
 ## Journal Papers
@@ -79,7 +75,7 @@ My research interests include:
 
 *IEEE Transactions on Geoscience and Remote Sensing* **(IEEE TGRS)**, 2025
 
-中科院一区 Top，JCR Q1, IF=7.5. **Multi-Temporal Image Inpainting**.
+中科院一区 Top, IF=8.6 | **Multi-Temporal Image Inpainting** <strong><span class="show_paper_citations" data="ZpxXejIAAAAJ:u-x6o8ySG0sC"></span></strong>
 
 [[Paper]](https://doi.org/10.1109/tgrs.2025.3574799), [[arXiv]](https://arxiv.org/abs/2406.13358), [[Code]](https://github.com/CUG-BEODL/MS2TAN), [[BibTeX]](#bibtex-ms2tan)
 
