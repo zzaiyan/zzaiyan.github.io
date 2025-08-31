@@ -75,7 +75,7 @@ My research interests include:
 
 *IEEE Transactions on Geoscience and Remote Sensing* **(IEEE TGRS)**, 2025
 
-中科院一区 Top, IF=8.6 | **Multi-Temporal Image Inpainting** <strong><span class="show_paper_citations" data="ZpxXejIAAAAJ:u-x6o8ySG0sC"></span></strong>
+中科院一区 Top, IF=8.6, **Multi-Temporal Image Inpainting** <strong><span class="show_paper_citations" data="ZpxXejIAAAAJ:u-x6o8ySG0sC"></span></strong>
 
 [[Paper]](https://doi.org/10.1109/tgrs.2025.3574799), [[arXiv]](https://arxiv.org/abs/2406.13358), [[Code]](https://github.com/CUG-BEODL/MS2TAN), [[BibTeX]](#bibtex-ms2tan)
 
