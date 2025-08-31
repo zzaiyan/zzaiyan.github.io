@@ -57,6 +57,13 @@ My research interests include:
 
 # 📝 Publications 
 
+<!-- 显示总引用量 -->
+<span id="total_cit">0</span>
+
+<!-- 显示单篇论文引用量 -->
+<span class="show_paper_citations" data="ZpxXejIAAAAJ:u-x6o8ySG0sC"></span>
+<!-- <span class="show_paper_citations" data="paper_id_2"></span> -->
+
 <!-- I have published  -->
 
 <!-- <a href='https://scholar.google.com/citations?user=ZpxXejIAAAAJ'><img src="https://img.shields.io/endpoint?logo=Google%20Scholar&url=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2Fzzaiyan%2Fzzaiyan.github.io@google-scholar-stats%2Fgs_data_shieldsio.json&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a> -->
