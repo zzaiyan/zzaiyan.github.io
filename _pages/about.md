@@ -17,7 +17,7 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-I am Zaiyan Zhang (张再筵), currently pursuing an M.E. degree in Photogrammetry and Remote Sensing (摄影测量与遥感) at [Wuhan University (武汉大学)](https://www.whu.edu.cn/) since Sep. 2025. I obtained a B.E. degree in Data Science and Big Data Technology (数据科学与大数据技术) from [China University of Geosciences (中国地质大学)](https://www.cug.edu.cn/) in Jun. 2025. 
+👋 Hi there! I am Zaiyan Zhang (张再筵), currently pursuing an M.E. degree in Photogrammetry and Remote Sensing (摄影测量与遥感) at [Wuhan University (武汉大学)](https://www.whu.edu.cn/) since Sep. 2025. I obtained a B.E. degree in Data Science and Big Data Technology (数据科学与大数据技术) from [China University of Geosciences (中国地质大学)](https://www.cug.edu.cn/) in Jun. 2025. 
 
 My research interests include:
 
@@ -34,23 +34,6 @@ My research interests include:
 # 🔥 News
 - *2025.05*:&ensp;🎉🎉 Our work ***MS$^2$TAN: Multiscale Restoration of Missing Data in Optical Time-series Images with Masked Spatial-Temporal Attention Network*** was accepted by **IEEE Transactions on Geoscience and Remote Sensing (TGRS)**.
 - *2024.06*:&ensp;🎉🎉 Our work “***Image-text mutual retrieval method based on large-scale pre-training CLIP model fine-tuning***” won the **Grand Prize (Top 0.1%)** in the **12th “Teddy Cup” Data Mining Challenge** [[link]](https://www.tipdm.org/dsej12/2429.jhtml).
-
-
-# 📖 Education
-- *2025.09 - Present*, **M.E.** in [Wuhan University](https://www.whu.edu.cn/), supervised by Prof. [Qiangqiang Yuan](https://scholar.google.com/citations?user=aItnA-sAAAAJ) and A.P. [Jie Li](https://scholar.google.com/citations?user=W4VvnDMAAAAJ).
-- *2021.09 - 2025.06*, **B.E.** in [China University of Geosciences](https://www.cug.edu.cn/), supervised by A.P. [Jining Yan](https://scholar.google.com/citations?user=iYTHxQcAAAAJ). 
-
-
-<!-- 备选Emoji：🎖🏅💎🏆 -->
-# 🏅 Honors and Awards
-- *2025*,&ensp;**Outstanding Undergraduate Graduate of CUG**.
-- *2024*,&ensp;**"Teddy Cup" Data Mining Challenge, Grand Prize** (Top 0.1%) [[link]](https://www.tipdm.org/dsej12/2429.jhtml).
-- *2024*,&ensp;**National Encouragement Scholarship**.
-- *2023*,&ensp;**National Scholarship**.
-- *2023*,&ensp;**Huawei Scholarship** (32 candidates annually) [[link]](https://cs.cug.edu.cn/info/1019/6103.htm).
-- *2023*,&ensp;**Chow Tai Fook Scholarship** (50 candidates annually).
-- *2022, 2023, 2024*,&ensp;**Outstanding Student Award**.
-- *2022*,&ensp;**Outstanding Student Scholarship**.
 
 
 # 📝 Publications 
@@ -75,9 +58,12 @@ My research interests include:
 
 *IEEE Transactions on Geoscience and Remote Sensing* **(IEEE TGRS)**, 2025
 
-中科院一区 Top, IF=8.6, **Multi-Temporal Image Inpainting** <strong><span class="show_paper_citations" data="ZpxXejIAAAAJ:u-x6o8ySG0sC"></span></strong>
+中科院一区 Top, IF=8.6, **Multi-Temporal Image Inpainting** <span class="show_paper_citations" data="ZpxXejIAAAAJ:u-x6o8ySG0sC"></span>
 
 [[Paper]](https://doi.org/10.1109/tgrs.2025.3574799), [[arXiv]](https://arxiv.org/abs/2406.13358), [[Code]](https://github.com/CUG-BEODL/MS2TAN), [[BibTeX]](#bibtex-ms2tan)
+
+</div>
+</div>
 
 <!-- ## Conference Papers -->
 
@@ -85,12 +71,25 @@ My research interests include:
 
 <!-- ## Preprints -->
 
-</div>
-</div>
-
 ## Patents
 
 - *2025.02*, ZL202410556414.6, **遥感图像序列的修复方法、装置、电子设备及存储介质**, &ensp;阎继宁, **<u>张再筵</u>**, 王力哲, 李军, 韩伟, 王玥玮.
+
+# 📖 Education
+- *2025.09 - Present*, **M.E.** in [Wuhan University](https://www.whu.edu.cn/), supervised by Prof. [Qiangqiang Yuan](https://scholar.google.com/citations?user=aItnA-sAAAAJ) and A.P. [Jie Li](https://scholar.google.com/citations?user=W4VvnDMAAAAJ).
+- *2021.09 - 2025.06*, **B.E.** in [China University of Geosciences](https://www.cug.edu.cn/), supervised by A.P. [Jining Yan](https://scholar.google.com/citations?user=iYTHxQcAAAAJ). 
+
+
+<!-- 备选Emoji：🎖🏅💎🏆 -->
+# 🏅 Honors and Awards
+- *2025*,&ensp;**Outstanding Undergraduate Graduate of CUG**.
+- *2024*,&ensp;**"Teddy Cup" Data Mining Challenge, Grand Prize** (Top 0.1%) [[link]](https://www.tipdm.org/dsej12/2429.jhtml).
+- *2024*,&ensp;**National Encouragement Scholarship**.
+- *2023*,&ensp;**National Scholarship**.
+- *2023*,&ensp;**Huawei Scholarship** (32 candidates annually) [[link]](https://cs.cug.edu.cn/info/1019/6103.htm).
+- *2023*,&ensp;**Chow Tai Fook Scholarship** (50 candidates annually).
+- *2022, 2023, 2024*,&ensp;**Outstanding Student Award**.
+- *2022*,&ensp;**Outstanding Student Scholarship**.
 
 
 # 🔍 Services
