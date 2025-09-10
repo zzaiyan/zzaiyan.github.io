@@ -19,7 +19,7 @@
               if (data['publications'] && data['publications'][paperId]) {
                 var numCitations = data['publications'][paperId]['num_citations'];
                 if (numCitations > 0) {
-                  element.innerHTML = '&nbsp;|&nbsp;Citations: ' + numCitations;
+                  element.innerHTML = '| Citations: ' + numCitations;
                 }
               }
           });
