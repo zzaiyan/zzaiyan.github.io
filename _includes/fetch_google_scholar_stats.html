@@ -1,5 +1,5 @@
 <script>
-  $(document).ready(function () {
+  $(window).on('load', function () {
       {% if site.google_scholar_stats_use_cdn %}
       var gsDataBaseUrl = 'https://cdn.jsdelivr.net/gh/{{ site.repository }}@'
       {% else %}
