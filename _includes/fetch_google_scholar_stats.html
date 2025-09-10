@@ -12,7 +12,7 @@
           Array.prototype.forEach.call(citationEles, element => {
               var paperId = element.getAttribute('data')
               var numCitations = data['publications'][paperId]['num_citations']
-              element.innerHTML = ', Citations: ' + numCitations;
+              element.innerHTML = '| Citations: ' + numCitations;
           });
       });
   })

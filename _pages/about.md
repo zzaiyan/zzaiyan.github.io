@@ -19,12 +19,7 @@ redirect_from:
 
 👋 Hi there! I am Zaiyan Zhang (张再筵), currently pursuing an M.E. degree in Photogrammetry and Remote Sensing (摄影测量与遥感) at [Wuhan University (武汉大学)](https://www.whu.edu.cn/) since Sep. 2025. I obtained a B.E. degree in Data Science and Big Data Technology (数据科学与大数据技术) from [China University of Geosciences (中国地质大学)](https://www.cug.edu.cn/) in Jun. 2025. 
 
-My research interests include:
-
-- **Image Processing**
-- **Remote Sensing**
-- **Multimodal Data Fusion**
-- **Computer Vision**
+My research interests cover <strong>Image Processing</strong>, <strong>Remote Sensing</strong>, <strong>Multimodal Data Fusion</strong>, and <strong>Computer Vision</strong>. <a href='https://scholar.google.com/citations?user=ZpxXejIAAAAJ'><img src="https://img.shields.io/endpoint?logo=Google%20Scholar&url=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2Fzzaiyan%2Fzzaiyan.github.io@google-scholar-stats%2Fgs_data_shieldsio.json&labelColor=f6f6f6&color=9cf&style=flat&label=citations" style="vertical-align:middle;margin-left:8px;"></a>
 
 🤝 I welcome collaboration and networking opportunities. Feel free to contact me via email {[1@zzaiyan.com](mailto:1@zzaiyan.com), [zzaiyan@whu.edu.cn](mailto:zzaiyan@whu.edu.cn)}! 📧
 
@@ -39,13 +34,13 @@ My research interests include:
 # 📝 Publications 
 
 <!-- 显示总引用量 -->
-<span id="total_cit">0</span>
+<!-- <span id="total_cit">0</span> -->
 
 <!-- 显示单篇论文引用量 -->
-<strong><span class="show_paper_citations" data="ZpxXejIAAAAJ:u-x6o8ySG0sC"></span></strong>
+<!-- <strong><span class="show_paper_citations" data="ZpxXejIAAAAJ:u-x6o8ySG0sC"></span></strong> -->
 
 <!-- 显示总引用量徽章 -->
-<a href='https://scholar.google.com/citations?user=ZpxXejIAAAAJ'><img src="https://img.shields.io/endpoint?logo=Google%20Scholar&url=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2Fzzaiyan%2Fzzaiyan.github.io@google-scholar-stats%2Fgs_data_shieldsio.json&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>
+<!-- <a href='https://scholar.google.com/citations?user=ZpxXejIAAAAJ'><img src="https://img.shields.io/endpoint?logo=Google%20Scholar&url=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2Fzzaiyan%2Fzzaiyan.github.io@google-scholar-stats%2Fgs_data_shieldsio.json&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a> -->
 
 ## Journal Papers
 
@@ -58,7 +53,7 @@ My research interests include:
 
 *IEEE Transactions on Geoscience and Remote Sensing* **(IEEE TGRS)**, 2025
 
-中科院一区 Top, IF=8.6, <strong>Multi-Temporal Image Inpainting</strong> <strong><span class="show_paper_citations" data="ZpxXejIAAAAJ:u-x6o8ySG0sC"></span></strong>
+中科院一区 Top, IF=8.6, Multi-Temporal Image Inpainting <span class="show_paper_citations" data="ZpxXejIAAAAJ:u-x6o8ySG0sC"></span>
 
 [[Paper]](https://doi.org/10.1109/tgrs.2025.3574799), [[arXiv]](https://arxiv.org/abs/2406.13358), [[Code]](https://github.com/CUG-BEODL/MS2TAN), [[BibTeX]](#bibtex-ms2tan)
 
