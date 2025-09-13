@@ -77,14 +77,15 @@ My research interests cover <strong>Image Processing</strong>, <strong>Remote Se
 
 <!-- 备选Emoji：🎖🏅💎🏆 -->
 # 🏅 Honors and Awards
-- *2025*,&ensp;**Outstanding Undergraduate Graduate** | **优秀本科毕业生**.
-- *2024*,&ensp;**"Teddy Cup" Data Mining Challenge, Grand Prize** (Top 0.1%) | **“泰迪杯”数据挖掘竞赛 特等奖** [[link]](https://www.tipdm.org/dsej12/2429.jhtml).
-- *2024*,&ensp;**National Encouragement Scholarship** | **国家励志奖学金**.
-- *2023*,&ensp;**National Scholarship** | **国家奖学金**.
-- *2023*,&ensp;**Huawei Innovation Scholarship** | **华为创新奖学金** [[link]](https://cs.cug.edu.cn/info/1019/6103.htm).
-- *2023*,&ensp;**Chow Tai Fook Scholarship** | **周大福奖学金**.
-- *2022, 2023, 2024*,&ensp;**Outstanding Student Award** | **优秀学生标兵**.
-- *2022*,&ensp;**Outstanding Student Scholarship** | **英才奖学金**.
+
+- *2025*,&ensp;**Outstanding Undergraduate Graduate** \| **优秀本科毕业生**.
+- *2024*,&ensp;**"Teddy Cup" Data Mining Challenge, Grand Prize** (Top 0.1%) \| **“泰迪杯”数据挖掘竞赛 特等奖** [[link]](https://www.tipdm.org/dsej12/2429.jhtml).
+- *2024*,&ensp;**National Encouragement Scholarship** \| **国家励志奖学金**.
+- *2023*,&ensp;**National Scholarship** \| **国家奖学金**.
+- *2023*,&ensp;**Huawei Innovation Scholarship** \| **华为创新奖学金** [[link]](https://cs.cug.edu.cn/info/1019/6103.htm).
+- *2023*,&ensp;**Chow Tai Fook Scholarship** \| **周大福奖学金**.
+- *2022, 2023, 2024*,&ensp;**Outstanding Student Award** \| **优秀学生标兵**.
+- *2022*,&ensp;**Outstanding Student Scholarship** \| **英才奖学金**.
 
 
 # 🔍 Services
