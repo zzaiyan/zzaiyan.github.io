@@ -71,27 +71,27 @@ My research interests cover <strong>Image Processing</strong>, <strong>Remote Se
 - *2025.02*, ZL202410556414.6, **遥感图像序列的修复方法、装置、电子设备及存储介质**, &ensp;阎继宁, **<u>张再筵</u>**, 王力哲, 李军, 韩伟, 王玥玮.
 
 # 📖 Education
-- *2025.09 - Present*, **M.E.** in [Wuhan University](https://www.whu.edu.cn/), supervised by Prof. [Qiangqiang Yuan](https://scholar.google.com/citations?user=aItnA-sAAAAJ) and A.P. [Jie Li](https://scholar.google.com/citations?user=W4VvnDMAAAAJ).
-- *2021.09 - 2025.06*, **B.E.** in [China University of Geosciences](https://www.cug.edu.cn/), supervised by A.P. [Jining Yan](https://scholar.google.com/citations?user=iYTHxQcAAAAJ). 
+- *2025.09 - Present*, **M.E.** in [Wuhan University](https://www.whu.edu.cn/), advised by Prof. [Qiangqiang Yuan](https://scholar.google.com/citations?user=aItnA-sAAAAJ) and A.P. [Jie Li](https://scholar.google.com/citations?user=W4VvnDMAAAAJ).
+- *2021.09 - 2025.06*, **B.E.** in [China University of Geosciences](https://www.cug.edu.cn/), advised by A.P. [Jining Yan](https://scholar.google.com/citations?user=iYTHxQcAAAAJ). 
 
 
 <!-- 备选Emoji：🎖🏅💎🏆 -->
 # 🏅 Honors and Awards
-- *2025*,&ensp;**Outstanding Undergraduate Graduate of CUG**.
-- *2024*,&ensp;**"Teddy Cup" Data Mining Challenge, Grand Prize** (Top 0.1%) [[link]](https://www.tipdm.org/dsej12/2429.jhtml).
-- *2024*,&ensp;**National Encouragement Scholarship**.
-- *2023*,&ensp;**National Scholarship**.
-- *2023*,&ensp;**Huawei Scholarship** (32 candidates annually) [[link]](https://cs.cug.edu.cn/info/1019/6103.htm).
-- *2023*,&ensp;**Chow Tai Fook Scholarship** (50 candidates annually).
-- *2022, 2023, 2024*,&ensp;**Outstanding Student Award**.
-- *2022*,&ensp;**Outstanding Student Scholarship**.
+- *2025*,&ensp;**Outstanding Undergraduate Graduate** | **优秀本科毕业生**.
+- *2024*,&ensp;**"Teddy Cup" Data Mining Challenge, Grand Prize** (Top 0.1%) | **“泰迪杯”数据挖掘竞赛 特等奖** [[link]](https://www.tipdm.org/dsej12/2429.jhtml).
+- *2024*,&ensp;**National Encouragement Scholarship** | **国家励志奖学金**.
+- *2023*,&ensp;**National Scholarship** | **国家奖学金**.
+- *2023*,&ensp;**Huawei Innovation Scholarship** | **华为创新奖学金** [[link]](https://cs.cug.edu.cn/info/1019/6103.htm).
+- *2023*,&ensp;**Chow Tai Fook Scholarship** | **周大福奖学金**.
+- *2022, 2023, 2024*,&ensp;**Outstanding Student Award** | **优秀学生标兵**.
+- *2022*,&ensp;**Outstanding Student Scholarship** | **英才奖学金**.
 
 
 # 🔍 Services
 
-## Peer Reviewer
+<!-- ## Academic  -->
 
-- **AAAI:** AAAI Conference on Artificial Intelligence.
+- **Program Committee:** AAAI Conference on Artificial Intelligence.
 
 
 <!-- # 💬 Invited Talks
