@@ -17,9 +17,9 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-👋 Hi there! I am Zaiyan Zhang (张再筵), currently pursuing an M.E. degree in Photogrammetry and Remote Sensing (摄影测量与遥感) at [Wuhan University (武汉大学)](https://www.whu.edu.cn/) since Sep. 2025. I obtained a B.E. degree in Data Science and Big Data Technology (数据科学与大数据技术) from [China University of Geosciences (中国地质大学)](https://www.cug.edu.cn/) in Jun. 2025. 
+👋 Hi there! I am Zaiyan Zhang (张再筵), currently pursuing the M.E. degree in Photogrammetry and Remote Sensing (摄影测量与遥感) at [Wuhan University (武汉大学)](https://www.whu.edu.cn/) since Sep. 2025. I obtained the B.E. degree in Data Science and Big Data Technology (数据科学与大数据技术) from [China University of Geosciences (中国地质大学)](https://www.cug.edu.cn/) in Jun. 2025. 
 
-My research interests cover <strong>Image Processing</strong>, <strong>Remote Sensing</strong>, <strong>Multimodal Data Fusion</strong>, and <strong>Computer Vision</strong>. <a href='https://scholar.google.com/citations?user=ZpxXejIAAAAJ'><img src="https://img.shields.io/endpoint?logo=Google%20Scholar&url=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2Fzzaiyan%2Fzzaiyan.github.io@google-scholar-stats%2Fgs_data_shieldsio.json&labelColor=f6f6f6&color=9cf&style=flat&label=citations" style="vertical-align:middle;margin-left:8px;"></a>
+My research interests cover **Image Processing**, **Multimodal Data Fusion**, **Remote Sensing**, and **Computer Vision**. <a href='https://scholar.google.com/citations?user=ZpxXejIAAAAJ'><img src="https://img.shields.io/endpoint?logo=Google%20Scholar&url=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2Fzzaiyan%2Fzzaiyan.github.io@google-scholar-stats%2Fgs_data_shieldsio.json&labelColor=f6f6f6&color=9cf&style=flat&label=citations" style="vertical-align:middle;margin-left:8px;"></a>
 
 🤝 I welcome collaboration and networking opportunities. Feel free to contact me via email {[1@zzaiyan.com](mailto:1@zzaiyan.com), [zzaiyan@whu.edu.cn](mailto:zzaiyan@whu.edu.cn)}!
 
@@ -28,7 +28,7 @@ My research interests cover <strong>Image Processing</strong>, <strong>Remote Se
 
 # 🔥 News
 - *2025.05*:&ensp;🎉🎉 Our work ***MS$^2$TAN: Multiscale Restoration of Missing Data in Optical Time-series Images with Masked Spatial-Temporal Attention Network*** was accepted by **IEEE Transactions on Geoscience and Remote Sensing (TGRS)**.
-- *2024.06*:&ensp;🎉🎉 Our work “***Image-text mutual retrieval method based on large-scale pre-training CLIP model fine-tuning***” won the **Grand Prize (Top 0.1%)** in the **12th “Teddy Cup” Data Mining Challenge** [[link]](https://www.tipdm.org/dsej12/2429.jhtml).
+- *2024.06*:&ensp;🎉🎉 Our work “***Image-text mutual retrieval method based on large-scale pre-training CLIP model fine-tuning***” won the **Grand Prize (Top 0.1%)** and **20,000 RMB** cash in the **12th “Teddy Cup” Data Mining Challenge** [[link]](https://www.tipdm.org/dsej12/2429.jhtml).
 
 
 # 📝 Publications 
@@ -82,7 +82,7 @@ My research interests cover <strong>Image Processing</strong>, <strong>Remote Se
 <!-- - *2024*,&ensp;**"Teddy Cup" Data Mining Challenge, Grand Prize** (Top 0.1%) \| **“泰迪杯”数据挖掘竞赛 特等奖** [[link]](https://www.tipdm.org/dsej12/2429.jhtml). -->
 - *2024*,&ensp;**National Encouragement Scholarship** \| **国家励志奖学金**.
 - *2023*,&ensp;**National Scholarship** \| **国家奖学金**.
-- *2023*,&ensp;**Huawei Innovation Scholarship** \| **华为创新奖学金** [[link]](https://cs.cug.edu.cn/info/1019/6103.htm).
+- *2023*,&ensp;**Huawei Scholarship - Rising Star** \| **华为奖学金 - 未来之星** [[link]](https://cs.cug.edu.cn/info/1019/6103.htm).
 - *2023*,&ensp;**Chow Tai Fook Scholarship** \| **周大福奖学金**.
 - *2022, 2023, 2024*,&ensp;**Outstanding Student Award** \| **优秀学生标兵**.
 - *2022*,&ensp;**Outstanding Student Scholarship** \| **英才奖学金**.
@@ -92,7 +92,7 @@ My research interests cover <strong>Image Processing</strong>, <strong>Remote Se
 
 <!-- ## Academic  -->
 
-- **Program Committee:** AAAI Conference on Artificial Intelligence.
+- **Program Committee** of AAAI Conference on Artificial Intelligence.
 
 
 <!-- # 💬 Invited Talks
@@ -101,3 +101,11 @@ My research interests cover <strong>Image Processing</strong>, <strong>Remote Se
 
 # 💻 Internships
 - *2019.05 - 2020.02*, [Lorem](https://github.com/), China. -->
+
+<!-- 
+# 📚 Miscellaneous
+
+- **Languages**: Chinese (Native), English (Fluent).
+- **Programming Skills**: Python, MATLAB, R, C++, JavaScript.
+- **Frameworks**: PyTorch, TensorFlow, OpenCV, GDAL.
+- **Tools**: Git, Docker, Linux, LaTeX. -->
