@@ -102,10 +102,20 @@ My research interests cover **Image Processing**, **Multimodal Data Fusion**, **
 # 💻 Internships
 - *2019.05 - 2020.02*, [Lorem](https://github.com/), China. -->
 
-<!-- 
 # 📚 Miscellaneous
 
-- **Languages**: Chinese (Native), English (Fluent).
-- **Programming Skills**: Python, MATLAB, R, C++, JavaScript.
-- **Frameworks**: PyTorch, TensorFlow, OpenCV, GDAL.
-- **Tools**: Git, Docker, Linux, LaTeX. -->
+## Open Source Tools
+
+In my spare time, I develop and maintain several open-source tools to facilitate research and development:
+
+- **[TorchHook (管理PyTorch钩子函数)](https://github.com/zzaiyan/TorchHook)**: A PyTorch hooks manager, providing convenient interfaces to capture feature maps and debug models.
+- **[AnyCapture (提取任意局部变量)](https://github.com/zzaiyan/AnyCapture)**: A tool to capture local variables from any function, especially useful for visualizing attention maps in deep learning models.
+- **[netcut (网络剪切板)](https://github.com/zzaiyan/netcut)**: A simple network clipboard application that allows users to save, retrieve, and delete text content through unique `key`s. Perfect for quickly sharing text between different devices. [[Live Demo]](https://zzaiyan.github.io/netcut/)
+
+## Websites
+
+During my studies of Computer Technologies, I operated several websites:
+
+- **Technical Blog (技术博客)**: [b.zzaiyan.com](http://b.zzaiyan.com) - Sharing technical insights and learning experiences.
+- **Personal Cloud Storage (个人网盘)**: [pan.zzaiyan.com](https://pan.zzaiyan.com/) - A personal cloud storage service (temporarily suspended due to network storage costs).
+- **URL Shorter (短链接生成器, 正在开发)**: [s.zzaiyan.com](https://s.zzaiyan.com/) - A simple and efficient short URL generator to quickly create and manage short links for easy sharing.
