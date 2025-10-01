@@ -110,7 +110,7 @@ In my spare time, I develop and maintain several open-source tools to facilitate
 
 - **TorchHook (管理PyTorch钩子函数)**: A PyTorch hooks manager, providing convenient interfaces to capture feature maps and debug models. [[Repo]](https://github.com/zzaiyan/TorchHook)
 - **AnyCapture (提取任意局部变量)**: A tool to capture local variables from any function, especially useful for visualizing attention maps in deep learning models. [[Repo]](https://github.com/zzaiyan/AnyCapture)
-- **netcut (网络剪切板)**: A simple network clipboard application that allows users to save, retrieve, and delete text content through unique `key`s. Perfect for quickly sharing text between different devices. [[Repo]](https://github.com/zzaiyan/netcut), [[Live Demo]](https://zzaiyan.github.io/netcut/)
+- **netcut (网络剪切板)**: A simple network clipboard application that allows users to save, retrieve, and delete text content through unique `key` s. Perfect for quickly sharing text between different devices. [[Repo]](https://github.com/zzaiyan/netcut), [[Live Demo]](https://zzaiyan.github.io/netcut/)
 
 Feel free to visit my [GitHub](https://github.com/zzaiyan) for more interesting projects.
 
