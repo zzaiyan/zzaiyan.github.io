@@ -24,8 +24,8 @@ main:
   - title: "Services"
     url: "/#-services"
 
-  - title: "Miscellaneous"
-    url: "/#-miscellaneous"
+  - title: "Misc"
+    url: "/#-misc"
 
   - title: "Blog"
     url: "https://b.zzaiyan.com"

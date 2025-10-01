@@ -102,7 +102,7 @@ My research interests cover **Image Processing**, **Multimodal Data Fusion**, **
 # 💻 Internships
 - *2019.05 - 2020.02*, [Lorem](https://github.com/), China. -->
 
-# 📚 Miscellaneous
+# 📚 Misc
 
 ## Open Source Tools
 
