@@ -108,9 +108,11 @@ My research interests cover **Image Processing**, **Multimodal Data Fusion**, **
 
 In my spare time, I develop and maintain several open-source tools to facilitate research and development:
 
-- **[TorchHook (管理PyTorch钩子函数)](https://github.com/zzaiyan/TorchHook)**: A PyTorch hooks manager, providing convenient interfaces to capture feature maps and debug models.
-- **[AnyCapture (提取任意局部变量)](https://github.com/zzaiyan/AnyCapture)**: A tool to capture local variables from any function, especially useful for visualizing attention maps in deep learning models.
-- **[netcut (网络剪切板)](https://github.com/zzaiyan/netcut)**: A simple network clipboard application that allows users to save, retrieve, and delete text content through unique `key`s. Perfect for quickly sharing text between different devices. [[Live Demo]](https://zzaiyan.github.io/netcut/)
+- **TorchHook (管理PyTorch钩子函数)**: A PyTorch hooks manager, providing convenient interfaces to capture feature maps and debug models. [[Repo]](https://github.com/zzaiyan/TorchHook)
+- **AnyCapture (提取任意局部变量)**: A tool to capture local variables from any function, especially useful for visualizing attention maps in deep learning models. [[Repo]](https://github.com/zzaiyan/AnyCapture)
+- **netcut (网络剪切板)**: A simple network clipboard application that allows users to save, retrieve, and delete text content through unique `key`s. Perfect for quickly sharing text between different devices. [[Repo]](https://github.com/zzaiyan/netcut), [[Live Demo]](https://zzaiyan.github.io/netcut/)
+
+Feel free to visit my [GitHub](https://github.com/zzaiyan) for more interesting projects.
 
 ## Websites
 
