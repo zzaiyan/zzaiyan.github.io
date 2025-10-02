@@ -159,3 +159,17 @@
     text-align: center;
   }
 }
+
+/* Last Update Time Styles */
+.last-update-time {
+  color: mix(#fff, $gray, 40%);
+  font-size: 0.9em;
+  font-style: italic;
+  margin-top: 0.2em;
+  display: block;
+  
+  &:before {
+    content: "🕒 ";
+    margin-right: 0.3em;
+  }
+}
