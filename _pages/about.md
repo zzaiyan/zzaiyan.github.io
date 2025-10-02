@@ -21,7 +21,7 @@ redirect_from:
 
 My research interests cover **Image Processing**, **Multimodal Data Fusion**, **Remote Sensing**, and **Computer Vision**. <a href='https://scholar.google.com/citations?user=ZpxXejIAAAAJ'><img src="https://img.shields.io/endpoint?logo=Google%20Scholar&url=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2Fzzaiyan%2Fzzaiyan.github.io@google-scholar-stats%2Fgs_data_shieldsio.json&labelColor=f6f6f6&color=9cf&style=flat&label=citations" style="vertical-align:middle;margin-left:8px;"></a>
 
-> 🤝 I welcome collaboration and networking opportunities. Feel free to contact me via email {[1@zzaiyan.com](mailto:1@zzaiyan.com), [zzaiyan@whu.edu.cn](mailto:zzaiyan@whu.edu.cn)}!
+🤝 I welcome collaboration and networking opportunities. Feel free to contact me via email {[1@zzaiyan.com](mailto:1@zzaiyan.com), [zzaiyan@whu.edu.cn](mailto:zzaiyan@whu.edu.cn)}!
 
 <!-- My research interest includes image processing, time series analysis, land cover change detection, computer vision, and deep learning. I have published more than 100 papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'>google scholar citations <strong><span id='total_cit'>260000+</span></strong></a> (You can also use google scholar badge <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>). -->
 
@@ -118,7 +118,7 @@ In my spare time, I develop and maintain several open-source tools to facilitate
 
 - **netcut - 网络剪切板**: [[Repo]](https://github.com/zzaiyan/netcut), [[Live Demo]](https://zzaiyan.github.io/netcut/)
 
-  A simple network clipboard application that allows users to save, retrieve, and delete text content through unique `key`s. Perfect for quickly sharing text between different devices.
+  A simple network clipboard application. Perfect for quickly sharing text between different devices.
 
 Feel free to visit my [GitHub](https://github.com/zzaiyan) for more interesting projects.
 
