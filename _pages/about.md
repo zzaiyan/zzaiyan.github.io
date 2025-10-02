@@ -114,10 +114,10 @@ In my spare time, I develop and maintain several open-source tools to facilitate
 
 Feel free to visit my [GitHub](https://github.com/zzaiyan) for more interesting projects.
 
-## Websites
+<!-- ## Websites
 
 During my studies of Computer Technologies, I operated several websites:
 
 - **Technical Blog (技术博客)**: [b.zzaiyan.com](http://b.zzaiyan.com) - Sharing technical insights and learning experiences.
 - **Personal Cloud Storage (个人网盘)**: [pan.zzaiyan.com](https://pan.zzaiyan.com/) - A personal cloud storage service (temporarily suspended due to network storage costs).
-- **URL Shorter (短链接生成器, 正在开发)**: [s.zzaiyan.com](https://s.zzaiyan.com/) - A simple and efficient short URL generator to quickly create and manage short links for easy sharing.
+- **URL Shortner (短链接生成器, 正在开发)**: [s.zzaiyan.com](https://s.zzaiyan.com/) - A simple and efficient short URL generator to quickly create and manage short links for easy sharing. -->
