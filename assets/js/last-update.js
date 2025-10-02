@@ -17,7 +17,7 @@ async function fetchLastUpdateTime() {
     // Format date in English
     const options = {
       year: 'numeric',
-      month: 'long',
+      month: 'numeric',
       day: 'numeric',
       timeZone: 'Asia/Shanghai'
     };
