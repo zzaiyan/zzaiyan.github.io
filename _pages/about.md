@@ -17,11 +17,11 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-👋 Hi there! I am Zaiyan Zhang (张再筵), currently pursuing the M.E. degree in Photogrammetry and Remote Sensing (摄影测量与遥感) at [Wuhan University (武汉大学)](https://www.whu.edu.cn/) since Sep. 2025. I obtained the B.E. degree in Data Science and Big Data Technology (数据科学与大数据技术) from [China University of Geosciences (中国地质大学)](https://www.cug.edu.cn/) in Jun. 2025. 
+👋 Hi there! I am Zaiyan Zhang (张再筵), currently pursuing the M.E. degree in Photogrammetry and Remote Sensing (摄影测量与遥感) at [Wuhan University (武汉大学)](https://www.whu.edu.cn/) since September 2025. I obtained the B.E. degree in Data Science and Big Data Technology (数据科学与大数据技术) at [China University of Geosciences (中国地质大学)](https://www.cug.edu.cn/) in June 2025. 
 
 My research interests cover **Image Processing**, **Multimodal Data Fusion**, **Remote Sensing**, and **Computer Vision**. <a href='https://scholar.google.com/citations?user=ZpxXejIAAAAJ'><img src="https://img.shields.io/endpoint?logo=Google%20Scholar&url=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2Fzzaiyan%2Fzzaiyan.github.io@google-scholar-stats%2Fgs_data_shieldsio.json&labelColor=f6f6f6&color=9cf&style=flat&label=citations" style="vertical-align:middle;margin-left:8px;"></a>
 
-🤝 I welcome collaboration and networking opportunities. Feel free to contact me via email {[1@zzaiyan.com](mailto:1@zzaiyan.com), [zzaiyan@whu.edu.cn](mailto:zzaiyan@whu.edu.cn)}!
+> 🤝 I welcome collaboration and networking opportunities. Feel free to contact me via email {[1@zzaiyan.com](mailto:1@zzaiyan.com), [zzaiyan@whu.edu.cn](mailto:zzaiyan@whu.edu.cn)}!
 
 <!-- My research interest includes image processing, time series analysis, land cover change detection, computer vision, and deep learning. I have published more than 100 papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'>google scholar citations <strong><span id='total_cit'>260000+</span></strong></a> (You can also use google scholar badge <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>). -->
 
@@ -108,9 +108,17 @@ My research interests cover **Image Processing**, **Multimodal Data Fusion**, **
 
 In my spare time, I develop and maintain several open-source tools to facilitate research and development:
 
-- **TorchHook (管理PyTorch钩子函数)**: A PyTorch hooks manager, providing convenient interfaces to capture feature maps and debug models. [[Repo]](https://github.com/zzaiyan/TorchHook)
-- **AnyCapture (提取任意局部变量)**: A tool to capture local variables from any function, especially useful for visualizing attention maps in deep learning models. [[Repo]](https://github.com/zzaiyan/AnyCapture)
-- **netcut (网络剪切板)**: A simple network clipboard application that allows users to save, retrieve, and delete text content through unique `key` s. Perfect for quickly sharing text between different devices. [[Repo]](https://github.com/zzaiyan/netcut), [[Live Demo]](https://zzaiyan.github.io/netcut/)
+- **TorchHook - 管理PyTorch钩子函数**: [[Repo]](https://github.com/zzaiyan/TorchHook)
+  
+  A PyTorch hooks manager, providing convenient interfaces to capture feature maps and debug models.
+
+- **AnyCapture - 提取任意局部变量**: [[Repo]](https://github.com/zzaiyan/AnyCapture)
+
+  A tool to capture local variables from any function, especially useful for visualizing attention maps in deep learning models.
+
+- **netcut - 网络剪切板**: [[Repo]](https://github.com/zzaiyan/netcut), [[Live Demo]](https://zzaiyan.github.io/netcut/)
+
+  A simple network clipboard application that allows users to save, retrieve, and delete text content through unique `key`s. Perfect for quickly sharing text between different devices.
 
 Feel free to visit my [GitHub](https://github.com/zzaiyan) for more interesting projects.
 
