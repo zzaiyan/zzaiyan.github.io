@@ -63,12 +63,9 @@
               >GitHub</a
             >. {% endif %}
             <br />
-            <span
-              id="last-update"
-              class="last-update-time"
-              style="display: none"
-            >
-              Last updated loading...
+            <span class="last-update-time">
+              Last updated on {{ site.github.last_commit.date | date: "%B %-d,
+              %Y" }}
             </span>
           </small>
         </div>

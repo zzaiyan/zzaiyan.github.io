@@ -166,7 +166,7 @@
   font-size: 0.9em;
   font-style: italic;
   margin-top: 0.2em;
-  display: block;
+  display: inline-block; /* Changed to inline-block for better alignment */
   
   &:before {
     content: "🕒 ";

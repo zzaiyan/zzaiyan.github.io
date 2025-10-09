@@ -11,6 +11,9 @@ description              : "A Research Beginner."
 repository               : "zzaiyan/zzaiyan.github.io"
 google_scholar_stats_use_cdn : true
 
+plugins:
+  - jekyll-github-metadata
+
 # google analytics
 google_analytics_id      :  # get google_analytics_id from https://analytics.google.com/analytics/
 
