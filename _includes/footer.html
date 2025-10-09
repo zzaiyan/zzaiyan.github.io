@@ -63,10 +63,16 @@
               >GitHub</a
             >. {% endif %}
             <br />
-            <span class="last-update-time">
-              Last updated on {{ site.github.last_commit.date | date: "%B %-d,
-              %Y" }}
-            </span>
+            {% if site.github.last_commit.date %}
+            <span class="last-update-time"
+              >Last updated on {{ site.github.last_commit.date | date: "%B %-d,
+              %Y" }}</span
+            >
+            {% else %}
+            <span class="last-update-time"
+              >No update information available</span
+            >
+            {% endif %}
           </small>
         </div>
       </div>
