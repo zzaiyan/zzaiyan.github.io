@@ -42,6 +42,8 @@ My research interests cover **Image Processing**, **Multimodal Data Fusion**, **
 <!-- 显示总引用量徽章 -->
 <!-- <a href='https://scholar.google.com/citations?user=ZpxXejIAAAAJ'><img src="https://img.shields.io/endpoint?logo=Google%20Scholar&url=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2Fzzaiyan%2Fzzaiyan.github.io@google-scholar-stats%2Fgs_data_shieldsio.json&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a> -->
 
+## Preprints
+
 ## Journal Papers
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">IEEE TGRS</div><img src='https://arxiv.org/html/2406.13358v2/x2.png' alt="sym" width="300"></div></div>
@@ -106,17 +108,18 @@ My research interests cover **Image Processing**, **Multimodal Data Fusion**, **
 
 ## Open Source Tools
 
-In my spare time, I develop and maintain several open-source tools to facilitate research and development:
+<!-- In my spare time, I develop and maintain several open-source tools to facilitate research and development: -->
+Perhaps your research field differs, or you may not be interested in my work. Nevertheless, the open-source tools I've developed may potentially advance your research and development:
 
-- **TorchHook - 管理PyTorch钩子函数**: [[Repo]](https://github.com/zzaiyan/TorchHook)
+- **TorchHook - 管理PyTorch钩子函数**: [[Repo]](https://github.com/zzaiyan/TorchHook), [[Tutorial]](https://github.com/zzaiyan/TorchHook/blob/main/BLOG.md), [[教程]](https://github.com/zzaiyan/TorchHook/blob/main/BLOG_CN.md)
   
   A PyTorch hooks manager, providing convenient interfaces to capture feature maps and debug models.
 
-- **AnyCapture - 提取任意局部变量**: [[Repo]](https://github.com/zzaiyan/AnyCapture)
+- **AnyCapture - 提取任意局部变量**: [[Repo]](https://github.com/zzaiyan/AnyCapture), [[教程]](https://github.com/zzaiyan/AnyCapture/blob/main/README.md)
 
   A tool to capture local variables from any function, especially useful for visualizing attention maps in deep learning models.
 
-- **netcut - 网络剪切板**: [[Repo]](https://github.com/zzaiyan/netcut), [[Live Demo]](https://zzaiyan.github.io/netcut/)
+- **netcut - 网络剪切板**: [[Repo]](https://github.com/zzaiyan/netcut), [[Demo]](https://zzaiyan.github.io/netcut/)
 
   A simple network clipboard application. Perfect for quickly sharing text between different devices.
 
