@@ -46,7 +46,7 @@ My research interests cover **Image Processing**, **Multimodal Data Fusion**, **
 
 ## Journal Papers
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">IEEE TGRS</div><img src='https://arxiv.org/html/2406.13358v2/x2.png' alt="sym" width="300"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">IEEE TGRS</div><img src='https://arxiv.org/html/2406.13358v2/x2.png' alt="sym"></div></div>
 <div class='paper-box-text' markdown="1">
 
 ***MS$^2$TAN: Multiscale Restoration of Missing Data in Optical Time-series Images with Masked Spatial-Temporal Attention Network***
