@@ -17,7 +17,7 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-👋 Hi there! I am Zaiyan Zhang (张再筵), currently pursuing a Master's degree in Photogrammetry and Remote Sensing (摄影测量与遥感) at [Wuhan University (武汉大学)](https://www.whu.edu.cn/) since September 2025. Prior to this, I obtained a Bachelor's degree in Data Science and Big Data Technology (数据科学与大数据技术) at [China University of Geosciences (中国地质大学)](https://www.cug.edu.cn/).
+👋 Hi there! I am Zaiyan Zhang (张再筵), currently pursuing a M.E. degree in Photogrammetry and Remote Sensing (摄影测量与遥感) at [Wuhan University (武汉大学)](https://www.whu.edu.cn/) since September 2025. Prior to this, I obtained a B.E. degree in Data Science and Big Data Technology (数据科学与大数据技术) at [China University of Geosciences (中国地质大学)](https://www.cug.edu.cn/).
 
 My research interests cover **Image Processing**, **Multimodal Data Fusion**, **Remote Sensing**, and **Computer Vision**. <a href='https://scholar.google.com/citations?user=ZpxXejIAAAAJ'><img src="https://img.shields.io/endpoint?logo=Google%20Scholar&url=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2Fzzaiyan%2Fzzaiyan.github.io@google-scholar-stats%2Fgs_data_shieldsio.json&labelColor=f6f6f6&color=9cf&style=flat&label=citations" style="vertical-align:middle;margin-left:8px;"></a>
 
@@ -77,11 +77,11 @@ _IEEE Transactions on Geoscience and Remote Sensing_ **(IEEE TGRS)**, 2025
 <div class='paper-box edu-box'><div class='paper-box-image'><div><a href="https://www.whu.edu.cn/" target="_blank"><img src='images/whu.png' alt="WHU"></a></div></div>
 <div class='paper-box-text' markdown="1">
 
-**Master** in Photogrammetry and Remote Sensing, _2025.09 - Present_
+[**Wuhan University**](https://www.whu.edu.cn/)
 
-[Wuhan University](https://www.whu.edu.cn/)
+**M.E.** in Photogrammetry and Remote Sensing, _2025.09 - Present_
 
-Advised by Prof. [Qiangqiang Yuan](https://scholar.google.com/citations?user=aItnA-sAAAAJ) and A.P. [Jie Li](https://scholar.google.com/citations?user=W4VvnDMAAAAJ)
+Advisors: Prof. [Qiangqiang Yuan](https://scholar.google.com/citations?user=aItnA-sAAAAJ) and A.P. [Jie Li](https://scholar.google.com/citations?user=W4VvnDMAAAAJ)
 
 </div>
 </div>
@@ -89,11 +89,11 @@ Advised by Prof. [Qiangqiang Yuan](https://scholar.google.com/citations?user=aIt
 <div class='paper-box edu-box'><div class='paper-box-image'><div><a href="https://www.cug.edu.cn/" target="_blank"><img src='images/cug.jpg' alt="CUG"></a></div></div>
 <div class='paper-box-text' markdown="1">
 
-**Bachelor** in Data Science and Big Data Technology, _2021.09 - 2025.06_
+[**China University of Geosciences**](https://www.cug.edu.cn/)
 
-[China University of Geosciences](https://www.cug.edu.cn/)
+**B.E.** in Data Science and Big Data Technology, _2021.09 - 2025.06_
 
-Advised by A.P. [Jining Yan](https://scholar.google.com/citations?user=iYTHxQcAAAAJ)
+Advisor: A.P. [Jining Yan](https://scholar.google.com/citations?user=iYTHxQcAAAAJ)
 
 </div>
 </div>

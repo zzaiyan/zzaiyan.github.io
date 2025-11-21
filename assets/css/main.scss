@@ -47,7 +47,7 @@ $paper-box-padding: 2em;
 
 // Education box configuration variables
 $edu-box-image-width: 300px;
-$edu-box-image-height: 120px;
+$edu-box-padding: 0.5em;
 
 .paper-box {
     display: flex;
@@ -120,21 +120,11 @@ h1:before, .anchor:before {
 
 // Education box styles
 .edu-box {
+    padding: $edu-box-padding 0 $edu-box-padding 0;
+    
     .paper-box-image {
         min-width: $edu-box-image-width;
         max-width: $edu-box-image-width;
-        height: $edu-box-image-height;
-        justify-content: center;
-        display: flex;
-        align-items: center;
-        
-        img {
-            width: auto;
-            height: 100%;
-            max-width: 100%;
-            box-shadow: 3px 3px 6px #888;
-            object-fit: contain;
-        }
     }
     
     @include breakpoint($medium) {
@@ -144,7 +134,8 @@ h1:before, .anchor:before {
         }
         
         .paper-box-text {
-            max-width: calc(100% - #{$edu-box-image-width} - #{$paper-box-padding});
+            padding-left: $edu-box-padding;
+            max-width: calc(100% - #{$edu-box-image-width} - #{$edu-box-padding});
         }
     }
 }
