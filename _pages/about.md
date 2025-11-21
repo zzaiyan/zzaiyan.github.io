@@ -3,7 +3,7 @@ permalink: /
 title: ""
 excerpt: ""
 author_profile: true
-redirect_from: 
+redirect_from:
   - /about/
   - /about.html
 ---
@@ -17,7 +17,7 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-👋 Hi there! I am Zaiyan Zhang (张再筵), currently pursuing a Master's degree in Photogrammetry and Remote Sensing (摄影测量与遥感) at [Wuhan University (武汉大学)](https://www.whu.edu.cn/) since September 2025. Prior to this, I obtained a Bachelor's degree in Data Science and Big Data Technology (数据科学与大数据技术) at [China University of Geosciences (中国地质大学)](https://www.cug.edu.cn/). 
+👋 Hi there! I am Zaiyan Zhang (张再筵), currently pursuing a Master's degree in Photogrammetry and Remote Sensing (摄影测量与遥感) at [Wuhan University (武汉大学)](https://www.whu.edu.cn/) since September 2025. Prior to this, I obtained a Bachelor's degree in Data Science and Big Data Technology (数据科学与大数据技术) at [China University of Geosciences (中国地质大学)](https://www.cug.edu.cn/).
 
 My research interests cover **Image Processing**, **Multimodal Data Fusion**, **Remote Sensing**, and **Computer Vision**. <a href='https://scholar.google.com/citations?user=ZpxXejIAAAAJ'><img src="https://img.shields.io/endpoint?logo=Google%20Scholar&url=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2Fzzaiyan%2Fzzaiyan.github.io@google-scholar-stats%2Fgs_data_shieldsio.json&labelColor=f6f6f6&color=9cf&style=flat&label=citations" style="vertical-align:middle;margin-left:8px;"></a>
 
@@ -25,14 +25,13 @@ My research interests cover **Image Processing**, **Multimodal Data Fusion**, **
 
 <!-- My research interest includes image processing, time series analysis, land cover change detection, computer vision, and deep learning. I have published more than 100 papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'>google scholar citations <strong><span id='total_cit'>260000+</span></strong></a> (You can also use google scholar badge <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>). -->
 
-
 # 🔥 News
-- *2025.09*:&ensp; I began my **Master**'s degree studies at **Wuhan University**.
-- *2025.05*:&ensp;🎉🎉 Our work ***MS$^2$TAN: Multiscale Restoration of Missing Data in Optical Time-series Images with Masked Spatial-Temporal Attention Network*** was accepted by **IEEE Transactions on Geoscience and Remote Sensing (TGRS)**.
-- *2024.06*:&ensp;🎉🎉 Our work “***Image-text mutual retrieval method based on large-scale pre-training CLIP model fine-tuning***” won the **Grand Prize (Top 0.1%)** and **20,000 RMB** cash in the **12th “Teddy Cup” Data Mining Challenge** [[link]](https://www.tipdm.org/dsej12/2429.jhtml).
 
+- _2025.09_:&ensp; I began my **Master**'s degree studies at **Wuhan University**.
+- _2025.05_:&ensp;🎉🎉 Our work **_MS$^2$TAN: Multiscale Restoration of Missing Data in Optical Time-series Images with Masked Spatial-Temporal Attention Network_** was accepted by **IEEE Transactions on Geoscience and Remote Sensing (TGRS)**.
+- _2024.06_:&ensp;🎉🎉 Our work “**_Image-text mutual retrieval method based on large-scale pre-training CLIP model fine-tuning_**” won the **Grand Prize (Top 0.1%)** and **20,000 RMB** cash in the **12th “Teddy Cup” Data Mining Challenge** [[link]](https://www.tipdm.org/dsej12/2429.jhtml).
 
-# 📝 Publications 
+# 📝 Publications
 
 <!-- 显示总引用量 -->
 <!-- <span id="total_cit">0</span> -->
@@ -50,11 +49,11 @@ My research interests cover **Image Processing**, **Multimodal Data Fusion**, **
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">IEEE TGRS</div><img src='https://arxiv.org/html/2406.13358v2/x2.png' alt="sym"></div></div>
 <div class='paper-box-text' markdown="1">
 
-***MS$^2$TAN: Multiscale Restoration of Missing Data in Optical Time-series Images with Masked Spatial-Temporal Attention Network***
+**_MS$^2$TAN: Multiscale Restoration of Missing Data in Optical Time-series Images with Masked Spatial-Temporal Attention Network_**
 
 **<u>Zaiyan Zhang</u>**, Jining Yan, Yuanqi Liang, Jiaxin Feng, Haixu He, Li Cao
 
-*IEEE Transactions on Geoscience and Remote Sensing* **(IEEE TGRS)**, 2025
+_IEEE Transactions on Geoscience and Remote Sensing_ **(IEEE TGRS)**, 2025
 
 中科院一区 Top, IF=8.6, Multi-Temporal Image Inpainting <span class="show_paper_citations" data="ZpxXejIAAAAJ:u-x6o8ySG0sC"></span>
 
@@ -71,25 +70,46 @@ My research interests cover **Image Processing**, **Multimodal Data Fusion**, **
 
 ## Patents
 
-- *2025.02*, ZL202410556414.6, **遥感图像序列的修复方法、装置、电子设备及存储介质**, &ensp;阎继宁, **<u>张再筵</u>**, 王力哲, 李军, 韩伟, 王玥玮.
+- _2025.02_, ZL202410556414.6, **遥感图像序列的修复方法、装置、电子设备及存储介质**, &ensp;阎继宁, **<u>张再筵</u>**, 王力哲, 李军, 韩伟, 王玥玮.
 
 # 📖 Education
-- *2025.09 - Present*, **Master** in [Wuhan University](https://www.whu.edu.cn/), advised by Prof. [Qiangqiang Yuan](https://scholar.google.com/citations?user=aItnA-sAAAAJ) and A.P. [Jie Li](https://scholar.google.com/citations?user=W4VvnDMAAAAJ).
-- *2021.09 - 2025.06*, **Bachelor** in [China University of Geosciences](https://www.cug.edu.cn/), advised by A.P. [Jining Yan](https://scholar.google.com/citations?user=iYTHxQcAAAAJ). 
 
+<div class='paper-box edu-box'><div class='paper-box-image'><div><div class="badge">2025.09 - Present</div><img src='images/whu.png' alt="WHU"></div></div>
+<div class='paper-box-text' markdown="1">
+
+**Master** in Photogrammetry and Remote Sensing
+
+[Wuhan University](https://www.whu.edu.cn/)
+
+Advised by Prof. [Qiangqiang Yuan](https://scholar.google.com/citations?user=aItnA-sAAAAJ) and A.P. [Jie Li](https://scholar.google.com/citations?user=W4VvnDMAAAAJ)
+
+</div>
+</div>
+
+<div class='paper-box edu-box'><div class='paper-box-image'><div><div class="badge">2021.09 - 2025.06</div><img src='images/cug.jpg' alt="CUG"></div></div>
+<div class='paper-box-text' markdown="1">
+
+**Bachelor** in Data Science and Big Data Technology
+
+[China University of Geosciences](https://www.cug.edu.cn/)
+
+Advised by A.P. [Jining Yan](https://scholar.google.com/citations?user=iYTHxQcAAAAJ)
+
+</div>
+</div>
 
 <!-- 备选Emoji：🎖🏅💎🏆 -->
+
 # 🏅 Honors and Awards
 
-- *2025*,&ensp;**Outstanding Undergraduate Graduate** \| **优秀本科毕业生**.
+- _2025_,&ensp;**Outstanding Undergraduate Graduate** \| **优秀本科毕业生**.
 <!-- - *2024*,&ensp;**"Teddy Cup" Data Mining Challenge, Grand Prize** (Top 0.1%) \| **“泰迪杯”数据挖掘竞赛 特等奖** [[link]](https://www.tipdm.org/dsej12/2429.jhtml). -->
-- *2024*,&ensp;**National Encouragement Scholarship** \| **国家励志奖学金**.
-- *2023*,&ensp;**National Scholarship** \| **国家奖学金**.
-- *2023*,&ensp;**Huawei Scholarship - Rising Star** \| **华为奖学金 - 未来之星** [[link]](https://cs.cug.edu.cn/info/1019/6103.htm).
-- *2023*,&ensp;**Chow Tai Fook Scholarship** \| **周大福奖学金**.
-- *2022, 2023, 2024*,&ensp;**Outstanding Student Award** \| **优秀学生标兵**.
-- *2022*,&ensp;**Outstanding Student Scholarship** \| **英才奖学金**.
-
+- _2024_,&ensp;**National Encouragement Scholarship** \| **国家励志奖学金**.
+- _2023_,&ensp;**National Scholarship** \| **国家奖学金**.
+- _2023_,&ensp;**Huawei Scholarship - Rising Star** \| **华为奖学金 - 未来之星** [[link]](https://cs.cug.edu.cn/info/1019/6103.htm).
+- _2023_,&ensp;**Chow Tai Fook Scholarship** \| **周大福奖学金**.
+- _2022, 2023, 2024_,&ensp;**Outstanding Student Award** \| **优秀学生标兵**.
+- _2022_,&ensp;**Outstanding Student Scholarship** \| **英才奖学金**.
 
 # 🔍 Services
 
@@ -97,9 +117,8 @@ My research interests cover **Image Processing**, **Multimodal Data Fusion**, **
 
 - **Program Committee** of AAAI Conference on Artificial Intelligence.
 
-
 <!-- # 💬 Invited Talks
-- *2021.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
+- *2021.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.
 - *2021.03*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  \| [\[video\]](https://github.com/)
 
 # 💻 Internships
@@ -110,10 +129,11 @@ My research interests cover **Image Processing**, **Multimodal Data Fusion**, **
 ## Open Source Tools
 
 <!-- In my spare time, I develop and maintain several open-source tools to facilitate research and development: -->
+
 Perhaps your research field differs from mine, but may the open-source tools I've developed prove useful to your studies:
 
-- **TorchHook - 管理PyTorch钩子函数**: [[Repo]](https://github.com/zzaiyan/TorchHook), [[Tutorial]](https://github.com/zzaiyan/TorchHook/blob/main/BLOG.md), [[教程]](https://github.com/zzaiyan/TorchHook/blob/main/BLOG_CN.md)
-  
+- **TorchHook - 管理 PyTorch 钩子函数**: [[Repo]](https://github.com/zzaiyan/TorchHook), [[Tutorial]](https://github.com/zzaiyan/TorchHook/blob/main/BLOG.md), [[教程]](https://github.com/zzaiyan/TorchHook/blob/main/BLOG_CN.md)
+
   A PyTorch hooks manager, providing convenient interfaces to capture feature maps and debug models.
 
 - **AnyCapture - 提取任意局部变量**: [[Repo]](https://github.com/zzaiyan/AnyCapture), [[教程]](https://github.com/zzaiyan/AnyCapture/blob/main/README.md)

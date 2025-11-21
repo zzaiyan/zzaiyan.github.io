@@ -113,3 +113,26 @@ h1:before, .anchor:before {
     background-color: #00369f;
     font-size: .8em;
 }
+
+// Education box styles
+.edu-box {
+    .paper-box-image {
+        min-width: 200px;
+        max-width: 200px;
+        display: flex;
+        align-items: center;
+        
+        img {
+            width: auto;
+            height: 80px;
+            box-shadow: none;
+            object-fit: contain;
+        }
+    }
+    
+    @include breakpoint($medium) {
+        .paper-box-text {
+            max-width: calc(100% - 200px - #{$paper-box-padding});
+        }
+    }
+}
