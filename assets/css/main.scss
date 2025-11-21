@@ -47,7 +47,7 @@ $paper-box-padding: 2em;
 
 // Education box configuration variables
 $edu-box-image-width: 300px;
-$edu-box-padding: 0.5em;
+$edu-box-padding: 1em;
 
 .paper-box {
     display: flex;
@@ -134,8 +134,8 @@ h1:before, .anchor:before {
         }
         
         .paper-box-text {
-            padding-left: $edu-box-padding;
-            max-width: calc(100% - #{$edu-box-image-width} - #{$edu-box-padding});
+            padding-left: $paper-box-padding;
+            max-width: calc(100% - #{$edu-box-image-width} - #{$paper-box-padding});
         }
     }
 }
