@@ -74,10 +74,10 @@ _IEEE Transactions on Geoscience and Remote Sensing_ **(IEEE TGRS)**, 2025
 
 # 📖 Education
 
-<div class='paper-box edu-box'><div class='paper-box-image'><div><div class="badge">2025.09 - Present</div><img src='images/whu.png' alt="WHU"></div></div>
+<div class='paper-box edu-box'><div class='paper-box-image'><div><a href="https://www.whu.edu.cn/" target="_blank"><img src='images/whu.png' alt="WHU"></a></div></div>
 <div class='paper-box-text' markdown="1">
 
-**Master** in Photogrammetry and Remote Sensing
+**Master** in Photogrammetry and Remote Sensing, _2025.09 - Present_
 
 [Wuhan University](https://www.whu.edu.cn/)
 
@@ -86,10 +86,10 @@ Advised by Prof. [Qiangqiang Yuan](https://scholar.google.com/citations?user=aIt
 </div>
 </div>
 
-<div class='paper-box edu-box'><div class='paper-box-image'><div><div class="badge">2021.09 - 2025.06</div><img src='images/cug.jpg' alt="CUG"></div></div>
+<div class='paper-box edu-box'><div class='paper-box-image'><div><a href="https://www.cug.edu.cn/" target="_blank"><img src='images/cug.jpg' alt="CUG"></a></div></div>
 <div class='paper-box-text' markdown="1">
 
-**Bachelor** in Data Science and Big Data Technology
+**Bachelor** in Data Science and Big Data Technology, _2021.09 - 2025.06_
 
 [China University of Geosciences](https://www.cug.edu.cn/)
 
