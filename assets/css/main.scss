@@ -123,8 +123,11 @@ h1:before, .anchor:before {
     padding: $edu-box-padding 0 $edu-box-padding 0;
     
     .paper-box-image {
-        min-width: $edu-box-image-width;
-        max-width: $edu-box-image-width;
+        img {
+            width: $edu-box-image-width;
+            max-width: 100%;
+            box-shadow: none;
+        }
     }
     
     @include breakpoint($medium) {
