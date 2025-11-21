@@ -17,7 +17,7 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-👋 Hi there! I am Zaiyan Zhang (张再筵), currently pursuing the M.E. degree in Photogrammetry and Remote Sensing (摄影测量与遥感) at [Wuhan University (武汉大学)](https://www.whu.edu.cn/) since September 2025. I obtained the B.E. degree in Data Science and Big Data Technology (数据科学与大数据技术) at [China University of Geosciences (中国地质大学)](https://www.cug.edu.cn/) in June 2025. 
+👋 Hi there! I am Zaiyan Zhang (张再筵), currently pursuing a Master's degree in Photogrammetry and Remote Sensing (摄影测量与遥感) at [Wuhan University (武汉大学)](https://www.whu.edu.cn/) since September 2025. Prior to this, I obtained a Bachelor's degree in Data Science and Big Data Technology (数据科学与大数据技术) at [China University of Geosciences (中国地质大学)](https://www.cug.edu.cn/). 
 
 My research interests cover **Image Processing**, **Multimodal Data Fusion**, **Remote Sensing**, and **Computer Vision**. <a href='https://scholar.google.com/citations?user=ZpxXejIAAAAJ'><img src="https://img.shields.io/endpoint?logo=Google%20Scholar&url=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2Fzzaiyan%2Fzzaiyan.github.io@google-scholar-stats%2Fgs_data_shieldsio.json&labelColor=f6f6f6&color=9cf&style=flat&label=citations" style="vertical-align:middle;margin-left:8px;"></a>
 
@@ -27,6 +27,7 @@ My research interests cover **Image Processing**, **Multimodal Data Fusion**, **
 
 
 # 🔥 News
+- *2025.09*:&ensp; I began my **Master**'s degree studies at **Wuhan University**.
 - *2025.05*:&ensp;🎉🎉 Our work ***MS$^2$TAN: Multiscale Restoration of Missing Data in Optical Time-series Images with Masked Spatial-Temporal Attention Network*** was accepted by **IEEE Transactions on Geoscience and Remote Sensing (TGRS)**.
 - *2024.06*:&ensp;🎉🎉 Our work “***Image-text mutual retrieval method based on large-scale pre-training CLIP model fine-tuning***” won the **Grand Prize (Top 0.1%)** and **20,000 RMB** cash in the **12th “Teddy Cup” Data Mining Challenge** [[link]](https://www.tipdm.org/dsej12/2429.jhtml).
 
@@ -73,8 +74,8 @@ My research interests cover **Image Processing**, **Multimodal Data Fusion**, **
 - *2025.02*, ZL202410556414.6, **遥感图像序列的修复方法、装置、电子设备及存储介质**, &ensp;阎继宁, **<u>张再筵</u>**, 王力哲, 李军, 韩伟, 王玥玮.
 
 # 📖 Education
-- *2025.09 - Present*, **M.E.** in [Wuhan University](https://www.whu.edu.cn/), advised by Prof. [Qiangqiang Yuan](https://scholar.google.com/citations?user=aItnA-sAAAAJ) and A.P. [Jie Li](https://scholar.google.com/citations?user=W4VvnDMAAAAJ).
-- *2021.09 - 2025.06*, **B.E.** in [China University of Geosciences](https://www.cug.edu.cn/), advised by A.P. [Jining Yan](https://scholar.google.com/citations?user=iYTHxQcAAAAJ). 
+- *2025.09 - Present*, **Master** in [Wuhan University](https://www.whu.edu.cn/), advised by Prof. [Qiangqiang Yuan](https://scholar.google.com/citations?user=aItnA-sAAAAJ) and A.P. [Jie Li](https://scholar.google.com/citations?user=W4VvnDMAAAAJ).
+- *2021.09 - 2025.06*, **Bachelor** in [China University of Geosciences](https://www.cug.edu.cn/), advised by A.P. [Jining Yan](https://scholar.google.com/citations?user=iYTHxQcAAAAJ). 
 
 
 <!-- 备选Emoji：🎖🏅💎🏆 -->
@@ -109,7 +110,7 @@ My research interests cover **Image Processing**, **Multimodal Data Fusion**, **
 ## Open Source Tools
 
 <!-- In my spare time, I develop and maintain several open-source tools to facilitate research and development: -->
-Perhaps your research field differs, or you may not be interested in my work. Nevertheless, the open-source tools I've developed may potentially advance your research and development:
+Perhaps your research field differs from mine, but may the open-source tools I've developed prove useful to your studies:
 
 - **TorchHook - 管理PyTorch钩子函数**: [[Repo]](https://github.com/zzaiyan/TorchHook), [[Tutorial]](https://github.com/zzaiyan/TorchHook/blob/main/BLOG.md), [[教程]](https://github.com/zzaiyan/TorchHook/blob/main/BLOG_CN.md)
   
