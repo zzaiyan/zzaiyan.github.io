@@ -77,9 +77,9 @@ _IEEE Transactions on Geoscience and Remote Sensing_ **(IEEE TGRS)**, 2025
 <div class='paper-box edu-box'><div class='paper-box-image'><div><a href="https://www.whu.edu.cn/" target="_blank"><img src='images/whu.png' alt="WHU"></a></div></div>
 <div class='paper-box-text' markdown="1">
 
-[**Wuhan University (武汉大学)**](https://www.whu.edu.cn/)
+[**Wuhan University \| 武汉大学**](https://www.whu.edu.cn/)
 
-**M.E.** in Photogrammetry and Remote Sensing, _2025.09 - Present_
+**M.E.** in Photogrammetry and Remote Sensing, &ensp;_2025.09 - Present_
 
 Advisors: Prof. [Qiangqiang Yuan](https://scholar.google.com/citations?user=aItnA-sAAAAJ) and A.P. [Jie Li](https://scholar.google.com/citations?user=W4VvnDMAAAAJ)
 
@@ -89,9 +89,9 @@ Advisors: Prof. [Qiangqiang Yuan](https://scholar.google.com/citations?user=aItn
 <div class='paper-box edu-box'><div class='paper-box-image'><div><a href="https://www.cug.edu.cn/" target="_blank"><img src='images/cug.jpg' alt="CUG"></a></div></div>
 <div class='paper-box-text' markdown="1">
 
-[**China University of Geosciences (中国地质大学)**](https://www.cug.edu.cn/)
+[**China University of Geosciences \| 中国地质大学**](https://www.cug.edu.cn/)
 
-**B.E.** in Data Science and Big Data Technology, _2021.09 - 2025.06_
+**B.E.** in Data Science and Big Data Technology, &ensp;_2021.09 - 2025.06_
 
 Advisor: A.P. [Jining Yan](https://scholar.google.com/citations?user=iYTHxQcAAAAJ)
 
