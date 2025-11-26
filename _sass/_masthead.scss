@@ -5,12 +5,9 @@
 .masthead {
   position: sticky;
   top: 0;
-  background-color: white;
-  border-bottom: 1px solid $border-color;
-  -webkit-animation: intro 0.3s both;
-          animation: intro 0.3s both;
-  -webkit-animation-delay: 0.15s;
-          animation-delay: 0.15s;
+  background: linear-gradient(90deg, #f6f0ff, #f0fff8, #fff7f0) !important;
+  border-bottom: none;
+  box-shadow: none;
   z-index: 20;
 
   &__inner-wrap {
@@ -59,6 +56,24 @@
     padding-right: 2em;
     font-weight: 700;
   }
+}
+
+/* All inner elements should be transparent to avoid color breaks */
+.masthead .masthead__inner-wrap,
+.masthead #site-nav.greedy-nav,
+.masthead .greedy-nav,
+.masthead .greedy-nav .hidden-links,
+.masthead .greedy-nav ul,
+.masthead .greedy-nav li,
+.masthead .greedy-nav a,
+.masthead .greedy-nav .visible-links {
+  background: transparent !important;
+}
+
+/* Button inherits background */
+.masthead .greedy-nav button {
+  background: inherit !important;
+  border: none;
 }
 
 
