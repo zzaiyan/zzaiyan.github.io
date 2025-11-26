@@ -62,7 +62,6 @@
 .masthead .masthead__inner-wrap,
 .masthead #site-nav.greedy-nav,
 .masthead .greedy-nav,
-.masthead .greedy-nav .hidden-links,
 .masthead .greedy-nav ul,
 .masthead .greedy-nav li,
 .masthead .greedy-nav a,
@@ -70,10 +69,36 @@
   background: transparent !important;
 }
 
-/* Button inherits background */
+/* Button with semi-transparent background */
 .masthead .greedy-nav button {
-  background: inherit !important;
-  border: none;
+  background: rgba(246, 240, 255, 0.9) !important;
+  border: 1px solid rgba(230, 220, 245, 0.6);
+  border-radius: 4px;
+  padding: 0.5rem 0.75rem;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: rgba(240, 255, 248, 0.95) !important;
+    border-color: rgba(220, 245, 235, 0.8);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Hidden links dropdown with semi-transparent background */
+.masthead .greedy-nav .hidden-links {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(230, 220, 245, 0.6);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+  a {
+    background: transparent !important;
+    transition: background 0.2s ease;
+
+    &:hover {
+      background: rgba(246, 240, 255, 0.6) !important;
+    }
+  }
 }
 
 
