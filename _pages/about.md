@@ -28,7 +28,7 @@ My research interests cover **Image Processing**, **Multimodal Data Fusion**, **
 # 🔥 News
 
 - _2025.09_:&ensp; I began my **Master**'s degree studies at **Wuhan University**.
-- _2025.05_:&ensp;🎉🎉 Our work **_MS$^2$TAN: Multiscale Restoration of Missing Data in Optical Time-series Images with Masked Spatial-Temporal Attention Network_** was accepted by **IEEE Transactions on Geoscience and Remote Sensing (TGRS)**.
+- _2025.05_:&ensp;🎉🎉 Our work **_Multiscale Restoration of Missing Data in Optical Time-series Images with Masked Spatial-Temporal Attention Network_** was accepted by **IEEE Transactions on Geoscience and Remote Sensing (TGRS)**.
 - _2024.06_:&ensp;🎉🎉 Our work “**_Image-text mutual retrieval method based on large-scale pre-training CLIP model fine-tuning_**” won the **Grand Prize (Top 0.1%)** and **20,000 RMB** cash in the **12th “Teddy Cup” Data Mining Challenge** [[link]](https://www.tipdm.org/dsej12/2429.jhtml).
 
 # 📝 Publications
@@ -49,7 +49,7 @@ My research interests cover **Image Processing**, **Multimodal Data Fusion**, **
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">IEEE TGRS</div><img src='https://arxiv.org/html/2406.13358v2/x2.png' alt="sym"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[**_MS$^2$TAN: Multiscale Restoration of Missing Data in Optical Time-series Images with Masked Spatial-Temporal Attention Network_**](https://doi.org/10.1109/tgrs.2025.3574799)
+[**Multiscale Restoration of Missing Data in Optical Time-series Images with Masked Spatial-Temporal Attention Network**](https://doi.org/10.1109/tgrs.2025.3574799)
 
 **<u>Zaiyan Zhang</u>**, Jining Yan, Yuanqi Liang, Jiaxin Feng, Haixu He, Li Cao
 
