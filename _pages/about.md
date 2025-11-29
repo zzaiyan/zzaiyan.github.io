@@ -19,11 +19,11 @@ redirect_from:
 
 👋 Hi there! I am Zaiyan Zhang (张再筵), currently pursuing an M.E. degree in Photogrammetry and Remote Sensing (摄影测量与遥感) at [Wuhan University (武汉大学)](https://www.whu.edu.cn/) since September 2025. Prior to this, I obtained a B.E. degree in Data Science and Big Data Technology (数据科学与大数据技术) at [China University of Geosciences (中国地质大学)](https://www.cug.edu.cn/).
 
-My research focuses on computer vision in remote sensing, with a particular concern for low-level vision:
+My research focuses on Computer Vision in Remote Sensing:
 
-- **<span style="color: #5887f7;">Low-level Vision in Remote Sensing</span>**: Cloud Removal, Image Dehazing, All-in-One Image Restoration.
-- **<span style="color: #cb6343;">Multi-modal Data Fusion</span>**: Optical-SAR Fusion, Visible-IR Fusion.
-- **<span style="color: #1ba784;">Representation Learning</span>**: Contrastive Learning, Transfer Learning, Knowledge Distillation.
+- **<span style="color: #915fddff;">Low-level Vision in Remote Sensing</span>**: Cloud Removal, Image Dehazing, All-in-One Image Restoration.
+- **<span style="color: #4874dbff;">Multi-modal Data Fusion</span>**: Optical-SAR Fusion, Visible-IR Fusion.
+- **<span style="color: #2bab8bff;">Representation Learning</span>**: Contrastive Learning, Domain Adaption, Knowledge Distillation.
 
 <!-- <a href='https://scholar.google.com/citations?user=ZpxXejIAAAAJ'><img src="https://img.shields.io/endpoint?logo=Google%20Scholar&url=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2Fzzaiyan%2Fzzaiyan.github.io@google-scholar-stats%2Fgs_data_shieldsio.json&labelColor=f6f6f6&color=9cf&style=flat&label=citations" style="vertical-align:middle;margin-left:8px;"></a> -->
 
