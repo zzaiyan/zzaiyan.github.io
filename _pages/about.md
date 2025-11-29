@@ -19,22 +19,20 @@ redirect_from:
 
 👋 Hi there! I am Zaiyan Zhang (张再筵), currently pursuing an M.E. degree in Photogrammetry and Remote Sensing (摄影测量与遥感) at [Wuhan University (武汉大学)](https://www.whu.edu.cn/) since September 2025. Prior to this, I obtained a B.E. degree in Data Science and Big Data Technology (数据科学与大数据技术) at [China University of Geosciences (中国地质大学)](https://www.cug.edu.cn/).
 
-My research focuses on Computer Vision in Remote Sensing:
+🔬 My research focuses on Computer Vision in Remote Sensing:
 
 - **<span style="color: #915fddff;">Low-level Vision in Remote Sensing</span>**: Cloud Removal, Image Dehazing, All-in-One Image Restoration.
-- **<span style="color: #4874dbff;">Multi-modal Data Fusion</span>**: Optical-SAR Fusion, Visible-IR Fusion.
+- **<span style="color: #4874dbff;">Multi-modal Data Fusion</span>**: Vision-Language Fusion, Optical-SAR Fusion, Visible-IR Fusion.
 - **<span style="color: #2bab8bff;">Representation Learning</span>**: Contrastive Learning, Domain Adaption, Knowledge Distillation.
 
 <!-- <a href='https://scholar.google.com/citations?user=ZpxXejIAAAAJ'><img src="https://img.shields.io/endpoint?logo=Google%20Scholar&url=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2Fzzaiyan%2Fzzaiyan.github.io@google-scholar-stats%2Fgs_data_shieldsio.json&labelColor=f6f6f6&color=9cf&style=flat&label=citations" style="vertical-align:middle;margin-left:8px;"></a> -->
 
 🤝 I welcome collaboration and networking opportunities. Feel free to contact me via email {[1@zzaiyan.com](mailto:1@zzaiyan.com), [zzaiyan@whu.edu.cn](mailto:zzaiyan@whu.edu.cn)}!
 
-<!-- My research interest includes image processing, time series analysis, land cover change detection, computer vision, and deep learning. I have published more than 100 papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'>google scholar citations <strong><span id='total_cit'>260000+</span></strong></a> (You can also use google scholar badge <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>). -->
-
 # 🔥 News
 
 - _2025.09_:&ensp; I began my **Master**'s degree studies at **Wuhan University**.
-- _2025.05_:&ensp;🎉🎉 Our work **_Multiscale Restoration of Missing Data in Optical Time-series Images with Masked Spatial-Temporal Attention Network_** was accepted by **IEEE Transactions on Geoscience and Remote Sensing (TGRS)**.
+- _2025.05_:&ensp;🎉🎉 Our work “**_Multiscale Restoration of Missing Data in Optical Time-series Images with Masked Spatial-Temporal Attention Network_**” was accepted by **IEEE Transactions on Geoscience and Remote Sensing (TGRS)**.
 - _2024.06_:&ensp;🎉🎉 Our work “**_Image-text mutual retrieval method based on large-scale pre-training CLIP model fine-tuning_**” won the **Grand Prize (Top 0.1%)** and **20,000 RMB** cash in the **12th “Teddy Cup” Data Mining Challenge** [[link]](https://www.tipdm.org/dsej12/2429.jhtml).
 
 # 📝 Publications
@@ -85,7 +83,7 @@ _IEEE Transactions on Geoscience and Remote Sensing_ **(IEEE TGRS)**, 2025
 
 **Wuhan University \| 武汉大学**
 
-**M.E.** in Photogrammetry and Remote Sensing, &ensp;_2025.09 - Present_
+**Master** in Photogrammetry and Remote Sensing, &ensp;_2025.09 - Present_
 
 Advisors: Prof. [Qiangqiang Yuan](https://scholar.google.com/citations?user=aItnA-sAAAAJ) and A.P. [Jie Li](https://scholar.google.com/citations?user=W4VvnDMAAAAJ)
 
@@ -97,7 +95,7 @@ Advisors: Prof. [Qiangqiang Yuan](https://scholar.google.com/citations?user=aItn
 
 **China University of Geosciences \| 中国地质大学**
 
-**B.E.** in Data Science and Big Data Technology, &ensp;_2021.09 - 2025.06_
+**Bachelor** in Data Science and Big Data Technology, &ensp;_2021.09 - 2025.06_
 
 Advisor: A.P. [Jining Yan](https://scholar.google.com/citations?user=iYTHxQcAAAAJ)
 
