@@ -49,7 +49,7 @@ My research interests cover **Image Processing**, **Multimodal Data Fusion**, **
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">IEEE TGRS</div><img src='https://arxiv.org/html/2406.13358v2/x2.png' alt="sym"></div></div>
 <div class='paper-box-text' markdown="1">
 
-**_MS$^2$TAN: Multiscale Restoration of Missing Data in Optical Time-series Images with Masked Spatial-Temporal Attention Network_**
+[**_MS$^2$TAN: Multiscale Restoration of Missing Data in Optical Time-series Images with Masked Spatial-Temporal Attention Network_**](https://doi.org/10.1109/tgrs.2025.3574799)
 
 **<u>Zaiyan Zhang</u>**, Jining Yan, Yuanqi Liang, Jiaxin Feng, Haixu He, Li Cao
 
@@ -57,7 +57,7 @@ _IEEE Transactions on Geoscience and Remote Sensing_ **(IEEE TGRS)**, 2025
 
 中科院一区 Top, IF=8.6, Multi-Temporal Image Inpainting <span class="show_paper_citations" data="ZpxXejIAAAAJ:u-x6o8ySG0sC"></span>
 
-[[Paper]](https://doi.org/10.1109/tgrs.2025.3574799), [[arXiv]](https://arxiv.org/abs/2406.13358), [[Code]](https://github.com/CUG-BEODL/MS2TAN), [[BibTeX]](#bibtex-ms2tan)
+[[PDF]](pubs/ms2tan.pdf), [[arXiv]](https://arxiv.org/abs/2406.13358), [[Code]](https://github.com/CUG-BEODL/MS2TAN), [[BibTeX]](#bibtex-ms2tan)
 
 </div>
 </div>
@@ -103,7 +103,6 @@ Advisor: A.P. [Jining Yan](https://scholar.google.com/citations?user=iYTHxQcAAAA
 # 🏅 Honors and Awards
 
 - _2025_,&ensp;**Outstanding Undergraduate Graduate** \| **优秀本科毕业生**.
-<!-- - *2024*,&ensp;**"Teddy Cup" Data Mining Challenge, Grand Prize** (Top 0.1%) \| **“泰迪杯”数据挖掘竞赛 特等奖** [[link]](https://www.tipdm.org/dsej12/2429.jhtml). -->
 - _2024_,&ensp;**National Encouragement Scholarship** \| **国家励志奖学金**.
 - _2023_,&ensp;**National Scholarship** \| **国家奖学金**.
 - _2023_,&ensp;**Huawei Scholarship - Rising Star** \| **华为奖学金 - 未来之星** [[link]](https://cs.cug.edu.cn/info/1019/6103.htm).
