@@ -17,7 +17,7 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-👋 Hi there! I am Zaiyan Zhang (张再筵), currently pursuing an M.E. degree in Photogrammetry and Remote Sensing (摄影测量与遥感) at [Wuhan University (武汉大学)](https://www.whu.edu.cn/) since September 2025. Prior to this, I obtained a B.E. degree in Data Science and Big Data Technology (数据科学与大数据技术) at [China University of Geosciences (中国地质大学)](https://www.cug.edu.cn/).
+👋 Hi there! I am Zaiyan Zhang (张再筵), currently pursuing an M.E. degree in Photogrammetry and Remote Sensing (摄影测量与遥感) at [Wuhan University (武汉大学)](https://www.whu.edu.cn/) under the direction of Prof. [Qiangqiang Yuan](https://scholar.google.com/citations?user=aItnA-sAAAAJ) and A.P. [Jie Li](https://scholar.google.com/citations?user=W4VvnDMAAAAJ). Prior to this, I obtained a B.E. degree in Data Science and Big Data Technology (数据科学与大数据技术) at [China University of Geosciences (中国地质大学)](https://www.cug.edu.cn/) in 2025.
 
 🔬 My research focuses on Computer Vision in Remote Sensing:
 
@@ -68,10 +68,6 @@ _IEEE Transactions on Geoscience and Remote Sensing_ **(IEEE TGRS)**, 2025
 
 <!-- ## Conference Papers -->
 
-<!-- - [Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet](https://github.com), A, B, C, **CVPR 2020** -->
-
-<!-- ## Preprints -->
-
 ## Patents
 
 - _2025.02_, ZL202410556414.6, **遥感图像序列的修复方法、装置、电子设备及存储介质**, &ensp;阎继宁, **<u>张再筵</u>**, 王力哲, 李军, 韩伟, 王玥玮.
@@ -111,7 +107,7 @@ Advisor: A.P. [Jining Yan](https://scholar.google.com/citations?user=iYTHxQcAAAA
 - _2023_,&ensp;**National Scholarship** \| **国家奖学金**.
 - _2023_,&ensp;**Huawei Scholarship - Rising Star** \| **华为奖学金 - 未来之星** [[link]](https://cs.cug.edu.cn/info/1019/6103.htm).
 - _2023_,&ensp;**Chow Tai Fook Scholarship** \| **周大福奖学金**.
-- _2022, 2023, 2024_,&ensp;**Outstanding Student Award** \| **优秀学生标兵**.
+- _2022, 2023, 2024_,&ensp;**Outstanding Student Model** \| **优秀学生标兵**.
 - _2022_,&ensp;**Outstanding Student Scholarship** \| **英才奖学金**.
 
 # 🔍 Services
