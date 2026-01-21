@@ -48,6 +48,23 @@ redirect_from:
 
 ## Preprints
 
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='https://arxiv.org/html/2601.12052v1/x1.png' alt="sym"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[**Task-Driven Prompt Learning: A Joint Framework for Multi-modal Cloud Removal and Segmentation**](https://arxiv.org/abs/2601.12052)
+
+**<u>Zaiyan Zhang</u>**, Jie Li, Shaowei Shi, Qiangqiang Yuan
+
+<!-- _IEEE Transactions on Geoscience and Remote Sensing_ **(IEEE TGRS)**, 2025 -->
+
+Optical-SAR Fusion 
+<!-- <span class="show_paper_citations" data="ZpxXejIAAAAJ:u-x6o8ySG0sC"></span> -->
+
+[[PDF]]([pubs/ms2tan.pdf](https://arxiv.org/pdf/2601.12052))
+
+</div>
+</div>
+
 ## Journal Papers
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">IEEE TGRS</div><img src='https://arxiv.org/html/2406.13358v2/x2.png' alt="sym"></div></div>
