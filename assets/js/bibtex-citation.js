@@ -62,7 +62,7 @@
         <div class="bibtex-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
           <h3 style="margin: 0; color: #333;">BibTeX Citation</h3>
           <button class="bibtex-close-btn" 
-                  style="background: none; border: none; font-size: 24px; cursor: pointer; color: #666;">&times; max-width: 1.5em;</button>
+                  style="background: none; border: none; font-size: 24px; cursor: pointer; color: #666; max-width: 1.5em;">&times;</button>
         </div>
         <textarea readonly class="bibtex-content" 
                   style="width: 100%; height: 200px; font-family: monospace; 
