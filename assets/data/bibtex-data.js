@@ -16,10 +16,10 @@ window.BibtexDatabase = {
   doi      = {10.1109/TGRS.2025.3574799}
 }`,
   zhang2026task: `@article{zhang2026task,
-  title={Task-Driven Prompt Learning: A Joint Framework for Multi-modal Cloud Removal and Segmentation},
-  author={Zhang, Zaiyan and Li, Jie and Shi, Shaowei and Yuan, Qiangqiang},
-  journal={arXiv preprint arXiv:2601.12052},
-  year={2026}
+  title    = {Task-Driven Prompt Learning: A Joint Framework for Multi-modal Cloud Removal and Segmentation},
+  author   = {Zhang, Zaiyan and Li, Jie and Shi, Shaowei and Yuan, Qiangqiang},
+  journal  = {arXiv preprint arXiv:2601.12052},
+  year     = {2026}
 }`,
 
   // 示例：添加更多文章时的格式
