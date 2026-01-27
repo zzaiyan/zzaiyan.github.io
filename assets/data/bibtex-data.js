@@ -6,7 +6,7 @@
 
 window.BibtexDatabase = {
   // MS²TAN: Multiscale Restoration of Missing Data in Optical Time-series Images
-  'ms2tan': `@article{zhang2024multi,
+  zhang2024multi: `@article{zhang2024multi,
   author   = {Zhang, Zaiyan and Yan, Jining and Liang, Yuanqi and Feng, Jiaxin and He, Haixu and Cao, Li},
   journal  = {IEEE Transactions on Geoscience and Remote Sensing},
   title    = {Multiscale Restoration of Missing Data in Optical Time-series Images with Masked Spatial-Temporal Attention Network},
@@ -14,6 +14,12 @@ window.BibtexDatabase = {
   volume   = {63},
   pages    = {1-15},
   doi      = {10.1109/TGRS.2025.3574799}
+}`,
+  zhang2026task: `@article{zhang2026task,
+  title={Task-Driven Prompt Learning: A Joint Framework for Multi-modal Cloud Removal and Segmentation},
+  author={Zhang, Zaiyan and Li, Jie and Shi, Shaowei and Yuan, Qiangqiang},
+  journal={arXiv preprint arXiv:2601.12052},
+  year={2026}
 }`,
 
   // 示例：添加更多文章时的格式
@@ -38,14 +44,17 @@ window.BibtexDatabase = {
   // }`,
 
   // 获取BibTeX数据的方法
-  getBibtex: function(key) {
+  getBibtex: function (key) {
     return this[key] || null;
   },
 
   // 获取所有可用的文章键
-  getAvailableKeys: function() {
-    return Object.keys(this).filter(key => 
-      typeof this[key] === 'string' && key !== 'getBibtex' && key !== 'getAvailableKeys'
+  getAvailableKeys: function () {
+    return Object.keys(this).filter(
+      (key) =>
+        typeof this[key] === "string" &&
+        key !== "getBibtex" &&
+        key !== "getAvailableKeys",
     );
-  }
+  },
 };

@@ -60,7 +60,7 @@ redirect_from:
 Optical-SAR Fusion 
 <!-- <span class="show_paper_citations" data="ZpxXejIAAAAJ:u-x6o8ySG0sC"></span> -->
 
-[[PDF]](https://arxiv.org/pdf/2601.12052), [[Code]](), [[BibTeX]]()
+[[PDF]](https://arxiv.org/pdf/2601.12052), [[Code]](#), [[BibTeX]](#bibtex-zhang2026task)
 
 </div>
 </div>
@@ -78,7 +78,7 @@ _IEEE Transactions on Geoscience and Remote Sensing_ **(IEEE TGRS)**, 2025
 
 中科院一区 Top, IF=8.6, Multi-Temporal Image Inpainting <span class="show_paper_citations" data="ZpxXejIAAAAJ:u-x6o8ySG0sC"></span>
 
-[[PDF]](pubs/ms2tan.pdf), [[arXiv]](https://arxiv.org/abs/2406.13358), [[Code]](https://github.com/CUG-BEODL/MS2TAN), [[BibTeX]](#bibtex-ms2tan)
+[[PDF]](pubs/ms2tan.pdf), [[arXiv]](https://arxiv.org/abs/2406.13358), [[Code]](https://github.com/CUG-BEODL/MS2TAN), [[BibTeX]](#bibtex-zhang2024multi)
 
 </div>
 </div>
