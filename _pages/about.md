@@ -60,7 +60,7 @@ redirect_from:
 Optical-SAR Fusion 
 <!-- <span class="show_paper_citations" data="ZpxXejIAAAAJ:u-x6o8ySG0sC"></span> -->
 
-[[PDF]](https://arxiv.org/pdf/2601.12052), [[Code]](#), [[BibTeX]](#bibtex-zhang2026task)
+[[PDF]](https://arxiv.org/pdf/2601.12052),  [[arXiv]](https://arxiv.org/abs/2601.12052), [[Code]](#to-do), [[BibTeX]](#bibtex-zhang2026task)
 
 </div>
 </div>
