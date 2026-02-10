@@ -21,9 +21,9 @@ redirect_from:
 
 🔬 My research focuses on Computer Vision in Remote Sensing:
 
-- **<span style="color: #915fddff;">Low-level Vision in Remote Sensing</span>**: Cloud Removal, Image Dehazing, All-in-One Image Restoration.
-- **<span style="color: #4874dbff;">Multi-modal Data Fusion</span>**: Vision-Language Fusion, Optical-SAR Fusion, Visible-IR Fusion.
-- **<span style="color: #2bab8bff;">Representation Learning</span>**: Contrastive Learning, Domain Adaption, Knowledge Distillation.
+- **<span style="color: #915fddff;">Low-level Vision in Remote Sensing</span>**: Cloud Removal, Dehazing, Deblurring, All-in-One Image Restoration.
+- **<span style="color: #4874dbff;">Remote Sensing Foundation Models</span>**: Multimodal Foundation Models, Low-level and High-level Task Collaboration.
+- **<span style="color: #2bab8bff;">Representation Learning</span>**: Contrastive Learning, Domain Adaptation, Knowledge Distillation.
 
 <!-- <a href='https://scholar.google.com/citations?user=ZpxXejIAAAAJ'><img src="https://img.shields.io/endpoint?logo=Google%20Scholar&url=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2Fzzaiyan%2Fzzaiyan.github.io@google-scholar-stats%2Fgs_data_shieldsio.json&labelColor=f6f6f6&color=9cf&style=flat&label=citations" style="vertical-align:middle;margin-left:8px;"></a> -->
 
@@ -55,10 +55,10 @@ redirect_from:
 
 **<u>Zaiyan Zhang</u>**, Jie Li, Shaowei Shi, Qiangqiang Yuan
 
-<!-- _IEEE Transactions on Geoscience and Remote Sensing_ **(IEEE TGRS)**, 2025 -->
+<!-- _IEEE International Geoscience and Remote Sensing Symposium_ **(IGARSS)**, 2026 -->
 
-Optical-SAR Fusion 
-<!-- <span class="show_paper_citations" data="ZpxXejIAAAAJ:u-x6o8ySG0sC"></span> -->
+Optical-SAR Fusion, Cloud Removal
+<span class="show_paper_citations" data="ZpxXejIAAAAJ:d1gkVwhDpl0C"></span>
 
 [[PDF]](https://arxiv.org/pdf/2601.12052),  [[arXiv]](https://arxiv.org/abs/2601.12052), [[Code]](#to-do), [[BibTeX]](#bibtex-zhang2026task)
 
