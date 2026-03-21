@@ -38,10 +38,10 @@
 │   └── ...
 ├── assets/
 │   ├── css/main.scss        # 样式入口
+│   ├── pubs/                # 论文 PDF 文件
 │   └── js/
 │       ├── bibtex-citation.js # BibTeX 引用弹窗功能
 │       └── last-update.js   # 自动获取最后更新时间
-├── pubs/                    # 论文 PDF 文件
 ├── images/                  # 图片资源
 └── google_scholar_crawler/  # Google Scholar 爬虫
 ```
@@ -78,7 +78,7 @@
       "note": "备注信息（分区、IF、关键词等）",
       "scholarId": "Google Scholar Paper ID（用于引用统计）",
       "links": [
-        { "name": "PDF", "url": "pubs/xxx.pdf" },
+        { "name": "PDF", "url": "assets/pubs/xxx.pdf" },
         { "name": "Code", "url": "https://github.com/xxx" }
       ],
       "bibtexKey": "bibtex.json 中对应的 key"
@@ -176,7 +176,7 @@ key 必须与 `pubs.json` 中的 `bibtexKey` 一致。
 
 1. 在 `_data/pubs.json` 对应分类中添加论文条目
 2. 在 `_data/bibtex.json` 中添加 BibTeX（key 与 `bibtexKey` 一致）
-3. 将 PDF 放入 `pubs/` 目录（可选）
+3. 将 PDF 放入 `assets/pubs/` 目录（可选）
 4. 推送到 GitHub
 
 ## 样式自定义
