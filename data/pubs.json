@@ -1,0 +1,66 @@
+{
+    "journal": [
+        {
+            "id": "zhang2024multi",
+            "title": "Multiscale Restoration of Missing Data in Optical Time-series Images with Masked Spatial-Temporal Attention Network",
+            "authors": "<strong><u>Zaiyan Zhang</u></strong>, Jining Yan, Yuanqi Liang, Jiaxin Feng, Haixu He, Li Cao",
+            "venue": "IEEE Transactions on Geoscience and Remote Sensing",
+            "venueShort": "IEEE TGRS",
+            "year": 2025,
+            "badge": "IEEE TGRS",
+            "image": "https://arxiv.org/html/2406.13358v2/x2.png",
+            "doi": "https://doi.org/10.1109/tgrs.2025.3574799",
+            "note": "中科院一区 Top, IF=8.6 | Multi-Temporal Image Inpainting",
+            "scholarId": "ZpxXejIAAAAJ:u-x6o8ySG0sC",
+            "links": [
+                {
+                    "name": "PDF",
+                    "url": "pubs/ms2tan.pdf"
+                },
+                {
+                    "name": "arXiv",
+                    "url": "https://arxiv.org/abs/2406.13358"
+                },
+                {
+                    "name": "Code",
+                    "url": "https://github.com/CUG-BEODL/MS2TAN"
+                }
+            ],
+            "bibtexKey": "zhang2024multi"
+        }
+    ],
+    "conference": [
+        {
+            "id": "zhang2026task",
+            "title": "Task-Driven Prompt Learning: A Joint Framework for Multi-modal Cloud Removal and Segmentation",
+            "authors": "<strong><u>Zaiyan Zhang</u></strong>, Jie Li, Shaowei Shi, Qiangqiang Yuan",
+            "venue": "IEEE International Geoscience and Remote Sensing Symposium",
+            "venueShort": "IGARSS",
+            "year": 2026,
+            "badge": "IGARSS 2026",
+            "image": "https://arxiv.org/html/2601.12052v1/x1.png",
+            "doi": null,
+            "note": "Optical-SAR Fusion, Cloud Removal",
+            "scholarId": "ZpxXejIAAAAJ:d1gkVwhDpl0C",
+            "links": [
+                {
+                    "name": "PDF",
+                    "url": "https://arxiv.org/pdf/2601.12052"
+                },
+                {
+                    "name": "arXiv",
+                    "url": "https://arxiv.org/abs/2601.12052"
+                }
+            ],
+            "bibtexKey": "zhang2026task"
+        }
+    ],
+    "patent": [
+        {
+            "date": "2025.02",
+            "number": "ZL202410556414.6",
+            "title": "遥感图像序列的修复方法、装置、电子设备及存储介质",
+            "authors": "阎继宁, <strong><u>张再筵</u></strong>, 王力哲, 李军, 韩伟, 王玥玮"
+        }
+    ]
+}

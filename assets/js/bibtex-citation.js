@@ -197,7 +197,7 @@
       // 检查数据库是否已加载
       if (!BibtexManager.isDatabaseLoaded()) {
         console.error(
-          "BibTeX database not loaded. Please check if bibtex-data.js is properly included.",
+          "BibTeX database not loaded. Please check if pub-renderer.js is properly included.",
         );
         alert("BibTeX数据库未加载，请刷新页面重试。");
         return;
@@ -255,7 +255,4 @@
   // 全局API
   window.BibtexCitation = BibtexCitation;
   window.BibtexManager = BibtexManager;
-
-  // 自动初始化
-  BibtexCitation.init();
 })();
