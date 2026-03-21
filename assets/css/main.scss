@@ -55,9 +55,17 @@ $edu-box-padding: 1em;
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
-    border-bottom: 1px #efefef solid;
-    padding: $paper-box-padding 0 $paper-box-padding 0;
-    
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: $paper-box-padding;
+    margin-bottom: 1.2em;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+
+    &:hover {
+        border-color: #b8d4fe;
+        box-shadow: 0 4px 20px rgba(66, 133, 244, 0.18), 0 0 0 3px rgba(66, 133, 244, 0.06);
+    }
 
     .paper-box-image{
         justify-content: center;
@@ -67,8 +75,9 @@ $edu-box-padding: 1em;
         img {
             width: $paper-box-image-width;
             max-width: 100%;
-            box-shadow: 3px 3px 6px #888;
+            box-shadow: none;
             object-fit: cover;
+            border-radius: 6px;
         }
     }
     
@@ -120,7 +129,7 @@ h1:before, .anchor:before {
 
 // Education box styles
 .edu-box {
-    padding: $edu-box-padding 0 $edu-box-padding 0;
+    padding: $edu-box-padding;
     
     .paper-box-image {
         img {
@@ -140,5 +149,49 @@ h1:before, .anchor:before {
             padding-left: $paper-box-padding;
             max-width: calc(100% - #{$edu-box-image-width} - #{$paper-box-padding});
         }
+    }
+}
+
+// Publication link buttons
+.pub-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4em;
+    margin-top: 0.5em;
+}
+
+.pub-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3em;
+    padding: 0.2em 0.65em;
+    font-size: 0.82em;
+    color: $info-color !important;
+    background: transparent;
+    border: 1px solid $info-color;
+    border-radius: 4px;
+    text-decoration: none !important;
+    transition: background 0.2s, color 0.2s;
+    white-space: nowrap;
+
+    &:hover {
+        background: $info-color;
+        color: #fff !important;
+        text-decoration: none !important;
+    }
+
+    i, .ai {
+        font-size: 1em;
+    }
+}
+
+.github-star-badge {
+    display: inline-flex;
+    align-items: center;
+
+    img {
+        height: 20px;
+        box-shadow: none !important;
+        border-radius: 0 !important;
     }
 }
