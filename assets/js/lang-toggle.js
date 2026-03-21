@@ -7,6 +7,8 @@
     localStorage.setItem(LANG_KEY, lang);
     var btn = document.getElementById("lang-toggle");
     if (btn) btn.textContent = lang === "en" ? "中文" : "EN";
+    // Recalculate greedy-nav after text width changes
+    if (window.resetGreedyNav) window.resetGreedyNav();
   }
 
   function getPreferredLang() {
@@ -59,7 +61,8 @@
     var themeBtn = document.getElementById("theme-toggle");
     if (themeBtn) {
       themeBtn.addEventListener("click", function () {
-        var cur = document.documentElement.getAttribute("data-theme") || "light";
+        var cur =
+          document.documentElement.getAttribute("data-theme") || "light";
         setTheme(cur === "light" ? "dark" : "light");
       });
     }

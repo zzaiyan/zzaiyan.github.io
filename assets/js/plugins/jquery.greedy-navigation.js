@@ -58,6 +58,17 @@ function updateNav() {
 
 }
 
+// Expose reset for external callers (e.g. language toggle)
+window.resetGreedyNav = function() {
+  while ($hlinks.children().length > 0) {
+    $hlinks.children().first().appendTo($vlinks);
+  }
+  breaks = [];
+  $btn.addClass('hidden');
+  $hlinks.addClass('hidden');
+  updateNav();
+};
+
 // Window listeners
 
 $(window).resize(function() {

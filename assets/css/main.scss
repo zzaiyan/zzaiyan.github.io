@@ -304,89 +304,89 @@ html:not([data-lang]) .lang-zh {
 
 // ── Dark mode ──
 html[data-theme="dark"] {
-    // Core colours
+    // Core colours — neutral dark grays
     body {
-        background-color: #1a1a2e;
-        color: #d4d4dc;
+        background-color: #181818;
+        color: #d4d4d4;
     }
 
     // Masthead
     .masthead {
-        background: linear-gradient(90deg, #1e1e34, #1e2e28, #2a2218) !important;
+        background: linear-gradient(90deg, #1f1f1f, #1c1f1e, #201e1c) !important;
     }
 
     .masthead .greedy-nav .hidden-links {
-        background: rgba(30, 30, 52, 0.97) !important;
+        background: rgba(30, 30, 30, 0.97) !important;
     }
 
     .masthead .greedy-nav a,
     .masthead .greedy-nav .visible-links a {
-        color: #c8c8d8 !important;
+        color: #ccc !important;
     }
 
     .toolbar-btn {
-        color: #8ab4f8;
-        background: rgba(138, 180, 248, 0.1);
+        color: #7ab0e6;
+        background: rgba(122, 176, 230, 0.1);
 
         &:hover {
-            background: #8ab4f8;
-            color: #1a1a2e;
+            background: #7ab0e6;
+            color: #181818;
         }
     }
 
     // Links
     a {
-        color: #8ab4f8;
+        color: #7ab0e6;
     }
 
     // Paper box
     .paper-box {
         border-color: #333;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
 
         &:hover {
             border-color: #5580b4;
-            box-shadow: 0 4px 20px rgba(66, 133, 244, 0.25), 0 0 0 3px rgba(66, 133, 244, 0.1);
+            box-shadow: 0 4px 20px rgba(66, 133, 244, 0.22), 0 0 0 3px rgba(66, 133, 244, 0.08);
         }
     }
 
     // Pub buttons
     .pub-btn {
-        color: #8ab4f8 !important;
-        background: rgba(138, 180, 248, 0.1);
+        color: #7ab0e6 !important;
+        background: rgba(122, 176, 230, 0.1);
 
         &:hover {
-            background: #8ab4f8;
-            color: #1a1a2e !important;
+            background: #7ab0e6;
+            color: #181818 !important;
         }
     }
 
     .pub-title {
-        color: #8ab4f8 !important;
+        color: #7ab0e6 !important;
 
         &:hover {
-            border-bottom-color: #8ab4f8;
+            border-bottom-color: #7ab0e6;
         }
     }
 
     // Sidebar / author profile
     .author__name {
-        color: #e0e0e8;
+        color: #e0e0e0;
     }
 
     .author__bio,
     .author__urls li,
     .author__urls a {
-        color: #b0b0c0 !important;
+        color: #aaa !important;
     }
 
     .sidebar p, .sidebar li {
-        color: #b0b0c0;
+        color: #aaa;
     }
 
     // Footer
     .page__footer {
-        background-color: #16162a;
+        background-color: #141414;
         border-top-color: #333;
         color: #888;
     }
@@ -394,15 +394,13 @@ html[data-theme="dark"] {
     // Code blocks
     code,
     pre {
-        background-color: #252540;
-        color: #d4d4dc;
+        background-color: #222;
+        color: #d4d4d4;
     }
-
-    $code-background-color: #252540;
 
     // Headings
     h1, h2, h3, h4, h5, h6 {
-        color: #e0e0e8;
+        color: #e0e0e0;
     }
 
     // News scrollbar
@@ -412,31 +410,31 @@ html[data-theme="dark"] {
 
     // Misc collapse
     details.misc-collapse summary {
-        color: #b0b0c0;
+        color: #aaa;
     }
 
     // BibTeX modal
     .bibtex-modal {
-        color: #d4d4dc;
+        color: #d4d4d4;
     }
 
     .bibtex-modal-content {
-        background: #252540 !important;
+        background: #222 !important;
     }
 
     .bibtex-header h3 {
-        color: #e0e0e8;
+        color: #e0e0e0;
     }
 
     .bibtex-content {
-        background: #1a1a2e !important;
+        background: #1a1a1a !important;
         border-color: #444 !important;
-        color: #d4d4dc !important;
+        color: #d4d4d4 !important;
     }
 
     // Tables
     table {
-        color: #d4d4dc;
+        color: #d4d4d4;
     }
 
     td, th {
@@ -445,18 +443,18 @@ html[data-theme="dark"] {
 
     // Inputs & forms
     input, textarea, select {
-        background-color: #252540;
-        color: #d4d4dc;
+        background-color: #222;
+        color: #d4d4d4;
         border-color: #444;
     }
 
     // Badges
     .badge {
-        background-color: #3366aa;
+        background-color: #2a5a99;
     }
 
     // Hidden links dropdown
     .greedy-nav .hidden-links li a {
-        color: #c8c8d8 !important;
+        color: #ccc !important;
     }
 }

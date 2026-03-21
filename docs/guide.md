@@ -1,102 +1,109 @@
-# 学术主页模板使用指南
+# Academic Homepage Template — User Guide
 
-本项目是一个基于 Jekyll + GitHub Pages 的个人学术主页。所有内容数据集中存储在 `_data/` 目录的 JSON 文件中，通过 Liquid 模板在构建时渲染为 HTML，实现零延迟加载。
+This project is a personal academic homepage built with Jekyll + GitHub Pages. All content is centrally stored as JSON files in `_data/`, rendered to static HTML at build time via Liquid templates — no client-side loading delay.  
+It supports **bilingual (EN / ZH) switching** and **dark / light theme toggling**.
 
-## 目录结构
+> 📖 [中文版文档](guide_zh.md)
+
+## Directory Structure
 
 ```
 .
-├── _config.yml              # Jekyll 全局配置（站点标题、作者信息、插件等）
+├── _config.yml              # Jekyll global config (title, author info, bilingual fields, etc.)
 ├── _data/
-│   ├── pubs.json            # 论文与专利数据
-│   ├── bibtex.json          # BibTeX 引用数据
-│   ├── news.json            # 新闻动态
-│   ├── education.json       # 教育经历
-│   ├── honors.json          # 荣誉奖项
-│   └── navigation.yml       # 导航菜单
+│   ├── pubs.json            # Publications & patents
+│   ├── bibtex.json          # BibTeX citation entries
+│   ├── news.json            # News items (with content_zh bilingual field)
+│   ├── education.json       # Education history (with degree_zh / major_zh bilingual fields)
+│   ├── honors.json          # Honors & awards
+│   └── navigation.yml       # Nav menu (with title_zh bilingual field)
 ├── _layouts/
-│   └── default.html         # 页面布局模板
+│   └── default.html         # Page layout template
 ├── _includes/
-│   ├── publications.html    # 论文卡片 Liquid 模板
-│   ├── news.html            # 新闻列表 Liquid 模板
-│   ├── education.html       # 教育经历 Liquid 模板
-│   ├── honors.html          # 荣誉奖项 Liquid 模板
-│   ├── head.html            # <head> 标签
-│   ├── scripts.html         # JS 脚本引入（含内联 BibTeX 数据）
-│   ├── footer.html          # 页脚
-│   ├── sidebar.html         # 侧边栏
-│   ├── author-profile.html  # 作者头像与社交链接
-│   ├── masthead.html        # 顶部导航栏
-│   ├── seo.html             # SEO meta 标签
+│   ├── publications.html    # Publications card Liquid template
+│   ├── news.html            # News list Liquid template (bilingual)
+│   ├── education.html       # Education Liquid template (bilingual)
+│   ├── honors.html          # Honors Liquid template
+│   ├── head.html            # <head> tag (includes flash-prevention inline script)
+│   ├── scripts.html         # JS includes (inlines BibTeX data at build time)
+│   ├── footer.html          # Footer
+│   ├── sidebar.html         # Sidebar
+│   ├── author-profile.html  # Author avatar & social links (bilingual)
+│   ├── masthead.html        # Top nav bar (includes lang/theme toggle buttons)
+│   ├── seo.html             # SEO meta tags
 │   ├── analytics.html       # Google Analytics
-│   └── fetch_google_scholar_stats.html  # Google Scholar 引用统计
+│   └── fetch_google_scholar_stats.html  # Google Scholar citation stats
 ├── _pages/
-│   └── about.md             # 主页内容（通过 Liquid include 组装各板块）
-├── _sass/                   # 样式源文件
-│   ├── _page.scss           # 页面主样式 + paper-box 卡片样式
-│   ├── _bibtex-citation.scss # BibTeX 模态框样式
+│   └── about.md             # Homepage content (bilingual div blocks + Liquid includes)
+├── _sass/                   # SCSS source files
+│   ├── _masthead.scss       # Navigation bar styles
+│   ├── _bibtex-citation.scss # BibTeX modal styles
 │   └── ...
 ├── assets/
-│   ├── css/main.scss        # 样式入口
-│   ├── pubs/                # 论文 PDF 文件
+│   ├── css/main.scss        # SCSS entry (includes dark mode & bilingual CSS)
+│   ├── pubs/                # Publication PDF files
 │   └── js/
-│       ├── bibtex-citation.js # BibTeX 引用弹窗功能
-│       └── last-update.js   # 自动获取最后更新时间
-├── images/                  # 图片资源
-└── google_scholar_crawler/  # Google Scholar 爬虫
+│       ├── lang-toggle.js   # Language toggle + theme toggle logic
+│       ├── bibtex-citation.js # BibTeX citation modal
+│       └── last-update.js   # Auto last-updated timestamp
+├── images/                  # Image assets
+└── google_scholar_crawler/  # Google Scholar crawler
 ```
 
-## 数据驱动架构
+## Data-Driven Architecture
 
-所有内容板块均通过 `_data/` 下的 JSON 文件定义，`_includes/` 下的 Liquid 模板读取数据并在 Jekyll 构建时生成静态 HTML。`about.md` 中仅包含固定文本（自我介绍等）和 `{% raw %}{% include xxx.html %}{% endraw %}` 调用。
+All content sections are defined by JSON files in `_data/`. Liquid templates in `_includes/` read the data and produce static HTML at build time. `about.md` contains only static prose (bio, etc.) and `{% raw %}{% include xxx.html %}{% endraw %}` calls.
 
-| 板块 | 数据文件 | 模板文件 |
-|------|----------|----------|
-| 论文 | `_data/pubs.json` | `_includes/publications.html` |
-| BibTeX | `_data/bibtex.json` | 内联至 `_includes/scripts.html` |
-| 新闻 | `_data/news.json` | `_includes/news.html` |
-| 教育 | `_data/education.json` | `_includes/education.html` |
-| 荣誉 | `_data/honors.json` | `_includes/honors.html` |
+| Section | Data file | Template |
+|---------|-----------|----------|
+| Publications | `_data/pubs.json` | `_includes/publications.html` |
+| BibTeX | `_data/bibtex.json` | Inlined via `_includes/scripts.html` |
+| News | `_data/news.json` | `_includes/news.html` |
+| Education | `_data/education.json` | `_includes/education.html` |
+| Honors | `_data/honors.json` | `_includes/honors.html` |
 
-## 各数据文件格式
+## Data File Formats
 
-### _data/pubs.json — 论文与专利
+### _data/pubs.json — Publications & Patents
+
+Supports four categories: `journal`, `conference`, `preprint`, `patent`. A section is automatically hidden if its array is empty.
 
 ```json
 {
   "journal": [
     {
       "id": "zhang2024multi",
-      "title": "论文标题",
-      "authors": "<strong><u>第一作者</u></strong>, 其他作者",
-      "venue": "期刊全称",
-      "venueShort": "缩写",
+      "title": "Paper Title",
+      "authors": "<strong><u>First Author</u></strong>, Other Authors",
+      "venue": "Full Journal Name",
+      "venueShort": "Abbrev.",
       "year": 2025,
-      "badge": "卡片左上角徽章文字",
-      "image": "论文示意图 URL",
-      "doi": "DOI 链接（可为 null）",
-      "note": "备注信息（分区、IF、关键词等）",
-      "scholarId": "Google Scholar Paper ID（用于引用统计）",
+      "badge": "Badge text shown top-left of card",
+      "image": "URL to teaser image",
+      "doi": "DOI URL (or null)",
+      "note": "Notes (quartile, IF, keywords, etc.)",
+      "scholarId": "Google Scholar Paper ID (for citation count)",
       "links": [
         { "name": "PDF", "url": "assets/pubs/xxx.pdf" },
         { "name": "Code", "url": "https://github.com/xxx" }
       ],
-      "bibtexKey": "bibtex.json 中对应的 key"
+      "bibtexKey": "key matching bibtex.json"
     }
   ],
   "conference": [ ... ],
+  "preprint": [ ... ],
   "patent": [
     {
       "date": "2025.02",
       "number": "ZL202410556414.6",
-      "title": "专利标题",
-      "authors": "发明人列表"
+      "title": "Patent Title",
+      "authors": "Inventor list"
     }
   ]
 }
 ```
 
-### _data/bibtex.json — BibTeX 引用
+### _data/bibtex.json — BibTeX Entries
 
 ```json
 {
@@ -105,49 +112,54 @@
 }
 ```
 
-key 必须与 `pubs.json` 中的 `bibtexKey` 一致。
+Each key must match the `bibtexKey` field in `pubs.json`.
 
-### _data/news.json — 新闻动态
+### _data/news.json — News Items
 
-**支持 Markdown 语法**。
+Supports Markdown syntax and an optional `content_zh` field for Chinese translation.
 
 ```json
 [
   {
     "date": "2025.09",
     "emoji": "🎉🎉",
-    "content": "Our work \"**_Paper Title_**\" was accepted by **Journal**."
+    "content": "Our work \"**_Paper Title_**\" was accepted by **Journal**.",
+    "content_zh": "我们的论文「**_标题_**」被 **期刊** 录用。"
   }
 ]
 ```
 
-| 字段 | 必填 | 说明 |
-|------|------|------|
-| `date` | 是 | 日期 |
-| `content` | 是 | 内容（支持 Markdown） |
-| `emoji` | 否 | 日期后显示的 emoji |
+| Field | Required | Description |
+|-------|----------|-------------|
+| `date` | Yes | Date string |
+| `content` | Yes | English content (Markdown supported) |
+| `content_zh` | No | Chinese content; falls back to `content` if omitted |
+| `emoji` | No | Emoji displayed after the date |
 
-### _data/education.json — 教育经历
+### _data/education.json — Education History
+
+Supports bilingual fields `degree_zh`, `major_zh`, `advisors_zh`.
 
 ```json
 [
   {
-    "school": "学校名 | 中文名",
-    "url": "学校官网",
-    "image": "images/logo.png",
-    "degree": "Master",
-    "major": "专业名",
+    "school": "Wuhan University | 武汉大学",
+    "url": "https://www.whu.edu.cn/",
+    "image": "images/whu.png",
+    "degree": "Master of Engineering",
+    "degree_zh": "工学硕士",
+    "major": "Photogrammetry and Remote Sensing",
+    "major_zh": "摄影测量与遥感",
     "period": "2025.09 - Present",
-    "advisors": "Prof. [Name](scholar_url)"
+    "advisors": "Prof. [Qiangqiang Yuan](...)",
+    "advisors_zh": "[袁强强](...)教授"
   }
 ]
 ```
 
-`advisors` 字段支持 Markdown 链接语法。
+### _data/honors.json — Honors & Awards
 
-### _data/honors.json — 荣誉奖项
-
-**支持 Markdown 语法**。
+Markdown syntax supported.
 
 ```json
 [
@@ -156,64 +168,137 @@ key 必须与 `pubs.json` 中的 `bibtexKey` 一致。
 ]
 ```
 
-## BibTeX 引用弹窗
+### _data/navigation.yml — Navigation Menu
 
-`_data/bibtex.json` 在构建时通过 Liquid 内联到页面的 `<script>` 标签中（见 `scripts.html`），`bibtex-citation.js` 在页面加载后自动绑定所有 `#bibtex-*` 链接。点击后弹出模态框，支持：
+Each entry accepts a `title_zh` field shown in Chinese mode.
 
-- 一键复制到剪贴板
-- ESC 键关闭
-- 点击遮罩区域关闭
+```yaml
+main:
+  - title: "Publications"
+    title_zh: "论文"
+    url: "/#-publications"
+```
 
-## Google Scholar 引用统计
+## Bilingual (EN / ZH) Toggle
 
-1. 在 GitHub 仓库 Settings → Secrets → Actions 中添加 `GOOGLE_SCHOLAR_ID`
-2. `_config.yml` 中设置 `google_scholar_stats_use_cdn: true`
-3. `_data/pubs.json` 论文条目中填写 `scholarId` 字段
+A language toggle button (EN / 中文) is displayed in the top-right of the nav bar. The preference is persisted in `localStorage`.
 
-引用数由 `fetch_google_scholar_stats.html` 在页面加载后异步获取并填充。
+### How it works
 
-## 添加新论文的完整流程
+- The `data-lang` attribute on `<html>` switches between `"en"` and `"zh"`
+- CSS rule `html[data-lang="en"] .lang-zh { display: none }` (and vice versa) controls visibility
+- `_includes/head.html` contains a flash-prevention inline script that sets `data-lang` before CSS loads
+- `assets/js/lang-toggle.js` handles the toggle logic and recalculates nav bar widths after switching
 
-1. 在 `_data/pubs.json` 对应分类中添加论文条目
-2. 在 `_data/bibtex.json` 中添加 BibTeX（key 与 `bibtexKey` 一致）
-3. 将 PDF 放入 `assets/pubs/` 目录（可选）
-4. 推送到 GitHub
+### Adding bilingual content in about.md
 
-## 样式自定义
+```html
+<div class="lang-en" markdown="1">
+English content here.
+</div>
 
-| 变量 | 位置 | 默认值 | 说明 |
-|------|------|--------|------|
-| `$paper-box-image-width` | `main.scss` | 360px | 论文图片宽度 |
-| `$paper-box-padding` | `main.scss` | 2em | 卡片内边距 |
-| `$edu-box-image-width` | `main.scss` | 240px | 学校 logo 宽度 |
+<div class="lang-zh" markdown="1">
+中文内容写在这里。
+</div>
+```
 
-BibTeX 弹窗样式在 `_sass/_bibtex-citation.scss` 中。
+Section headings example:
 
-## 全局配置（_config.yml）
+```markdown
+# <span class="lang-en">🔥 News</span><span class="lang-zh">🔥 新闻动态</span>
+{: #-news}
+```
 
-| 配置项 | 说明 |
-|--------|------|
-| `title` | 站点标题 |
-| `description` | 站点描述 |
-| `repository` | GitHub 仓库名（`user/repo`） |
-| `google_scholar_stats_use_cdn` | CDN 读取引用数据 |
+### Bilingual fields in _config.yml
+
+```yaml
+description: "A Research Beginner."
+description_zh: "一名科研新手。"
+
+author:
+  name: "Zaiyan Zhang"
+  name_zh: "张再筵"
+  bio: "Wuhan University"
+  bio_zh: "武汉大学"
+  location: "Wuhan, China"
+  location_zh: "中国，武汉"
+```
+
+## Dark / Light Theme Toggle
+
+A theme toggle button (🌙 / ☀) is displayed next to the language button. The preference is persisted in `localStorage`.
+
+### How it works
+
+- The `data-theme` attribute on `<html>` switches between `"light"` and `"dark"`
+- `assets/css/main.scss` contains an `html[data-theme="dark"] { ... }` block that overrides component colors
+- `_includes/head.html` contains a flash-prevention inline script that sets `data-theme` before CSS loads
+- `assets/js/lang-toggle.js` handles both language and theme toggles and persistence
+
+## BibTeX Citation Modal
+
+`_data/bibtex.json` is inlined into a `<script>` tag at build time (via `scripts.html`). `bibtex-citation.js` binds all `#bibtex-*` links on page load. Clicking a BibTeX link opens a modal supporting:
+
+- One-click copy to clipboard
+- Close with ESC key
+- Close by clicking the backdrop
+
+## Google Scholar Citation Stats
+
+1. Add `GOOGLE_SCHOLAR_ID` under Settings → Secrets → Actions in your GitHub repo
+2. Set `google_scholar_stats_use_cdn: true` in `_config.yml`
+3. Fill in the `scholarId` field for each paper entry in `_data/pubs.json`
+
+Citation counts are fetched asynchronously by `fetch_google_scholar_stats.html` after page load.
+
+## Adding a New Paper — Full Workflow
+
+1. Add an entry to the appropriate category (`journal` / `conference` / `preprint`) in `_data/pubs.json`
+2. Add the BibTeX entry to `_data/bibtex.json` (key must match `bibtexKey`)
+3. Optionally place the PDF in `assets/pubs/`
+4. Push to GitHub
+
+## Style Customization
+
+| Variable | File | Default | Description |
+|----------|------|---------|-------------|
+| `$paper-box-image-width` | `main.scss` | 360px | Paper teaser image width |
+| `$paper-box-padding` | `main.scss` | 2em | Card inner padding |
+| `$edu-box-image-width` | `main.scss` | 240px | School logo width |
+
+BibTeX modal styles are in `_sass/_bibtex-citation.scss`.  
+Dark mode styles are in the `html[data-theme="dark"] { ... }` block in `assets/css/main.scss`.
+
+## Global Config (_config.yml)
+
+| Key | Description |
+|-----|-------------|
+| `title` | Site title |
+| `description` / `description_zh` | Site description (bilingual) |
+| `repository` | GitHub repo (`user/repo`) |
+| `google_scholar_stats_use_cdn` | Use CDN for citation data |
 | `google_analytics_id` | Google Analytics ID |
-| `author.*` | 作者信息与社交链接 |
+| `author.name` / `author.name_zh` | Author name (bilingual) |
+| `author.bio` / `author.bio_zh` | Author bio (bilingual) |
+| `author.location` / `author.location_zh` | Location (bilingual) |
+| `author.*` | Social links (email, github, googlescholar, etc.) |
 
-## 本地调试
+## Local Development
 
 ```bash
 bundle install
 bundle exec jekyll serve
 ```
 
-访问 http://127.0.0.1:4000 预览。
+Open http://127.0.0.1:4000 in your browser. Live reload is enabled.
 
-## 故障排查
+## Troubleshooting
 
-| 问题 | 排查方法 |
-|------|----------|
-| 论文卡片不显示 | 检查 `_data/pubs.json` JSON 语法 |
-| BibTeX 弹窗无反应 | 检查 `_data/bibtex.json` 中对应 key 是否存在 |
-| 引用数不显示 | 确认 `google-scholar-stats` 分支有数据 |
-| Markdown 未渲染 | 确认 JSON 中的引号已正确转义 |
+| Problem | Check |
+|---------|-------|
+| Publication cards not showing | Validate `_data/pubs.json` JSON syntax |
+| BibTeX modal not opening | Verify the key exists in `_data/bibtex.json` |
+| Citation counts missing | Confirm `google-scholar-stats` branch has data |
+| Markdown not rendering | Ensure quotes in JSON strings are properly escaped |
+| Nav items disappear after language switch | Confirm `jquery.greedy-navigation.js` exposes `resetGreedyNav` |
+| Dark mode flash on load | Confirm flash-prevention inline script exists in `head.html` |

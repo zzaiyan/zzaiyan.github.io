@@ -19,4 +19,4 @@ I'm **Zaiyan Zhang (张再筵)**, currently pursuing an M.E. degree in **Photogr
 
 ---
 
-> 💡 **Note**: This repository contains the source code for my academic personal homepage. Visit [zzaiyan.github.io](https://zzaiyan.github.io) to see the live version!
+> 💡 **Note**: This repository contains the source code for my academic personal homepage. Visit [zzaiyan.github.io](https://zzaiyan.github.io) to see the live version! [User Guide](docs/guide.md) | [使用指南](docs/guide_zh.md)
