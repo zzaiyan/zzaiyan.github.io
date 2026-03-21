@@ -61,8 +61,7 @@
       content.innerHTML = `
         <div class="bibtex-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
           <h3 style="margin: 0; color: #333;">BibTeX Citation</h3>
-          <button class="bibtex-close-btn" 
-                  style="background: none; border: none; font-size: 24px; cursor: pointer; color: #666; max-width: 1.5em;">&times;</button>
+          <button class="bibtex-dismiss-btn">&times;</button>
         </div>
         <textarea readonly class="bibtex-content" 
                   style="width: 100%; height: 200px; font-family: monospace; 
@@ -70,14 +69,10 @@
                          resize: vertical; background: #f9f9f9; cursor: text; 
                          user-select: text; -webkit-user-select: text; -moz-user-select: text;">${bibtex}</textarea>
         <div class="bibtex-actions" style="margin-top: 15px; text-align: right;">
-          <button class="bibtex-copy-btn" 
-                  style="background: #007cba; color: white; border: none; padding: 8px 16px; 
-                         border-radius: 4px; cursor: pointer; margin-right: 10px;">
+          <button class="bibtex-copy-btn" style="margin-right: 10px;">
             Copy to Clipboard
           </button>
-          <button class="bibtex-close-btn" 
-                  style="background: #6c757d; color: white; border: none; padding: 8px 16px; 
-                         border-radius: 4px; cursor: pointer;">
+          <button class="bibtex-close-btn">
             Close
           </button>
         </div>
@@ -94,7 +89,9 @@
 
     // 绑定事件
     bindEvents: function (modal, bibtex) {
-      const closeButtons = modal.querySelectorAll(".bibtex-close-btn");
+      const closeButtons = modal.querySelectorAll(
+        ".bibtex-close-btn, .bibtex-dismiss-btn",
+      );
       const copyButton = modal.querySelector(".bibtex-copy-btn");
       const textarea = modal.querySelector(".bibtex-content");
 

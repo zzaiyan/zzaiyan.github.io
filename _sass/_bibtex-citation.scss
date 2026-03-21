@@ -21,7 +21,7 @@
   font-size: 13px;
   border: 1px solid #e1e4e8 !important;
   transition: border-color 0.2s ease;
-  color: #333333;
+  color: #1a1a1a !important;
 }
 
 .bibtex-content:focus {
@@ -37,7 +37,7 @@
   padding: 0.3em 1em;
   font-size: 0.85em;
   font-weight: 500;
-  color: #007cba !important;
+  color: #007cba;
   background: transparent;
   border: 2px solid rgba(0, 124, 186, 0.4);
   border-radius: 999px;
@@ -46,8 +46,8 @@
 }
 
 .bibtex-copy-btn:hover {
-  background: #007cba !important;
-  color: #fff !important;
+  background: #007cba;
+  color: #fff;
   border-color: #007cba;
   transform: none;
   box-shadow: none;
@@ -60,7 +60,7 @@
   padding: 0.3em 1em;
   font-size: 0.85em;
   font-weight: 500;
-  color: #5a6268 !important;
+  color: #5a6268;
   background: transparent;
   border: 2px solid rgba(90, 98, 104, 0.4);
   border-radius: 999px;
@@ -69,10 +69,33 @@
 }
 
 .bibtex-close-btn:hover {
-  background: #5a6268 !important;
-  color: #fff !important;
+  background: #5a6268;
+  color: #fff;
   border-color: #5a6268;
   transform: none;
+}
+
+.bibtex-dismiss-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2em;
+  height: 2em;
+  flex-shrink: 0;
+  font-size: 1.3em;
+  line-height: 1;
+  color: #666;
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  padding: 0;
+}
+
+.bibtex-dismiss-btn:hover {
+  background: rgba(0, 0, 0, 0.08);
+  color: #333;
 }
 
 /* 动画效果 */

@@ -1,3 +1,26 @@
+{% if site.data.pubs.preprint.size > 0 %}
+## Preprints
+
+{% for pub in site.data.pubs.preprint %}
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">{{ pub.badge }}</div><img src='{{ pub.image }}' alt="sym"></div></div>
+<div class='paper-box-text' markdown="1">
+
+{% if pub.doi %}<a class="pub-title" href="{{ pub.doi }}">{{ pub.title }}</a>{% elsif pub.links.size > 0 %}<a class="pub-title" href="{{ pub.links[0].url }}">{{ pub.title }}</a>{% else %}<span class="pub-title">{{ pub.title }}</span>{% endif %}
+
+{{ pub.authors }}
+
+_{{ pub.venue }}_, {{ pub.year }}
+
+{{ pub.note | replace: "|", "&#124;" }}{% if pub.scholarId %} <span class="show_paper_citations" data="{{ pub.scholarId }}"></span>{% endif %}
+
+<div class="pub-links">{% for link in pub.links %}<a class="pub-btn" href="{{ link.url }}">{% if link.url contains 'github.com' %}<i class="fab fa-github"></i>{% elsif link.name == 'PDF' %}<i class="fas fa-file-pdf"></i>{% elsif link.name == 'arXiv' %}<i class="ai ai-arxiv"></i>{% else %}<i class="fas fa-link"></i>{% endif %} {{ link.name }}</a>{% endfor %}{% if pub.bibtexKey %}<a class="pub-btn" href="#bibtex-{{ pub.bibtexKey }}"><i class="fas fa-quote-right"></i> BibTeX</a>{% endif %}</div>
+
+</div>
+</div>
+{% endfor %}
+{% endif %}
+
+{% if site.data.pubs.journal.size > 0 %}
 ## Journal Papers
 
 {% for pub in site.data.pubs.journal %}
@@ -17,7 +40,9 @@ _{{ pub.venue }}_ **({{ pub.venueShort }})**, {{ pub.year }}
 </div>
 </div>
 {% endfor %}
+{% endif %}
 
+{% if site.data.pubs.conference.size > 0 %}
 ## Conference Papers
 
 {% for pub in site.data.pubs.conference %}
@@ -37,10 +62,11 @@ _{{ pub.venue }}_ **({{ pub.venueShort }})**, {{ pub.year }}
 </div>
 </div>
 {% endfor %}
-
-## Patents
+{% endif %}
 
 {% if site.data.pubs.patent.size > 0 %}
+## Patents
+
 {% for pat in site.data.pubs.patent %}
 - _{{ pat.date }}_, {{ pat.number }}, **{{ pat.title }}**, &ensp;{{ pat.authors }}.
 {% endfor %}

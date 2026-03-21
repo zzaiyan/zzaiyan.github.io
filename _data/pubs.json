@@ -40,7 +40,7 @@
             "badge": "IGARSS 2026",
             "image": "https://arxiv.org/html/2601.12052v1/x1.png",
             "doi": null,
-            "note": "Optical-SAR Fusion, Cloud Removal",
+            "note": "Optical-SAR Fusion, Cloud Removal, Segmentation",
             "scholarId": "ZpxXejIAAAAJ:d1gkVwhDpl0C",
             "links": [
                 {
@@ -55,6 +55,7 @@
             "bibtexKey": "zhang2026task"
         }
     ],
+    "preprint": [],
     "patent": [
         {
             "date": "2025.02",
