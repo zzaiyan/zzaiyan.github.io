@@ -1,6 +1,10 @@
 <script src="assets/js/main.min.js"></script>
+<script>
+  window.BibtexDatabase = {{ site.data.bibtex | jsonify }};
+  window.BibtexDatabase.getBibtex = function(key) { return typeof this[key] === 'string' ? this[key] : null; };
+  window.BibtexDatabase.getAvailableKeys = function() { var self = this; return Object.keys(this).filter(function(k) { return typeof self[k] === 'string'; }); };
+</script>
 <script src="assets/js/bibtex-citation.js"></script>
-<script src="assets/js/pub-renderer.js"></script>
 <script src="assets/js/last-update.js"></script>
 
 {% include analytics.html %} {% include fetch_google_scholar_stats.html %}

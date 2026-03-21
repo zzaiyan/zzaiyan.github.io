@@ -1,0 +1,51 @@
+## Journal Papers {% for pub in site.data.pubs.journal %}
+<div class="paper-box">
+  <div class="paper-box-image">
+    <div>
+      <div class="badge">{{ pub.badge }}</div>
+      <img src="{{ pub.image }}" alt="sym" />
+    </div>
+  </div>
+  <div class="paper-box-text" markdown="1">
+    {% if pub.doi %}[**{{ pub.title }}**]({{ pub.doi }}){% elsif pub.links.size
+    > 0 %}[**{{ pub.title }}**]({{ pub.links[0].url }}){% else %}**{{ pub.title
+    }}**{% endif %} {{ pub.authors }} _{{ pub.venue }}_ **({{ pub.venueShort
+    }})**, {{ pub.year }} {{ pub.note }}{% if pub.scholarId %}
+    <span class="show_paper_citations" data="{{ pub.scholarId }}"></span>{%
+    endif %} {% assign linkItems = "" %}{% for link in pub.links %}{% if
+    linkItems != "" %}{% assign linkItems = linkItems | append: ", " %}{% endif
+    %}{% assign linkItems = linkItems | append: "[[" | append: link.name |
+    append: "]](" | append: link.url | append: ")" %}{% endfor %}{% if
+    pub.bibtexKey %}{% if linkItems != "" %}{% assign linkItems = linkItems |
+    append: ", " %}{% endif %}{% assign linkItems = linkItems | append:
+    "[[BibTeX]](#bibtex-" | append: pub.bibtexKey | append: ")" %}{% endif %}{{
+    linkItems }}
+  </div>
+</div>
+{% endfor %} ## Conference Papers {% for pub in site.data.pubs.conference %}
+<div class="paper-box">
+  <div class="paper-box-image">
+    <div>
+      <div class="badge">{{ pub.badge }}</div>
+      <img src="{{ pub.image }}" alt="sym" />
+    </div>
+  </div>
+  <div class="paper-box-text" markdown="1">
+    {% if pub.doi %}[**{{ pub.title }}**]({{ pub.doi }}){% elsif pub.links.size
+    > 0 %}[**{{ pub.title }}**]({{ pub.links[0].url }}){% else %}**{{ pub.title
+    }}**{% endif %} {{ pub.authors }} _{{ pub.venue }}_ **({{ pub.venueShort
+    }})**, {{ pub.year }} {{ pub.note }}{% if pub.scholarId %}
+    <span class="show_paper_citations" data="{{ pub.scholarId }}"></span>{%
+    endif %} {% assign linkItems = "" %}{% for link in pub.links %}{% if
+    linkItems != "" %}{% assign linkItems = linkItems | append: ", " %}{% endif
+    %}{% assign linkItems = linkItems | append: "[[" | append: link.name |
+    append: "]](" | append: link.url | append: ")" %}{% endfor %}{% if
+    pub.bibtexKey %}{% if linkItems != "" %}{% assign linkItems = linkItems |
+    append: ", " %}{% endif %}{% assign linkItems = linkItems | append:
+    "[[BibTeX]](#bibtex-" | append: pub.bibtexKey | append: ")" %}{% endif %}{{
+    linkItems }}
+  </div>
+</div>
+{% endfor %} ## Patents {% if site.data.pubs.patent.size > 0 %} {% for pat in
+site.data.pubs.patent %} - _{{ pat.date }}_, {{ pat.number }}, **{{ pat.title
+}}**, &ensp;{{ pat.authors }}. {% endfor %} {% endif %}

@@ -1,0 +1,20 @@
+[
+    {
+        "school": "Wuhan University | 武汉大学",
+        "url": "https://www.whu.edu.cn/",
+        "image": "images/whu.png",
+        "degree": "Master",
+        "major": "Photogrammetry and Remote Sensing",
+        "period": "2025.09 - Present",
+        "advisors": "Prof. [Qiangqiang Yuan](https://scholar.google.com/citations?user=aItnA-sAAAAJ) and A.P. [Jie Li](https://scholar.google.com/citations?user=W4VvnDMAAAAJ)"
+    },
+    {
+        "school": "China University of Geosciences | 中国地质大学",
+        "url": "https://www.cug.edu.cn/",
+        "image": "images/cug.jpg",
+        "degree": "Bachelor",
+        "major": "Data Science and Big Data Technology",
+        "period": "2021.09 - 2025.06",
+        "advisors": "A.P. [Jining Yan](https://scholar.google.com/citations?user=iYTHxQcAAAAJ)"
+    }
+]

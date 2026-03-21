@@ -1,0 +1,4 @@
+{% for item in site.data.news %} - _{{ item.date }}_:&ensp;{% if item.emoji %}{{
+item.emoji }} {% endif %}{{ item.content | markdownify | remove: '
+<p>' | remove: '</p>
+' | strip }} {% endfor %}

@@ -31,61 +31,21 @@ redirect_from:
 
 # 🔥 News
 
-- _2025.09_:&ensp; I began my **Master**'s degree studies at **Wuhan University**.
-- _2025.05_:&ensp;🎉🎉 Our work “**_Multiscale Restoration of Missing Data in Optical Time-series Images with Masked Spatial-Temporal Attention Network_**” was accepted by **IEEE Transactions on Geoscience and Remote Sensing (TGRS)**.
-- _2024.06_:&ensp;🎉🎉 Our work “**_Image-text mutual retrieval method based on large-scale pre-training CLIP model fine-tuning_**” won the **Grand Prize (Top 0.1%)** and **20,000 RMB** cash in the **12th “Teddy Cup” Data Mining Challenge** [[link]](https://www.tipdm.org/dsej12/2429.jhtml).
+{% include news.html %}
 
 # 📝 Publications
 
-## Journal Papers
-
-<div id="pub-journal"></div>
-
-## Conference Papers
-
-<div id="pub-conference"></div>
-
-## Patents
-
-<div id="pub-patent"></div>
+{% include publications.html %}
 
 # 📖 Education
 
-<div class='paper-box edu-box'><div class='paper-box-image'><div><a href="https://www.whu.edu.cn/" target="_blank"><img src='images/whu.png' alt="WHU"></a></div></div>
-<div class='paper-box-text' markdown="1">
-
-**Wuhan University \| 武汉大学**
-
-**Master** in Photogrammetry and Remote Sensing, &ensp;_2025.09 - Present_
-
-Advisors: Prof. [Qiangqiang Yuan](https://scholar.google.com/citations?user=aItnA-sAAAAJ) and A.P. [Jie Li](https://scholar.google.com/citations?user=W4VvnDMAAAAJ)
-
-</div>
-</div>
-
-<div class='paper-box edu-box'><div class='paper-box-image'><div><a href="https://www.cug.edu.cn/" target="_blank"><img src='images/cug.jpg' alt="CUG"></a></div></div>
-<div class='paper-box-text' markdown="1">
-
-**China University of Geosciences \| 中国地质大学**
-
-**Bachelor** in Data Science and Big Data Technology, &ensp;_2021.09 - 2025.06_
-
-Advisor: A.P. [Jining Yan](https://scholar.google.com/citations?user=iYTHxQcAAAAJ)
-
-</div>
-</div>
+{% include education.html %}
 
 <!-- 备选Emoji：🎖🏅💎🏆 -->
 
 # 🏅 Honors and Awards
 
-- _2025_,&ensp;**Outstanding Undergraduate Graduate** \| **优秀本科毕业生**.
-- _2024_,&ensp;**National Encouragement Scholarship** \| **国家励志奖学金**.
-- _2023_,&ensp;**National Scholarship** \| **国家奖学金**.
-- _2023_,&ensp;**Huawei Scholarship - Rising Star** \| **华为奖学金 - 未来之星** [[link]](https://cs.cug.edu.cn/info/1019/6103.htm).
-- _2023_,&ensp;**Chow Tai Fook Scholarship** \| **周大福奖学金**.
-- _2022, 2023, 2024_,&ensp;**Outstanding Student Model** \| **优秀学生标兵**.
-- _2022_,&ensp;**Outstanding Student Scholarship** \| **英才奖学金**.
+{% include honors.html %}
 
 # 🔍 Services
 
