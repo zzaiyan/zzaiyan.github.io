@@ -1,8 +1,8 @@
 {% for edu in site.data.education %}
-<div class='paper-box edu-box'><div class='paper-box-image'><div><a href="{{ edu.url }}" target="_blank"><img src='{{ edu.image }}' alt="{{ edu.school }}"></a></div></div>
+<div class='paper-box edu-box'><div class='paper-box-image'><div><img src='{{ edu.image }}' alt="{{ edu.school }}"></div></div>
 <div class='paper-box-text' markdown="1">
 
-**{{ edu.school | replace: "|", "&#124;" }}**
+<a class="pub-title" href="{{ edu.url }}">{{ edu.school | replace: "|", "&#124;" }}</a>
 
 **{{ edu.degree }}** in {{ edu.major }}, &ensp;_{{ edu.period }}_
 
