@@ -267,9 +267,25 @@ html:not([data-lang]) .lang-zh {
     display: none !important;
 }
 
-.lang-btn {
+// Masthead toolbar (lang + theme toggles)
+.masthead__toolbar {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    position: absolute;
+    right: 2.8em; // leave room for hamburger on small screens
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 25;
+
+    @include breakpoint($large) {
+        right: 0.5em; // no hamburger on large screens
+    }
+}
+
+.toolbar-btn {
     cursor: pointer;
-    padding: 0.25em 0.6em;
+    padding: 0.25em 0.55em;
     font-size: 0.82em;
     font-weight: 600;
     color: $info-color;
@@ -277,12 +293,170 @@ html:not([data-lang]) .lang-zh {
     border: none;
     border-radius: 6px;
     transition: background 0.2s, color 0.2s;
-    margin-left: 0.8em;
     white-space: nowrap;
     line-height: 1.4;
 
     &:hover {
         background: $info-color;
         color: #fff;
+    }
+}
+
+// ── Dark mode ──
+html[data-theme="dark"] {
+    // Core colours
+    body {
+        background-color: #1a1a2e;
+        color: #d4d4dc;
+    }
+
+    // Masthead
+    .masthead {
+        background: linear-gradient(90deg, #1e1e34, #1e2e28, #2a2218) !important;
+    }
+
+    .masthead .greedy-nav .hidden-links {
+        background: rgba(30, 30, 52, 0.97) !important;
+    }
+
+    .masthead .greedy-nav a,
+    .masthead .greedy-nav .visible-links a {
+        color: #c8c8d8 !important;
+    }
+
+    .toolbar-btn {
+        color: #8ab4f8;
+        background: rgba(138, 180, 248, 0.1);
+
+        &:hover {
+            background: #8ab4f8;
+            color: #1a1a2e;
+        }
+    }
+
+    // Links
+    a {
+        color: #8ab4f8;
+    }
+
+    // Paper box
+    .paper-box {
+        border-color: #333;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+
+        &:hover {
+            border-color: #5580b4;
+            box-shadow: 0 4px 20px rgba(66, 133, 244, 0.25), 0 0 0 3px rgba(66, 133, 244, 0.1);
+        }
+    }
+
+    // Pub buttons
+    .pub-btn {
+        color: #8ab4f8 !important;
+        background: rgba(138, 180, 248, 0.1);
+
+        &:hover {
+            background: #8ab4f8;
+            color: #1a1a2e !important;
+        }
+    }
+
+    .pub-title {
+        color: #8ab4f8 !important;
+
+        &:hover {
+            border-bottom-color: #8ab4f8;
+        }
+    }
+
+    // Sidebar / author profile
+    .author__name {
+        color: #e0e0e8;
+    }
+
+    .author__bio,
+    .author__urls li,
+    .author__urls a {
+        color: #b0b0c0 !important;
+    }
+
+    .sidebar p, .sidebar li {
+        color: #b0b0c0;
+    }
+
+    // Footer
+    .page__footer {
+        background-color: #16162a;
+        border-top-color: #333;
+        color: #888;
+    }
+
+    // Code blocks
+    code,
+    pre {
+        background-color: #252540;
+        color: #d4d4dc;
+    }
+
+    $code-background-color: #252540;
+
+    // Headings
+    h1, h2, h3, h4, h5, h6 {
+        color: #e0e0e8;
+    }
+
+    // News scrollbar
+    .news-scroll::-webkit-scrollbar-thumb {
+        background: #555;
+    }
+
+    // Misc collapse
+    details.misc-collapse summary {
+        color: #b0b0c0;
+    }
+
+    // BibTeX modal
+    .bibtex-modal {
+        color: #d4d4dc;
+    }
+
+    .bibtex-modal-content {
+        background: #252540 !important;
+    }
+
+    .bibtex-header h3 {
+        color: #e0e0e8;
+    }
+
+    .bibtex-content {
+        background: #1a1a2e !important;
+        border-color: #444 !important;
+        color: #d4d4dc !important;
+    }
+
+    // Tables
+    table {
+        color: #d4d4dc;
+    }
+
+    td, th {
+        border-color: #444;
+    }
+
+    // Inputs & forms
+    input, textarea, select {
+        background-color: #252540;
+        color: #d4d4dc;
+        border-color: #444;
+    }
+
+    // Badges
+    .badge {
+        background-color: #3366aa;
+    }
+
+    // Hidden links dropdown
+    .greedy-nav .hidden-links li a {
+        color: #c8c8d8 !important;
     }
 }

@@ -8,6 +8,7 @@
 # Site Settings
 title: "Zaiyan Zhang"
 description: "A Research Beginner."
+description_zh: "科研起步者。"
 repository: "zzaiyan/zzaiyan.github.io"
 google_scholar_stats_use_cdn: true
 
@@ -27,6 +28,7 @@ author:
   bio: "Wuhan University"
   bio_zh: "武汉大学"
   location: "Wuhan, China"
+  location_zh: "中国，武汉"
   employer:
   pubmed:
   googlescholar: "https://scholar.google.com/citations?user=ZpxXejIAAAAJ&hl=en"

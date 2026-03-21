@@ -12,6 +12,8 @@
       document.documentElement.className.replace(/\bno-js\b/g, "") + " js";
     // 语言切换：防止闪烁，立即设置 data-lang
     (function(){var l=localStorage.getItem('preferred-lang')||(navigator.language.startsWith('zh')?'zh':'en');document.documentElement.setAttribute('data-lang',l);})();
+    // 主题切换：防止闪烁，立即设置 data-theme
+    (function(){var t=localStorage.getItem('preferred-theme')||'light';document.documentElement.setAttribute('data-theme',t);})();
   </script>
 
   <!-- For all browsers -->

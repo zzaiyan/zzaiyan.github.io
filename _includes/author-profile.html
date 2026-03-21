@@ -24,13 +24,13 @@ endif %}
       {% if site.description %}
       <li>
         <div style="white-space: normal; margin-bottom: 1em">
-          {{ site.description }}
+          <span class="lang-en">{{ site.description }}</span><span class="lang-zh">{{ site.description_zh | default: site.description }}</span>
         </div>
       </li>
       {% endif %} {% if author.location %}
       <li>
-        <i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> {{
-        author.location }}
+        <i class="fa fa-fw fa-map-marker" aria-hidden="true"></i>
+        <span class="lang-en">{{ author.location }}</span><span class="lang-zh">{{ author.location_zh | default: author.location }}</span>
       </li>
       {% endif %} {% if author.employer %}
       <li>
@@ -40,13 +40,13 @@ endif %}
       {% endif %} {% if author.uri %}
       <li>
         <a href="{{ author.uri }}"
-          ><i class="fas fa-fw fa-link" aria-hidden="true"></i> Website</a
+          ><i class="fas fa-fw fa-link" aria-hidden="true"></i> <span class="lang-en">Website</span><span class="lang-zh">个人网站</span></a
         >
       </li>
       {% endif %} {% if author.email %}
       <li>
         <a href="mailto:{{ author.email }}"
-          ><i class="fas fa-fw fa-envelope" aria-hidden="true"></i> Email</a
+          ><i class="fas fa-fw fa-envelope" aria-hidden="true"></i> <span class="lang-en">Email</span><span class="lang-zh">邮箱</span></a
         >
       </li>
       {% endif %} {% if author.keybase %}
@@ -209,7 +209,7 @@ endif %}
       {% endif %} {% if author.googlescholar %}
       <li>
         <a href="{{ author.googlescholar }}"
-          ><i class="fas fa-fw fa-graduation-cap"></i> Google Scholar</a
+          ><i class="fas fa-fw fa-graduation-cap"></i> <span class="lang-en">Google Scholar</span><span class="lang-zh">谷歌学术</span></a
         >
       </li>
       {% endif %} {% if author.pubmed %}
