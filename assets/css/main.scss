@@ -186,12 +186,73 @@ h1:before, .anchor:before {
 }
 
 .github-star-badge {
-    display: inline-flex;
-    align-items: center;
+    display: none;
+}
 
-    img {
-        height: 20px;
-        box-shadow: none !important;
-        border-radius: 0 !important;
+// Paper title link style
+.pub-title {
+    font-size: 1.05em;
+    font-weight: 700;
+    color: $info-color !important;
+    text-decoration: none !important;
+    border-bottom: 1.5px solid transparent;
+    transition: border-color 0.2s;
+
+    &:hover {
+        border-bottom-color: $info-color;
     }
+}
+
+// News scrollable container
+.news-scroll {
+    max-height: 220px;
+    overflow-y: auto;
+    padding-right: 4px;
+
+    &::-webkit-scrollbar {
+        width: 5px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border-radius: 3px;
+    }
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+}
+
+// Collapsible Misc section
+details.misc-collapse {
+    summary {
+        cursor: pointer;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 0.4em;
+        font-weight: 600;
+        color: $dark-gray;
+        user-select: none;
+        padding: 0.3em 0;
+
+        &::-webkit-details-marker {
+            display: none;
+        }
+
+        .collapse-icon {
+            display: inline-block;
+            transition: transform 0.2s;
+            font-size: 0.75em;
+        }
+    }
+
+    &[open] summary .collapse-icon {
+        transform: rotate(90deg);
+    }
+}
+
+// Inline pub-links inside list items
+li .pub-links {
+    display: inline-flex;
+    margin-top: 0;
+    vertical-align: middle;
 }

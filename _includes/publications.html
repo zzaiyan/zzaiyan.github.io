@@ -4,7 +4,7 @@
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">{{ pub.badge }}</div><img src='{{ pub.image }}' alt="sym"></div></div>
 <div class='paper-box-text' markdown="1">
 
-{% if pub.doi %}[**{{ pub.title }}**]({{ pub.doi }}){% elsif pub.links.size > 0 %}[**{{ pub.title }}**]({{ pub.links[0].url }}){% else %}**{{ pub.title }}**{% endif %}
+{% if pub.doi %}<a class="pub-title" href="{{ pub.doi }}">{{ pub.title }}</a>{% elsif pub.links.size > 0 %}<a class="pub-title" href="{{ pub.links[0].url }}">{{ pub.title }}</a>{% else %}<span class="pub-title">{{ pub.title }}</span>{% endif %}
 
 {{ pub.authors }}
 
@@ -12,7 +12,7 @@ _{{ pub.venue }}_ **({{ pub.venueShort }})**, {{ pub.year }}
 
 {{ pub.note | replace: "|", "&#124;" }}{% if pub.scholarId %} <span class="show_paper_citations" data="{{ pub.scholarId }}"></span>{% endif %}
 
-<div class="pub-links">{% for link in pub.links %}{% if link.url contains 'github.com' %}<a class="pub-btn" href="{{ link.url }}"><i class="fab fa-github"></i> {{ link.name }}</a> <a class="github-star-badge" href="{{ link.url }}/stargazers">{% assign repo_path = link.url | remove: 'https://github.com/' %}<img src="https://img.shields.io/github/stars/{{ repo_path }}?style=social" alt="GitHub Stars"></a>{% else %}<a class="pub-btn" href="{{ link.url }}">{% if link.name == 'PDF' %}<i class="fas fa-file-pdf"></i>{% elsif link.name == 'arXiv' %}<i class="ai ai-arxiv"></i>{% else %}<i class="fas fa-link"></i>{% endif %} {{ link.name }}</a>{% endif %}{% endfor %}{% if pub.bibtexKey %}<a class="pub-btn" href="#bibtex-{{ pub.bibtexKey }}"><i class="fas fa-quote-right"></i> BibTeX</a>{% endif %}</div>
+<div class="pub-links">{% for link in pub.links %}<a class="pub-btn" href="{{ link.url }}">{% if link.url contains 'github.com' %}<i class="fab fa-github"></i>{% elsif link.name == 'PDF' %}<i class="fas fa-file-pdf"></i>{% elsif link.name == 'arXiv' %}<i class="ai ai-arxiv"></i>{% else %}<i class="fas fa-link"></i>{% endif %} {{ link.name }}</a>{% endfor %}{% if pub.bibtexKey %}<a class="pub-btn" href="#bibtex-{{ pub.bibtexKey }}"><i class="fas fa-quote-right"></i> BibTeX</a>{% endif %}</div>
 
 </div>
 </div>
@@ -24,7 +24,7 @@ _{{ pub.venue }}_ **({{ pub.venueShort }})**, {{ pub.year }}
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">{{ pub.badge }}</div><img src='{{ pub.image }}' alt="sym"></div></div>
 <div class='paper-box-text' markdown="1">
 
-{% if pub.doi %}[**{{ pub.title }}**]({{ pub.doi }}){% elsif pub.links.size > 0 %}[**{{ pub.title }}**]({{ pub.links[0].url }}){% else %}**{{ pub.title }}**{% endif %}
+{% if pub.doi %}<a class="pub-title" href="{{ pub.doi }}">{{ pub.title }}</a>{% elsif pub.links.size > 0 %}<a class="pub-title" href="{{ pub.links[0].url }}">{{ pub.title }}</a>{% else %}<span class="pub-title">{{ pub.title }}</span>{% endif %}
 
 {{ pub.authors }}
 
@@ -32,7 +32,7 @@ _{{ pub.venue }}_ **({{ pub.venueShort }})**, {{ pub.year }}
 
 {{ pub.note | replace: "|", "&#124;" }}{% if pub.scholarId %} <span class="show_paper_citations" data="{{ pub.scholarId }}"></span>{% endif %}
 
-<div class="pub-links">{% for link in pub.links %}{% if link.url contains 'github.com' %}<a class="pub-btn" href="{{ link.url }}"><i class="fab fa-github"></i> {{ link.name }}</a> <a class="github-star-badge" href="{{ link.url }}/stargazers">{% assign repo_path = link.url | remove: 'https://github.com/' %}<img src="https://img.shields.io/github/stars/{{ repo_path }}?style=social" alt="GitHub Stars"></a>{% else %}<a class="pub-btn" href="{{ link.url }}">{% if link.name == 'PDF' %}<i class="fas fa-file-pdf"></i>{% elsif link.name == 'arXiv' %}<i class="ai ai-arxiv"></i>{% else %}<i class="fas fa-link"></i>{% endif %} {{ link.name }}</a>{% endif %}{% endfor %}{% if pub.bibtexKey %}<a class="pub-btn" href="#bibtex-{{ pub.bibtexKey }}"><i class="fas fa-quote-right"></i> BibTeX</a>{% endif %}</div>
+<div class="pub-links">{% for link in pub.links %}<a class="pub-btn" href="{{ link.url }}">{% if link.url contains 'github.com' %}<i class="fab fa-github"></i>{% elsif link.name == 'PDF' %}<i class="fas fa-file-pdf"></i>{% elsif link.name == 'arXiv' %}<i class="ai ai-arxiv"></i>{% else %}<i class="fas fa-link"></i>{% endif %} {{ link.name }}</a>{% endfor %}{% if pub.bibtexKey %}<a class="pub-btn" href="#bibtex-{{ pub.bibtexKey }}"><i class="fas fa-quote-right"></i> BibTeX</a>{% endif %}</div>
 
 </div>
 </div>

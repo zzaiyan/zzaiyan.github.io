@@ -29,7 +29,11 @@ redirect_from:
 
 # 🔥 News
 
+<div class="news-scroll" markdown="1">
+
 {% include news.html %}
+
+</div>
 
 # 📝 Publications
 
@@ -60,21 +64,24 @@ redirect_from:
 
 # 📚 Misc
 
+<details class="misc-collapse" markdown="1">
+<summary><span class="collapse-icon">▶</span> Click to expand</summary>
+
 ## Open Source Tools
 
 <!-- In my spare time, I develop and maintain several open-source tools to facilitate research and development: -->
 
 Perhaps your research field differs from mine, but may the open-source tools I've developed prove useful to your studies:
 
-- **TorchHook - 管理 PyTorch 钩子函数**: <span class="pub-links"><a class="pub-btn" href="https://github.com/zzaiyan/TorchHook"><i class="fab fa-github"></i> Repo</a> <a class="github-star-badge" href="https://github.com/zzaiyan/TorchHook/stargazers"><img src="https://img.shields.io/github/stars/zzaiyan/TorchHook?style=social" alt="Stars"></a> <a class="pub-btn" href="https://github.com/zzaiyan/TorchHook/blob/main/BLOG.md"><i class="fas fa-book"></i> Tutorial</a> <a class="pub-btn" href="https://github.com/zzaiyan/TorchHook/blob/main/BLOG_CN.md"><i class="fas fa-book"></i> 教程</a></span>
+- **TorchHook - 管理 PyTorch 钩子函数**: <span class="pub-links"><a class="pub-btn" href="https://github.com/zzaiyan/TorchHook"><i class="fab fa-github"></i> Repo</a> <a class="pub-btn" href="https://github.com/zzaiyan/TorchHook/blob/main/BLOG.md"><i class="fas fa-book"></i> Tutorial</a> <a class="pub-btn" href="https://github.com/zzaiyan/TorchHook/blob/main/BLOG_CN.md"><i class="fas fa-book"></i> 教程</a></span>
 
   A PyTorch hooks manager, providing convenient interfaces to capture feature maps and debug models.
 
-- **AnyCapture - 提取任意局部变量**: <span class="pub-links"><a class="pub-btn" href="https://github.com/zzaiyan/AnyCapture"><i class="fab fa-github"></i> Repo</a> <a class="github-star-badge" href="https://github.com/zzaiyan/AnyCapture/stargazers"><img src="https://img.shields.io/github/stars/zzaiyan/AnyCapture?style=social" alt="Stars"></a> <a class="pub-btn" href="https://github.com/zzaiyan/AnyCapture/blob/main/README.md"><i class="fas fa-book"></i> 教程</a></span>
+- **AnyCapture - 提取任意局部变量**: <span class="pub-links"><a class="pub-btn" href="https://github.com/zzaiyan/AnyCapture"><i class="fab fa-github"></i> Repo</a> <a class="pub-btn" href="https://github.com/zzaiyan/AnyCapture/blob/main/README.md"><i class="fas fa-book"></i> 教程</a></span>
 
   A tool to capture local variables from any function, especially useful for visualizing attention maps in deep learning models.
 
-- **netcut - 网络剪切板**: <span class="pub-links"><a class="pub-btn" href="https://github.com/zzaiyan/netcut"><i class="fab fa-github"></i> Repo</a> <a class="github-star-badge" href="https://github.com/zzaiyan/netcut/stargazers"><img src="https://img.shields.io/github/stars/zzaiyan/netcut?style=social" alt="Stars"></a> <a class="pub-btn" href="https://zzaiyan.github.io/netcut/"><i class="fas fa-desktop"></i> Demo</a></span>
+- **netcut - 网络剪切板**: <span class="pub-links"><a class="pub-btn" href="https://github.com/zzaiyan/netcut"><i class="fab fa-github"></i> Repo</a> <a class="pub-btn" href="https://zzaiyan.github.io/netcut/"><i class="fas fa-desktop"></i> Demo</a></span>
 
   A simple network clipboard application. Perfect for quickly sharing text between different devices.
 
@@ -87,3 +94,5 @@ During my studies of Computer Technologies, I operated several websites:
 - **Technical Blog (技术博客)**: [b.zzaiyan.com](http://b.zzaiyan.com) - Sharing technical insights and learning experiences.
 - **Personal Cloud Storage (个人网盘)**: [pan.zzaiyan.com](https://pan.zzaiyan.com/) - A personal cloud storage service (temporarily suspended due to network storage costs).
 - **URL Shortner (短链接生成器, 正在开发)**: [s.zzaiyan.com](https://s.zzaiyan.com/) - A simple and efficient short URL generator to quickly create and manage short links for easy sharing. -->
+
+</details>
