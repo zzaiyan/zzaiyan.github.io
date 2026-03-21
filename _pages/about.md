@@ -46,7 +46,7 @@ redirect_from:
 </div>
 
 # <span class="lang-en">🔥 News</span><span class="lang-zh">🔥 新闻动态</span>
-{: #-news}
+{: #news}
 
 <div class="news-scroll" markdown="1">
 
@@ -55,24 +55,24 @@ redirect_from:
 </div>
 
 # <span class="lang-en">📝 Publications</span><span class="lang-zh">📝 论文发表</span>
-{: #-publications}
+{: #publications}
 
 {% include publications.html %}
 
 # <span class="lang-en">📖 Education</span><span class="lang-zh">📖 教育经历</span>
-{: #-education}
+{: #education}
 
 {% include education.html %}
 
 <!-- 备选Emoji：🎖🏅💎🏆 -->
 
 # <span class="lang-en">🏅 Honors and Awards</span><span class="lang-zh">🏅 荣誉奖项</span>
-{: #-honors-and-awards}
+{: #honors-and-awards}
 
 {% include honors.html %}
 
 # <span class="lang-en">🔍 Services</span><span class="lang-zh">🔍 学术服务</span>
-{: #-services}
+{: #services}
 
 <!-- ## Academic  -->
 
@@ -96,7 +96,7 @@ redirect_from:
 - *2019.05 - 2020.02*, [Lorem](https://github.com/), China. -->
 
 # <span class="lang-en">📚 Misc</span><span class="lang-zh">📚 其他</span>
-{: #-misc}
+{: #misc}
 
 <details class="misc-collapse" markdown="1">
 <summary><span class="collapse-icon">▶</span> <span class="lang-en">Click to expand</span><span class="lang-zh">点击展开</span></summary>

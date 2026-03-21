@@ -6,19 +6,19 @@ main:
 
   - title: "News"
     title_zh: "新闻"
-    url: "/#-news"
+    url: "/#news"
 
   - title: "Publications"
     title_zh: "论文"
-    url: "/#-publications"
+    url: "/#publications"
 
   - title: "Education"
     title_zh: "教育"
-    url: "/#-education"
+    url: "/#education"
 
   - title: "Honors and Awards"
     title_zh: "荣誉奖项"
-    url: "/#-honors-and-awards"
+    url: "/#honors-and-awards"
 
   # - title: "Invited Talks"
   #   url: "/#-invited-talks"
@@ -28,11 +28,11 @@ main:
 
   - title: "Services"
     title_zh: "学术服务"
-    url: "/#-services"
+    url: "/#services"
 
   - title: "Misc"
     title_zh: "其他"
-    url: "/#-misc"
+    url: "/#misc"
 
   - title: "Blog"
     url: "https://b.zzaiyan.com"
