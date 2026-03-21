@@ -1,4 +1,3 @@
-{% for item in site.data.honors %} - _{{ item.year }}_,&ensp;{{ item.content |
-markdownify | remove: '
-<p>' | remove: '</p>
-' | strip }}. {% endfor %}
+{% for item in site.data.honors %}
+- _{{ item.year }}_,&ensp;{{ item.content }}.
+{% endfor %}
