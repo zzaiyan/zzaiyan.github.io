@@ -256,3 +256,33 @@ li .pub-links {
     margin-top: 0;
     vertical-align: middle;
 }
+
+// Language toggle
+html[data-lang="en"] .lang-zh,
+html[data-lang="zh"] .lang-en {
+    display: none !important;
+}
+
+html:not([data-lang]) .lang-zh {
+    display: none !important;
+}
+
+.lang-btn {
+    cursor: pointer;
+    padding: 0.25em 0.6em;
+    font-size: 0.82em;
+    font-weight: 600;
+    color: $info-color;
+    background: rgba($info-color, 0.07);
+    border: none;
+    border-radius: 6px;
+    transition: background 0.2s, color 0.2s;
+    margin-left: 0.8em;
+    white-space: nowrap;
+    line-height: 1.4;
+
+    &:hover {
+        background: $info-color;
+        color: #fff;
+    }
+}

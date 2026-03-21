@@ -1,3 +1,3 @@
 {% for item in site.data.news %}
-- _{{ item.date }}_:&ensp;{% if item.emoji %}{{ item.emoji }} {% endif %}{{ item.content }}
+- _{{ item.date }}_:&ensp;{% if item.emoji %}{{ item.emoji }} {% endif %}<span class="lang-en">{{ item.content | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip }}</span>{% if item.content_zh %}<span class="lang-zh">{{ item.content_zh | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip }}</span>{% else %}<span class="lang-zh">{{ item.content | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip }}</span>{% endif %}
 {% endfor %}

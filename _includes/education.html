@@ -4,9 +4,9 @@
 
 <a class="pub-title" href="{{ edu.url }}">{{ edu.school | replace: "|", "&#124;" }}</a>
 
-**{{ edu.degree }}** in {{ edu.major }}, &ensp;_{{ edu.period }}_
+<span class="lang-en"><strong>{{ edu.degree }}</strong> in {{ edu.major }}</span><span class="lang-zh"><strong>{{ edu.degree_zh | default: edu.degree }}</strong>，{{ edu.major_zh | default: edu.major }}</span>, &ensp;_{{ edu.period }}_
 
-Advisors: {{ edu.advisors }}
+<span class="lang-en">Advisors: {{ edu.advisors | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip }}</span><span class="lang-zh">导师: {{ edu.advisors_zh | default: edu.advisors | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip }}</span>
 
 </div>
 </div>

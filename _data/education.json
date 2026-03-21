@@ -4,17 +4,23 @@
         "url": "https://www.whu.edu.cn/",
         "image": "images/whu.png",
         "degree": "Master",
+        "degree_zh": "硕士",
         "major": "Photogrammetry and Remote Sensing",
+        "major_zh": "摄影测量与遥感",
         "period": "2025.09 - Present",
-        "advisors": "Prof. [Qiangqiang Yuan](https://scholar.google.com/citations?user=aItnA-sAAAAJ) and A.P. [Jie Li](https://scholar.google.com/citations?user=W4VvnDMAAAAJ)"
+        "advisors": "Prof. [Qiangqiang Yuan](https://scholar.google.com/citations?user=aItnA-sAAAAJ) and A.P. [Jie Li](https://scholar.google.com/citations?user=W4VvnDMAAAAJ)",
+        "advisors_zh": "[袁强强](https://scholar.google.com/citations?user=aItnA-sAAAAJ) 教授、[李杰](https://scholar.google.com/citations?user=W4VvnDMAAAAJ) 副教授"
     },
     {
         "school": "China University of Geosciences | 中国地质大学",
         "url": "https://www.cug.edu.cn/",
         "image": "images/cug.jpg",
         "degree": "Bachelor",
+        "degree_zh": "学士",
         "major": "Data Science and Big Data Technology",
+        "major_zh": "数据科学与大数据技术",
         "period": "2021.09 - 2025.06",
-        "advisors": "A.P. [Jining Yan](https://scholar.google.com/citations?user=iYTHxQcAAAAJ)"
+        "advisors": "A.P. [Jining Yan](https://scholar.google.com/citations?user=iYTHxQcAAAAJ)",
+        "advisors_zh": "[阎继宁](https://scholar.google.com/citations?user=iYTHxQcAAAAJ) 副教授"
     }
 ]

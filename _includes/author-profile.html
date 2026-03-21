@@ -12,10 +12,9 @@ endif %}
   </div>
 
   <div class="author__content">
-    <h3 class="author__name">{{ author.name }}</h3>
-    <!-- <h3 class="author__name">{{ author.name_zh }}</h3> -->
+    <h3 class="author__name"><span class="lang-en">{{ author.name }}</span><span class="lang-zh">{{ author.name_zh | default: author.name }}</span></h3>
     {% if author.bio %}
-    <p class="author__bio">{{ author.bio }}</p>
+    <p class="author__bio"><span class="lang-en">{{ author.bio }}</span><span class="lang-zh">{{ author.bio_zh | default: author.bio }}</span></p>
     {% endif %}
   </div>
 

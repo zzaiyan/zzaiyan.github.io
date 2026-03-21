@@ -1,18 +1,23 @@
 # main links links
 main:
   - title: "About Me"
+    title_zh: "关于我"
     url: "/#about-me"
 
   - title: "News"
+    title_zh: "新闻"
     url: "/#-news"
 
   - title: "Publications"
+    title_zh: "论文"
     url: "/#-publications"
 
   - title: "Education"
+    title_zh: "教育"
     url: "/#-education"
 
   - title: "Honors and Awards"
+    title_zh: "荣誉奖项"
     url: "/#-honors-and-awards"
 
   # - title: "Invited Talks"
@@ -22,9 +27,11 @@ main:
   #   url: "/#-internships"
 
   - title: "Services"
+    title_zh: "学术服务"
     url: "/#-services"
 
   - title: "Misc"
+    title_zh: "其他"
     url: "/#-misc"
 
   - title: "Blog"

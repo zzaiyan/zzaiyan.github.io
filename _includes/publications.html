@@ -1,5 +1,5 @@
 {% if site.data.pubs.preprint.size > 0 %}
-## Preprints
+## <span class="lang-en">Preprints</span><span class="lang-zh">预印本</span>
 
 {% for pub in site.data.pubs.preprint %}
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">{{ pub.badge }}</div><img src='{{ pub.image }}' alt="sym"></div></div>
@@ -21,7 +21,7 @@ _{{ pub.venue }}_, {{ pub.year }}
 {% endif %}
 
 {% if site.data.pubs.journal.size > 0 %}
-## Journal Papers
+## <span class="lang-en">Journal Papers</span><span class="lang-zh">期刊论文</span>
 
 {% for pub in site.data.pubs.journal %}
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">{{ pub.badge }}</div><img src='{{ pub.image }}' alt="sym"></div></div>
@@ -43,7 +43,7 @@ _{{ pub.venue }}_ **({{ pub.venueShort }})**, {{ pub.year }}
 {% endif %}
 
 {% if site.data.pubs.conference.size > 0 %}
-## Conference Papers
+## <span class="lang-en">Conference Papers</span><span class="lang-zh">会议论文</span>
 
 {% for pub in site.data.pubs.conference %}
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">{{ pub.badge }}</div><img src='{{ pub.image }}' alt="sym"></div></div>
@@ -65,7 +65,7 @@ _{{ pub.venue }}_ **({{ pub.venueShort }})**, {{ pub.year }}
 {% endif %}
 
 {% if site.data.pubs.patent.size > 0 %}
-## Patents
+## <span class="lang-en">Patents</span><span class="lang-zh">专利</span>
 
 {% for pat in site.data.pubs.patent %}
 - _{{ pat.date }}_, {{ pat.number }}, **{{ pat.title }}**, &ensp;{{ pat.authors }}.
