@@ -10,7 +10,7 @@
 
 _{{ pub.venue }}_ **({{ pub.venueShort }})**, {{ pub.year }}
 
-{{ pub.note }}{% if pub.scholarId %} <span class="show_paper_citations" data="{{ pub.scholarId }}"></span>{% endif %}
+{{ pub.note | replace: "|", "&#124;" }}{% if pub.scholarId %} <span class="show_paper_citations" data="{{ pub.scholarId }}"></span>{% endif %}
 
 {% capture linkItems %}{% for link in pub.links %}{% if forloop.first == false %}, {% endif %}[[{{ link.name }}]]({{ link.url }}){% endfor %}{% if pub.bibtexKey %}{% if pub.links.size > 0 %}, {% endif %}[[BibTeX]](#bibtex-{{ pub.bibtexKey }}){% endif %}{% endcapture %}{{ linkItems }}
 
@@ -30,7 +30,7 @@ _{{ pub.venue }}_ **({{ pub.venueShort }})**, {{ pub.year }}
 
 _{{ pub.venue }}_ **({{ pub.venueShort }})**, {{ pub.year }}
 
-{{ pub.note }}{% if pub.scholarId %} <span class="show_paper_citations" data="{{ pub.scholarId }}"></span>{% endif %}
+{{ pub.note | replace: "|", "&#124;" }}{% if pub.scholarId %} <span class="show_paper_citations" data="{{ pub.scholarId }}"></span>{% endif %}
 
 {% capture linkItems %}{% for link in pub.links %}{% if forloop.first == false %}, {% endif %}[[{{ link.name }}]]({{ link.url }}){% endfor %}{% if pub.bibtexKey %}{% if pub.links.size > 0 %}, {% endif %}[[BibTeX]](#bibtex-{{ pub.bibtexKey }}){% endif %}{% endcapture %}{{ linkItems }}
 

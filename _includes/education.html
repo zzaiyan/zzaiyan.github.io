@@ -2,7 +2,7 @@
 <div class='paper-box edu-box'><div class='paper-box-image'><div><a href="{{ edu.url }}" target="_blank"><img src='{{ edu.image }}' alt="{{ edu.school }}"></a></div></div>
 <div class='paper-box-text' markdown="1">
 
-**{{ edu.school }}**
+**{{ edu.school | replace: "|", "&#124;" }}**
 
 **{{ edu.degree }}** in {{ edu.major }}, &ensp;_{{ edu.period }}_
 
