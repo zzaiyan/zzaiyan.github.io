@@ -31,28 +31,48 @@
 }
 
 .bibtex-copy-btn {
-  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  padding: 0.3em 1em;
+  font-size: 0.85em;
   font-weight: 500;
-  font-size: 14px;
-  color: #ffffff;
+  color: #007cba !important;
+  background: transparent;
+  border: 2px solid rgba(0, 124, 186, 0.4);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
 }
 
 .bibtex-copy-btn:hover {
-  background-color: #005a8b !important;
-  transform: translateY(-1px);
-  box-shadow: 0 2px 4px rgba(0, 124, 186, 0.3);
+  background: #007cba !important;
+  color: #fff !important;
+  border-color: #007cba;
+  transform: none;
+  box-shadow: none;
 }
 
 .bibtex-close-btn {
-  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  padding: 0.3em 1em;
+  font-size: 0.85em;
   font-weight: 500;
-  font-size: 14px;
-  color: #ffffff;
+  color: #5a6268 !important;
+  background: transparent;
+  border: 2px solid rgba(90, 98, 104, 0.4);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
 }
 
 .bibtex-close-btn:hover {
-  background-color: #5a6268 !important;
-  transform: translateY(-1px);
+  background: #5a6268 !important;
+  color: #fff !important;
+  border-color: #5a6268;
+  transform: none;
 }
 
 /* 动画效果 */

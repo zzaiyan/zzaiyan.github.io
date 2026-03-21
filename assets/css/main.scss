@@ -57,7 +57,7 @@ $edu-box-padding: 1em;
     flex-wrap: wrap;
     border: 1px solid #e0e0e0;
     border-radius: 12px;
-    padding: $paper-box-padding;
+    padding: 1em 1em 1em 1.5em;
     margin-bottom: 1.2em;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     transition: box-shadow 0.3s ease, border-color 0.3s ease;
@@ -164,19 +164,20 @@ h1:before, .anchor:before {
     display: inline-flex;
     align-items: center;
     gap: 0.3em;
-    padding: 0.2em 0.65em;
+    padding: 0.2em 0.75em;
     font-size: 0.82em;
     color: $info-color !important;
     background: transparent;
-    border: 1px solid $info-color;
-    border-radius: 4px;
+    border: 2px solid rgba($info-color, 0.4);
+    border-radius: 999px;
     text-decoration: none !important;
-    transition: background 0.2s, color 0.2s;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
     white-space: nowrap;
 
     &:hover {
         background: $info-color;
         color: #fff !important;
+        border-color: $info-color;
         text-decoration: none !important;
     }
 
