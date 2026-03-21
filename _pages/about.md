@@ -46,25 +46,6 @@ redirect_from:
 <!-- 显示总引用量徽章 -->
 <!-- <a href='https://scholar.google.com/citations?user=ZpxXejIAAAAJ'><img src="https://img.shields.io/endpoint?logo=Google%20Scholar&url=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2Fzzaiyan%2Fzzaiyan.github.io@google-scholar-stats%2Fgs_data_shieldsio.json&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a> -->
 
-## Preprints
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='https://arxiv.org/html/2601.12052v1/x1.png' alt="sym"></div></div>
-<div class='paper-box-text' markdown="1">
-
-[**Task-Driven Prompt Learning: A Joint Framework for Multi-modal Cloud Removal and Segmentation**](https://arxiv.org/abs/2601.12052)
-
-**<u>Zaiyan Zhang</u>**, Jie Li, Shaowei Shi, Qiangqiang Yuan
-
-<!-- _IEEE International Geoscience and Remote Sensing Symposium_ **(IGARSS)**, 2026 -->
-
-Optical-SAR Fusion, Cloud Removal
-<span class="show_paper_citations" data="ZpxXejIAAAAJ:d1gkVwhDpl0C"></span>
-
-[[PDF]](https://arxiv.org/pdf/2601.12052),  [[arXiv]](https://arxiv.org/abs/2601.12052), [[Code]](#to-do), [[BibTeX]](#bibtex-zhang2026task)
-
-</div>
-</div>
-
 ## Journal Papers
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">IEEE TGRS</div><img src='https://arxiv.org/html/2406.13358v2/x2.png' alt="sym"></div></div>
@@ -76,14 +57,31 @@ Optical-SAR Fusion, Cloud Removal
 
 _IEEE Transactions on Geoscience and Remote Sensing_ **(IEEE TGRS)**, 2025
 
-中科院一区 Top, IF=8.6, Multi-Temporal Image Inpainting <span class="show_paper_citations" data="ZpxXejIAAAAJ:u-x6o8ySG0sC"></span>
+中科院一区 Top, IF=8.6 \| Multi-Temporal Image Inpainting <span class="show_paper_citations" data="ZpxXejIAAAAJ:u-x6o8ySG0sC"></span>
 
 [[PDF]](pubs/ms2tan.pdf), [[arXiv]](https://arxiv.org/abs/2406.13358), [[Code]](https://github.com/CUG-BEODL/MS2TAN), [[BibTeX]](#bibtex-zhang2024multi)
 
 </div>
 </div>
 
-<!-- ## Conference Papers -->
+## Conference Papers
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">IGARSS 2026</div><img src='https://arxiv.org/html/2601.12052v1/x1.png' alt="sym"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[**Task-Driven Prompt Learning: A Joint Framework for Multi-modal Cloud Removal and Segmentation**](https://arxiv.org/abs/2601.12052)
+
+**<u>Zaiyan Zhang</u>**, Jie Li, Shaowei Shi, Qiangqiang Yuan
+
+_IEEE International Geoscience and Remote Sensing Symposium_ **(IGARSS)**, 2026
+
+Optical-SAR Fusion, Cloud Removal
+<span class="show_paper_citations" data="ZpxXejIAAAAJ:d1gkVwhDpl0C"></span>
+
+[[PDF]](https://arxiv.org/pdf/2601.12052),  [[arXiv]](https://arxiv.org/abs/2601.12052), [[BibTeX]](#bibtex-zhang2026task)
+
+</div>
+</div>
 
 ## Patents
 
