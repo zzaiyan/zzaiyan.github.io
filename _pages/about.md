@@ -19,7 +19,7 @@ redirect_from:
 
 <div class="lang-en" markdown="1">
 
-👋 Hi there! I am Zaiyan Zhang (张再筵), currently pursuing an M.E. degree in Photogrammetry and Remote Sensing (摄影测量与遥感) at [Wuhan University (武汉大学)](https://www.whu.edu.cn/) under the direction of Prof. [Qiangqiang Yuan](https://scholar.google.com/citations?user=aItnA-sAAAAJ) and A.P. [Jie Li](https://scholar.google.com/citations?user=W4VvnDMAAAAJ). Prior to this, I obtained a B.E. degree in Data Science and Big Data Technology (数据科学与大数据技术) at [China University of Geosciences (中国地质大学)](https://www.cug.edu.cn/) in 2025 <a href='https://scholar.google.com/citations?user=ZpxXejIAAAAJ'><img src="https://img.shields.io/endpoint?logo=Google%20Scholar&url={{ url | url_encode }}&labelColor=f6f6f6&color=9cf&style=flat&label=citations" style="vertical-align:middle;margin-left:8px;"></a>.
+👋 Hi there! I am Zaiyan Zhang (张再筵), currently pursuing an M.E. degree in Photogrammetry and Remote Sensing (摄影测量与遥感) at [Wuhan University (武汉大学)](https://www.whu.edu.cn/) under the direction of Prof. [Qiangqiang Yuan](https://scholar.google.com/citations?user=aItnA-sAAAAJ), [Jie Li](https://scholar.google.com/citations?user=W4VvnDMAAAAJ) and [Liangpei Zhang](https://scholar.google.com/citations?user=yFEl8hcAAAAJ). Prior to this, I obtained a B.E. degree in Data Science and Big Data Technology (数据科学与大数据技术) at [China University of Geosciences (中国地质大学)](https://www.cug.edu.cn/) in 2025 <a href='https://scholar.google.com/citations?user=ZpxXejIAAAAJ'><img src="https://img.shields.io/endpoint?logo=Google%20Scholar&url={{ url | url_encode }}&labelColor=f6f6f6&color=9cf&style=flat&label=citations" style="vertical-align:middle;margin-left:8px;"></a>.
 
 🔬 My research focuses on Computer Vision in Remote Sensing:
 
@@ -33,9 +33,9 @@ redirect_from:
 
 <div class="lang-zh" markdown="1">
 
-👋 大家好！我是张再筵，目前在[武汉大学](https://www.whu.edu.cn/)攻读摄影测量与遥感专业硕士学位，导师为[袁强强](https://scholar.google.com/citations?user=aItnA-sAAAAJ) 教授和[李杰](https://scholar.google.com/citations?user=W4VvnDMAAAAJ) 副教授。此前，我于2025年在[中国地质大学（武汉）](https://www.cug.edu.cn/)获得数据科学与大数据技术专业学士学位 <a href='https://scholar.google.com/citations?user=ZpxXejIAAAAJ'><img src="https://img.shields.io/endpoint?logo=Google%20Scholar&url={{ url | url_encode }}&labelColor=f6f6f6&color=9cf&style=flat&label=citations" style="vertical-align:middle;margin-left:8px;"></a>。
+👋 大家好！我是张再筵，目前在[武汉大学](https://www.whu.edu.cn/)攻读摄影测量与遥感专业硕士学位，导师为[袁强强](https://scholar.google.com/citations?user=aItnA-sAAAAJ)、[李杰](https://scholar.google.com/citations?user=W4VvnDMAAAAJ)与[张良培](https://scholar.google.com/citations?user=yFEl8hcAAAAJ)教授。此前，我于2025年在[中国地质大学（武汉）](https://www.cug.edu.cn/)获得数据科学与大数据技术专业学士学位 <a href='https://scholar.google.com/citations?user=ZpxXejIAAAAJ'><img src="https://img.shields.io/endpoint?logo=Google%20Scholar&url={{ url | url_encode }}&labelColor=f6f6f6&color=9cf&style=flat&label=citations" style="vertical-align:middle;margin-left:8px;"></a>。
 
-🔬 我的研究方向聚焦于遥感中的计算机视觉：
+🔬 我的研究聚焦于遥感中的计算机视觉：
 
 - **<span style="color: #915fddff;">遥感底层视觉</span>**：去云、去雾、去模糊、通用图像复原。
 - **<span style="color: #4874dbff;">遥感基础模型</span>**：多模态基础模型、底层与高层任务协同。
