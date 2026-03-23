@@ -267,21 +267,7 @@ html:not([data-lang]) .lang-zh {
     display: none !important;
 }
 
-// Masthead toolbar (lang + theme toggles)
-.masthead__toolbar {
-    display: flex;
-    align-items: center;
-    gap: 0.4em;
-    position: absolute;
-    right: 2.8em; // leave room for hamburger on small screens
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 25;
-
-    @include breakpoint($large) {
-        right: 0.5em; // no hamburger on large screens
-    }
-}
+// Toolbar buttons inside greedy-nav toggle-wrap inherit layout from _navigation.scss
 
 .toolbar-btn {
     cursor: pointer;
@@ -331,6 +317,15 @@ html[data-theme="dark"] {
         &:hover {
             background: #7ab0e6;
             color: #181818;
+        }
+    }
+
+    .greedy-nav__toggle {
+        background: rgba(255, 255, 255, 0.1) !important;
+        color: #ccc;
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.2) !important;
         }
     }
 

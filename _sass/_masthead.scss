@@ -70,10 +70,16 @@
   background: transparent !important;
 }
 
-/* Button with semi-transparent background */
-.masthead .greedy-nav button {
-  background: rgba(33, 33, 33, 0.2) !important;
-  // border: 1px solid rgba(0, 0, 0, 0.1);
+/* Hamburger toggle */
+.masthead .greedy-nav__toggle {
+  background: rgba(33, 33, 33, 0.1) !important;
+  color: #555;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+
+  &:hover {
+    background: rgba(33, 33, 33, 0.22) !important;
+  }
 }
 
 /* Hidden links dropdown with semi-transparent background */
