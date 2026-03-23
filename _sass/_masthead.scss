@@ -71,21 +71,9 @@
   background: transparent !important;
 }
 
-/* Hamburger toggle button */
-.masthead .greedy-nav button {
-  background: rgba(33, 33, 33, 0.1) !important;
-  border-radius: 6px;
-  transition: background 0.2s;
-
-  .navicon,
-  .navicon:before,
-  .navicon:after {
-    background: #555;
-  }
-
-  &:hover {
-    background: rgba(33, 33, 33, 0.22) !important;
-  }
+/* More dropdown button */
+.masthead .greedy-nav__more {
+  color: #555;
 }
 
 /* Hidden links dropdown with semi-transparent background */

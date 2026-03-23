@@ -327,17 +327,11 @@ html[data-theme="dark"] {
         }
     }
 
-    .greedy-nav button {
-        background: rgba(255, 255, 255, 0.1) !important;
-
-        .navicon,
-        .navicon:before,
-        .navicon:after {
-            background: #ccc;
-        }
+    .greedy-nav__more {
+        color: #aaa;
 
         &:hover {
-            background: rgba(255, 255, 255, 0.2) !important;
+            color: #fff;
         }
     }
 

@@ -6,7 +6,7 @@
     document.documentElement.setAttribute("data-lang", lang);
     localStorage.setItem(LANG_KEY, lang);
     var btn = document.getElementById("lang-toggle");
-    if (btn) btn.textContent = lang === "en" ? "中文" : "EN";
+    if (btn) btn.textContent = lang === "en" ? "EN" : "中文";
     // Recalculate greedy-nav after text width changes
     if (window.resetGreedyNav) window.resetGreedyNav();
   }
@@ -32,8 +32,8 @@
     if (btn) {
       btn.innerHTML =
         theme === "dark"
-          ? '<i class="fas fa-sun"></i>'
-          : '<i class="fas fa-moon"></i>';
+          ? '<i class="fas fa-moon"></i>'
+          : '<i class="fas fa-sun"></i>';
     }
   }
 

@@ -6,16 +6,15 @@
  */
 
 var $nav = $("#site-nav");
-var $btn = $("#site-nav button");
-var $vlinks = $("#site-nav .visible-links");
-var $hlinks = $("#site-nav .hidden-links");
+var $btn = $nav.find(".greedy-nav__more");
+var $vlinks = $nav.find(".visible-links");
+var $hlinks = $nav.find(".hidden-links");
 
 var breaks = [];
 
 function updateNav() {
-  var availableSpace = $btn.hasClass("hidden")
-    ? $nav.width()
-    : $nav.width() - $btn.width() - 30;
+  var btnWidth = $btn.hasClass("hidden") ? 0 : ($btn.outerWidth(true) || 0);
+  var availableSpace = $nav.width() - btnWidth;
 
   // The visible list is overflowing the nav
   if ($vlinks.width() > availableSpace) {
@@ -41,7 +40,7 @@ function updateNav() {
 
     // Hide the dropdown btn if hidden list is empty
     if (breaks.length < 1) {
-      $btn.addClass("hidden");
+      $btn.addClass("hidden").removeClass("open");
       $hlinks.addClass("hidden");
     }
   }
@@ -61,9 +60,8 @@ window.resetGreedyNav = function () {
     $hlinks.children().first().appendTo($vlinks);
   }
   breaks = [];
-  $btn.addClass("hidden");
+  $btn.addClass("hidden").removeClass("open");
   $hlinks.addClass("hidden");
-  $btn.removeClass("close");
   // Force reflow so CSS changes (e.g. lang switch) are reflected in width calculations
   void $nav[0].offsetWidth;
   updateNav();
@@ -77,7 +75,7 @@ $(window).resize(function () {
 
 $btn.on("click", function () {
   $hlinks.toggleClass("hidden");
-  $(this).toggleClass("close");
+  $(this).toggleClass("open");
 });
 
 updateNav();
