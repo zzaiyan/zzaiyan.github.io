@@ -174,7 +174,8 @@
 
 .greedy-nav {
   position: relative;
-  min-width: 250px;
+  flex: 1;
+  min-width: 0;
   background: $background-color;
 
   a {
@@ -189,30 +190,16 @@
     }
   }
 
-  .greedy-nav__toggle-wrap {
+  button {
     position: absolute;
-    right: 0;
-    top: 0;
     height: 100%;
-    display: flex;
-    align-items: center;
-    gap: 0.35em;
-    padding-left: 0.5em;
-  }
-
-  .greedy-nav__toggle {
-    padding: 0.35em 0.55em;
+    right: 0;
+    padding: 0 0.5rem;
     border: 0;
     outline: none;
     background-color: $primary-color;
     color: #fff;
     cursor: pointer;
-    border-radius: 6px;
-    font-size: 0.92em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 1;
   }
 
   .visible-links {

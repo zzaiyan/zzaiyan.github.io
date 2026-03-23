@@ -6,16 +6,16 @@
  */
 
 var $nav = $("#site-nav");
-var $btn = $nav.find(".greedy-nav__toggle");
-var $vlinks = $nav.find(".visible-links");
-var $hlinks = $nav.find(".hidden-links");
-var $toggleWrap = $nav.find(".greedy-nav__toggle-wrap");
+var $btn = $("#site-nav button");
+var $vlinks = $("#site-nav .visible-links");
+var $hlinks = $("#site-nav .hidden-links");
 
 var breaks = [];
 
 function updateNav() {
-  var toggleWrapWidth = $toggleWrap.outerWidth(true) || 0;
-  var availableSpace = $nav.width() - toggleWrapWidth - 10;
+  var availableSpace = $btn.hasClass("hidden")
+    ? $nav.width()
+    : $nav.width() - $btn.width() - 30;
 
   // The visible list is overflowing the nav
   if ($vlinks.width() > availableSpace) {
@@ -63,6 +63,7 @@ window.resetGreedyNav = function () {
   breaks = [];
   $btn.addClass("hidden");
   $hlinks.addClass("hidden");
+  $btn.removeClass("close");
   // Force reflow so CSS changes (e.g. lang switch) are reflected in width calculations
   void $nav[0].offsetWidth;
   updateNav();
@@ -77,13 +78,6 @@ $(window).resize(function () {
 $btn.on("click", function () {
   $hlinks.toggleClass("hidden");
   $(this).toggleClass("close");
-  // Toggle hamburger / close icon
-  var $icon = $(this).find("i");
-  if ($(this).hasClass("close")) {
-    $icon.removeClass("fa-bars").addClass("fa-times");
-  } else {
-    $icon.removeClass("fa-times").addClass("fa-bars");
-  }
 });
 
 updateNav();

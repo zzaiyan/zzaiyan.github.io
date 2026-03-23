@@ -2,6 +2,7 @@
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
+        <button><div class="navicon"></div></button>
         <ul class="visible-links">
           <li
             class="masthead__menu-item masthead__menu-item--lg masthead__menu-home-item"
@@ -14,13 +15,12 @@
           </li>
           {% endfor %}
         </ul>
-        <div class="greedy-nav__toggle-wrap">
-          <button class="greedy-nav__toggle hidden" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
-          <button id="theme-toggle" class="toolbar-btn" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
-          <button id="lang-toggle" class="toolbar-btn" aria-label="Switch language">EN</button>
-        </div>
         <ul class="hidden-links hidden"></ul>
       </nav>
+      <div class="masthead__toolbar">
+        <button id="theme-toggle" class="toolbar-btn" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+        <button id="lang-toggle" class="toolbar-btn" aria-label="Switch language">EN</button>
+      </div>
     </div>
   </div>
 </div>

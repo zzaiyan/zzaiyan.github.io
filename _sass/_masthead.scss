@@ -31,7 +31,8 @@
 }
 
 .masthead__menu {
-  position: relative;
+  display: flex;
+  align-items: center;
 
   ul {
     margin: 0;
@@ -70,12 +71,17 @@
   background: transparent !important;
 }
 
-/* Hamburger toggle */
-.masthead .greedy-nav__toggle {
+/* Hamburger toggle button */
+.masthead .greedy-nav button {
   background: rgba(33, 33, 33, 0.1) !important;
-  color: #555;
   border-radius: 6px;
-  transition: background 0.2s, color 0.2s;
+  transition: background 0.2s;
+
+  .navicon,
+  .navicon:before,
+  .navicon:after {
+    background: #555;
+  }
 
   &:hover {
     background: rgba(33, 33, 33, 0.22) !important;

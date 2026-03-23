@@ -267,7 +267,14 @@ html:not([data-lang]) .lang-zh {
     display: none !important;
 }
 
-// Toolbar buttons inside greedy-nav toggle-wrap inherit layout from _navigation.scss
+// Masthead toolbar (theme + lang toggle buttons)
+.masthead__toolbar {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    flex-shrink: 0;
+    padding-left: 0.4em;
+}
 
 .toolbar-btn {
     cursor: pointer;
@@ -320,9 +327,14 @@ html[data-theme="dark"] {
         }
     }
 
-    .greedy-nav__toggle {
+    .greedy-nav button {
         background: rgba(255, 255, 255, 0.1) !important;
-        color: #ccc;
+
+        .navicon,
+        .navicon:before,
+        .navicon:after {
+            background: #ccc;
+        }
 
         &:hover {
             background: rgba(255, 255, 255, 0.2) !important;
