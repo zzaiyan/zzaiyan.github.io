@@ -192,6 +192,11 @@
     }
   }
 
+  .greedy-nav__dropdown {
+    position: relative;
+    flex-shrink: 0;
+  }
+
   .greedy-nav__more {
     flex-shrink: 0;
     padding: 0.5rem 0;
@@ -270,6 +275,7 @@
   .hidden-links {
     position: absolute;
     top: 100%;
+    left: 0;
     margin-top: 5px;
     padding: 5px;
     border: 1px solid $border-color;

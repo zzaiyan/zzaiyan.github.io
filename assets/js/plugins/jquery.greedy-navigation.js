@@ -9,12 +9,14 @@ var $nav = $("#site-nav");
 var $btn = $nav.find(".greedy-nav__more");
 var $vlinks = $nav.find(".visible-links");
 var $hlinks = $nav.find(".hidden-links");
+var $dropdown = $nav.find(".greedy-nav__dropdown");
 
 var breaks = [];
 
 function updateNav() {
-  var btnWidth = $btn.hasClass("hidden") ? 0 : ($btn.outerWidth(true) || 0);
-  var availableSpace = $nav.width() - btnWidth;
+  // Recalculate dropdown width each call (visibility may have changed during recursion)
+  var dropdownWidth = $dropdown.hasClass("hidden") ? 0 : ($dropdown.outerWidth(true) || 0);
+  var availableSpace = $nav.width() - dropdownWidth;
 
   // The visible list is overflowing the nav
   if ($vlinks.width() > availableSpace) {
@@ -27,6 +29,10 @@ function updateNav() {
     // Show the dropdown btn
     if ($btn.hasClass("hidden")) {
       $btn.removeClass("hidden");
+      $dropdown.removeClass("hidden");
+      // Dropdown just became visible — recalculate with its actual width
+      dropdownWidth = $dropdown.outerWidth(true) || 0;
+      availableSpace = $nav.width() - dropdownWidth;
     }
 
     // The visible list is not overflowing
@@ -42,6 +48,7 @@ function updateNav() {
     if (breaks.length < 1) {
       $btn.addClass("hidden").removeClass("open");
       $hlinks.addClass("hidden");
+      $dropdown.addClass("hidden");
     }
   }
 
@@ -49,7 +56,7 @@ function updateNav() {
   $btn.attr("count", breaks.length);
 
   // Recur if the visible list is still overflowing the nav
-  if ($vlinks.width() > availableSpace) {
+  if ($vlinks.width() > ($nav.width() - (breaks.length > 0 ? ($dropdown.outerWidth(true) || 0) : 0))) {
     updateNav();
   }
 }
@@ -62,25 +69,31 @@ window.resetGreedyNav = function () {
   breaks = [];
   $btn.addClass("hidden").removeClass("open");
   $hlinks.addClass("hidden");
+  $dropdown.addClass("hidden");
   // Force reflow so CSS changes (e.g. lang switch) are reflected in width calculations
   void $nav[0].offsetWidth;
-  updateNav();
+  // Delay updateNav to next frame so layout from DOM changes (lang switch etc.) settles
+  requestAnimationFrame(function () {
+    updateNav();
+  });
 };
 
-// Window listeners
-
-$(window).resize(function () {
-  updateNav();
-});
+// Window / container resize listeners
+// ResizeObserver fires on maximize/restore and any container size change
+if (typeof ResizeObserver !== "undefined") {
+  new ResizeObserver(function () {
+    updateNav();
+  }).observe($nav[0]);
+} else {
+  // Fallback for older browsers
+  $(window).resize(function () {
+    updateNav();
+  });
+}
 
 $btn.on("click", function () {
   $hlinks.toggleClass("hidden");
   $(this).toggleClass("open");
-  // Position dropdown below the more button
-  if (!$hlinks.hasClass("hidden")) {
-    var btnLeft = $btn.position().left;
-    $hlinks.css("left", btnLeft + "px");
-  }
 });
 
 updateNav();
