@@ -310,6 +310,15 @@ html[data-theme="dark"] {
 
     .masthead .greedy-nav .hidden-links {
         background: rgba(30, 30, 30, 0.97) !important;
+        border-color: #444 !important;
+
+        &::before {
+            border-bottom-color: #444 !important;
+        }
+
+        &::after {
+            border-bottom-color: rgba(30, 30, 30, 0.97) !important;
+        }
     }
 
     .masthead .greedy-nav a,

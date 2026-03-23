@@ -275,14 +275,35 @@
   .hidden-links {
     position: absolute;
     top: 100%;
-    left: 0;
-    margin-top: 5px;
+    right: 0;
+    margin-top: 15px;
     padding: 5px;
     border: 1px solid $border-color;
     border-radius: $border-radius;
     background: #fff;
     box-shadow: 0 4px 12px rgba(#000, 0.15);
     z-index: 100;
+
+    // 小三角箭头，指向下拉按钮
+    &::before {
+      content: "";
+      position: absolute;
+      top: -8px;
+      right: 10px;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-bottom: 8px solid $border-color;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: -7px;
+      right: 11px;
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
+      border-bottom: 7px solid #fff;
+    }
 
     a {
       margin: 0;
