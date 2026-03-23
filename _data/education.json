@@ -4,19 +4,19 @@
         "url": "https://www.whu.edu.cn/",
         "image": "images/whu.png",
         "degree": "Master",
-        "degree_zh": "硕士",
+        "degree_zh": "工学硕士",
         "major": "Photogrammetry and Remote Sensing",
         "major_zh": "摄影测量与遥感",
         "period": "2025.09 - Present",
         "advisors": "Prof. [Qiangqiang Yuan](https://scholar.google.com/citations?user=aItnA-sAAAAJ), [Jie Li](https://scholar.google.com/citations?user=W4VvnDMAAAAJ) and [Liangpei Zhang](https://scholar.google.com/citations?user=yFEl8hcAAAAJ)",
-        "advisors_zh": "[袁强强](https://scholar.google.com/citations?user=aItnA-sAAAAJ)、[李杰](https://scholar.google.com/citations?user=W4VvnDMAAAAJ)与[张良培](https://scholar.google.com/citations?user=yFEl8hcAAAAJ)教授"
+        "advisors_zh": "[袁强强](https://scholar.google.com/citations?user=aItnA-sAAAAJ)、[李杰](https://scholar.google.com/citations?user=W4VvnDMAAAAJ)与[张良培](https://scholar.google.com/citations?user=yFEl8hcAAAAJ) 教授"
     },
     {
         "school": "China University of Geosciences | 中国地质大学",
         "url": "https://www.cug.edu.cn/",
         "image": "images/cug.jpg",
         "degree": "Bachelor",
-        "degree_zh": "学士",
+        "degree_zh": "工学学士",
         "major": "Data Science and Big Data Technology",
         "major_zh": "数据科学与大数据技术",
         "period": "2021.09 - 2025.06",
