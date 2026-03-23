@@ -194,14 +194,14 @@
 
   .greedy-nav__more {
     flex-shrink: 0;
-    padding: 0.25em 0.5em;
-    margin-left: 0.15em;
+    padding: 0.5rem 0;
+    margin: 0 1rem;
     border: 0;
     outline: none;
     background: transparent;
     color: $masthead-link-color;
     cursor: pointer;
-    font-size: 0.88em;
+    font-size: 1em;
     line-height: 1;
     transition: color 0.2s;
 
@@ -270,7 +270,6 @@
   .hidden-links {
     position: absolute;
     top: 100%;
-    left: 0;
     margin-top: 5px;
     padding: 5px;
     border: 1px solid $border-color;

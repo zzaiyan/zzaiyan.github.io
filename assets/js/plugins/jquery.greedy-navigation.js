@@ -76,6 +76,11 @@ $(window).resize(function () {
 $btn.on("click", function () {
   $hlinks.toggleClass("hidden");
   $(this).toggleClass("open");
+  // Position dropdown below the more button
+  if (!$hlinks.hasClass("hidden")) {
+    var btnLeft = $btn.position().left;
+    $hlinks.css("left", btnLeft + "px");
+  }
 });
 
 updateNav();
