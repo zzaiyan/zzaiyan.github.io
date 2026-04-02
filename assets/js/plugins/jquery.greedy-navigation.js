@@ -15,7 +15,9 @@ var breaks = [];
 
 function updateNav() {
   // Recalculate dropdown width each call (visibility may have changed during recursion)
-  var dropdownWidth = $dropdown.hasClass("hidden") ? 0 : ($dropdown.outerWidth(true) || 0);
+  var dropdownWidth = $dropdown.hasClass("hidden")
+    ? 0
+    : $dropdown.outerWidth(true) || 0;
   var availableSpace = $nav.width() - dropdownWidth;
 
   // The visible list is overflowing the nav
@@ -56,7 +58,10 @@ function updateNav() {
   $btn.attr("count", breaks.length);
 
   // Recur if the visible list is still overflowing the nav
-  if ($vlinks.width() > ($nav.width() - (breaks.length > 0 ? ($dropdown.outerWidth(true) || 0) : 0))) {
+  if (
+    $vlinks.width() >
+    $nav.width() - (breaks.length > 0 ? $dropdown.outerWidth(true) || 0 : 0)
+  ) {
     updateNav();
   }
 }
