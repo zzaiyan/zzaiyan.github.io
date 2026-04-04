@@ -1,7 +1,27 @@
 {
     "journal": [
         {
-            "id": "zhang2024multi",
+            "id": "zhang2026ecrformer",
+            "title": "ECRformer: An efficient cloud removal Transformer with semantic-decoupled learning for multimodal satellite imagery",
+            "authors": "<strong><u>Zaiyan Zhang</u></strong>, Jie Li, Yuanqi Liang, Jining Yan, Yi Xiao, Xin Su, Qiangqiang Yuan",
+            "venue": "ISPRS Journal of Photogrammetry and Remote Sensing",
+            "venueShort": "ISPRS J P&RS",
+            "year": 2026,
+            "badge": "ISPRS J P&RS",
+            "image": "images/ecrformer.png",
+            "doi": "https://doi.org/10.1109/tgrs.2025.3574799",
+            "note": "中科院一区 Top, IF=12.2 | Cloud Removal, Multimodal Fusion",
+            "scholarId": "ZpxXejIAAAAJ:u-x6o8ySG0sC",
+            "links": [
+                {
+                    "name": "Code",
+                    "url": "https://github.com/zzaiyan/ECRformer"
+                }
+            ],
+            "bibtexKey": "zhang2026ecrformer"
+        },
+        {
+            "id": "zhang2025multi",
             "title": "Multiscale Restoration of Missing Data in Optical Time-series Images with Masked Spatial-Temporal Attention Network",
             "authors": "<strong><u>Zaiyan Zhang</u></strong>, Jining Yan, Yuanqi Liang, Jiaxin Feng, Haixu He, Li Cao",
             "venue": "IEEE Transactions on Geoscience and Remote Sensing",
@@ -26,7 +46,7 @@
                     "url": "https://github.com/CUG-BEODL/MS2TAN"
                 }
             ],
-            "bibtexKey": "zhang2024multi"
+            "bibtexKey": "zhang2025multi"
         }
     ],
     "conference": [

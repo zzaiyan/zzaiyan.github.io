@@ -1,14 +1,20 @@
 [
     {
+        "date": "2026.04",
+        "emoji": "🎉🎉",
+        "content": "One paper has been accepted by **ISPRS Journal of Photogrammetry and Remote Sensing (ISPRS J P&RS)**.",
+        "content_zh": "一篇论文被 **ISPRS摄影测量与遥感杂志 (ISPRS J P&RS)** 录用。"
+    },
+    {
         "date": "2026.03",
         "emoji": "🎉🎉",
-        "content": "One paper was accepted by **IEEE International Geoscience and Remote Sensing Symposium (IGARSS 2026)**.",
+        "content": "One paper has been accepted by **IEEE International Geoscience and Remote Sensing Symposium (IGARSS 2026)**.",
         "content_zh": "一篇论文被 **IEEE国际地球科学与遥感会议 (IGARSS 2026)** 录用。"
     },
     {
         "date": "2026.01",
         "emoji": "🎉🎉",
-        "content": "One co-authored paper was accepted by **International Society for Photogrammetry and Remote Sensing Congress (ISPRS 2026)**.",
+        "content": "One co-authored paper has been accepted by **International Society for Photogrammetry and Remote Sensing Congress (ISPRS 2026)**.",
         "content_zh": "一篇合作论文被 **国际摄影测量与遥感学会大会 (ISPRS 2026)** 录用。"
     },
     {
@@ -19,7 +25,7 @@
     {
         "date": "2025.05",
         "emoji": "🎉🎉",
-        "content": "One paper was accepted by **IEEE Transactions on Geoscience and Remote Sensing (TGRS)**.",
+        "content": "One paper has been accepted by **IEEE Transactions on Geoscience and Remote Sensing (TGRS)**.",
         "content_zh": "一篇论文被 **IEEE Transactions on Geoscience and Remote Sensing (TGRS)** 录用。"
     },
     {
