@@ -5,12 +5,12 @@
             "title": "ECRformer: An efficient cloud removal Transformer with semantic-decoupled learning for multimodal satellite imagery",
             "authors": "<strong><u>Zaiyan Zhang</u></strong>, Jie Li, Yuanqi Liang, Jining Yan, Yi Xiao, Xin Su, Qiangqiang Yuan",
             "venue": "ISPRS Journal of Photogrammetry and Remote Sensing",
-            "venueShort": "ISPRS J P&RS",
+            "venueShort": "ISPRS J PRS",
             "year": 2026,
-            "badge": "ISPRS J P&RS",
+            "badge": "ISPRS J PRS",
             "image": "images/ecrformer.png",
             "doi": "https://doi.org/10.1109/tgrs.2025.3574799",
-            "note": "中科院一区 Top, IF=12.2 | Cloud Removal, Multimodal Fusion",
+            "note": "Cloud Removal, Multimodal Fusion",
             "scholarId": "ZpxXejIAAAAJ:u-x6o8ySG0sC",
             "links": [
                 {
@@ -30,7 +30,7 @@
             "badge": "IEEE TGRS",
             "image": "https://arxiv.org/html/2406.13358v2/x2.png",
             "doi": "https://doi.org/10.1109/tgrs.2025.3574799",
-            "note": "中科院一区 Top, IF=8.6 | Multi-Temporal Image Inpainting",
+            "note": "Multi-Temporal Image Inpainting",
             "scholarId": "ZpxXejIAAAAJ:u-x6o8ySG0sC",
             "links": [
                 {

@@ -16,15 +16,9 @@ main:
     title_zh: "教育"
     url: "/#education"
 
-  - title: "Honors and Awards"
+  - title: "Honors"
     title_zh: "荣誉奖项"
-    url: "/#honors-and-awards"
-
-  # - title: "Invited Talks"
-  #   url: "/#-invited-talks"
-
-  # - title: "Internships"
-  #   url: "/#-internships"
+    url: "/#honors"
 
   - title: "Services"
     title_zh: "学术服务"

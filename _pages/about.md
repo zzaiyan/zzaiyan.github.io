@@ -67,7 +67,7 @@ redirect_from:
 <!-- 备选Emoji：🎖🏅💎🏆 -->
 
 # <span class="lang-en">🏅 Honors and Awards</span><span class="lang-zh">🏅 荣誉奖项</span>
-{: #honors-and-awards}
+{: #honors}
 
 {% include honors.html %}
 

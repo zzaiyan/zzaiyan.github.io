@@ -33,7 +33,7 @@ _{{ pub.venue }}_, {{ pub.year }}
 
 _{{ pub.venue }}_ **({{ pub.venueShort }})**, {{ pub.year }}
 
-{{ pub.note | replace: "|", "&#124;" }}{% if pub.scholarId %} <span class="show_paper_citations" data="{{ pub.scholarId }}"></span>{% endif %}
+{% assign venue_info = site.data.venues[pub.venueShort] %}{% if venue_info %}{{ venue_info.rank }}, IF={{ venue_info.IF }}{% if pub.note %} &#124; {% endif %}{% endif %}{{ pub.note | replace: "|", "&#124;" }}{% if pub.scholarId %} <span class="show_paper_citations" data="{{ pub.scholarId }}"></span>{% endif %}
 
 <div class="pub-links">{% for link in pub.links %}<a class="pub-btn" href="{{ link.url }}">{% if link.url contains 'github.com' %}<i class="fab fa-github"></i>{% elsif link.name == 'PDF' %}<i class="fas fa-file-pdf"></i>{% elsif link.name == 'arXiv' %}<i class="ai ai-arxiv"></i>{% else %}<i class="fas fa-link"></i>{% endif %} {{ link.name }}</a>{% endfor %}{% if pub.bibtexKey %}<a class="pub-btn" href="#bibtex-{{ pub.bibtexKey }}"><i class="fas fa-quote-right"></i> BibTeX</a>{% endif %}</div>
 
@@ -55,7 +55,7 @@ _{{ pub.venue }}_ **({{ pub.venueShort }})**, {{ pub.year }}
 
 _{{ pub.venue }}_ **({{ pub.venueShort }})**, {{ pub.year }}
 
-{{ pub.note | replace: "|", "&#124;" }}{% if pub.scholarId %} <span class="show_paper_citations" data="{{ pub.scholarId }}"></span>{% endif %}
+{% assign venue_info = site.data.venues[pub.venueShort] %}{% if venue_info %}{{ venue_info.rank }}, IF={{ venue_info.IF }}{% if pub.note %} &#124; {% endif %}{% endif %}{{ pub.note | replace: "|", "&#124;" }}{% if pub.scholarId %} <span class="show_paper_citations" data="{{ pub.scholarId }}"></span>{% endif %}
 
 <div class="pub-links">{% for link in pub.links %}<a class="pub-btn" href="{{ link.url }}">{% if link.url contains 'github.com' %}<i class="fab fa-github"></i>{% elsif link.name == 'PDF' %}<i class="fas fa-file-pdf"></i>{% elsif link.name == 'arXiv' %}<i class="ai ai-arxiv"></i>{% else %}<i class="fas fa-link"></i>{% endif %} {{ link.name }}</a>{% endfor %}{% if pub.bibtexKey %}<a class="pub-btn" href="#bibtex-{{ pub.bibtexKey }}"><i class="fas fa-quote-right"></i> BibTeX</a>{% endif %}</div>
 
