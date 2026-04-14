@@ -1,54 +1,39 @@
 (function () {
   /* ── Language toggle ── */
-  var LANG_KEY = "preferred-lang";
-
   function setLang(lang) {
     document.documentElement.setAttribute("data-lang", lang);
-    localStorage.setItem(LANG_KEY, lang);
     var btn = document.getElementById("lang-toggle");
-    if (btn) btn.textContent = lang === "en" ? "EN" : "中文";
+    // Show target state: when EN is active → button says 中文 (to switch to Chinese), and vice versa
+    if (btn) btn.textContent = lang === "en" ? "中文" : "EN";
     // Recalculate greedy-nav after text width changes
     if (window.resetGreedyNav) window.resetGreedyNav();
   }
 
-  function getPreferredLang() {
-    return (
-      localStorage.getItem(LANG_KEY) ||
-      (navigator.language.startsWith("zh") ? "zh" : "en")
-    );
-  }
-
   if (!document.documentElement.getAttribute("data-lang")) {
-    document.documentElement.setAttribute("data-lang", getPreferredLang());
+    document.documentElement.setAttribute("data-lang", "en");
   }
 
   /* ── Theme toggle ── */
-  var THEME_KEY = "preferred-theme";
-
   function setTheme(theme) {
     document.documentElement.setAttribute("data-theme", theme);
-    localStorage.setItem(THEME_KEY, theme);
     var btn = document.getElementById("theme-toggle");
     if (btn) {
+      // Show target state: when light → show moon (to switch to dark), when dark → show sun (to switch to light)
       btn.innerHTML =
         theme === "dark"
-          ? '<i class="fas fa-moon"></i>'
-          : '<i class="fas fa-sun"></i>';
+          ? '<i class="fas fa-sun"></i>'
+          : '<i class="fas fa-moon"></i>';
     }
   }
 
-  function getPreferredTheme() {
-    return localStorage.getItem(THEME_KEY) || "light";
-  }
-
   if (!document.documentElement.getAttribute("data-theme")) {
-    document.documentElement.setAttribute("data-theme", getPreferredTheme());
+    document.documentElement.setAttribute("data-theme", "light");
   }
 
   /* ── DOMContentLoaded ── */
   document.addEventListener("DOMContentLoaded", function () {
-    setLang(getPreferredLang());
-    setTheme(getPreferredTheme());
+    setLang("en");
+    setTheme("light");
 
     var langBtn = document.getElementById("lang-toggle");
     if (langBtn) {
