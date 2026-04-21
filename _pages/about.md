@@ -80,13 +80,17 @@ redirect_from:
 
 <div class="lang-en" markdown="1">
 
+- **Reviewer** of IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI).
+- **Reviewer** of IEEE Transactions on Geoscience and Remote Sensing (TGRS).
 - **Program Committee** of AAAI Conference on Artificial Intelligence.
 
 </div>
 
 <div class="lang-zh" markdown="1">
 
-- AAAI 人工智能大会 **程序委员会** 成员。
+- IEEE 模式分析与机器智能汇刊 (TPAMI) **审稿人**。
+- IEEE 地球科学与遥感汇刊 (TGRS) **审稿人**。
+- AAAI 人工智能大会 **程序委员会**。
 
 </div>
 
