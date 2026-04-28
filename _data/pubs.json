@@ -9,10 +9,14 @@
             "year": 2026,
             "badge": "ISPRS J PRS",
             "image": "images/ecrformer.png",
-            "doi": null,
+            "doi": "https://doi.org/10.1016/j.isprsjprs.2026.04.009",
             "note": "Cloud Removal, Multimodal Fusion",
             "scholarId": "ZpxXejIAAAAJ:u-x6o8ySG0sC",
             "links": [
+                {
+                    "name": "PDF",
+                    "url": "assets/pubs/ecrformer.pdf"
+                },
                 {
                     "name": "Code",
                     "url": "https://github.com/zzaiyan/ECRformer"

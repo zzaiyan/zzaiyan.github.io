@@ -35,7 +35,7 @@ redirect_from:
 
 <div class="lang-zh" markdown="1">
 
-👋 大家好！我是张再筵，目前在[武汉大学](https://www.whu.edu.cn/)攻读摄影测量与遥感专业硕士学位，师从[袁强强](https://scholar.google.com/citations?user=aItnA-sAAAAJ)、[李杰](https://scholar.google.com/citations?user=W4VvnDMAAAAJ)与[张良培](https://scholar.google.com/citations?user=yFEl8hcAAAAJ)教授。此前，我于2025年在[中国地质大学（武汉）](https://www.cug.edu.cn/)获得数据科学与大数据技术专业学士学位 <a href='https://scholar.google.com/citations?user=ZpxXejIAAAAJ'><img src="https://img.shields.io/endpoint?logo=Google%20Scholar&url={{ url | url_encode }}&labelColor=f6f6f6&color=9cf&style=flat&label=citations" style="vertical-align:middle;margin-left:8px;"></a>。
+👋 大家好！我是张再筵，目前在[武汉大学](https://www.whu.edu.cn/)攻读摄影测量与遥感专业硕士学位，师从[袁强强](https://scholar.google.com/citations?user=aItnA-sAAAAJ)、[李杰](https://scholar.google.com/citations?user=W4VvnDMAAAAJ)与[张良培](https://scholar.google.com/citations?user=yFEl8hcAAAAJ)教授。此前，我于2025年在[中国地质大学（武汉）](https://www.cug.edu.cn/)获得数据科学与大数据技术专业学士学位。
 
 🔬 我的研究聚焦于遥感中的计算机视觉：
 
