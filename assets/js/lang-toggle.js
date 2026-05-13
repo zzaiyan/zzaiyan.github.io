@@ -9,10 +9,6 @@
     if (window.resetGreedyNav) window.resetGreedyNav();
   }
 
-  if (!document.documentElement.getAttribute("data-lang")) {
-    document.documentElement.setAttribute("data-lang", "en");
-  }
-
   /* ── Theme toggle ── */
   function setTheme(theme) {
     document.documentElement.setAttribute("data-theme", theme);
@@ -26,15 +22,8 @@
     }
   }
 
-  if (!document.documentElement.getAttribute("data-theme")) {
-    document.documentElement.setAttribute("data-theme", "light");
-  }
-
   /* ── DOMContentLoaded ── */
   document.addEventListener("DOMContentLoaded", function () {
-    setLang("en");
-    setTheme("light");
-
     var langBtn = document.getElementById("lang-toggle");
     if (langBtn) {
       langBtn.addEventListener("click", function () {
