@@ -16,6 +16,7 @@ It supports **bilingual (EN / ZH) switching** and **dark / light theme toggling*
 │   ├── news.json            # News items (with content_zh bilingual field)
 │   ├── education.json       # Education history (with degree_zh / major_zh bilingual fields)
 │   ├── honors.json          # Honors & awards
+│   ├── venues.json          # Journal/conference rankings & IF
 │   └── navigation.yml       # Nav menu (with title_zh bilingual field)
 ├── _layouts/
 │   └── default.html         # Page layout template
@@ -61,6 +62,7 @@ All content sections are defined by JSON files in `_data/`. Liquid templates in 
 | News | `_data/news.json` | `_includes/news.html` |
 | Education | `_data/education.json` | `_includes/education.html` |
 | Honors | `_data/honors.json` | `_includes/honors.html` |
+| Venues | `_data/venues.json` | Referenced in `_includes/publications.html` |
 
 ## Data File Formats
 
@@ -166,6 +168,23 @@ Markdown syntax supported.
   { "year": "2023", "content": "**National Scholarship** | **国家奖学金**" },
   { "year": "2023", "content": "**Huawei Scholarship** [[link]](url)" }
 ]
+```
+
+### _data/venues.json — Journal/Conference Rankings
+
+Each key is the venue abbreviation used in `venueShort` field of `pubs.json`. The rank and IF are displayed inline in journal/conference paper entries.
+
+```json
+{
+  "ISPRS J PRS": {
+    "rank": "中科院一区 Top",
+    "IF": 12.2
+  },
+  "IEEE TGRS": {
+    "rank": "中科院一区 Top",
+    "IF": 8.6
+  }
+}
 ```
 
 ### _data/navigation.yml — Navigation Menu

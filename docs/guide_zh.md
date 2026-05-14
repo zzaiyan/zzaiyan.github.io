@@ -15,6 +15,7 @@
 │   ├── news.json            # 新闻动态（含 content_zh 双语字段）
 │   ├── education.json       # 教育经历（含 degree_zh/major_zh 等双语字段）
 │   ├── honors.json          # 荣誉奖项
+│   ├── venues.json          # 期刊/会议分区与影响因子
 │   └── navigation.yml       # 导航菜单（含 title_zh 双语字段）
 ├── _layouts/
 │   └── default.html         # 页面布局模板
@@ -60,6 +61,7 @@
 | 新闻 | `_data/news.json` | `_includes/news.html` |
 | 教育 | `_data/education.json` | `_includes/education.html` |
 | 荣誉 | `_data/honors.json` | `_includes/honors.html` |
+| 期刊分区 | `_data/venues.json` | `_includes/publications.html` 中引用 |
 
 ## 各数据文件格式
 
@@ -165,6 +167,23 @@ key 必须与 `pubs.json` 中的 `bibtexKey` 一致。
   { "year": "2023", "content": "**National Scholarship** | **国家奖学金**" },
   { "year": "2023", "content": "**Huawei Scholarship** [[link]](url)" }
 ]
+```
+
+### _data/venues.json — 期刊/会议分区
+
+每个 key 为 `pubs.json` 中 `venueShort` 字段对应的缩写，分区和影响因子会显示在期刊/会议论文条目中。
+
+```json
+{
+  "ISPRS J PRS": {
+    "rank": "中科院一区 Top",
+    "IF": 12.2
+  },
+  "IEEE TGRS": {
+    "rank": "中科院一区 Top",
+    "IF": 8.6
+  }
+}
 ```
 
 ### _data/navigation.yml — 导航菜单
