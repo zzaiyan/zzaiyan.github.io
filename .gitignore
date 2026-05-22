@@ -1,3 +1,8 @@
 _site/
 push.sh
 .DS_Store
+
+# AI config files
+.claude/
+.codex/
+.copilot/
