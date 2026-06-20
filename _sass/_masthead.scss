@@ -5,10 +5,41 @@
 .masthead {
   position: sticky;
   top: 0;
-  background: linear-gradient(90deg, #f6f0ff, #f0fff8, #fff7f0) !important;
-  border-bottom: none;
-  box-shadow: none;
+  overflow: hidden;
+  isolation: isolate;
+  background: rgba(255, 255, 255, 0.18) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(1.55);
+  backdrop-filter: blur(24px) saturate(1.55);
+  border-bottom: 0;
+  box-shadow: 0 4px 12px rgba(31, 45, 61, 0.12), inset 0 0 rgba(31, 45, 61, 0.08);
   z-index: 20;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  &::before {
+    inset: -120% -30%;
+    z-index: -2;
+    background:
+      radial-gradient(circle at 12% 35%, rgba(154, 123, 255, 0.38), transparent 28%),
+      radial-gradient(circle at 45% 18%, rgba(90, 210, 255, 0.34), transparent 30%),
+      radial-gradient(circle at 72% 45%, rgba(96, 226, 170, 0.34), transparent 28%),
+      radial-gradient(circle at 90% 24%, rgba(255, 190, 118, 0.34), transparent 26%);
+    background-size: 220% 220%;
+    filter: blur(12px);
+    opacity: 0.64;
+    animation: masthead-aurora 6s ease-in-out infinite alternate;
+  }
+
+  &::after {
+    z-index: -1;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.22), transparent 65%);
+  }
 
   &__inner-wrap {
     @include container;
@@ -30,6 +61,29 @@
   }
 }
 
+@keyframes masthead-aurora {
+  0% {
+    transform: translate3d(-6%, -4%, 0) scale(1);
+    background-position: 0% 35%;
+  }
+
+  50% {
+    transform: translate3d(6%, 4%, 0) scale(1.08);
+    background-position: 100% 60%;
+  }
+
+  100% {
+    transform: translate3d(-2%, 6%, 0) scale(1.04);
+    background-position: 30% 80%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .masthead::before {
+    animation: none;
+  }
+}
+
 .masthead__menu {
   display: flex;
   align-items: center;
@@ -46,6 +100,7 @@
   @include breakpoint($medium) {
     display: block !important;
   }
+
   display: none !important;
 }
 
@@ -83,7 +138,7 @@
   &::after {
     border-bottom-color: rgba(255, 255, 255, 0.95) !important;
   }
-  
+
   a:hover {
     background: rgba(0, 0, 0, 0.05) !important;
   }
