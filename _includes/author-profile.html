@@ -212,6 +212,12 @@ endif %}
           ><i class="fas fa-fw fa-graduation-cap"></i> <span class="lang-en">Google Scholar</span><span class="lang-zh">谷歌学术</span></a
         >
       </li>
+      {% endif %} {% if author.blog %}
+      <li>
+        <a href="{{ author.blog }}"
+          ><i class="fas fa-fw fa-rss" aria-hidden="true"></i> <span class="lang-en">Blog</span><span class="lang-zh">博客</span></a
+        >
+      </li>
       {% endif %} {% if author.pubmed %}
       <li>
         <a href="{{ author.pubmed }}"
@@ -347,6 +353,10 @@ endif %}
       {% endif %} {% if author.googlescholar %}
       <a href="{{ author.googlescholar }}"
         ><i class="fas fa-fw fa-graduation-cap"></i
+      ></a>
+      {% endif %} {% if author.blog %}
+      <a href="{{ author.blog }}"
+        ><i class="fas fa-fw fa-rss" aria-hidden="true"></i
       ></a>
       {% endif %} {% if author.pubmed %}
       <a href="{{ author.pubmed }}"
