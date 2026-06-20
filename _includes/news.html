@@ -1,3 +1,10 @@
+<ol class="news-timeline">
 {% for item in site.data.news %}
-- _{{ item.date }}_:&ensp;{% if item.emoji %}{{ item.emoji }} {% endif %}<span class="lang-en">{{ item.content | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip }}</span>{% if item.content_zh %}<span class="lang-zh">{{ item.content_zh | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip }}</span>{% else %}<span class="lang-zh">{{ item.content | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip }}</span>{% endif %}
+  <li class="news-timeline__item">
+    <time class="news-timeline__date">{{ item.date }}</time>
+    <div class="news-timeline__content">
+      {% if item.emoji %}<span class="news-timeline__emoji">{{ item.emoji }}</span>{% endif %}<span class="lang-en">{{ item.content | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip }}</span>{% if item.content_zh %}<span class="lang-zh">{{ item.content_zh | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip }}</span>{% else %}<span class="lang-zh">{{ item.content | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip }}</span>{% endif %}
+    </div>
+  </li>
 {% endfor %}
+</ol>
