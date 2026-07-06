@@ -19,15 +19,15 @@ redirect_from:
 
 <div class="lang-en" markdown="1">
 
-👋 Hi there! I am Zaiyan Zhang (张再筵), currently pursuing an M.E. degree in Photogrammetry and Remote Sensing (摄影测量与遥感) at [Wuhan University (武汉大学)](https://www.whu.edu.cn/) under the direction of Prof. [Qiangqiang Yuan (袁强强)](https://scholar.google.com/citations?user=aItnA-sAAAAJ), [Jie Li (李杰)](https://scholar.google.com/citations?user=W4VvnDMAAAAJ) and [Liangpei Zhang (张良培)](https://scholar.google.com/citations?user=yFEl8hcAAAAJ). Prior to this, I obtained a B.E. degree in Data Science and Big Data Technology (数据科学与大数据技术) at [China University of Geosciences (中国地质大学)](https://www.cug.edu.cn/) in 2025.
+👋 Hi there! I am Zaiyan Zhang (张再筵), currently pursuing an M.E. degree in Photogrammetry and Remote Sensing at [Wuhan University](https://www.whu.edu.cn/) under the direction of Prof. [Qiangqiang Yuan (袁强强)](https://scholar.google.com/citations?user=aItnA-sAAAAJ), [Jie Li (李杰)](https://scholar.google.com/citations?user=W4VvnDMAAAAJ) and [Liangpei Zhang (张良培)](https://scholar.google.com/citations?user=yFEl8hcAAAAJ). I am also a Research Intern at the AI4Science Center of [Shanghai AI Laboratory](https://www.shlab.org.cn/), hosted by Dr. [Hao Chen (陈浩)](https://justchenhao.github.io) and [Lei Bai (白磊)](http://leibai.site). Prior to this, I obtained a B.E. degree in Data Science and Big Data Technology at [China University of Geosciences](https://www.cug.edu.cn/) in 2025.
 
 <!-- <a href='https://scholar.google.com/citations?user=ZpxXejIAAAAJ'><img src="https://img.shields.io/endpoint?logo=Google%20Scholar&url={{ url | url_encode }}&labelColor=f6f6f6&color=9cf&style=flat&label=citations" style="vertical-align:middle;margin-left:8px;"></a> -->
 
 🔬 My research focuses on Computer Vision in Remote Sensing:
 
-- **<span style="color: #915fddff;">Low-level Vision in Remote Sensing</span>**: Cloud Removal, Dehazing, Deblurring, All-in-One Image Restoration.
-- **<span style="color: #4874dbff;">Remote Sensing Foundation Models</span>**: Multimodal Foundation Models, Low-level and High-level Task Collaboration.
-- **<span style="color: #2bab8bff;">Representation Learning</span>**: Contrastive Learning, Domain Adaptation, Knowledge Distillation.
+- **<span style="color: #915fddff;">Remote Sensing Image Processing</span>**: Cloud Removal, Time-series Reconstruction, All-in-One Image Restoration.
+- **<span style="color: #4874dbff;">Multimodal Foundation Models</span>**: Open-world Remote Sensing Interpretation, Geospatial Embedding Models.
+- **<span style="color: #2bab8bff;">Remote Sensing Agents</span>**: Open-world Agents, Scientific Discovery Agents.
 
 🤝 I welcome collaboration and networking opportunities. Feel free to contact me via email {[1@zzaiyan.com](mailto:1@zzaiyan.com), [zzaiyan@whu.edu.cn](mailto:zzaiyan@whu.edu.cn)}!
 
@@ -35,13 +35,13 @@ redirect_from:
 
 <div class="lang-zh" markdown="1">
 
-👋 大家好！我是张再筵，目前在[武汉大学](https://www.whu.edu.cn/)攻读摄影测量与遥感专业硕士学位，师从[袁强强](https://scholar.google.com/citations?user=aItnA-sAAAAJ)、[李杰](https://scholar.google.com/citations?user=W4VvnDMAAAAJ)与[张良培](https://scholar.google.com/citations?user=yFEl8hcAAAAJ)教授。此前，我于2025年在[中国地质大学（武汉）](https://www.cug.edu.cn/)获得数据科学与大数据技术专业学士学位。
+👋 大家好！我是张再筵，目前在[武汉大学](https://www.whu.edu.cn/)攻读摄影测量与遥感专业硕士学位，师从[袁强强](https://scholar.google.com/citations?user=aItnA-sAAAAJ)、[李杰](https://scholar.google.com/citations?user=W4VvnDMAAAAJ)与[张良培](https://scholar.google.com/citations?user=yFEl8hcAAAAJ)教授。我同时也在[上海人工智能实验室](https://www.shlab.org.cn/) AI4Science 中心担任研究实习生，与[陈浩](https://justchenhao.github.io)与[白磊](http://leibai.site)博士合作。此前，我于2025年在[中国地质大学（武汉）](https://www.cug.edu.cn/)获得数据科学与大数据技术专业学士学位。
 
 🔬 我的研究聚焦于遥感中的计算机视觉：
 
-- **<span style="color: #915fddff;">遥感底层视觉</span>**：去云、去雾、去模糊、通用图像复原。
-- **<span style="color: #4874dbff;">遥感基础模型</span>**：多模态基础模型、底层与高层任务协同。
-- **<span style="color: #2bab8bff;">表征学习</span>**：对比学习、域适应、知识蒸馏。
+- **<span style="color: #915fddff;">遥感图像处理</span>**：去云、时序重建、一体化图像复原。
+- **<span style="color: #4874dbff;">多模态基础模型</span>**：开放世界遥感解译、地理空间嵌入模型。
+- **<span style="color: #2bab8bff;">遥感智能体</span>**：开放世界智能体、科学发现智能体。
 
 🤝 欢迎合作与交流！您可以通过邮箱 {[1@zzaiyan.com](mailto:1@zzaiyan.com), [zzaiyan@whu.edu.cn](mailto:zzaiyan@whu.edu.cn)} 联系我。
 
