@@ -66,6 +66,11 @@ redirect_from:
 
 {% include education.html %}
 
+# <span class="lang-en">💼 Internship</span><span class="lang-zh">💼 实习经历</span>
+{: #internship}
+
+{% include internship.html %}
+
 <!-- 备选Emoji：🎖🏅💎🏆 -->
 
 # <span class="lang-en">🏅 Honors and Awards</span><span class="lang-zh">🏅 荣誉奖项</span>
