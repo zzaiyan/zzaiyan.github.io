@@ -16,6 +16,10 @@ main:
     title_zh: "教育"
     url: "/#education"
 
+  - title: "Internship"
+    title_zh: "实习"
+    url: "/#internship"
+
   - title: "Honors"
     title_zh: "荣誉奖项"
     url: "/#honors"
