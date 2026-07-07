@@ -178,6 +178,8 @@
   align-items: center;
   flex: 1;
   min-width: 0;
+  overflow: visible;
+  z-index: 1;
   background: $background-color;
 
   a {
@@ -195,6 +197,7 @@
   .greedy-nav__dropdown {
     position: relative;
     flex-shrink: 0;
+    z-index: 2;
   }
 
   .greedy-nav__more {
@@ -282,7 +285,8 @@
     border-radius: $border-radius;
     background: #fff;
     box-shadow: 0 4px 12px rgba(#000, 0.15);
-    z-index: 100;
+    min-width: 10rem;
+    z-index: 3;
 
     // 小三角箭头，指向下拉按钮
     &::before {

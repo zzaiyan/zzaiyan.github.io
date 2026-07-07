@@ -5,25 +5,25 @@
 .masthead {
   position: sticky;
   top: 0;
-  overflow: hidden;
+  overflow: visible;
   isolation: isolate;
   background: rgba(255, 255, 255, 0.18) !important;
   -webkit-backdrop-filter: blur(24px) saturate(1.55);
   backdrop-filter: blur(24px) saturate(1.55);
   border-bottom: 0;
   box-shadow: 0 4px 12px rgba(31, 45, 61, 0.12), inset 0 0 rgba(31, 45, 61, 0.08);
-  z-index: 20;
+  z-index: 1000;
 
   &::before,
   &::after {
     content: "";
     position: absolute;
     inset: 0;
+    clip-path: inset(0);
     pointer-events: none;
   }
 
   &::before {
-    inset: -120% -30%;
     z-index: -2;
     background:
       radial-gradient(circle at 12% 35%, rgba(154, 123, 255, 0.38), transparent 28%),
@@ -63,17 +63,14 @@
 
 @keyframes masthead-aurora {
   0% {
-    transform: translate3d(-6%, -4%, 0) scale(1);
     background-position: 0% 35%;
   }
 
   50% {
-    transform: translate3d(6%, 4%, 0) scale(1.08);
     background-position: 100% 60%;
   }
 
   100% {
-    transform: translate3d(-2%, 6%, 0) scale(1.04);
     background-position: 30% 80%;
   }
 }
@@ -85,6 +82,8 @@
 }
 
 .masthead__menu {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
 
