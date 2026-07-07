@@ -213,6 +213,46 @@ h1:before,
     display: none;
 }
 
+.google-scholar-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4em;
+    width: fit-content;
+    margin: 0.1em 0 0.75em;
+    padding: 0.22em 0.72em;
+    font-size: 0.82em;
+    line-height: 1.2;
+    color: #2764b1 !important;
+    background: #eef5ff;
+    border: 1px solid rgba(39, 100, 177, 0.16);
+    border-radius: 999px;
+    text-decoration: none !important;
+    white-space: nowrap;
+    transition: background 0.2s, border-color 0.2s, transform 0.2s;
+
+    &:hover {
+        background: #dcecff;
+        border-color: rgba(39, 100, 177, 0.28);
+        text-decoration: none !important;
+        transform: translateY(-1px);
+    }
+
+    .ai {
+        color: #4285f4;
+        font-size: 1.05em;
+    }
+}
+
+.google-scholar-badge__count {
+    color: #174ea6;
+    font-weight: 700;
+}
+
+.google-scholar-badge[data-state="loading"] .google-scholar-badge__count,
+.google-scholar-badge[data-state="unavailable"] .google-scholar-badge__count {
+    color: #6b7280;
+}
+
 // Paper title link style
 .pub-title {
     font-size: 1.05em;
@@ -418,6 +458,25 @@ html[data-theme="dark"] {
         &:hover {
             border-bottom-color: #7ab0e6;
         }
+    }
+
+    .google-scholar-badge {
+        color: #9cc8ff !important;
+        background: rgba(122, 176, 230, 0.12);
+        border-color: rgba(122, 176, 230, 0.2);
+
+        &:hover {
+            background: rgba(122, 176, 230, 0.2);
+            border-color: rgba(122, 176, 230, 0.34);
+        }
+
+        .ai {
+            color: #9cc8ff;
+        }
+    }
+
+    .google-scholar-badge__count {
+        color: #cfe6ff;
     }
 
     // Sidebar / author profile

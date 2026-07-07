@@ -1,0 +1,12 @@
+{% assign scholar_config = site.google_scholar %}
+{% assign scholar_id = include.scholar_id | default: scholar_config.id %}
+{% assign scholar_url = include.url | default: site.author.googlescholar %}
+{% unless scholar_url %}
+  {% assign scholar_url = "https://scholar.google.com/citations?user=" | append: scholar_id %}
+{% endunless %}
+
+<a class="google-scholar-badge" href="{{ scholar_url }}" target="_blank" rel="noopener" data-state="loading" aria-label="Google Scholar citations">
+  <i class="ai ai-google-scholar" aria-hidden="true"></i>
+  <span class="google-scholar-badge__label">Citations</span>
+  <strong class="google-scholar-badge__count">...</strong>
+</a>
