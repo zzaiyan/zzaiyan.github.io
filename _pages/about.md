@@ -14,9 +14,9 @@ redirect_from:
 
 👋 Hi there! I am Zaiyan Zhang (张再筵), currently pursuing an M.E. degree in Photogrammetry and Remote Sensing at [Wuhan University](https://www.whu.edu.cn/) under the direction of Prof. [Qiangqiang Yuan (袁强强)](https://scholar.google.com/citations?user=aItnA-sAAAAJ), [Jie Li (李杰)](https://scholar.google.com/citations?user=W4VvnDMAAAAJ) and [Liangpei Zhang (张良培)](https://scholar.google.com/citations?user=yFEl8hcAAAAJ). I am also a Research Intern at the AI4Science Center of [Shanghai AI Laboratory](https://www.shlab.org.cn/), working with Dr. [Hao Chen (陈浩)](https://justchenhao.github.io) and [Lei Bai (白磊)](http://leibai.site). Prior to this, I obtained a B.E. degree in Data Science and Big Data Technology at [China University of Geosciences](https://www.cug.edu.cn/) in 2025.
 
-{% include google-scholar-badge.html %}
+<!-- {% include google-scholar-badge.html %} -->
 
-🔬 My research focuses on Computer Vision in Remote Sensing:
+🔬 My research focuses on Artifical Intelligence Applications in Remote Sensing:
 
 - **<span style="color: #915fddff;">Remote Sensing Image Processing</span>**: Cloud Removal, Time-series Reconstruction, All-in-One Image Restoration.
 - **<span style="color: #4874dbff;">Multimodal Foundation Models</span>**: Open-world Remote Sensing Interpretation, Geospatial Embedding Models.
@@ -32,7 +32,7 @@ redirect_from:
 
 {% include google-scholar-badge.html %}
 
-🔬 我的研究聚焦于遥感中的计算机视觉：
+🔬 我的研究聚焦于人工智能在遥感科学中的应用：
 
 - **<span style="color: #915fddff;">遥感图像处理</span>**：去云、时序重建、一体化图像复原。
 - **<span style="color: #4874dbff;">多模态基础模型</span>**：开放世界遥感解译、地理空间嵌入模型。
