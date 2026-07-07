@@ -1,16 +1,29 @@
 <script>
   $(document).ready(function () {
+    {% assign scholar_config = site.google_scholar %}
+    {% assign stats_branch = scholar_config.stats_branch | default: "google-scholar-stats" %}
+    {% assign stats_file = scholar_config.stats_file | default: "gs_data.json" %}
+    {% assign raw_base_url = scholar_config.raw_base_url | default: "https://raw.githubusercontent.com" %}
+
+    var gsDataUrls = [
     {% if site.google_scholar_stats_use_cdn %}
-    var gsDataBaseUrl = 'https://cdn.jsdelivr.net/gh/{{ site.repository }}@'
-    {% else %}
-    var gsDataBaseUrl = 'https://raw.githubusercontent.com/{{ site.repository }}/'
+      {% for cdn_base_url in scholar_config.stats_cdn_base_urls %}
+      '{{ cdn_base_url }}/{{ site.repository }}@{{ stats_branch }}/{{ stats_file }}',
+      {% endfor %}
     {% endif %}
-    $.getJSON(gsDataBaseUrl + "google-scholar-stats/gs_data.json", function (data) {
+      '{{ raw_base_url }}/{{ site.repository }}/{{ stats_branch }}/{{ stats_file }}'
+    ];
+
+    function renderScholarStats(data, sourceUrl) {
         var totalCitation = data['citedby'];
         var totalCitElement = document.getElementById('total_cit');
         if (totalCitElement) {
           totalCitElement.innerHTML = totalCitation;
         }
+        $('.google-scholar-badge__count').text(totalCitation);
+        $('.google-scholar-badge')
+          .attr('data-state', 'ready')
+          .attr('title', 'Citation data loaded from ' + sourceUrl);
 
         var citationEles = document.getElementsByClassName('show_paper_citations');
         Array.prototype.forEach.call(citationEles, element => {
@@ -22,6 +35,23 @@
               }
             }
         });
-    });
+    }
+
+    function loadScholarStats(sourceIndex) {
+      if (sourceIndex >= gsDataUrls.length) {
+        $('.google-scholar-badge').attr('data-state', 'unavailable');
+        return;
+      }
+
+      $.getJSON(gsDataUrls[sourceIndex])
+        .done(function (data) {
+          renderScholarStats(data, gsDataUrls[sourceIndex]);
+        })
+        .fail(function () {
+          loadScholarStats(sourceIndex + 1);
+        });
+    }
+
+    loadScholarStats(0);
   });
 </script>

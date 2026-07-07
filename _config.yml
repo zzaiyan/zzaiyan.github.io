@@ -11,6 +11,14 @@ description: "A Research Beginner."
 description_zh: "科研起步者。"
 repository: "zzaiyan/zzaiyan.github.io"
 google_scholar_stats_use_cdn: true
+google_scholar:
+  id: "ZpxXejIAAAAJ"
+  stats_branch: "google-scholar-stats"
+  stats_file: "gs_data.json"
+  stats_cdn_base_urls:
+    - "https://cdn.jsdmirror.com/gh"
+    - "https://cdn.jsdelivr.net/gh"
+  raw_base_url: "https://raw.githubusercontent.com"
 
 # google analytics
 google_analytics_id: # get google_analytics_id from https://analytics.google.com/analytics/
