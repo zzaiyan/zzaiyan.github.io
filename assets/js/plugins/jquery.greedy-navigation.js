@@ -13,6 +13,11 @@ var $dropdown = $nav.find(".greedy-nav__dropdown");
 
 var breaks = [];
 
+function closeGreedyNav() {
+  $hlinks.addClass("hidden");
+  $btn.removeClass("open");
+}
+
 function updateNav() {
   // Recalculate dropdown width each call (visibility may have changed during recursion)
   var dropdownWidth = $dropdown.hasClass("hidden")
@@ -48,8 +53,8 @@ function updateNav() {
 
     // Hide the dropdown btn if hidden list is empty
     if (breaks.length < 1) {
-      $btn.addClass("hidden").removeClass("open");
-      $hlinks.addClass("hidden");
+      $btn.addClass("hidden");
+      closeGreedyNav();
       $dropdown.addClass("hidden");
     }
   }
@@ -72,8 +77,8 @@ window.resetGreedyNav = function () {
     $hlinks.children().first().appendTo($vlinks);
   }
   breaks = [];
-  $btn.addClass("hidden").removeClass("open");
-  $hlinks.addClass("hidden");
+  $btn.addClass("hidden");
+  closeGreedyNav();
   $dropdown.addClass("hidden");
   // Force reflow so CSS changes (e.g. lang switch) are reflected in width calculations
   void $nav[0].offsetWidth;
@@ -87,18 +92,37 @@ window.resetGreedyNav = function () {
 // ResizeObserver fires on maximize/restore and any container size change
 if (typeof ResizeObserver !== "undefined") {
   new ResizeObserver(function () {
+    closeGreedyNav();
     updateNav();
   }).observe($nav[0]);
 } else {
   // Fallback for older browsers
   $(window).resize(function () {
+    closeGreedyNav();
     updateNav();
   });
 }
 
-$btn.on("click", function () {
+$btn.on("click", function (event) {
+  event.stopPropagation();
   $hlinks.toggleClass("hidden");
   $(this).toggleClass("open");
+});
+
+$hlinks.on("click", function () {
+  closeGreedyNav();
+});
+
+$(document).on("click", function (event) {
+  if (!$(event.target).closest("#site-nav").length) {
+    closeGreedyNav();
+  }
+});
+
+$(document).on("keyup", function (event) {
+  if (event.key === "Escape") {
+    closeGreedyNav();
+  }
 });
 
 updateNav();
