@@ -7,7 +7,7 @@
   top: 0;
   overflow: visible;
   isolation: isolate;
-  background: rgba(255, 255, 255, 0.18) !important;
+  background: rgba(210, 238, 244, 0.36) !important;
   -webkit-backdrop-filter: blur(24px) saturate(1.55);
   backdrop-filter: blur(24px) saturate(1.55);
   border-bottom: 0;
@@ -38,7 +38,7 @@
 
   &::after {
     z-index: -1;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.22), transparent 65%);
+    background: transparent;
   }
 
   &__inner-wrap {
