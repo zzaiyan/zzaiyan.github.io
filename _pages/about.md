@@ -16,7 +16,7 @@ redirect_from:
 
 <!-- {% include google-scholar-badge.html %} -->
 
-🔬 My research focuses on Artifical Intelligence Applications in Remote Sensing:
+🔬 My research focuses on Artifical Intelligence in Earth Observation:
 
 - **<span style="color: #915fddff;">Remote Sensing Image Processing</span>**: Cloud Removal, Time-series Reconstruction, All-in-One Image Restoration.
 - **<span style="color: #4874dbff;">Multimodal Foundation Models</span>**: Open-world Remote Sensing Interpretation, Geospatial Embedding Models.
@@ -32,7 +32,7 @@ redirect_from:
 
 {% include google-scholar-badge.html %}
 
-🔬 我的研究聚焦于人工智能在遥感科学中的应用：
+🔬 我的研究聚焦于人工智能在地球观测中的应用：
 
 - **<span style="color: #915fddff;">遥感图像处理</span>**：去云、时序重建、一体化图像复原。
 - **<span style="color: #4874dbff;">多模态基础模型</span>**：开放世界遥感解译、地理空间嵌入模型。
