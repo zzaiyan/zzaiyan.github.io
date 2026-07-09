@@ -6,7 +6,7 @@
 
 <span class="lang-en"><strong>{{ internship.role }}</strong>, {{ internship.department }}, &ensp;_{{ internship.period }}_</span><span class="lang-zh"><strong>{{ internship.role_zh | default: internship.role }}</strong>，{{ internship.department_zh | default: internship.department }}，&ensp;_{{ internship.period_zh | default: internship.period }}_</span>
 
-<span class="lang-en">Hosts: {{ internship.hosts | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip }}</span><span class="lang-zh">导师: {{ internship.hosts_zh | default: internship.hosts | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip }}</span>
+<span class="lang-en">Hosts: {{ internship.hosts | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip }}</span><span class="lang-zh">合作导师: {{ internship.hosts_zh | default: internship.hosts | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip }}</span>
 
 </div>
 </div>
