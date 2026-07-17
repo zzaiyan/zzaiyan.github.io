@@ -1,0 +1,32 @@
+{% assign pub = include.pub %}
+{% assign compact = false %}
+{% if pub.layout == "compact" %}{% assign compact = true %}{% endif %}
+{% assign pub_url = pub.doi %}
+{% unless pub_url %}{% if pub.links.size > 0 %}{% assign pub_url = pub.links[0].url %}{% endif %}{% endunless %}
+
+<article class="paper-box{% if compact %} paper-box--compact{% else %} paper-box--featured{% endif %}">
+{% unless compact %}
+  <div class="paper-box-image">
+    <div>
+      {% if pub.badge %}<span class="badge">{{ pub.badge }}</span>{% endif %}
+      <img src="{{ pub.image }}" alt="{{ pub.title }}">
+    </div>
+  </div>
+{% endunless %}
+  <div class="paper-box-text">
+    <div class="pub-heading">
+      {% if pub_url %}<a class="pub-title" href="{{ pub_url }}">{{ pub.title }}</a>{% else %}<span class="pub-title">{{ pub.title }}</span>{% endif %}
+      {% if compact and pub.badge %}<span class="badge badge--inline">{{ pub.badge }}</span>{% endif %}
+    </div>
+    <div class="pub-authors">{{ pub.authors }}</div>
+    <div class="pub-venue"><em>{{ pub.venue }}</em>, {{ pub.year }}</div>
+    <div class="pub-footer">
+      <div class="pub-details">
+        {% if include.show_venue_info %}{% assign venue_info = site.data.venues[pub.venueShort] %}{% if venue_info %}{{ venue_info.rank }}, IF={{ venue_info.IF }}{% if pub.note %} &#124; {% endif %}{% endif %}{% endif %}{{ pub.note | replace: "|", "&#124;" }}{% if pub.scholarId %} <span class="show_paper_citations" data="{{ pub.scholarId }}"></span>{% endif %}
+      </div>
+      <div class="pub-links">
+        {% for link in pub.links %}<a class="pub-btn" href="{{ link.url }}">{% if link.url contains 'github.com' %}<i class="fab fa-github"></i>{% elsif link.name == 'PDF' %}<i class="fas fa-file-pdf"></i>{% elsif link.name == 'arXiv' %}<i class="ai ai-arxiv"></i>{% else %}<i class="fas fa-link"></i>{% endif %} {{ link.name }}</a>{% endfor %}{% if pub.referenceKey %}<a class="pub-btn" href="#citation-{{ pub.referenceKey }}"><i class="fas fa-quote-right"></i> <span class="lang-en">Cite</span><span class="lang-zh">引用</span></a>{% endif %}
+      </div>
+    </div>
+  </div>
+</article>

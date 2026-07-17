@@ -1,0 +1,77 @@
+{
+    "zhang2026ecrformer": {
+        "id": "zhang2026ecrformer",
+        "type": "article-journal",
+        "title": "ECRformer: An efficient cloud removal Transformer with semantic-decoupled learning for multimodal satellite imagery",
+        "author": [
+            { "family": "Zhang", "given": "Zaiyan" },
+            { "family": "Li", "given": "Jie" },
+            { "family": "Liang", "given": "Yuanqi" },
+            { "family": "Yan", "given": "Jining" },
+            { "family": "Xiao", "given": "Yi" },
+            { "family": "Su", "given": "Xin" },
+            { "family": "Yuan", "given": "Qiangqiang" }
+        ],
+        "container-title": "ISPRS Journal of Photogrammetry and Remote Sensing",
+        "volume": "237",
+        "page": "323-338",
+        "publisher": "Elsevier",
+        "DOI": "10.1016/j.isprsjprs.2026.04.009",
+        "URL": "https://doi.org/10.1016/j.isprsjprs.2026.04.009",
+        "issued": { "date-parts": [[2026]] }
+    },
+    "zhang2025multi": {
+        "id": "zhang2025multi",
+        "type": "article-journal",
+        "title": "Multiscale Restoration of Missing Data in Optical Time-Series Images With Masked Spatial-Temporal Attention Network",
+        "author": [
+            { "family": "Zhang", "given": "Zaiyan" },
+            { "family": "Yan", "given": "Jining" },
+            { "family": "Liang", "given": "Yuanqi" },
+            { "family": "Feng", "given": "Jiaxin" },
+            { "family": "He", "given": "Haixu" },
+            { "family": "Cao", "given": "Li" }
+        ],
+        "container-title": "IEEE Transactions on Geoscience and Remote Sensing",
+        "volume": "63",
+        "page": "1-15",
+        "DOI": "10.1109/TGRS.2025.3574799",
+        "URL": "https://doi.org/10.1109/TGRS.2025.3574799",
+        "issued": { "date-parts": [[2025]] }
+    },
+    "zhang2026task": {
+        "id": "zhang2026task",
+        "type": "article-journal",
+        "title": "Task-Driven Prompt Learning: A Joint Framework for Multi-modal Cloud Removal and Segmentation",
+        "author": [
+            { "family": "Zhang", "given": "Zaiyan" },
+            { "family": "Li", "given": "Jie" },
+            { "family": "Shi", "given": "Shaowei" },
+            { "family": "Yuan", "given": "Qiangqiang" }
+        ],
+        "container-title": "arXiv",
+        "genre": "Preprint",
+        "URL": "https://arxiv.org/abs/2601.12052",
+        "issued": { "date-parts": [[2026]] }
+    },
+    "wan2026lad": {
+        "id": "wan2026lad",
+        "type": "paper-conference",
+        "title": "LAD-Enhancer: A Lightweight All in One Aerial Detection Enhancer Under Adverse Weather",
+        "author": [
+            { "family": "Wan", "given": "Yu" },
+            { "family": "Li", "given": "Jie" },
+            { "family": "Lin", "given": "Liupeng" },
+            { "family": "Zhang", "given": "Zaiyan" },
+            { "family": "Yuan", "given": "Qiangqiang" },
+            { "family": "Shen", "given": "Huanfeng" }
+        ],
+        "container-title": "ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences",
+        "event-title": "XXV ISPRS Congress 2026",
+        "volume": "XI-3-2026",
+        "page": "307-313",
+        "DOI": "10.5194/isprs-annals-XI-3-2026-307-2026",
+        "URL": "https://doi.org/10.5194/isprs-annals-XI-3-2026-307-2026",
+        "issued": { "date-parts": [[2026]] }
+    }
+}

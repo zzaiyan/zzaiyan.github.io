@@ -12,7 +12,8 @@ It supports **bilingual (EN / ZH) switching** and **dark / light theme toggling*
 ├── _config.yml              # Jekyll global config (title, author info, bilingual fields, etc.)
 ├── _data/
 │   ├── pubs.json            # Publications & patents
-│   ├── bibtex.json          # BibTeX citation entries
+│   ├── references.json      # Canonical CSL-JSON citation metadata
+│   ├── citation_outputs.json # Generated citation formats
 │   ├── news.json            # News items (with content_zh bilingual field)
 │   ├── education.json       # Education history (with degree_zh / major_zh bilingual fields)
 │   ├── honors.json          # Honors & awards
@@ -26,7 +27,7 @@ It supports **bilingual (EN / ZH) switching** and **dark / light theme toggling*
 │   ├── education.html       # Education Liquid template (bilingual)
 │   ├── honors.html          # Honors Liquid template
 │   ├── head.html            # <head> tag (includes flash-prevention inline script)
-│   ├── scripts.html         # JS includes (inlines BibTeX data at build time)
+│   ├── scripts.html         # JS includes (inlines generated citation data)
 │   ├── footer.html          # Footer
 │   ├── sidebar.html         # Sidebar
 │   ├── author-profile.html  # Author avatar & social links (bilingual)
@@ -38,16 +39,20 @@ It supports **bilingual (EN / ZH) switching** and **dark / light theme toggling*
 │   └── about.md             # Homepage content (bilingual div blocks + Liquid includes)
 ├── _sass/                   # SCSS source files
 │   ├── _masthead.scss       # Navigation bar styles
-│   ├── _bibtex-citation.scss # BibTeX modal styles
+│   ├── _citation-dialog.scss # Citation dialog styles
 │   └── ...
 ├── assets/
 │   ├── css/main.scss        # SCSS entry (includes dark mode & bilingual CSS)
 │   ├── pubs/                # Publication PDF files
 │   └── js/
 │       ├── lang-toggle.js   # Language toggle + theme toggle logic
-│       ├── bibtex-citation.js # BibTeX citation modal
+│       ├── citation-dialog.js # Citation dialog
 │       └── last-update.js   # Auto last-updated timestamp
 ├── images/                  # Image assets
+├── scripts/
+│   ├── build-citations.mjs  # Offline citation format generator
+│   └── csl/                 # Local IEEE and GB/T 7714 styles
+├── package.json             # Citation generation dev dependencies
 └── google_scholar_crawler/  # Google Scholar crawler
 ```
 
@@ -58,7 +63,7 @@ All content sections are defined by JSON files in `_data/`. Liquid templates in 
 | Section | Data file | Template |
 |---------|-----------|----------|
 | Publications | `_data/pubs.json` | `_includes/publications.html` |
-| BibTeX | `_data/bibtex.json` | Inlined via `_includes/scripts.html` |
+| Citations | `_data/references.json` + `_data/citation_outputs.json` | Inlined via `_includes/scripts.html` |
 | News | `_data/news.json` | `_includes/news.html` |
 | Education | `_data/education.json` | `_includes/education.html` |
 | Honors | `_data/honors.json` | `_includes/honors.html` |
@@ -89,7 +94,7 @@ Supports four categories: `journal`, `conference`, `preprint`, `patent`. A secti
         { "name": "PDF", "url": "assets/pubs/xxx.pdf" },
         { "name": "Code", "url": "https://github.com/xxx" }
       ],
-      "bibtexKey": "key matching bibtex.json"
+      "referenceKey": "key matching references.json"
     }
   ],
   "conference": [ ... ],
@@ -105,16 +110,34 @@ Supports four categories: `journal`, `conference`, `preprint`, `patent`. A secti
 }
 ```
 
-### _data/bibtex.json — BibTeX Entries
+### _data/references.json — Canonical Citation Metadata
 
 ```json
 {
-  "zhang2024multi": "@article{zhang2024multi,\n  author = {...},\n  ...}",
-  "zhang2026task": "@article{zhang2026task,\n  ...}"
+  "zhang2024multi": {
+    "id": "zhang2024multi",
+    "type": "article-journal",
+    "title": "Paper Title",
+    "author": [{ "family": "Zhang", "given": "Zaiyan" }],
+    "container-title": "Journal Name",
+    "issued": { "date-parts": [[2025]] }
+  }
 }
 ```
 
-Each key must match the `bibtexKey` field in `pubs.json`.
+Each key must match the `referenceKey` field in `pubs.json`. Generated formats must not be edited by hand.
+
+### Citation Format Generation
+
+Run the local generator after changing `references.json`:
+
+```bash
+npm install
+npm run citations:build
+npm run citations:check
+```
+
+The generator writes BibTeX, RIS, CSL-JSON, IEEE, APA, and GB/T 7714 output to `_data/citation_outputs.json`. The browser only reads this generated static file, so no citation library or CDN is required at runtime.
 
 ### _data/news.json — News Items
 
@@ -254,13 +277,14 @@ A theme toggle button (🌙 / ☀) is displayed next to the language button. The
 - `_includes/head.html` contains a flash-prevention inline script that sets `data-theme` before CSS loads
 - `assets/js/lang-toggle.js` handles both language and theme toggles and persistence
 
-## BibTeX Citation Modal
+## Multi-Format Citation Dialog
 
-`_data/bibtex.json` is inlined into a `<script>` tag at build time (via `scripts.html`). `bibtex-citation.js` binds all `#bibtex-*` links on page load. Clicking a BibTeX link opens a modal supporting:
+`_data/citation_outputs.json` is inlined into a `<script>` tag at build time (via `scripts.html`). `citation-dialog.js` binds all `#citation-*` links on page load. Clicking a `Cite` link opens a dialog supporting:
 
+- BibTeX, RIS, CSL-JSON, IEEE, APA, and GB/T 7714 formats
 - One-click copy to clipboard
-- Close with ESC key
-- Close by clicking the backdrop
+- Downloads for machine-readable formats
+- Close with ESC key or by clicking the backdrop
 
 ## Google Scholar Citation Stats
 
@@ -273,9 +297,10 @@ Citation counts are fetched asynchronously by `fetch_google_scholar_stats.html` 
 ## Adding a New Paper — Full Workflow
 
 1. Add an entry to the appropriate category (`journal` / `conference` / `preprint`) in `_data/pubs.json`
-2. Add the BibTeX entry to `_data/bibtex.json` (key must match `bibtexKey`)
-3. Optionally place the PDF in `assets/pubs/`
-4. Push to GitHub
+2. Add structured citation metadata to `_data/references.json` (key must match `referenceKey`)
+3. Run `npm run citations:build`
+4. Optionally place the PDF in `assets/pubs/`
+5. Push to GitHub
 
 ## Style Customization
 
@@ -285,7 +310,7 @@ Citation counts are fetched asynchronously by `fetch_google_scholar_stats.html` 
 | `$paper-box-padding` | `main.scss` | 2em | Card inner padding |
 | `$edu-box-image-width` | `main.scss` | 240px | School logo width |
 
-BibTeX modal styles are in `_sass/_bibtex-citation.scss`.  
+Citation dialog styles are in `_sass/_citation-dialog.scss`.
 Dark mode styles are in the `html[data-theme="dark"] { ... }` block in `assets/css/main.scss`.
 
 ## Global Config (_config.yml)
@@ -316,7 +341,7 @@ Open http://127.0.0.1:4000 in your browser. Live reload is enabled.
 | Problem | Check |
 |---------|-------|
 | Publication cards not showing | Validate `_data/pubs.json` JSON syntax |
-| BibTeX modal not opening | Verify the key exists in `_data/bibtex.json` |
+| Citation dialog not opening | Verify the key exists in `_data/citation_outputs.json` and run `npm run citations:build` |
 | Citation counts missing | Confirm `google-scholar-stats` branch has data |
 | Markdown not rendering | Ensure quotes in JSON strings are properly escaped |
 | Nav items disappear after language switch | Confirm `jquery.greedy-navigation.js` exposes `resetGreedyNav` |

@@ -1,0 +1,15 @@
+{
+  "name": "zzaiyan-academic-homepage",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "citations:build": "node scripts/build-citations.mjs",
+    "citations:check": "node scripts/build-citations.mjs --check"
+  },
+  "devDependencies": {
+    "@citation-js/core": "0.8.2",
+    "@citation-js/plugin-bibtex": "0.8.2",
+    "@citation-js/plugin-csl": "0.8.2",
+    "@citation-js/plugin-ris": "0.8.2"
+  }
+}
