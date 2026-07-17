@@ -125,8 +125,8 @@ $edu-box-padding: 1em;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.045);
 
     &:hover {
-        transform: translateY(-1px);
-        box-shadow: 0 3px 14px rgba(66, 133, 244, 0.13), 0 0 0 2px rgba(66, 133, 244, 0.045);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 20px rgba(66, 133, 244, 0.18), 0 0 0 3px rgba(66, 133, 244, 0.06);
     }
 
     .paper-box-text {
@@ -208,14 +208,9 @@ $edu-box-padding: 1em;
 
 $scroll_offset : 4.5em;
 
-h1:before,
-.anchor:before {
-    content: '';
-    display: block;
-    position: relative;
-    width: 0;
-    height: $scroll_offset;
-    margin-top: -$scroll_offset;
+h1,
+.anchor {
+    scroll-margin-top: $scroll_offset;
 }
 
 .badge {
