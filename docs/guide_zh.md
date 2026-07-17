@@ -11,7 +11,8 @@
 ├── _config.yml              # Jekyll 全局配置（站点标题、作者信息、双语描述等）
 ├── _data/
 │   ├── pubs.json            # 论文与专利数据
-│   ├── bibtex.json          # BibTeX 引用数据
+│   ├── references.json    # CSL-JSON 规范引用元数据
+│   ├── citation_outputs.json # 生成的多格式引用
 │   ├── news.json            # 新闻动态（含 content_zh 双语字段）
 │   ├── education.json       # 教育经历（含 degree_zh/major_zh 等双语字段）
 │   ├── honors.json          # 荣誉奖项
@@ -25,7 +26,7 @@
 │   ├── education.html       # 教育经历 Liquid 模板（双语）
 │   ├── honors.html          # 荣誉奖项 Liquid 模板
 │   ├── head.html            # <head> 标签（含防闪烁内联脚本）
-│   ├── scripts.html         # JS 脚本引入（含内联 BibTeX 数据）
+│   ├── scripts.html         # JS 脚本引入（含内联引用数据）
 │   ├── footer.html          # 页脚
 │   ├── sidebar.html         # 侧边栏
 │   ├── author-profile.html  # 作者头像与社交链接（双语）
@@ -37,16 +38,20 @@
 │   └── about.md             # 主页内容（双语 div 块 + Liquid include）
 ├── _sass/                   # 样式源文件
 │   ├── _masthead.scss       # 导航栏样式
-│   ├── _bibtex-citation.scss # BibTeX 模态框样式
+│   ├── _citation-dialog.scss # 多格式引用弹窗样式
 │   └── ...
 ├── assets/
 │   ├── css/main.scss        # 样式入口（含深色模式与双语 CSS）
 │   ├── pubs/                # 论文 PDF 文件
 │   └── js/
 │       ├── lang-toggle.js   # 语言切换 + 主题切换逻辑
-│       ├── bibtex-citation.js # BibTeX 引用弹窗功能
+│       ├── citation-dialog.js # 多格式引用弹窗功能
 │       └── last-update.js   # 自动获取最后更新时间
 ├── images/                  # 图片资源
+├── scripts/
+│   ├── build-citations.mjs  # 离线引用格式生成器
+│   └── csl/                 # 本地 IEEE 与 GB/T 7714 样式
+├── package.json             # 引用生成开发依赖
 └── google_scholar_crawler/  # Google Scholar 爬虫
 ```
 
@@ -57,7 +62,7 @@
 | 板块 | 数据文件 | 模板文件 |
 |------|----------|----------|
 | 论文 | `_data/pubs.json` | `_includes/publications.html` |
-| BibTeX | `_data/bibtex.json` | 内联至 `_includes/scripts.html` |
+| 多格式引用 | `_data/references.json` + `_data/citation_outputs.json` | 内联至 `_includes/scripts.html` |
 | 新闻 | `_data/news.json` | `_includes/news.html` |
 | 教育 | `_data/education.json` | `_includes/education.html` |
 | 荣誉 | `_data/honors.json` | `_includes/honors.html` |
@@ -88,7 +93,7 @@
         { "name": "PDF", "url": "assets/pubs/xxx.pdf" },
         { "name": "Code", "url": "https://github.com/xxx" }
       ],
-      "bibtexKey": "bibtex.json 中对应的 key"
+      "referenceKey": "references.json 中对应的 key"
     }
   ],
   "conference": [ ... ],
@@ -104,16 +109,34 @@
 }
 ```
 
-### _data/bibtex.json — BibTeX 引用
+### _data/references.json — 规范引用元数据
 
 ```json
 {
-  "zhang2024multi": "@article{zhang2024multi,\n  author = {...},\n  ...}",
-  "zhang2026task": "@article{zhang2026task,\n  ...}"
+  "zhang2024multi": {
+    "id": "zhang2024multi",
+    "type": "article-journal",
+    "title": "论文标题",
+    "author": [{ "family": "Zhang", "given": "Zaiyan" }],
+    "container-title": "期刊名称",
+    "issued": { "date-parts": [[2025]] }
+  }
 }
 ```
 
-key 必须与 `pubs.json` 中的 `bibtexKey` 一致。
+key 必须与 `pubs.json` 中的 `referenceKey` 一致。生成后的格式不应手动修改。
+
+### 引用格式生成
+
+修改 `references.json` 后运行本地生成器：
+
+```bash
+npm install
+npm run citations:build
+npm run citations:check
+```
+
+生成器会将 BibTeX、RIS、CSL-JSON、IEEE、APA 和 GB/T 7714 写入 `_data/citation_outputs.json`。浏览器运行时只读取生成后的静态文件，不依赖引用库或 CDN。
 
 ### _data/news.json — 新闻动态
 
@@ -253,13 +276,14 @@ author:
 - `_includes/head.html` 含防闪烁内联脚本，在 CSS 加载前即设置 `data-theme`
 - `assets/js/lang-toggle.js` 同时管理语言和主题的切换与持久化
 
-## BibTeX 引用弹窗
+## 多格式引用弹窗
 
-`_data/bibtex.json` 在构建时通过 Liquid 内联到页面的 `<script>` 标签中（见 `scripts.html`），`bibtex-citation.js` 在页面加载后自动绑定所有 `#bibtex-*` 链接。点击后弹出模态框，支持：
+`_data/citation_outputs.json` 在构建时通过 Liquid 内联到页面的 `<script>` 标签中（见 `scripts.html`），`citation-dialog.js` 在页面加载后自动绑定所有 `#citation-*` 链接。点击 `Cite/引用` 后弹出窗口，支持：
 
+- BibTeX、RIS、CSL-JSON、IEEE、APA 和 GB/T 7714
 - 一键复制到剪贴板
-- ESC 键关闭
-- 点击遮罩区域关闭
+- 机器可读格式下载
+- ESC 键或点击遮罩区域关闭
 
 ## Google Scholar 引用统计
 
@@ -272,9 +296,10 @@ author:
 ## 添加新论文的完整流程
 
 1. 在 `_data/pubs.json` 对应分类（`journal` / `conference` / `preprint`）中添加论文条目
-2. 在 `_data/bibtex.json` 中添加 BibTeX（key 与 `bibtexKey` 一致）
-3. 将 PDF 放入 `assets/pubs/` 目录（可选）
-4. 推送到 GitHub
+2. 在 `_data/references.json` 中添加结构化引用元数据（key 与 `referenceKey` 一致）
+3. 运行 `npm run citations:build`
+4. 将 PDF 放入 `assets/pubs/` 目录（可选）
+5. 推送到 GitHub
 
 ## 样式自定义
 
@@ -284,7 +309,7 @@ author:
 | `$paper-box-padding` | `main.scss` | 2em | 卡片内边距 |
 | `$edu-box-image-width` | `main.scss` | 240px | 学校 logo 宽度 |
 
-BibTeX 弹窗样式在 `_sass/_bibtex-citation.scss` 中。深色模式样式在 `assets/css/main.scss` 的 `html[data-theme="dark"] { ... }` 块中。
+多格式引用弹窗样式在 `_sass/_citation-dialog.scss` 中。深色模式样式也在该文件中定义。
 
 ## 全局配置（_config.yml）
 
@@ -314,7 +339,7 @@ bundle exec jekyll serve
 | 问题 | 排查方法 |
 |------|----------|
 | 论文卡片不显示 | 检查 `_data/pubs.json` JSON 语法 |
-| BibTeX 弹窗无反应 | 检查 `_data/bibtex.json` 中对应 key 是否存在 |
+| 引用弹窗无反应 | 检查 `_data/citation_outputs.json` 中对应 key 是否存在，并运行 `npm run citations:build` |
 | 引用数不显示 | 确认 `google-scholar-stats` 分支有数据 |
 | Markdown 未渲染 | 确认 JSON 中的引号已正确转义 |
 | 切换语言后导航项消失 | 检查 `jquery.greedy-navigation.js` 是否包含 `resetGreedyNav` 函数 |

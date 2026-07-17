@@ -22,7 +22,7 @@
                     "url": "https://github.com/zzaiyan/ECRformer"
                 }
             ],
-            "bibtexKey": "zhang2026ecrformer"
+            "referenceKey": "zhang2026ecrformer"
         },
         {
             "id": "zhang2025multi",
@@ -34,7 +34,7 @@
             "badge": "IEEE TGRS",
             "image": "https://arxiv.org/html/2406.13358v2/x2.png",
             "doi": "https://doi.org/10.1109/tgrs.2025.3574799",
-            "note": "Multi-Temporal Image Inpainting",
+            "note": "Time Series Reconstruction",
             "scholarId": "ZpxXejIAAAAJ:u-x6o8ySG0sC",
             "links": [
                 {
@@ -50,12 +50,13 @@
                     "url": "https://github.com/CUG-BEODL/MS2TAN"
                 }
             ],
-            "bibtexKey": "zhang2025multi"
+            "referenceKey": "zhang2025multi"
         }
     ],
     "conference": [
         {
             "id": "zhang2026task",
+            "layout": "compact",
             "title": "Task-Driven Prompt Learning: A Joint Framework for Multi-modal Cloud Removal and Segmentation",
             "authors": "<strong><u>Zaiyan Zhang</u></strong>, Jie Li, Shaowei Shi, Qiangqiang Yuan",
             "venue": "IEEE International Geoscience and Remote Sensing Symposium",
@@ -76,7 +77,26 @@
                     "url": "https://arxiv.org/abs/2601.12052"
                 }
             ],
-            "bibtexKey": "zhang2026task"
+            "referenceKey": "zhang2026task"
+        },
+        {
+            "id": "wan2026lad",
+            "layout": "compact",
+            "title": "LAD-Enhancer: A Lightweight All in One Aerial Detection Enhancer Under Adverse Weather",
+            "authors": "Yu Wan, Jie Li, Liupeng Lin, <strong><u>Zaiyan Zhang</u></strong>, Qiangqiang Yuan, Huanfeng Shen",
+            "venue": "XXV ISPRS Congress",
+            "venueShort": "ISPRS Congress",
+            "year": 2026,
+            "badge": "ISPRS Congress 2026",
+            "doi": "https://doi.org/10.5194/isprs-annals-XI-3-2026-307-2026",
+            "note": "Adverse Weather Enhancement, Object Detection",
+            "links": [
+                {
+                    "name": "PDF",
+                    "url": "assets/pubs/lad-enhancer.pdf"
+                }
+            ],
+            "referenceKey": "wan2026lad"
         }
     ],
     "preprint": [],

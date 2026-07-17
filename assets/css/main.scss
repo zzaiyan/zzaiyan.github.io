@@ -37,7 +37,7 @@
 @import "vendor/font-awesome/solid";
 @import "vendor/font-awesome/brands";
 @import "vendor/magnific-popup/magnific-popup";
-@import "bibtex-citation";
+@import "citation-dialog";
 @import "print";
 
 // Paper box configuration variables
@@ -92,13 +92,10 @@ $edu-box-padding: 1em;
     }
 
     .paper-box-text {
+        min-width: 0;
         max-width: 100%;
         order: 1;
         line-height: 1.45;
-
-        p {
-            margin: 0.35em 0;
-        }
     }
 
     @include breakpoint($medium) {
@@ -121,6 +118,94 @@ $edu-box-padding: 1em;
 
 }
 
+.paper-box--compact {
+    display: block;
+    padding: 0.85em 1.1em;
+    margin-bottom: 0.8em;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.045);
+
+    &:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 3px 14px rgba(66, 133, 244, 0.13), 0 0 0 2px rgba(66, 133, 244, 0.045);
+    }
+
+    .paper-box-text {
+        width: 100%;
+        max-width: none;
+        padding-left: 0;
+    }
+
+    .pub-title {
+        font-size: 1em;
+    }
+
+    .pub-authors,
+    .pub-venue,
+    .pub-details {
+        font-size: 0.9em;
+    }
+
+    .pub-btn {
+        min-height: 1.75em;
+        padding: 0.15em 0.62em;
+        font-size: 0.78em;
+    }
+}
+
+.paper-box--featured {
+    .paper-box-text {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pub-authors,
+    .pub-venue,
+    .pub-details {
+        margin-top: 0.45em;
+    }
+
+    .pub-footer {
+        flex: 0 0 auto;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: stretch;
+        gap: 0.5em;
+
+        .pub-details {
+            flex: 0 0 auto;
+        }
+
+        .pub-links {
+            justify-content: flex-start;
+            margin-top: 0.35em;
+        }
+    }
+
+    @include breakpoint($medium) {
+        display: grid;
+        grid-template-columns: minmax(300px, 36%) minmax(0, 1fr);
+        gap: 1.5em;
+
+        .paper-box-image {
+            width: 100%;
+            min-width: 0;
+            max-width: none;
+
+            >div,
+            img {
+                width: 100%;
+            }
+        }
+
+        .paper-box-text {
+            align-self: center;
+            max-width: none;
+            padding-left: 0;
+        }
+    }
+
+}
+
 $scroll_offset : 4.5em;
 
 h1:before,
@@ -134,16 +219,39 @@ h1:before,
 }
 
 .badge {
-    padding-left: 1rem;
-    padding-right: 1rem;
     position: absolute;
-    margin-top: .5em;
-    margin-left: -.5em;
-    color: white;
-    background-color: #00369f;
-    font-size: .8em;
+    top: 0.65em;
+    left: 0.65em;
+    display: inline-flex;
+    align-items: center;
+    max-width: calc(100% - 1.3em);
+    padding: 0.3em 0.72em;
+    color: #fff;
+    background: rgba(25, 65, 126, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.34);
+    border-radius: 999px;
+    box-shadow: 0 4px 12px rgba(18, 45, 88, 0.2);
+    backdrop-filter: blur(8px) saturate(1.25);
+    -webkit-backdrop-filter: blur(8px) saturate(1.25);
+    font-size: 0.72em;
+    font-weight: 700;
+    line-height: 1.2;
     z-index: 1;
-    border-radius: 0 3px 3px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.badge--inline {
+    position: static;
+    flex: 0 0 auto;
+    max-width: 100%;
+    color: $info-color;
+    background: rgba($info-color, 0.08);
+    border-color: rgba($info-color, 0.16);
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
 }
 
 // Education box styles
@@ -177,6 +285,41 @@ h1:before,
     flex-wrap: wrap;
     gap: 0.4em;
     margin-top: 0.5em;
+}
+
+.pub-heading {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.5em 1em;
+
+    .pub-title {
+        flex: 1 1 20em;
+        min-width: 0;
+    }
+}
+
+.pub-authors,
+.pub-venue,
+.pub-details {
+    margin-top: 0.35em;
+}
+
+.pub-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 0.25em 1em;
+
+    .pub-details {
+        flex: 1 1 16em;
+    }
+
+    .pub-links {
+        flex: 0 1 auto;
+    }
 }
 
 .pub-btn {
@@ -259,12 +402,14 @@ h1:before,
     font-weight: 700;
     line-height: 1.35;
     color: $info-color !important;
-    text-decoration: none !important;
-    border-bottom: 1.5px solid transparent;
-    transition: border-color 0.2s;
+    text-decoration-line: underline !important;
+    text-decoration-color: transparent !important;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 0.18em;
+    transition: text-decoration-color 0.2s;
 
     &:hover {
-        border-bottom-color: $info-color;
+        text-decoration-color: $info-color !important;
     }
 }
 
@@ -456,7 +601,7 @@ html[data-theme="dark"] {
         color: #7ab0e6 !important;
 
         &:hover {
-            border-bottom-color: #7ab0e6;
+            text-decoration-color: #7ab0e6 !important;
         }
     }
 
@@ -537,25 +682,6 @@ html[data-theme="dark"] {
         color: #aaa;
     }
 
-    // BibTeX modal
-    .bibtex-modal {
-        color: #d4d4d4;
-    }
-
-    .bibtex-modal-content {
-        background: #222 !important;
-    }
-
-    .bibtex-header h3 {
-        color: #e0e0e0;
-    }
-
-    .bibtex-content {
-        background: #1a1a1a !important;
-        border-color: #444 !important;
-        color: #d4d4d4 !important;
-    }
-
     // Tables
     table {
         color: #d4d4d4;
@@ -578,6 +704,12 @@ html[data-theme="dark"] {
     // Badges
     .badge {
         background-color: #2a5a99;
+    }
+
+    .badge--inline {
+        color: #9cc8ff;
+        background: rgba(122, 176, 230, 0.12);
+        border-color: rgba(122, 176, 230, 0.22);
     }
 
     // Hidden links dropdown

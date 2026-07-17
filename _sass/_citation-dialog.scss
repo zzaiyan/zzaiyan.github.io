@@ -1,0 +1,537 @@
+/* Multi-format citation dialog */
+@property --citation-halo-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+body.citation-modal-open {
+  overflow: hidden;
+  padding-right: calc(
+    var(--citation-body-padding-right, 0px) +
+    var(--citation-scrollbar-compensation, 0px)
+  );
+}
+
+.citation-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  color: #263443;
+  background: transparent;
+}
+
+.citation-modal::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: rgba(15, 22, 31, 0.48);
+  backdrop-filter: blur(4px) saturate(0.96);
+  -webkit-backdrop-filter: blur(4px) saturate(0.96);
+  pointer-events: none;
+  animation: citationBackdropIn 0.2s ease-out both;
+}
+
+.citation-modal__panel {
+  position: relative;
+  z-index: 1;
+  isolation: isolate;
+  width: min(680px, 100%);
+  max-height: min(82vh, 720px);
+  overflow: hidden;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.52), rgba(218, 233, 246, 0.3)),
+    rgba(235, 243, 250, 0.72);
+  border-radius: 16px;
+  box-shadow:
+    0 24px 64px rgba(20, 35, 52, 0.24),
+    0 0 34px rgba(67, 145, 219, 0.22);
+  backdrop-filter: blur(12px) saturate(1.6) contrast(0.96);
+  -webkit-backdrop-filter: blur(12px) saturate(1.6) contrast(0.96);
+  animation: citationPanelIn 0.28s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.citation-modal__panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  padding: 3px;
+  border-radius: inherit;
+  background: conic-gradient(
+    from var(--citation-halo-angle),
+    rgba(83, 133, 232, 0.98),
+    rgba(43, 192, 176, 0.92),
+    rgba(255, 185, 86, 0.86),
+    rgba(144, 105, 238, 0.94),
+    rgba(83, 133, 232, 0.98)
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  animation: citationHaloFlow 6s linear infinite;
+}
+
+.citation-modal__panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.4'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+  mix-blend-mode: soft-light;
+  opacity: 0.035;
+  pointer-events: none;
+}
+
+.citation-modal__panel:focus {
+  outline: none;
+}
+
+.citation-modal__header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.1rem 1.25rem 0.95rem;
+  border-bottom: 1px solid rgba(34, 75, 141, 0.1);
+}
+
+.citation-modal__heading {
+  min-width: 0;
+}
+
+.citation-modal__title {
+  margin: 0;
+  color: #24364b;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.citation-modal__key {
+  display: block;
+  margin-top: 0.25rem;
+  overflow: hidden;
+  background: transparent;
+  color: #687789;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 0.76rem;
+  line-height: 1.3;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.citation-dismiss-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  flex: 0 0 2rem;
+  padding: 0;
+  color: #667585;
+  background: rgba(34, 75, 141, 0.06);
+  border: 1px solid transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: color 0.2s, background 0.2s, border-color 0.2s;
+}
+
+.citation-dismiss-btn:hover {
+  color: #224b8d;
+  background: rgba(34, 75, 141, 0.11);
+  border-color: rgba(34, 75, 141, 0.1);
+}
+
+.citation-modal__body {
+  position: relative;
+  z-index: 1;
+  min-height: 0;
+  padding: 1rem 1.25rem;
+}
+
+.citation-format-tabs {
+  display: flex;
+  gap: 0.25rem;
+  margin-bottom: 0.75rem;
+  overflow-x: auto;
+  padding-bottom: 2px;
+  scrollbar-width: none;
+}
+
+.citation-format-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.citation-format-tab {
+  flex: 0 0 auto;
+  padding: 0.34em 0.72em;
+  color: #5b6b7b;
+  background: rgba(34, 75, 141, 0.05);
+  border: 1px solid transparent;
+  border-radius: 5px;
+  font-size: 0.78em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s, background 0.2s, border-color 0.2s;
+}
+
+.citation-format-tab:hover {
+  color: #224b8d;
+  background: rgba(34, 75, 141, 0.1);
+}
+
+.citation-format-tab[aria-selected="true"] {
+  color: #fff;
+  background: #224b8d;
+  border-color: #224b8d;
+}
+
+.citation-code {
+  max-height: min(50vh, 430px);
+  margin: 0;
+  overflow: auto;
+  padding: 1rem;
+  color: #344456;
+  background: rgba(244, 248, 252, 0.84);
+  border: 1px solid rgba(34, 75, 141, 0.12);
+  border-radius: 6px;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 0.8rem;
+  line-height: 1.55;
+  tab-size: 2;
+  white-space: pre;
+  user-select: text;
+  scrollbar-color: rgba(88, 108, 130, 0.48) transparent;
+  scrollbar-width: thin;
+}
+
+.citation-code code {
+  background: transparent;
+  color: inherit;
+}
+
+.citation-code[data-format="ieee"],
+.citation-code[data-format="apa"],
+.citation-code[data-format="gb-t-7714"] {
+  font-family: inherit;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  white-space: pre-wrap;
+}
+
+.citation-code::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+.citation-code::-webkit-scrollbar-thumb {
+  background: rgba(88, 108, 130, 0.42);
+  border-radius: 999px;
+}
+
+.citation-code::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.citation-code::selection,
+.citation-code code::selection {
+  color: #fff;
+  background: #3478c7;
+}
+
+.citation-modal__footer {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.45rem;
+  padding: 0 1.25rem 1.1rem;
+}
+
+.citation-copy-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4em;
+  min-width: 7.6em;
+  min-height: 2.2em;
+  padding: 0.35em 0.9em;
+  color: #fff;
+  background: #224b8d;
+  border: 1px solid #224b8d;
+  border-radius: 999px;
+  font-size: 0.84em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.citation-copy-btn:hover {
+  background: #183d78;
+  border-color: #183d78;
+  transform: translateY(-1px);
+}
+
+.citation-copy-btn.is-copied {
+  background: #3478c7;
+  border-color: #3478c7;
+}
+
+.citation-copy-btn.is-error {
+  background: #a34b4b;
+  border-color: #a34b4b;
+}
+
+.citation-download-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4em;
+  min-height: 2.2em;
+  padding: 0.35em 0.9em;
+  color: #224b8d;
+  background: rgba(34, 75, 141, 0.07);
+  border: 1px solid rgba(34, 75, 141, 0.16);
+  border-radius: 999px;
+  font-size: 0.84em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.citation-download-btn:hover {
+  color: #fff;
+  background: #224b8d;
+  border-color: #224b8d;
+  transform: translateY(-1px);
+}
+
+.citation-dismiss-btn:focus-visible,
+.citation-copy-btn:focus-visible,
+.citation-download-btn:focus-visible,
+.citation-format-tab:focus-visible {
+  outline: 2px solid #3c82d1;
+  outline-offset: 2px;
+}
+
+.citation-modal.is-closing::before {
+  animation: citationBackdropOut 0.16s ease-in both;
+}
+
+.citation-modal.is-closing .citation-modal__panel {
+  animation: citationPanelOut 0.16s ease-in both;
+}
+
+html[data-theme="dark"] {
+  .citation-modal {
+    color: #d7e0ea;
+  }
+
+  .citation-modal::before {
+    background: rgba(0, 0, 0, 0.64);
+  }
+
+  .citation-modal__panel {
+    background:
+      linear-gradient(145deg, rgba(65, 76, 91, 0.44), rgba(22, 27, 34, 0.3)),
+      rgba(28, 33, 40, 0.76);
+    box-shadow:
+      0 24px 72px rgba(0, 0, 0, 0.52),
+      0 0 38px rgba(102, 164, 226, 0.2);
+  }
+
+  .citation-modal__panel::after {
+    mix-blend-mode: screen;
+    opacity: 0.025;
+  }
+
+  .citation-modal__panel::before {
+    opacity: 1;
+  }
+
+  .citation-modal__header {
+    border-bottom-color: rgba(156, 200, 255, 0.12);
+  }
+
+  .citation-modal__title {
+    color: #edf4fb;
+  }
+
+  .citation-modal__key {
+    background: transparent;
+    color: #9aa9b9;
+  }
+
+  .citation-dismiss-btn {
+    color: #aebccc;
+    background: rgba(156, 200, 255, 0.08);
+  }
+
+  .citation-dismiss-btn:hover {
+    color: #d9ebff;
+    background: rgba(156, 200, 255, 0.14);
+    border-color: rgba(156, 200, 255, 0.12);
+  }
+
+  .citation-code {
+    color: #cfdae5;
+    background: rgba(16, 18, 22, 0.78);
+    border-color: rgba(156, 200, 255, 0.14);
+    scrollbar-color: rgba(174, 191, 208, 0.42) transparent;
+  }
+
+  .citation-code code {
+    background: transparent;
+    color: inherit;
+  }
+
+  .citation-format-tab {
+    color: #aebccc;
+    background: rgba(156, 200, 255, 0.08);
+  }
+
+  .citation-format-tab:hover {
+    color: #d9ebff;
+    background: rgba(156, 200, 255, 0.14);
+  }
+
+  .citation-format-tab[aria-selected="true"] {
+    color: #17202a;
+    background: #86b8eb;
+    border-color: #86b8eb;
+  }
+
+  .citation-copy-btn {
+    color: #17202a;
+    background: #86b8eb;
+    border-color: #86b8eb;
+  }
+
+  .citation-copy-btn:hover {
+    background: #a1caf3;
+    border-color: #a1caf3;
+  }
+
+  .citation-copy-btn.is-copied {
+    color: #fff;
+    background: #5b9bd5;
+    border-color: #5b9bd5;
+  }
+
+  .citation-copy-btn.is-error {
+    color: #fff;
+    background: #b65b5b;
+    border-color: #b65b5b;
+  }
+
+  .citation-download-btn {
+    color: #9cc8ff;
+    background: rgba(122, 176, 230, 0.1);
+    border-color: rgba(122, 176, 230, 0.2);
+  }
+
+  .citation-download-btn:hover {
+    color: #17202a;
+    background: #86b8eb;
+    border-color: #86b8eb;
+  }
+}
+
+@media (max-width: 520px) {
+  .citation-modal {
+    padding: 10px;
+  }
+
+  .citation-modal__panel {
+    width: 100%;
+    max-height: calc(100dvh - 20px);
+  }
+
+  .citation-modal__header {
+    padding: 1rem 1rem 0.85rem;
+  }
+
+  .citation-modal__body {
+    padding: 0.85rem 1rem;
+  }
+
+  .citation-code {
+    max-height: 52dvh;
+    padding: 0.85rem;
+    font-size: 0.75rem;
+  }
+
+  .citation-modal__footer {
+    padding: 0 1rem 1rem;
+  }
+
+  .citation-copy-btn {
+    width: 100%;
+  }
+
+  .citation-download-btn {
+    width: 100%;
+  }
+
+  .citation-modal__footer {
+    flex-wrap: wrap;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .citation-modal,
+  .citation-modal::before,
+  .citation-modal__panel,
+  .citation-modal__panel::before {
+    animation: none !important;
+  }
+}
+
+@keyframes citationHaloFlow {
+  to {
+    --citation-halo-angle: 360deg;
+  }
+}
+
+@keyframes citationBackdropIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes citationBackdropOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes citationPanelIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes citationPanelOut {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(8px) scale(0.99);
+  }
+}
