@@ -56,7 +56,6 @@
     "conference": [
         {
             "id": "zhang2026task",
-            "layout": "compact",
             "title": "Task-Driven Prompt Learning: A Joint Framework for Multi-modal Cloud Removal and Segmentation",
             "authors": "<strong><u>Zaiyan Zhang</u></strong>, Jie Li, Shaowei Shi, Qiangqiang Yuan",
             "venue": "IEEE International Geoscience and Remote Sensing Symposium",
