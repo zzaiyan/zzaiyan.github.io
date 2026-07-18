@@ -1,9 +1,9 @@
-<script src="assets/js/lang-toggle.js"></script>
-<script src="assets/js/main.min.js"></script>
+<script src="assets/js/lang-toggle.js" defer></script>
+<script src="assets/js/main.min.js" defer></script>
 <script>
   window.CitationDatabase = {{ site.data.citation_outputs | jsonify }};
 </script>
-<script src="assets/js/citation-dialog.js"></script>
-<script src="assets/js/last-update.js"></script>
+<script src="assets/js/citation-dialog.js" defer></script>
+<script src="assets/js/visitor-map.js" defer></script>
 
 {% include analytics.html %} {% include fetch_google_scholar_stats.html %}

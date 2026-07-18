@@ -1,5 +1,5 @@
 <script>
-  $(document).ready(function () {
+  (function () {
     {% assign scholar_config = site.google_scholar %}
     {% assign stats_branch = scholar_config.stats_branch | default: "google-scholar-stats" %}
     {% assign stats_file = scholar_config.stats_file | default: "gs_data.json" %}
@@ -14,44 +14,77 @@
       '{{ raw_base_url }}/{{ site.repository }}/{{ stats_branch }}/{{ stats_file }}'
     ];
 
-    function renderScholarStats(data, sourceUrl) {
-        var totalCitation = data['citedby'];
-        var totalCitElement = document.getElementById('total_cit');
-        if (totalCitElement) {
-          totalCitElement.innerHTML = totalCitation;
-        }
-        $('.google-scholar-badge__count').text(totalCitation);
-        $('.google-scholar-badge')
-          .attr('data-state', 'ready')
-          .attr('title', 'Citation data loaded from ' + sourceUrl);
-
-        var citationEles = document.getElementsByClassName('show_paper_citations');
-        Array.prototype.forEach.call(citationEles, element => {
-            var paperId = element.getAttribute('data');
-            if (data['publications'] && data['publications'][paperId]) {
-              var numCitations = data['publications'][paperId]['num_citations'];
-              if (numCitations > 0) {
-                element.innerHTML = '| Citations: ' + numCitations;
-              }
-            }
-        });
+    function setBadgesState(state) {
+      document.querySelectorAll('.google-scholar-badge').forEach(function (badge) {
+        badge.dataset.state = state;
+      });
     }
 
-    function loadScholarStats(sourceIndex) {
-      if (sourceIndex >= gsDataUrls.length) {
-        $('.google-scholar-badge').attr('data-state', 'unavailable');
-        return;
+    function renderScholarStats(data, sourceUrl) {
+      var totalCitation = data.citedby;
+      var totalCitElement = document.getElementById('total_cit');
+      if (totalCitElement) totalCitElement.textContent = totalCitation;
+
+      document.querySelectorAll('.google-scholar-badge__count').forEach(function (count) {
+        count.textContent = totalCitation;
+      });
+      document.querySelectorAll('.google-scholar-badge').forEach(function (badge) {
+        badge.dataset.state = 'ready';
+        badge.title = 'Citation data loaded from ' + sourceUrl;
+      });
+
+      document.querySelectorAll('.show_paper_citations').forEach(function (element) {
+        var paper = data.publications && data.publications[element.dataset.paperId];
+        if (paper && paper.num_citations > 0) {
+          element.textContent = '| Citations: ' + paper.num_citations;
+        }
+      });
+    }
+
+    function fetchWithTimeout(url, timeoutMs) {
+      var controller = new AbortController();
+      var timeout = window.setTimeout(function () {
+        controller.abort();
+      }, timeoutMs);
+
+      return fetch(url, {
+        cache: 'force-cache',
+        credentials: 'omit',
+        signal: controller.signal
+      }).then(function (response) {
+        if (!response.ok) throw new Error('HTTP ' + response.status);
+        return response.json();
+      }).finally(function () {
+        window.clearTimeout(timeout);
+      });
+    }
+
+    async function loadScholarStats() {
+      for (var index = 0; index < gsDataUrls.length; index += 1) {
+        try {
+          var data = await fetchWithTimeout(gsDataUrls[index], 4000);
+          renderScholarStats(data, gsDataUrls[index]);
+          return;
+        } catch (error) {
+          // Continue through the configured CDN and raw-source fallback chain.
+        }
       }
 
-      $.getJSON(gsDataUrls[sourceIndex])
-        .done(function (data) {
-          renderScholarStats(data, gsDataUrls[sourceIndex]);
-        })
-        .fail(function () {
-          loadScholarStats(sourceIndex + 1);
-        });
+      setBadgesState('unavailable');
     }
 
-    loadScholarStats(0);
-  });
+    function initScholarStats() {
+      if (
+        !document.querySelector('.google-scholar-badge') &&
+        !document.querySelector('.show_paper_citations')
+      ) return;
+      loadScholarStats();
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initScholarStats, { once: true });
+    } else {
+      initScholarStats();
+    }
+  })();
 </script>

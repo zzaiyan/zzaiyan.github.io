@@ -51,7 +51,7 @@ It supports **bilingual (EN / ZH) switching** and **dark / light theme toggling*
 │   └── js/
 │       ├── lang-toggle.js   # Language toggle + theme toggle logic
 │       ├── citation-dialog.js # Citation dialog
-│       └── last-update.js   # Auto last-updated timestamp
+│       └── visitor-map.js   # Lazy visitor-map loader
 ├── images/                  # Image assets
 ├── scripts/
 │   ├── build-citations.mjs  # Offline citation format generator
@@ -300,7 +300,15 @@ The dialog panel uses a translucent Mica-like material with `backdrop-filter: bl
 2. Set `google_scholar_stats_use_cdn: true` in `_config.yml`
 3. Fill in the `scholarId` field for each paper entry in `_data/pubs.json`
 
-Citation counts are fetched asynchronously by `fetch_google_scholar_stats.html` after page load.
+Citation counts are fetched asynchronously by `fetch_google_scholar_stats.html` after the DOM is ready. The loader uses native `fetch`, tries the configured CDN URLs sequentially with a four-second timeout, and falls back to the raw GitHub source without blocking rendering.
+
+## Resource Loading
+
+- Local behavior scripts use `defer` and preserve their document order.
+- MathJax is loaded only on pages whose front matter contains `mathjax: true`.
+- Google Analytics is emitted only when `google_analytics_id` is configured.
+- The visitor map is injected when its footer container enters a 320px prefetch margin, so its third-party script does not block initial parsing.
+- The footer's last-updated date uses Jekyll's build time and does not call the GitHub API at runtime.
 
 ## Adding a New Paper — Full Workflow
 

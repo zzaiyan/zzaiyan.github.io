@@ -50,7 +50,7 @@
 │   └── js/
 │       ├── lang-toggle.js   # 语言切换 + 主题切换逻辑
 │       ├── citation-dialog.js # 多格式引用弹窗功能
-│       └── last-update.js   # 自动获取最后更新时间
+│       └── visitor-map.js   # 访客地图延迟加载
 ├── images/                  # 图片资源
 ├── scripts/
 │   ├── build-citations.mjs  # 离线引用格式生成器
@@ -299,7 +299,15 @@ author:
 2. `_config.yml` 中设置 `google_scholar_stats_use_cdn: true`
 3. `_data/pubs.json` 论文条目中填写 `scholarId` 字段
 
-引用数由 `fetch_google_scholar_stats.html` 在页面加载后异步获取并填充。
+引用数由 `fetch_google_scholar_stats.html` 在 DOM 就绪后异步获取并填充。加载器使用原生 `fetch`，按配置顺序尝试各 CDN，每个地址最多等待四秒，最后回退到 GitHub Raw；整个过程不阻塞页面渲染。
+
+## 静态资源加载
+
+- 本地交互脚本使用 `defer`，并保持文档中的执行顺序。
+- 仅当页面 front matter 设置 `mathjax: true` 时加载 MathJax。
+- 仅在配置 `google_analytics_id` 后输出 Google Analytics 脚本。
+- 访客地图进入页脚容器前 320px 的预加载范围时才注入，第三方脚本不再阻塞初始 HTML 解析。
+- 页脚最后更新时间使用 Jekyll 构建时间，不再在浏览器中请求 GitHub API。
 
 ## 添加新论文的完整流程
 

@@ -2,7 +2,7 @@
     {
         "school": "Wuhan University | 武汉大学",
         "url": "https://www.whu.edu.cn/",
-        "image": "images/whu.png",
+        "image": "images/whu.webp",
         "degree": "Master",
         "degree_zh": "工学硕士",
         "major": "Photogrammetry and Remote Sensing",
@@ -14,7 +14,7 @@
     {
         "school": "China University of Geosciences | 中国地质大学",
         "url": "https://www.cug.edu.cn/",
-        "image": "images/cug.jpg",
+        "image": "images/cug.webp",
         "degree": "Bachelor",
         "degree_zh": "工学学士",
         "major": "Data Science and Big Data Technology",
