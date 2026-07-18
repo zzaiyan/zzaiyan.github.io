@@ -354,11 +354,11 @@ bundle exec jekyll serve
 
 ## 部署
 
-推送 `main` 后会触发 `.github/workflows/deploy.yml`。工作流只构建一次 `_site`，再将同一份产物部署到 GitHub Pages 和阿里云 ECS。`zzaiyan.com` 是 canonical 主站，`zzaiyan.github.io` 继续作为可独立访问的镜像。
+推送 `main` 后会触发 `.github/workflows/deploy.yml`。工作流只构建一次 `_site`，再将同一份产物部署到 GitHub Pages 和可通过 SSH 访问的 Web 服务器。自定义域名作为 canonical 主站，GitHub Pages 地址继续作为可独立访问的镜像。
 
-ECS 部署使用 `aliyun-production` Environment，以及 `ECS_HOST`、`ECS_PORT`、`ECS_USER`、`ECS_SSH_KEY`、`ECS_KNOWN_HOSTS` 五个 Secrets。版本文件上传至 `/www/wwwroot/acadhome/releases/<commit-sha>`，随后通过 `/www/wwwroot/acadhome/current` 软链接原子切换。`/www/wwwroot/acadhome` 只是发布基目录，宝塔网站根目录必须指向 `/www/wwwroot/acadhome/current`。
+SSH 部署使用 `server-production` Environment，以及 `SSH_HOST`、`SSH_PORT`、`SSH_USER`、`SSH_PRIVATE_KEY`、`SSH_KNOWN_HOSTS` 五个 Secrets。另需在该 Environment 中设置 `SSH_DEPLOY_PATH`（例如 `/www/wwwroot/acadhome`）和 `SSH_SITE_URL`（例如 `https://example.com`）两个 Variables。版本文件上传至 `<SSH_DEPLOY_PATH>/releases/<commit-sha>`，随后通过 `<SSH_DEPLOY_PATH>/current` 软链接原子切换；Web 服务器的网站根目录应指向该 `current` 软链接。
 
-每份产物包含 `deploy-version.json`，ECS 任务在切换后会通过公网地址验证版本。需要回滚时，将 `current` 重新指向 `releases/` 下的旧版本目录。
+每份产物包含 `deploy-version.json`，SSH 服务器任务在切换后会通过公网地址验证版本。需要回滚时，将 `current` 重新指向 `releases/` 下的旧版本目录。
 
 ## 故障排查
 
