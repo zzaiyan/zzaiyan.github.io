@@ -284,6 +284,10 @@ author:
 - 一键复制到剪贴板
 - 机器可读格式下载
 - ESC 键或点击遮罩区域关闭
+- 弹窗打开期间保留页面滚动条
+- 关闭时将焦点还给原始 `Cite/引用` 链接，但不改变当前页面位置
+
+弹窗面板使用半透明云母片风格，滤镜为 `backdrop-filter: blur(16px) saturate(2) contrast(0.96)`。面板与代码区均保留半透明背景，可透出经过模糊处理的主页轮廓。鼠标位于引用内容区域时优先滚动该区域，位于外围遮罩时仍可继续滚动主页。
 
 ## Google Scholar 引用统计
 
@@ -309,7 +313,7 @@ author:
 | `$paper-box-padding` | `main.scss` | 2em | 卡片内边距 |
 | `$edu-box-image-width` | `main.scss` | 240px | 学校 logo 宽度 |
 
-多格式引用弹窗样式在 `_sass/_citation-dialog.scss` 中。深色模式样式也在该文件中定义。
+多格式引用弹窗的材质透明度、背景滤镜、动态光环和响应式尺寸均在 `_sass/_citation-dialog.scss` 中定义；弹窗交互与焦点恢复逻辑位于 `assets/js/citation-dialog.js`。
 
 ## 全局配置（_config.yml）
 
