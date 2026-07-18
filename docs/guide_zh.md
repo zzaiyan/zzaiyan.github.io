@@ -356,7 +356,7 @@ bundle exec jekyll serve
 
 推送 `main` 后会触发 `.github/workflows/deploy.yml`。工作流只构建一次 `_site`，再将同一份产物部署到 GitHub Pages 和阿里云 ECS。`zzaiyan.com` 是 canonical 主站，`zzaiyan.github.io` 继续作为可独立访问的镜像。
 
-ECS 部署使用 `aliyun-production` Environment，以及 `ECS_HOST`、`ECS_PORT`、`ECS_USER`、`ECS_SSH_KEY`、`ECS_KNOWN_HOSTS` 五个 Secrets。版本文件上传至 `/www/wwwroot/acadhome/releases/<commit-sha>`，随后通过 `/www/wwwroot/acadhome/current` 软链接原子切换；宝塔网站根目录必须指向该软链接。如果宝塔修改网站目录时将 `current` 创建成了真实的空目录，部署会且只会安全地用版本软链接替换这个空目录。
+ECS 部署使用 `aliyun-production` Environment，以及 `ECS_HOST`、`ECS_PORT`、`ECS_USER`、`ECS_SSH_KEY`、`ECS_KNOWN_HOSTS` 五个 Secrets。版本文件上传至 `/www/wwwroot/acadhome/releases/<commit-sha>`，随后通过 `/www/wwwroot/acadhome/current` 软链接原子切换。`/www/wwwroot/acadhome` 只是发布基目录，宝塔网站根目录必须指向 `/www/wwwroot/acadhome/current`。
 
 每份产物包含 `deploy-version.json`，ECS 任务在切换后会通过公网地址验证版本。需要回滚时，将 `current` 重新指向 `releases/` 下的旧版本目录。
 
