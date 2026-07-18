@@ -145,10 +145,43 @@ jobs:
           RSYNC_RSH="ssh -i $HOME/.ssh/ecs_deploy_key -p $port -o BatchMode=yes -o ConnectTimeout=10 -o ServerAliveInterval=15 -o ServerAliveCountMax=3 -o StrictHostKeyChecking=yes" \
             rsync -az --delete --delay-updates ./site/ "$remote:$release/"
 
-          "${ssh_args[@]}" "$remote" \
-            "test -f '$release/index.html' && \
-             ln -sfn '$release' '${REMOTE_BASE}/current.next' && \
-             mv -Tf '${REMOTE_BASE}/current.next' '${REMOTE_BASE}/current'"
+          "${ssh_args[@]}" "$remote" bash -s -- \
+            "$release" "$REMOTE_BASE" "$GITHUB_SHA" <<'REMOTE_SCRIPT'
+          set -euo pipefail
+          release="$1"
+          remote_base="$2"
+          commit_sha="$3"
+          current="${remote_base}/current"
+          next="${remote_base}/current.next"
+
+          test -s "${release}/index.html"
+          test -s "${release}/deploy-version.json"
+
+          if [[ -e "$current" && ! -L "$current" ]]; then
+            if [[ -d "$current" ]]; then
+              rmdir "$current" || {
+                echo "$current must be empty before it can become a release symlink" >&2
+                exit 1
+              }
+            else
+              echo "$current exists but is not a directory or symlink" >&2
+              exit 1
+            fi
+          fi
+
+          if [[ -e "$next" && ! -L "$next" ]]; then
+            echo "$next exists but is not a symlink" >&2
+            exit 1
+          fi
+
+          ln -sfn "$release" "$next"
+          mv -Tf "$next" "$current"
+
+          test -L "$current"
+          test -s "${current}/index.html"
+          grep -Fq "\"commit\":\"${commit_sha}\"" \
+            "${current}/deploy-version.json"
+          REMOTE_SCRIPT
 
       - name: Verify public deployment
         run: |

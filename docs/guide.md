@@ -357,7 +357,7 @@ Open http://127.0.0.1:4000 in your browser. Live reload is enabled.
 
 Pushing `main` triggers `.github/workflows/deploy.yml`. The workflow builds `_site` once, then deploys the same artifact to GitHub Pages and Aliyun ECS. `zzaiyan.com` is the canonical URL; `zzaiyan.github.io` remains an independently accessible mirror.
 
-The ECS deployment uses the `aliyun-production` environment and these secrets: `ECS_HOST`, `ECS_PORT`, `ECS_USER`, `ECS_SSH_KEY`, and `ECS_KNOWN_HOSTS`. Releases are uploaded to `/www/wwwroot/acadhome/releases/<commit-sha>` and activated atomically through the `/www/wwwroot/acadhome/current` symlink. The BaoTa site root must point to that symlink.
+The ECS deployment uses the `aliyun-production` environment and these secrets: `ECS_HOST`, `ECS_PORT`, `ECS_USER`, `ECS_SSH_KEY`, and `ECS_KNOWN_HOSTS`. Releases are uploaded to `/www/wwwroot/acadhome/releases/<commit-sha>` and activated atomically through the `/www/wwwroot/acadhome/current` symlink. The BaoTa site root must point to that symlink. If BaoTa creates `current` as an empty directory while updating the site root, the deployment safely replaces only that empty directory with the release symlink.
 
 Each artifact contains `deploy-version.json`. The ECS job verifies this endpoint after activation. To roll back, point `current` to a previous directory under `releases/`.
 
