@@ -3,6 +3,7 @@ node_modules/
 push.sh
 .DS_Store
 .bundle/
+.sass-cache/
 vendor/bundle/
 
 # AI config files
