@@ -63,10 +63,10 @@ jobs:
         with:
           path: ./_site
 
-      - name: Upload ECS artifact
+      - name: Upload SSH server artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ecs-site
+          name: site
           path: ./_site
           include-hidden-files: true
           retention-days: 1
@@ -88,51 +88,57 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
-  deploy-ecs:
-    name: Deploy Aliyun ECS
+  deploy-server:
+    name: Deploy to SSH Server
     needs: build
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
       contents: read
     environment:
-      name: aliyun-production
-      url: https://zzaiyan.com
+      name: server-production
+      url: ${{ vars.SSH_SITE_URL }}
     env:
-      REMOTE_BASE: /www/wwwroot/acadhome
+      SSH_DEPLOY_PATH: ${{ vars.SSH_DEPLOY_PATH }}
+      SSH_SITE_URL: ${{ vars.SSH_SITE_URL }}
     steps:
       - name: Download site artifact
         uses: actions/download-artifact@v4
         with:
-          name: ecs-site
+          name: site
           path: ./site
 
       - name: Configure SSH
         env:
-          ECS_SSH_KEY: ${{ secrets.ECS_SSH_KEY }}
-          ECS_KNOWN_HOSTS: ${{ secrets.ECS_KNOWN_HOSTS }}
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SSH_KNOWN_HOSTS: ${{ secrets.SSH_KNOWN_HOSTS }}
         run: |
+          set -euo pipefail
+          : "${SSH_PRIVATE_KEY:?SSH_PRIVATE_KEY is not configured}"
+          : "${SSH_KNOWN_HOSTS:?SSH_KNOWN_HOSTS is not configured}"
+
           install -d -m 700 "$HOME/.ssh"
-          printf '%s\n' "$ECS_SSH_KEY" > "$HOME/.ssh/ecs_deploy_key"
-          printf '%s\n' "$ECS_KNOWN_HOSTS" > "$HOME/.ssh/known_hosts"
-          chmod 600 "$HOME/.ssh/ecs_deploy_key" "$HOME/.ssh/known_hosts"
+          printf '%s\n' "$SSH_PRIVATE_KEY" > "$HOME/.ssh/deploy_key"
+          printf '%s\n' "$SSH_KNOWN_HOSTS" > "$HOME/.ssh/known_hosts"
+          chmod 600 "$HOME/.ssh/deploy_key" "$HOME/.ssh/known_hosts"
 
       - name: Upload and activate release
         env:
-          ECS_HOST: ${{ secrets.ECS_HOST }}
-          ECS_PORT: ${{ secrets.ECS_PORT }}
-          ECS_USER: ${{ secrets.ECS_USER }}
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_PORT: ${{ secrets.SSH_PORT }}
+          SSH_USER: ${{ secrets.SSH_USER }}
         run: |
           set -euo pipefail
-          : "${ECS_HOST:?ECS_HOST is not configured}"
-          : "${ECS_USER:?ECS_USER is not configured}"
+          : "${SSH_HOST:?SSH_HOST is not configured}"
+          : "${SSH_USER:?SSH_USER is not configured}"
+          : "${SSH_DEPLOY_PATH:?SSH_DEPLOY_PATH is not configured}"
 
-          port="${ECS_PORT:-22}"
-          remote="${ECS_USER}@${ECS_HOST}"
-          release="${REMOTE_BASE}/releases/${GITHUB_SHA}"
+          port="${SSH_PORT:-22}"
+          remote="${SSH_USER}@${SSH_HOST}"
+          release="${SSH_DEPLOY_PATH}/releases/${GITHUB_SHA}"
           ssh_args=(
             ssh
-            -i "$HOME/.ssh/ecs_deploy_key"
+            -i "$HOME/.ssh/deploy_key"
             -p "$port"
             -o BatchMode=yes
             -o ConnectTimeout=10
@@ -142,11 +148,11 @@ jobs:
           )
 
           "${ssh_args[@]}" "$remote" "mkdir -p '$release'"
-          RSYNC_RSH="ssh -i $HOME/.ssh/ecs_deploy_key -p $port -o BatchMode=yes -o ConnectTimeout=10 -o ServerAliveInterval=15 -o ServerAliveCountMax=3 -o StrictHostKeyChecking=yes" \
+          RSYNC_RSH="ssh -i $HOME/.ssh/deploy_key -p $port -o BatchMode=yes -o ConnectTimeout=10 -o ServerAliveInterval=15 -o ServerAliveCountMax=3 -o StrictHostKeyChecking=yes" \
             rsync -az --delete --delay-updates ./site/ "$remote:$release/"
 
           "${ssh_args[@]}" "$remote" bash -s -- \
-            "$release" "$REMOTE_BASE" "$GITHUB_SHA" <<'REMOTE_SCRIPT'
+            "$release" "$SSH_DEPLOY_PATH" "$GITHUB_SHA" <<'REMOTE_SCRIPT'
           set -euo pipefail
           release="$1"
           remote_base="$2"
@@ -186,11 +192,13 @@ jobs:
       - name: Verify public deployment
         run: |
           set -euo pipefail
+          : "${SSH_SITE_URL:?SSH_SITE_URL is not configured}"
           expected="\"commit\":\"${GITHUB_SHA}\""
+          site_url="${SSH_SITE_URL%/}"
 
           for attempt in {1..10}; do
             response="$(curl -fsS --connect-timeout 5 --max-time 15 \
-              "https://zzaiyan.com/deploy-version.json?sha=${GITHUB_SHA}" || true)"
+              "${site_url}/deploy-version.json?sha=${GITHUB_SHA}" || true)"
             if grep -Fq "$expected" <<< "$response"; then
               exit 0
             fi

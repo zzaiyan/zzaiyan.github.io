@@ -355,11 +355,11 @@ Open http://127.0.0.1:4000 in your browser. Live reload is enabled.
 
 ## Deployment
 
-Pushing `main` triggers `.github/workflows/deploy.yml`. The workflow builds `_site` once, then deploys the same artifact to GitHub Pages and Aliyun ECS. `zzaiyan.com` is the canonical URL; `zzaiyan.github.io` remains an independently accessible mirror.
+Pushing `main` triggers `.github/workflows/deploy.yml`. The workflow builds `_site` once, then deploys the same artifact to GitHub Pages and an SSH-accessible web server. The custom domain is the canonical URL, while the GitHub Pages URL remains an independently accessible mirror.
 
-The ECS deployment uses the `aliyun-production` environment and these secrets: `ECS_HOST`, `ECS_PORT`, `ECS_USER`, `ECS_SSH_KEY`, and `ECS_KNOWN_HOSTS`. Releases are uploaded to `/www/wwwroot/acadhome/releases/<commit-sha>` and activated atomically through the `/www/wwwroot/acadhome/current` symlink. `/www/wwwroot/acadhome` is only the release base directory; the BaoTa site root must point to `/www/wwwroot/acadhome/current`.
+The SSH deployment uses the `server-production` environment and these secrets: `SSH_HOST`, `SSH_PORT`, `SSH_USER`, `SSH_PRIVATE_KEY`, and `SSH_KNOWN_HOSTS`. Configure `SSH_DEPLOY_PATH` (for example, `/www/wwwroot/acadhome`) and `SSH_SITE_URL` (for example, `https://example.com`) as environment variables. Releases are uploaded to `<SSH_DEPLOY_PATH>/releases/<commit-sha>` and activated atomically through the `<SSH_DEPLOY_PATH>/current` symlink. Configure the web server's document root to use that `current` symlink.
 
-Each artifact contains `deploy-version.json`. The ECS job verifies this endpoint after activation. To roll back, point `current` to a previous directory under `releases/`.
+Each artifact contains `deploy-version.json`. The SSH server job verifies this endpoint after activation. To roll back, point `current` to a previous directory under `releases/`.
 
 ## Troubleshooting
 
