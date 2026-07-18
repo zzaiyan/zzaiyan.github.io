@@ -124,19 +124,6 @@
       tab.addEventListener("click", () => setFormat(format.id), { signal });
     });
 
-    const scrollbarWidth = Math.max(
-      0,
-      window.innerWidth - document.documentElement.clientWidth,
-    );
-    document.body.style.setProperty(
-      "--citation-body-padding-right",
-      window.getComputedStyle(document.body).paddingRight,
-    );
-    document.body.style.setProperty(
-      "--citation-scrollbar-compensation",
-      `${scrollbarWidth}px`,
-    );
-
     function setFormat(formatId) {
       currentFormat = getFormat(formatId);
       const value = entry.formats[currentFormat.id] || "";
@@ -156,11 +143,10 @@
       controller.abort();
       window.clearTimeout(copyResetTimer);
       modal.remove();
-      document.body.classList.remove("citation-modal-open");
-      document.body.style.removeProperty("--citation-body-padding-right");
-      document.body.style.removeProperty("--citation-scrollbar-compensation");
       if (activeDialog && activeDialog.modal === modal) activeDialog = null;
-      if (trigger && document.contains(trigger)) trigger.focus();
+      if (trigger && document.contains(trigger)) {
+        trigger.focus({ preventScroll: true });
+      }
     }
 
     function close(immediate) {
@@ -237,7 +223,6 @@
     document.addEventListener("keydown", trapFocus, { signal });
 
     document.body.appendChild(modal);
-    document.body.classList.add("citation-modal-open");
     activeDialog = { modal, removeImmediately: () => close(true) };
     setFormat(currentFormat.id);
     window.requestAnimationFrame(() => panel.focus());

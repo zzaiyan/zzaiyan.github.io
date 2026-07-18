@@ -285,6 +285,10 @@ A theme toggle button (🌙 / ☀) is displayed next to the language button. The
 - One-click copy to clipboard
 - Downloads for machine-readable formats
 - Close with ESC key or by clicking the backdrop
+- Keep the page scrollbar available while the dialog is open
+- Restore focus to the originating `Cite` link without changing the current page position
+
+The dialog panel uses a translucent Mica-like material with `backdrop-filter: blur(16px) saturate(2) contrast(0.96)`. Its panel and code-area backgrounds remain semi-transparent so the blurred page structure is visible through the dialog. Scrolling over the citation content scrolls that content first; scrolling over the surrounding backdrop continues to scroll the page.
 
 ## Google Scholar Citation Stats
 
@@ -310,7 +314,7 @@ Citation counts are fetched asynchronously by `fetch_google_scholar_stats.html` 
 | `$paper-box-padding` | `main.scss` | 2em | Card inner padding |
 | `$edu-box-image-width` | `main.scss` | 240px | School logo width |
 
-Citation dialog styles are in `_sass/_citation-dialog.scss`.
+Citation dialog styles, including material transparency, backdrop filtering, the animated halo, and responsive sizing, are in `_sass/_citation-dialog.scss`. Dialog behavior and focus restoration are implemented in `assets/js/citation-dialog.js`.
 Dark mode styles are in the `html[data-theme="dark"] { ... }` block in `assets/css/main.scss`.
 
 ## Global Config (_config.yml)
