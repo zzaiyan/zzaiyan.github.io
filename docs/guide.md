@@ -40,9 +40,13 @@ It supports **bilingual (EN / ZH) switching** and **dark / light theme toggling*
 ├── _sass/                   # SCSS source files
 │   ├── _masthead.scss       # Navigation bar styles
 │   ├── _citation-dialog.scss # Citation dialog styles
+│   ├── _publication-cards.scss # Publication, education, and internship cards
+│   ├── _homepage-sections.scss # Anchors, news, timeline, and misc sections
+│   ├── _site-controls.scss  # Language visibility and masthead controls
+│   ├── _dark-mode.scss      # Site-wide dark theme overrides
 │   └── ...
 ├── assets/
-│   ├── css/main.scss        # SCSS entry (includes dark mode & bilingual CSS)
+│   ├── css/main.scss        # SCSS entry and ordered partial imports
 │   ├── pubs/                # Publication PDF files
 │   └── js/
 │       ├── lang-toggle.js   # Language toggle + theme toggle logic
@@ -273,7 +277,7 @@ A theme toggle button (🌙 / ☀) is displayed next to the language button. The
 ### How it works
 
 - The `data-theme` attribute on `<html>` switches between `"light"` and `"dark"`
-- `assets/css/main.scss` contains an `html[data-theme="dark"] { ... }` block that overrides component colors
+- `_sass/_dark-mode.scss` contains the `html[data-theme="dark"] { ... }` overrides for component colors
 - `_includes/head.html` contains a flash-prevention inline script that sets `data-theme` before CSS loads
 - `assets/js/lang-toggle.js` handles both language and theme toggles and persistence
 
@@ -310,12 +314,13 @@ Citation counts are fetched asynchronously by `fetch_google_scholar_stats.html` 
 
 | Variable | File | Default | Description |
 |----------|------|---------|-------------|
-| `$paper-box-image-width` | `main.scss` | 360px | Paper teaser image width |
-| `$paper-box-padding` | `main.scss` | 2em | Card inner padding |
-| `$edu-box-image-width` | `main.scss` | 240px | School logo width |
+| `$paper-box-image-width` | `_publication-cards.scss` | 360px | Paper teaser image width |
+| `$paper-box-padding` | `_publication-cards.scss` | 2em | Card inner padding |
+| `$edu-box-image-width` | `_publication-cards.scss` | 240px | School logo width |
 
 Citation dialog styles, including material transparency, backdrop filtering, the animated halo, and responsive sizing, are in `_sass/_citation-dialog.scss`. Dialog behavior and focus restoration are implemented in `assets/js/citation-dialog.js`.
-Dark mode styles are in the `html[data-theme="dark"] { ... }` block in `assets/css/main.scss`.
+
+`assets/css/main.scss` is only the compilation entry. Site-specific partials are imported after the base theme in dependency order: component foundations, homepage sections, site controls, and finally `_dark-mode.scss`. Keep dark-mode rules in the final partial so theme overrides cannot be replaced by later base component rules.
 
 ## Global Config (_config.yml)
 

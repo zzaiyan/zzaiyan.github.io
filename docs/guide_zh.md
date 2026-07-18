@@ -39,9 +39,13 @@
 ├── _sass/                   # 样式源文件
 │   ├── _masthead.scss       # 导航栏样式
 │   ├── _citation-dialog.scss # 多格式引用弹窗样式
+│   ├── _publication-cards.scss # 论文、教育与实习卡片
+│   ├── _homepage-sections.scss # 锚点、新闻、时间线与 Misc
+│   ├── _site-controls.scss  # 语言可见性与导航栏控件
+│   ├── _dark-mode.scss      # 全站深色主题覆盖
 │   └── ...
 ├── assets/
-│   ├── css/main.scss        # 样式入口（含深色模式与双语 CSS）
+│   ├── css/main.scss        # SCSS 编译入口与有序 partial 导入
 │   ├── pubs/                # 论文 PDF 文件
 │   └── js/
 │       ├── lang-toggle.js   # 语言切换 + 主题切换逻辑
@@ -272,20 +276,20 @@ author:
 ### 实现原理
 
 - `<html>` 元素的 `data-theme` 属性在 `"light"` / `"dark"` 间切换
-- `assets/css/main.scss` 中 `html[data-theme="dark"] { ... }` 覆盖各组件颜色
+- `_sass/_dark-mode.scss` 中的 `html[data-theme="dark"] { ... }` 负责覆盖各组件颜色
 - `_includes/head.html` 含防闪烁内联脚本，在 CSS 加载前即设置 `data-theme`
 - `assets/js/lang-toggle.js` 同时管理语言和主题的切换与持久化
 
 ## 多格式引用弹窗
 
-`_data/citation_outputs.json` 在构建时通过 Liquid 内联到页面的 `<script>` 标签中（见 `scripts.html`），`citation-dialog.js` 在页面加载后自动绑定所有 `#citation-*` 链接。点击 `Cite/引用` 后弹出窗口，支持：
+`_data/citation_outputs.json` 在构建时通过 Liquid 内联到页面的 `<script>` 标签中（见 `scripts.html`），`citation-dialog.js` 在页面加载后自动绑定所有 `#citation-*` 链接。点击 `Cite` 后弹出窗口，支持：
 
 - BibTeX、RIS、CSL-JSON、IEEE、APA 和 GB/T 7714
 - 一键复制到剪贴板
 - 机器可读格式下载
 - ESC 键或点击遮罩区域关闭
 - 弹窗打开期间保留页面滚动条
-- 关闭时将焦点还给原始 `Cite/引用` 链接，但不改变当前页面位置
+- 关闭时将焦点还给原始 `Cite` 链接，但不改变当前页面位置
 
 弹窗面板使用半透明云母片风格，滤镜为 `backdrop-filter: blur(16px) saturate(2) contrast(0.96)`。面板与代码区均保留半透明背景，可透出经过模糊处理的主页轮廓。鼠标位于引用内容区域时优先滚动该区域，位于外围遮罩时仍可继续滚动主页。
 
@@ -309,11 +313,13 @@ author:
 
 | 变量 | 位置 | 默认值 | 说明 |
 |------|------|--------|------|
-| `$paper-box-image-width` | `main.scss` | 360px | 论文图片宽度 |
-| `$paper-box-padding` | `main.scss` | 2em | 卡片内边距 |
-| `$edu-box-image-width` | `main.scss` | 240px | 学校 logo 宽度 |
+| `$paper-box-image-width` | `_publication-cards.scss` | 360px | 论文图片宽度 |
+| `$paper-box-padding` | `_publication-cards.scss` | 2em | 卡片内边距 |
+| `$edu-box-image-width` | `_publication-cards.scss` | 240px | 学校 logo 宽度 |
 
 多格式引用弹窗的材质透明度、背景滤镜、动态光环和响应式尺寸均在 `_sass/_citation-dialog.scss` 中定义；弹窗交互与焦点恢复逻辑位于 `assets/js/citation-dialog.js`。
+
+`assets/css/main.scss` 仅作为编译入口。站点定制 partial 在基础主题之后按依赖顺序导入：组件基础样式、主页区块、站点控件，最后是 `_dark-mode.scss`。深色主题必须保持最后导入，避免主题覆盖被后续基础组件规则反向覆盖。
 
 ## 全局配置（_config.yml）
 
