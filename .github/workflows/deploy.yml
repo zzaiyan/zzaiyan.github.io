@@ -1,0 +1,158 @@
+name: Deploy website
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: production-deploy
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build site
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      pages: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Verify citation data
+        run: |
+          npm ci
+          npm run citations:check
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+
+      - name: Record deployment version
+        run: |
+          printf '{"commit":"%s","built_at":"%s"}\n' \
+            "$GITHUB_SHA" "$(date -u +'%Y-%m-%dT%H:%M:%SZ')" \
+            > _site/deploy-version.json
+
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./_site
+
+      - name: Upload ECS artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ecs-site
+          path: ./_site
+          include-hidden-files: true
+          retention-days: 1
+
+  deploy-pages:
+    name: Deploy GitHub Pages
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+  deploy-ecs:
+    name: Deploy Aliyun ECS
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    environment:
+      name: aliyun-production
+      url: https://zzaiyan.com
+    env:
+      REMOTE_BASE: /www/wwwroot/acadhome
+    steps:
+      - name: Download site artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: ecs-site
+          path: ./site
+
+      - name: Configure SSH
+        env:
+          ECS_SSH_KEY: ${{ secrets.ECS_SSH_KEY }}
+          ECS_KNOWN_HOSTS: ${{ secrets.ECS_KNOWN_HOSTS }}
+        run: |
+          install -d -m 700 "$HOME/.ssh"
+          printf '%s\n' "$ECS_SSH_KEY" > "$HOME/.ssh/ecs_deploy_key"
+          printf '%s\n' "$ECS_KNOWN_HOSTS" > "$HOME/.ssh/known_hosts"
+          chmod 600 "$HOME/.ssh/ecs_deploy_key" "$HOME/.ssh/known_hosts"
+
+      - name: Upload and activate release
+        env:
+          ECS_HOST: ${{ secrets.ECS_HOST }}
+          ECS_PORT: ${{ secrets.ECS_PORT }}
+          ECS_USER: ${{ secrets.ECS_USER }}
+        run: |
+          set -euo pipefail
+          : "${ECS_HOST:?ECS_HOST is not configured}"
+          : "${ECS_USER:?ECS_USER is not configured}"
+
+          port="${ECS_PORT:-22}"
+          remote="${ECS_USER}@${ECS_HOST}"
+          release="${REMOTE_BASE}/releases/${GITHUB_SHA}"
+          ssh_args=(
+            ssh
+            -i "$HOME/.ssh/ecs_deploy_key"
+            -p "$port"
+            -o BatchMode=yes
+            -o ConnectTimeout=10
+            -o ServerAliveInterval=15
+            -o ServerAliveCountMax=3
+            -o StrictHostKeyChecking=yes
+          )
+
+          "${ssh_args[@]}" "$remote" "mkdir -p '$release'"
+          RSYNC_RSH="ssh -i $HOME/.ssh/ecs_deploy_key -p $port -o BatchMode=yes -o ConnectTimeout=10 -o ServerAliveInterval=15 -o ServerAliveCountMax=3 -o StrictHostKeyChecking=yes" \
+            rsync -az --delete --delay-updates ./site/ "$remote:$release/"
+
+          "${ssh_args[@]}" "$remote" \
+            "test -f '$release/index.html' && \
+             ln -sfn '$release' '${REMOTE_BASE}/current.next' && \
+             mv -Tf '${REMOTE_BASE}/current.next' '${REMOTE_BASE}/current'"
+
+      - name: Verify public deployment
+        run: |
+          set -euo pipefail
+          expected="\"commit\":\"${GITHUB_SHA}\""
+
+          for attempt in {1..10}; do
+            response="$(curl -fsS --connect-timeout 5 --max-time 15 \
+              "https://zzaiyan.com/deploy-version.json?sha=${GITHUB_SHA}" || true)"
+            if grep -Fq "$expected" <<< "$response"; then
+              exit 0
+            fi
+            sleep 3
+          done
+
+          echo "Public deployment did not report commit ${GITHUB_SHA}" >&2
+          exit 1

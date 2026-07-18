@@ -7,6 +7,8 @@
 
 # Site Settings
 title: "Zaiyan Zhang"
+url: "https://zzaiyan.com"
+baseurl: ""
 description: "A Research Beginner."
 description_zh: "科研起步者。"
 repository: "zzaiyan/zzaiyan.github.io"
