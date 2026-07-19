@@ -1,20 +1,18 @@
-<head>
-  <meta charset="utf-8" />
-  {% include seo.html %}
+<meta charset="utf-8" />
+{% include seo.html %}
 
-  <meta name="HandheldFriendly" content="True" />
-  <meta name="MobileOptimized" content="320" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="HandheldFriendly" content="True" />
+<meta name="MobileOptimized" content="320" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <script>
-    // 保持主题原有 no-js -> js 切换
-    document.documentElement.className =
-      document.documentElement.className.replace(/\bno-js\b/g, "") + " js";
-  </script>
+<script>
+  // 保持主题原有 no-js -> js 切换
+  document.documentElement.className =
+    document.documentElement.className.replace(/\bno-js\b/g, "") + " js";
+</script>
 
-  <!-- For all browsers -->
-  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
-  <meta http-equiv="cleartype" content="on" />
+<!-- For all browsers -->
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
+<meta http-equiv="cleartype" content="on" />
 
-  <base target="_blank" />
-</head>
+<base target="_blank" />

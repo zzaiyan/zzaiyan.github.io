@@ -9,8 +9,10 @@
 title: "Zaiyan Zhang"
 url: "https://zzaiyan.com"
 baseurl: ""
-description: "A Research Beginner."
-description_zh: "科研起步者。"
+description: "From remote sensing image processing to open-world interpretation and scientific discovery."
+description_zh: "从遥感图像处理到开放世界解译与科学发现。"
+seo_title: "Zaiyan Zhang (张再筵) | Intelligent Earth Observation"
+seo_description: "Academic homepage of Zaiyan Zhang (张再筵), focusing on remote sensing image processing, open-world interpretation, multimodal foundation models, and AI agents for scientific discovery."
 repository: "zzaiyan/zzaiyan.github.io"
 google_scholar_stats_use_cdn: true
 google_scholar:
