@@ -8,7 +8,7 @@
 
 ---
 
-这是我的学术个人主页源码，基于 Jekyll 构建，参考了 [Yi Ren](https://rayeren.github.io/) 等多人的源代码，加入了一系列新特性，部署于 [zzaiyan.github.io](https://zzaiyan.github.io)。
+这是我的学术个人主页源码，基于 Jekyll 构建，参考了 [Yi Ren](https://rayeren.github.io/) 等多人的源代码，并加入了一系列新特性。主站部署于 [zzaiyan.com](https://zzaiyan.com)，同时发布至 [GitHub Pages](https://zzaiyan.github.io) 作为镜像。
 
 ## ✨ 特性
 

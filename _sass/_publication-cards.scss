@@ -5,6 +5,10 @@ $edu-box-image-width: 240px;
 $edu-box-padding: 1em;
 
 .paper-box {
+  --card-image-width: #{$paper-box-image-width};
+  --card-image-min: 300px;
+  --card-image-share: 36%;
+
   display: flex;
   justify-content: left;
   align-items: center;
@@ -32,12 +36,12 @@ $edu-box-padding: 1em;
 
     > div {
       position: relative;
-      width: $paper-box-image-width;
+      width: var(--card-image-width);
       max-width: 100%;
     }
 
     img {
-      width: $paper-box-image-width;
+      width: var(--card-image-width);
       max-width: 100%;
       display: block;
       box-shadow: none;
@@ -57,15 +61,15 @@ $edu-box-padding: 1em;
   @include breakpoint($medium) {
     .paper-box-image {
       justify-content: left;
-      min-width: $paper-box-image-width;
-      max-width: $paper-box-image-width;
+      min-width: var(--card-image-width);
+      max-width: var(--card-image-width);
       order: 1;
     }
 
     .paper-box-text {
       justify-content: left;
       padding-left: $paper-box-padding;
-      max-width: calc(100% - #{$paper-box-image-width} - #{$paper-box-padding});
+      max-width: calc(100% - var(--card-image-width) - #{$paper-box-padding});
       order: 2;
     }
   }
@@ -133,29 +137,6 @@ $edu-box-padding: 1em;
       margin-top: 0.35em;
     }
   }
-
-  @include breakpoint($medium) {
-    display: grid;
-    grid-template-columns: minmax(300px, 36%) minmax(0, 1fr);
-    gap: 1.5em;
-
-    .paper-box-image {
-      width: 100%;
-      min-width: 0;
-      max-width: none;
-
-      > div,
-      img {
-        width: 100%;
-      }
-    }
-
-    .paper-box-text {
-      align-self: center;
-      max-width: none;
-      padding-left: 0;
-    }
-  }
 }
 
 .badge {
@@ -195,23 +176,39 @@ $edu-box-padding: 1em;
 }
 
 .edu-box {
+  --card-image-width: #{$edu-box-image-width};
+  --card-image-min: 180px;
+  --card-image-share: 28%;
+
   padding: $edu-box-padding;
 
   .paper-box-image img {
-    width: $edu-box-image-width;
-    max-width: 100%;
     box-shadow: none;
   }
+}
 
+.paper-box--featured,
+.edu-box {
   @include breakpoint($medium) {
+    display: grid;
+    grid-template-columns: minmax(var(--card-image-min), var(--card-image-share)) minmax(0, 1fr);
+    gap: 1.5em;
+
     .paper-box-image {
-      min-width: $edu-box-image-width;
-      max-width: $edu-box-image-width;
+      width: 100%;
+      min-width: 0;
+      max-width: none;
+
+      > div,
+      img {
+        width: 100%;
+      }
     }
 
     .paper-box-text {
-      padding-left: $paper-box-padding;
-      max-width: calc(100% - #{$edu-box-image-width} - #{$paper-box-padding});
+      align-self: center;
+      max-width: none;
+      padding-left: 0;
     }
   }
 }

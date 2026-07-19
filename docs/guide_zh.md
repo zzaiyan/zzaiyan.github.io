@@ -258,7 +258,7 @@ English content here.
 
 ```yaml
 description: "Building AI for open-world Earth observation."
-description_zh: "从遥感图像处理到开放世界解译与科学发现。"
+description_zh: "构建面向开放世界地球观测的人工智能。"
 seo_title: "Zaiyan Zhang (张再筵) | Intelligent Earth Observation"
 seo_description: "Academic homepage of Zaiyan Zhang (张再筵), focusing on remote sensing image processing, open-world interpretation, multimodal foundation models, and AI agents for scientific discovery."
 
