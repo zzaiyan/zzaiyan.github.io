@@ -257,8 +257,10 @@ English content here.
 ### 在 _config.yml 中添加双语字段
 
 ```yaml
-description: "A Research Beginner."
-description_zh: "一名科研新手。"
+description: "From remote sensing image processing to open-world interpretation and scientific discovery."
+description_zh: "从遥感图像处理到开放世界解译与科学发现。"
+seo_title: "Zaiyan Zhang (张再筵) | Intelligent Earth Observation"
+seo_description: "Academic homepage of Zaiyan Zhang (张再筵), focusing on remote sensing image processing, open-world interpretation, multimodal foundation models, and AI agents for scientific discovery."
 
 author:
   name: "Zaiyan Zhang"
