@@ -1,10 +1,10 @@
 # Zaiyan Zhang (张再筵)
 
-*"A Research Beginner."* - Always learning, always exploring.
+*"Building AI for open-world Earth observation."*
 
-[![GitHub](https://img.shields.io/badge/GitHub-zzaiyan-blue?style=flat&logo=github)](https://github.com/zzaiyan)
-[![Google Scholar](https://img.shields.io/badge/Google%20Scholar-Profile-green?style=flat&logo=google-scholar)](https://scholar.google.com/citations?user=ZpxXejIAAAAJ&hl=en)
-[![Website](https://img.shields.io/badge/Website-zzaiyan.github.io-orange?style=flat&logo=firefox)](https://zzaiyan.github.io)
+[![GitHub](https://img.shields.io/badge/GitHub-zzaiyan-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/zzaiyan)
+[![Google Scholar](https://img.shields.io/badge/Google_Scholar-Publications-4285f4?style=flat-square&logo=googlescholar&logoColor=white)](https://scholar.google.com/citations?user=ZpxXejIAAAAJ&hl=en)
+[![Website](https://img.shields.io/badge/Website-zzaiyan.com-0f766e?style=flat-square&logo=googlechrome&logoColor=white)](https://zzaiyan.com)
 
 ---
 
