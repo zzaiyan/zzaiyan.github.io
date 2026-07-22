@@ -50,8 +50,7 @@ It supports **bilingual (EN / ZH) switching** and **dark / light theme toggling*
 │   ├── pubs/                # Publication PDF files
 │   └── js/
 │       ├── lang-toggle.js   # Language toggle + theme toggle logic
-│       ├── citation-dialog.js # Citation dialog
-│       └── visitor-map.js   # Lazy visitor-map loader
+│       └── citation-dialog.js # Citation dialog
 ├── images/                  # Image assets
 ├── scripts/
 │   ├── build-citations.mjs  # Offline citation format generator
@@ -309,7 +308,7 @@ Citation counts are fetched asynchronously by `fetch_google_scholar_stats.html` 
 - Local behavior scripts use `defer` and preserve their document order.
 - MathJax is loaded only on pages whose front matter contains `mathjax: true`.
 - Google Analytics is emitted only when `google_analytics_id` is configured.
-- The visitor map is injected when its footer container enters a 320px prefetch margin, so its third-party script does not block initial parsing.
+- VisitorTrace tracking loads asynchronously, while its SVG visitor map uses native image lazy loading.
 - The footer's last-updated date uses Jekyll's build time and does not call the GitHub API at runtime.
 
 ## Adding a New Paper — Full Workflow

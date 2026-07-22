@@ -3,11 +3,24 @@
     <div class="page__footer-container">
       <!-- Left Column: Visitor Statistics -->
       <div class="page__footer-left">
-        <div
+        {% if site.visitor_trace.base_url and site.visitor_trace.site_id %}
+        <a
           class="page__footer-visitor-map"
-          data-visitor-map-src="https://mapmyvisitors.com/map.js?cl=6f808f&amp;w=300&amp;t=tt&amp;d=w7cjBVWXkj-i_LEaFdHrWjwQGauzbp1XWI3kyXLhbxA&amp;co=f2f3f3&amp;ct=9ba1a6&amp;cmo=e34949&amp;cmn=3fdd3f"
-          aria-label="Visitor map"
-        ></div>
+          href="{{ site.visitor_trace.base_url }}/public/{{ site.visitor_trace.site_id }}/analytics"
+          target="_blank"
+          rel="noopener"
+          aria-label="Visitor analytics"
+        >
+          <img
+            src="{{ site.visitor_trace.base_url }}/api/v1/sites/{{ site.visitor_trace.site_id }}/map.svg?w=300&amp;h=168"
+            width="300"
+            height="168"
+            loading="lazy"
+            decoding="async"
+            alt="Visitor map"
+          />
+        </a>
+        {% endif %}
       </div>
 
       <!-- Right Column: Other Content -->

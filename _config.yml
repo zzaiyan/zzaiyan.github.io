@@ -24,6 +24,10 @@ google_scholar:
     - "https://cdn.jsdelivr.net/gh"
   raw_base_url: "https://raw.githubusercontent.com"
 
+visitor_trace:
+  base_url: "https://stats.zzaiyan.com"
+  site_id: "obpufw6r5ffbi43m"
+
 # google analytics
 google_analytics_id: # get google_analytics_id from https://analytics.google.com/analytics/
 
