@@ -308,7 +308,7 @@ Citation counts are fetched asynchronously by `fetch_google_scholar_stats.html` 
 - Local behavior scripts use `defer` and preserve their document order.
 - MathJax is loaded only on pages whose front matter contains `mathjax: true`.
 - Google Analytics is emitted only when `google_analytics_id` is configured.
-- VisitorTrace tracking loads asynchronously, while its SVG visitor map uses native image lazy loading.
+- VisitorTrace tracking loads asynchronously, while its SVG visitor map uses native image lazy loading and inherits its dimensions from the server-side Map Preset.
 - The footer's last-updated date uses Jekyll's build time and does not call the GitHub API at runtime.
 
 ## Adding a New Paper — Full Workflow
