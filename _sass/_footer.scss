@@ -106,24 +106,22 @@
 }
 
 .page__footer-left {
+  flex: 0 1 auto;
   margin-right: 1.5rem;
   text-align: center;
-  min-width: 300px;
-  min-height: 168px;
+  min-width: 0;
 }
 
 .page__footer-visitor-map {
   display: block;
-  width: 300px;
   max-width: 100%;
-  aspect-ratio: 25 / 14;
   margin: 0 auto;
 
   img {
     display: block;
-    width: 100%;
+    max-width: 100%;
     height: auto;
-    aspect-ratio: 25 / 14;
+    margin: 0 auto;
   }
 }
 

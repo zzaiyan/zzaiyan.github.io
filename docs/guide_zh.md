@@ -307,7 +307,7 @@ author:
 - 本地交互脚本使用 `defer`，并保持文档中的执行顺序。
 - 仅当页面 front matter 设置 `mathjax: true` 时加载 MathJax。
 - 仅在配置 `google_analytics_id` 后输出 Google Analytics 脚本。
-- VisitorTrace 统计脚本异步加载，SVG 访客地图使用浏览器原生图片延迟加载。
+- VisitorTrace 统计脚本异步加载，SVG 访客地图使用浏览器原生图片延迟加载，尺寸由服务端地图预设决定。
 - 页脚最后更新时间使用 Jekyll 构建时间，不再在浏览器中请求 GitHub API。
 
 ## 添加新论文的完整流程
