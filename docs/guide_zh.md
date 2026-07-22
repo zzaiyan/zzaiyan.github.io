@@ -49,8 +49,7 @@
 │   ├── pubs/                # 论文 PDF 文件
 │   └── js/
 │       ├── lang-toggle.js   # 语言切换 + 主题切换逻辑
-│       ├── citation-dialog.js # 多格式引用弹窗功能
-│       └── visitor-map.js   # 访客地图延迟加载
+│       └── citation-dialog.js # 多格式引用弹窗功能
 ├── images/                  # 图片资源
 ├── scripts/
 │   ├── build-citations.mjs  # 离线引用格式生成器
@@ -308,7 +307,7 @@ author:
 - 本地交互脚本使用 `defer`，并保持文档中的执行顺序。
 - 仅当页面 front matter 设置 `mathjax: true` 时加载 MathJax。
 - 仅在配置 `google_analytics_id` 后输出 Google Analytics 脚本。
-- 访客地图进入页脚容器前 320px 的预加载范围时才注入，第三方脚本不再阻塞初始 HTML 解析。
+- VisitorTrace 统计脚本异步加载，SVG 访客地图使用浏览器原生图片延迟加载。
 - 页脚最后更新时间使用 Jekyll 构建时间，不再在浏览器中请求 GitHub API。
 
 ## 添加新论文的完整流程

@@ -4,6 +4,11 @@
   window.CitationDatabase = {{ site.data.citation_outputs | jsonify }};
 </script>
 <script src="assets/js/citation-dialog.js" defer></script>
-<script src="assets/js/visitor-map.js" defer></script>
+{% if site.visitor_trace.base_url and site.visitor_trace.site_id %}
+<script
+  async
+  src="{{ site.visitor_trace.base_url }}/embed/tracker.js?site_id={{ site.visitor_trace.site_id }}"
+></script>
+{% endif %}
 
 {% include analytics.html %} {% include fetch_google_scholar_stats.html %}
