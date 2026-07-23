@@ -4,20 +4,11 @@
       <!-- Left Column: Visitor Statistics -->
       <div class="page__footer-left">
         {% if site.visitor_trace.base_url and site.visitor_trace.site_id %}
-        <a
-          class="page__footer-visitor-map"
-          href="{{ site.visitor_trace.base_url }}/public/{{ site.visitor_trace.site_id }}/analytics"
-          target="_blank"
-          rel="noopener"
-          aria-label="Visitor analytics"
-        >
-          <img
-            src="{{ site.visitor_trace.base_url }}/api/v1/sites/{{ site.visitor_trace.site_id }}/map.svg"
-            loading="lazy"
-            decoding="async"
-            alt="Visitor map"
-          />
-        </a>
+        <img
+          loading="lazy"
+          src="{{ site.visitor_trace.base_url }}/api/v1/sites/{{ site.visitor_trace.site_id }}/map.svg"
+          alt="Visitor map"
+        />
         {% endif %}
       </div>
 
