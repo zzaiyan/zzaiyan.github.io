@@ -4,11 +4,10 @@
       <!-- Left Column: Visitor Statistics -->
       <div class="page__footer-left">
         {% if site.visitor_trace.base_url and site.visitor_trace.site_id %}
-        <img
-          loading="lazy"
-          src="{{ site.visitor_trace.base_url }}/api/v1/sites/{{ site.visitor_trace.site_id }}/map.svg"
-          alt="Visitor map"
-        />
+        <script
+          async
+          src="{{ site.visitor_trace.base_url }}/embed/map.js?site_id={{ site.visitor_trace.site_id }}"
+        ></script>
         {% endif %}
       </div>
 
