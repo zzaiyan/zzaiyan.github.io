@@ -3,6 +3,16 @@
         "id": "coreuir2026",
         "type": "article-journal",
         "title": "CoRE-UIR: Prior-Guided Common and Residual Experts for Efficient All-in-One Remote Sensing Image Restoration",
+        "author": [
+            { "family": "Zhang", "given": "Zaiyan" },
+            { "family": "Yuan", "given": "Qiangqiang" },
+            { "family": "Li", "given": "Jie" },
+            { "family": "Lihe", "given": "Ziyang" },
+            { "family": "Wan", "given": "Yu" },
+            { "family": "Chen", "given": "Yuzeng" },
+            { "family": "Su", "given": "Xin" },
+            { "family": "Zhang", "given": "Liangpei" }
+        ],
         "container-title": "ISPRS Journal of Photogrammetry and Remote Sensing",
         "issued": { "date-parts": [[2026]] }
     },

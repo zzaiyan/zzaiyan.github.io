@@ -3,13 +3,14 @@
         {
             "id": "coreuir2026",
             "title": "CoRE-UIR: Prior-Guided Common and Residual Experts for Efficient All-in-One Remote Sensing Image Restoration",
+            "authors": "<strong><u>Zaiyan Zhang</u></strong>, Qiangqiang Yuan, Jie Li, Ziyang Lihe, Yu Wan, Yuzeng Chen, Xin Su, Liangpei Zhang",
             "venue": "ISPRS Journal of Photogrammetry and Remote Sensing",
             "venueShort": "ISPRS J PRS",
             "year": 2026,
             "badge": "ISPRS J PRS",
             "image": "images/core-uir.webp",
             "doi": null,
-            "note": "All-in-One Remote Sensing Image Restoration",
+            "note": "All-in-One Image Restoration",
             "scholarId": null,
             "links": [
                 {
