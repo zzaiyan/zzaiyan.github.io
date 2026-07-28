@@ -1,6 +1,25 @@
 {
     "journal": [
         {
+            "id": "coreuir2026",
+            "title": "CoRE-UIR: Prior-Guided Common and Residual Experts for Efficient All-in-One Remote Sensing Image Restoration",
+            "venue": "ISPRS Journal of Photogrammetry and Remote Sensing",
+            "venueShort": "ISPRS J PRS",
+            "year": 2026,
+            "badge": "ISPRS J PRS",
+            "image": "images/core-uir.webp",
+            "doi": null,
+            "note": "All-in-One Remote Sensing Image Restoration",
+            "scholarId": null,
+            "links": [
+                {
+                    "name": "Code",
+                    "url": "https://github.com/zzaiyan/CoRE-UIR"
+                }
+            ],
+            "referenceKey": "coreuir2026"
+        },
+        {
             "id": "zhang2026ecrformer",
             "title": "ECRformer: An efficient cloud removal Transformer with semantic-decoupled learning for multimodal satellite imagery",
             "authors": "<strong><u>Zaiyan Zhang</u></strong>, Jie Li, Yuanqi Liang, Jining Yan, Yi Xiao, Xin Su, Qiangqiang Yuan",
