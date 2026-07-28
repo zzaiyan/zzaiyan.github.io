@@ -1,4 +1,11 @@
 {
+    "coreuir2026": {
+        "id": "coreuir2026",
+        "type": "article-journal",
+        "title": "CoRE-UIR: Prior-Guided Common and Residual Experts for Efficient All-in-One Remote Sensing Image Restoration",
+        "container-title": "ISPRS Journal of Photogrammetry and Remote Sensing",
+        "issued": { "date-parts": [[2026]] }
+    },
     "zhang2026ecrformer": {
         "id": "zhang2026ecrformer",
         "type": "article-journal",
