@@ -110,6 +110,16 @@ $edu-box-padding: 1em;
 }
 
 .paper-box--featured {
+  .paper-box-image {
+    > div {
+      aspect-ratio: 16 / 9;
+    }
+
+    img {
+      height: 100%;
+    }
+  }
+
   .paper-box-text {
     display: flex;
     flex-direction: column;
