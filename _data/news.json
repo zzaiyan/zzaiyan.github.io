@@ -1,42 +1,49 @@
 [
     {
         "date": "2026.07",
-        "emoji": "🎉",
+        "emoji": "📄",
         "content": "One paper related to **All-in-One Image Restoration** was accepted by **ISPRS J PRS**.",
         "content_zh": "一篇关于 **一体化图像复原** 的论文被 **ISPRS J PRS** 录用。"
     },
     {
+        "date": "2026.07",
+        "emoji": "💻",
+        "content": "I began my **Research Internship** at **Shanghai AI Laboratory**.",
+        "content_zh": "我开始了在 **上海人工智能实验室** 的 **研究型实习**。"
+    },
+    {
         "date": "2026.04",
-        "emoji": "🎉",
+        "emoji": "📄",
         "content": "One paper related to **Multimodal Cloud Removal** was accepted by **ISPRS J PRS**.",
         "content_zh": "一篇关于 **多模态去云** 的论文被 **ISPRS J PRS** 录用。"
     },
     {
         "date": "2026.03",
-        "emoji": "🎉",
+        "emoji": "📄",
         "content": "One paper related to **Multimodal Unified Framework** was accepted by **IGARSS 2026**.",
         "content_zh": "一篇关于 **多模态统一框架** 的论文被 **IGARSS 2026** 录用。"
     },
     {
         "date": "2026.01",
-        "emoji": "🎉",
+        "emoji": "📄",
         "content": "One co-authored paper was accepted by **ISPRS Congress 2026**.",
         "content_zh": "一篇合著论文被 **ISPRS 2026** 录用。"
     },
     {
         "date": "2025.09",
+        "emoji": "🎓",
         "content": "I began my **Master**'s degree studies at **Wuhan University**.",
         "content_zh": "我开始在 **武汉大学** 攻读 **硕士** 学位。"
     },
     {
         "date": "2025.05",
-        "emoji": "🎉",
+        "emoji": "📄",
         "content": "One paper related to **Time Series Reconstruction** was accepted by **IEEE TGRS**.",
         "content_zh": "一篇关于 **时序图像重建** 的论文被 **IEEE TGRS** 录用。"
     },
     {
         "date": "2024.06",
-        "emoji": "🎉",
+        "emoji": "🏆",
         "content": "We won the **Grand Prize (Top 0.1%)** and **20,000 RMB** cash in the **12th \"Teddy Cup\" Data Mining Challenge** [[link]](https://www.tipdm.org/dsej12/2429.jhtml).",
         "content_zh": "我们在第12届**“泰迪杯”数据挖掘挑战赛**中获得**特等奖 (Top 0.1%)** 及 **2万元**奖金 [[link]](https://www.tipdm.org/dsej12/2429.jhtml)。"
     }

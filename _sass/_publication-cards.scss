@@ -2,7 +2,8 @@
 $paper-box-image-width: 360px;
 $paper-box-padding: 2em;
 $edu-box-image-width: 240px;
-$edu-box-padding: 1em;
+$card-padding: 1.1em;
+$compact-card-padding-block: 0.9em;
 
 .paper-box {
   --card-image-width: #{$paper-box-image-width};
@@ -17,7 +18,7 @@ $edu-box-padding: 1em;
   border: 1px solid rgba($info-color, 0.14);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.72);
-  padding: 1em 1em 1em 1.5em;
+  padding: $card-padding;
   margin-bottom: 1.25em;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
@@ -77,7 +78,7 @@ $edu-box-padding: 1em;
 
 .paper-box--compact {
   display: block;
-  padding: 0.85em 1.1em;
+  padding: $compact-card-padding-block $card-padding;
   margin-bottom: 0.8em;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.045);
 
@@ -190,10 +191,12 @@ $edu-box-padding: 1em;
   --card-image-min: 180px;
   --card-image-share: 28%;
 
-  padding: $edu-box-padding;
-
   .paper-box-image img {
     box-shadow: none;
+  }
+
+  .paper-box-text p:last-child {
+    margin-bottom: 0;
   }
 }
 
