@@ -16,6 +16,7 @@ const cslConfig = plugins.config.get("@csl");
 const bibtexConfig = plugins.config.get("@bibtex");
 
 bibtexConfig.format.useIdAsLabel = true;
+bibtexConfig.constants.fieldTypes.title = ["field", "literal"];
 cslConfig.styles.add(
   "ieee-local",
   fs.readFileSync(path.join(styleDir, "ieee.csl"), "utf8"),
@@ -35,6 +36,13 @@ function formatBibliography(cite, style) {
     .trim();
 }
 
+function formatBibtex(reference) {
+  const protectedTitle = `<span class="nocase">${reference.title}</span>`;
+  return new Cite({ ...reference, title: protectedTitle })
+    .format("bibtex")
+    .trim();
+}
+
 function buildOutputs() {
   return Object.fromEntries(
     Object.entries(references).map(([key, reference]) => {
@@ -43,7 +51,7 @@ function buildOutputs() {
         key,
         title: reference.title,
         formats: {
-          bibtex: cite.format("bibtex").trim(),
+          bibtex: formatBibtex(reference),
           ris: cite.format("ris").trim(),
           "csl-json": JSON.stringify(reference, null, 2),
           ieee: formatBibliography(cite, "ieee-local"),

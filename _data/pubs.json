@@ -1,7 +1,7 @@
 {
     "journal": [
         {
-            "id": "coreuir2026",
+            "id": "zhang2026coreuir",
             "title": "CoRE-UIR: Prior-Guided Common and Residual Experts for Efficient All-in-One Remote Sensing Image Restoration",
             "authors": "<strong><u>Zaiyan Zhang</u></strong>, Qiangqiang Yuan, Jie Li, Ziyang Lihe, Yu Wan, Yuzeng Chen, Xin Su, Liangpei Zhang",
             "venue": "ISPRS Journal of Photogrammetry and Remote Sensing",
@@ -14,11 +14,19 @@
             "scholarId": null,
             "links": [
                 {
+                    "name": "PDF",
+                    "url": "https://arxiv.org/pdf/2607.27898"
+                },
+                {
+                    "name": "arXiv",
+                    "url": "https://arxiv.org/abs/2607.27898"
+                },
+                {
                     "name": "Code",
                     "url": "https://github.com/zzaiyan/CoRE-UIR"
                 }
             ],
-            "referenceKey": "coreuir2026"
+            "referenceKey": "zhang2026coreuir"
         },
         {
             "id": "zhang2026ecrformer",

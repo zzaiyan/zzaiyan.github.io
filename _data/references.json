@@ -1,6 +1,6 @@
 {
-    "coreuir2026": {
-        "id": "coreuir2026",
+    "zhang2026coreuir": {
+        "id": "zhang2026coreuir",
         "type": "article-journal",
         "title": "CoRE-UIR: Prior-Guided Common and Residual Experts for Efficient All-in-One Remote Sensing Image Restoration",
         "author": [
@@ -14,6 +14,7 @@
             { "family": "Zhang", "given": "Liangpei" }
         ],
         "container-title": "ISPRS Journal of Photogrammetry and Remote Sensing",
+        "URL": "https://arxiv.org/abs/2607.27898",
         "issued": { "date-parts": [[2026]] }
     },
     "zhang2026ecrformer": {
