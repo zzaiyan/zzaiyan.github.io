@@ -12,11 +12,11 @@
 
   const formats = [
     { id: "bibtex", en: "BibTeX", zh: "BibTeX", extension: "bib", downloadable: true },
-    { id: "ris", en: "RIS", zh: "RIS", extension: "ris", downloadable: true },
-    { id: "csl-json", en: "CSL-JSON", zh: "CSL-JSON", extension: "json", downloadable: true },
     { id: "ieee", en: "IEEE", zh: "IEEE", extension: "txt", downloadable: false },
     { id: "apa", en: "APA", zh: "APA", extension: "txt", downloadable: false },
     { id: "gb-t-7714", en: "GB/T 7714", zh: "GB/T 7714", extension: "txt", downloadable: false },
+    { id: "ris", en: "RIS", zh: "RIS", extension: "ris", downloadable: true },
+    { id: "csl-json", en: "CSL-JSON", zh: "CSL-JSON", extension: "json", downloadable: true },
   ];
 
   let activeDialog = null;
