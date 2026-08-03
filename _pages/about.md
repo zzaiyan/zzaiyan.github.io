@@ -12,15 +12,13 @@ redirect_from:
 
 <div class="lang-en" markdown="1">
 
-👋 Hi there! I am Zaiyan Zhang (张再筵), currently pursuing an M.E. degree in Photogrammetry and Remote Sensing at [Wuhan University](https://www.whu.edu.cn/) under the direction of Prof. [Qiangqiang Yuan (袁强强)](https://scholar.google.com/citations?user=aItnA-sAAAAJ), [Jie Li (李杰)](https://scholar.google.com/citations?user=W4VvnDMAAAAJ) and [Liangpei Zhang (张良培)](https://scholar.google.com/citations?user=yFEl8hcAAAAJ). I am also a Research Intern at the AI4Science Center of [Shanghai AI Laboratory](https://www.shlab.org.cn/), working with Dr. [Hao Chen (陈浩)](https://justchenhao.github.io) and [Lei Bai (白磊)](http://leibai.site). Prior to this, I obtained a B.E. degree in Data Science and Big Data Technology at [China University of Geosciences](https://www.cug.edu.cn/) in 2025.
-
-<!-- {% include google-scholar-badge.html %} -->
+👋 Hi there! I am Zaiyan Zhang (张再筵), currently pursuing an M.E. degree in Photogrammetry and Remote Sensing at [Wuhan University](https://www.whu.edu.cn/) under the direction of Prof. [Qiangqiang Yuan (袁强强)](https://scholar.google.com/citations?user=aItnA-sAAAAJ), [Jie Li (李杰)](https://scholar.google.com/citations?user=W4VvnDMAAAAJ) and [Liangpei Zhang (张良培)](https://scholar.google.com/citations?user=yFEl8hcAAAAJ). I am also a Research Intern at the AI4Science Center of [Shanghai AI Laboratory](https://www.shlab.org.cn/), working with Dr. [Hao Chen (陈浩)](https://justchenhao.github.io). Prior to this, I obtained a B.E. degree in Data Science and Big Data Technology at [China University of Geosciences](https://www.cug.edu.cn/) in 2025. {% include google-scholar-badge.html inline=true %}
 
 🔍 My research focuses on Artifical Intelligence in Earth Observation:
 
 - **<span style="color: #915fddff;">Remote Sensing Image Processing</span>**: Cloud Removal, Time-series Reconstruction, All-in-One Image Restoration.
 - **<span style="color: #4874dbff;">Multimodal Foundation Models</span>**: Open-world Remote Sensing Interpretation, Geospatial Embedding Models.
-- **<span style="color: #2bab8bff;">Remote Sensing Agents</span>**: Open-world Agents, Scientific Discovery Agents.
+- **<span style="color: #2bab8bff;">Remote Sensing Agents</span>**: Disaster Response Agent, Multimodal Perception Agent.
 
 🤝 I welcome collaboration and networking opportunities. Feel free to contact me via email {[1@zzaiyan.com](mailto:1@zzaiyan.com), [zzaiyan@whu.edu.cn](mailto:zzaiyan@whu.edu.cn)}!
 
@@ -28,15 +26,13 @@ redirect_from:
 
 <div class="lang-zh" markdown="1">
 
-👋 大家好！我是张再筵，目前在[武汉大学](https://www.whu.edu.cn/)攻读摄影测量与遥感专业硕士学位，师从[袁强强](https://scholar.google.com/citations?user=aItnA-sAAAAJ)、[李杰](https://scholar.google.com/citations?user=W4VvnDMAAAAJ)与[张良培](https://scholar.google.com/citations?user=yFEl8hcAAAAJ)教授。我同时也在[上海人工智能实验室](https://www.shlab.org.cn/) AI4Science 中心担任研究实习生，与[陈浩](https://justchenhao.github.io)与[白磊](http://leibai.site)博士合作。此前，我于2025年在[中国地质大学（武汉）](https://www.cug.edu.cn/)获得数据科学与大数据技术专业学士学位。
-
-{% include google-scholar-badge.html %}
+👋 大家好！我是张再筵，目前在[武汉大学](https://www.whu.edu.cn/)攻读摄影测量与遥感专业硕士学位，师从[袁强强](https://scholar.google.com/citations?user=aItnA-sAAAAJ)、[李杰](https://scholar.google.com/citations?user=W4VvnDMAAAAJ)与[张良培](https://scholar.google.com/citations?user=yFEl8hcAAAAJ)教授。我同时也在[上海人工智能实验室](https://www.shlab.org.cn/) AI4Science 中心担任研究实习生，与[陈浩](https://justchenhao.github.io)博士合作。此前，我于2025年在[中国地质大学（武汉）](https://www.cug.edu.cn/)获得数据科学与大数据技术专业学士学位。 {% include google-scholar-badge.html inline=true %}
 
 🔍 我的研究聚焦于人工智能在地球观测中的应用：
 
 - **<span style="color: #915fddff;">遥感图像处理</span>**：去云、时序重建、一体化图像复原。
 - **<span style="color: #4874dbff;">多模态基础模型</span>**：开放世界遥感解译、地理空间嵌入模型。
-- **<span style="color: #2bab8bff;">遥感智能体</span>**：开放世界智能体、科学发现智能体。
+- **<span style="color: #2bab8bff;">遥感智能体</span>**：灾害响应智能体、多模态感知智能体。
 
 🤝 欢迎合作与交流！您可以通过邮箱 {[1@zzaiyan.com](mailto:1@zzaiyan.com), [zzaiyan@whu.edu.cn](mailto:zzaiyan@whu.edu.cn)} 联系我。
 
