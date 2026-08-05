@@ -296,11 +296,15 @@ author:
 
 ## Google Scholar 引用统计
 
-1. 在 GitHub 仓库 Settings → Secrets → Actions 中添加 `GOOGLE_SCHOLAR_ID`
-2. `_config.yml` 中设置 `google_scholar_stats_use_cdn: true`
-3. `_data/pubs.json` 论文条目中填写 `scholarId` 字段
+1. 在本地安装 `scholarly` 依赖，并准备可访问 GitHub 的 SSH 推送权限。
+2. 安装并登录 GitHub CLI：`gh auth login`。
+3. Windows 执行 `google_scholar_crawler/git_update.bat`，WSL 执行 `google_scholar_crawler/git_update.sh`。Shell 脚本使用爬虫目录中已忽略的 `.venv`。两个脚本都会抓取、校验并原子更新结果；数据没有实质变化时不会创建统计分支提交。
+4. 推送成功后，脚本通过 `gh workflow run deploy.yml` 触发双站部署。部署构建会把 `google-scholar-stats` 分支的快照写入网站产物，页面优先从当前站点同源读取。
+5. `_data/pubs.json` 论文条目中填写 `scholarId` 字段。
 
-引用数由 `fetch_google_scholar_stats.html` 在 DOM 就绪后异步获取并填充。加载器使用原生 `fetch`，按配置顺序尝试各 CDN，每个地址最多等待四秒，最后回退到 GitHub Raw；整个过程不阻塞页面渲染。
+引用数由 `fetch_google_scholar_stats.html` 在 DOM 就绪后异步获取并填充。加载器首先读取带构建版本号的同源快照；本地预览或快照暂时不可用时，再按配置顺序尝试 CDN，最后回退到 GitHub Raw。每个地址最多等待四秒，整个过程不阻塞页面渲染。
+
+Google Scholar 对自动化访问有较严格的限制，因此爬虫保留在本地运行。抓取失败时不会覆盖上一次有效数据；网站仍会继续使用上一次成功部署的快照。
 
 ## 静态资源加载
 

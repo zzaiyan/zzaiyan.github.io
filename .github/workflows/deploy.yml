@@ -22,6 +22,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
+      - name: Include Google Scholar snapshot
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin google-scholar-stats --depth=1
+          mkdir -p assets/data
+          git show FETCH_HEAD:gs_data.json > assets/data/google-scholar.json
+          test -s assets/data/google-scholar.json
+          jq empty assets/data/google-scholar.json
+
       - name: Set up Node.js
         uses: actions/setup-node@v6
         with:
