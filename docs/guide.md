@@ -297,11 +297,15 @@ The dialog panel uses a translucent Mica-like material with `backdrop-filter: bl
 
 ## Google Scholar Citation Stats
 
-1. Add `GOOGLE_SCHOLAR_ID` under Settings → Secrets → Actions in your GitHub repo
-2. Set `google_scholar_stats_use_cdn: true` in `_config.yml`
-3. Fill in the `scholarId` field for each paper entry in `_data/pubs.json`
+1. Install the local `scholarly` dependencies and configure SSH push access to GitHub.
+2. Install and authenticate GitHub CLI with `gh auth login`.
+3. Run `google_scholar_crawler/git_update.bat` on Windows or `google_scholar_crawler/git_update.sh` in WSL. The shell script uses the ignored `.venv` in the crawler directory. Both scripts fetch, validate, and atomically update the result; unchanged data is not committed to the stats branch.
+4. After a successful push, the script runs `gh workflow run deploy.yml`, which deploys both sites. The build copies the `google-scholar-stats` snapshot into the site artifact, and the page reads it from the current origin first.
+5. Fill in the `scholarId` field for each paper entry in `_data/pubs.json`.
 
-Citation counts are fetched asynchronously by `fetch_google_scholar_stats.html` after the DOM is ready. The loader uses native `fetch`, tries the configured CDN URLs sequentially with a four-second timeout, and falls back to the raw GitHub source without blocking rendering.
+Citation counts are fetched asynchronously by `fetch_google_scholar_stats.html` after the DOM is ready. The loader first requests the same-origin snapshot with a build-version query, then tries the configured CDN URLs and raw GitHub source as fallbacks. Each URL has a four-second timeout, so rendering is never blocked.
+
+Google Scholar applies strict limits to automated access, so the crawler intentionally runs locally. Failed crawls never replace the last valid result; the website continues serving the last successfully deployed snapshot.
 
 ## Resource Loading
 
