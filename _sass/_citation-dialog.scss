@@ -1,10 +1,4 @@
 /* Multi-format citation dialog */
-@property --citation-halo-angle {
-  syntax: "<angle>";
-  inherits: false;
-  initial-value: 0deg;
-}
-
 .citation-modal {
   position: fixed;
   inset: 0;
@@ -22,16 +16,21 @@
   inset: 0;
   z-index: 0;
   background: rgba(15, 22, 31, 0.48);
-  backdrop-filter: blur(4px) saturate(0.96);
-  -webkit-backdrop-filter: blur(4px) saturate(0.96);
+  backdrop-filter: blur(2px) saturate(0.96);
+  -webkit-backdrop-filter: blur(2px) saturate(0.96);
   pointer-events: none;
   animation: citationBackdropIn 0.2s ease-out both;
 }
 
 .citation-modal__panel {
+  --citation-depth-shadow: 0 24px 64px rgba(20, 35, 52, 0.24);
+  --citation-edge-highlight: inset 0 1px rgba(255, 255, 255, 0.36);
+  --citation-glow-blue: rgba(65, 137, 255, 0.48);
+  --citation-glow-cyan: rgba(48, 195, 190, 0.29);
+  --citation-glow-purple: rgba(144, 105, 238, 0.39);
+  --citation-glow-pink: rgba(205, 107, 228, 0.29);
   position: relative;
   z-index: 1;
-  isolation: isolate;
   width: min(680px, 100%);
   max-height: min(82vh, 720px);
   overflow: hidden;
@@ -40,35 +39,17 @@
     rgba(235, 243, 250, 0.5);
   border-radius: 16px;
   box-shadow:
-    0 24px 64px rgba(20, 35, 52, 0.24),
-    0 0 34px rgba(67, 145, 219, 0.22);
+    var(--citation-depth-shadow),
+    -8px 0 22px 1px var(--citation-glow-blue),
+    0 -7px 18px var(--citation-glow-cyan),
+    8px 0 22px 1px var(--citation-glow-purple),
+    0 8px 20px var(--citation-glow-pink),
+    var(--citation-edge-highlight);
   backdrop-filter: blur(16px) saturate(2) contrast(0.96);
   -webkit-backdrop-filter: blur(16px) saturate(2) contrast(0.96);
-  animation: citationPanelIn 0.28s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-
-.citation-modal__panel::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 3;
-  padding: 3px;
-  border-radius: inherit;
-  background: conic-gradient(
-    from var(--citation-halo-angle),
-    rgba(83, 133, 232, 0.98),
-    rgba(43, 192, 176, 0.92),
-    rgba(255, 185, 86, 0.86),
-    rgba(144, 105, 238, 0.94),
-    rgba(83, 133, 232, 0.98)
-  );
-  -webkit-mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
-  animation: citationHaloFlow 6s linear infinite;
+  animation:
+    citationPanelIn 0.28s cubic-bezier(0.22, 1, 0.36, 1) both,
+    citationHaloGlow 6s linear infinite;
 }
 
 .citation-modal__panel::after {
@@ -78,6 +59,7 @@
   z-index: 0;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.4'/%3E%3C/svg%3E");
   background-size: 180px 180px;
+  border-radius: inherit;
   mix-blend-mode: soft-light;
   opacity: 0.035;
   pointer-events: none;
@@ -335,21 +317,20 @@ html[data-theme="dark"] {
   }
 
   .citation-modal__panel {
+    --citation-depth-shadow: 0 24px 72px rgba(0, 0, 0, 0.52);
+    --citation-edge-highlight: inset 0 1px rgba(255, 255, 255, 0.12);
+    --citation-glow-blue: rgba(86, 151, 255, 0.4);
+    --citation-glow-cyan: rgba(67, 200, 196, 0.24);
+    --citation-glow-purple: rgba(154, 118, 239, 0.34);
+    --citation-glow-pink: rgba(207, 114, 229, 0.26);
     background:
       linear-gradient(145deg, rgba(65, 76, 91, 0.3), rgba(22, 27, 34, 0.18)),
       rgba(28, 33, 40, 0.56);
-    box-shadow:
-      0 24px 72px rgba(0, 0, 0, 0.52),
-      0 0 38px rgba(102, 164, 226, 0.2);
   }
 
   .citation-modal__panel::after {
     mix-blend-mode: screen;
     opacity: 0.025;
-  }
-
-  .citation-modal__panel::before {
-    opacity: 1;
   }
 
   .citation-modal__header {
@@ -482,17 +463,48 @@ html[data-theme="dark"] {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .citation-modal,
   .citation-modal::before,
-  .citation-modal__panel,
-  .citation-modal__panel::before {
+  .citation-modal__panel {
     animation: none !important;
   }
 }
 
-@keyframes citationHaloFlow {
-  to {
-    --citation-halo-angle: 360deg;
+@keyframes citationHaloGlow {
+  0%, 100% {
+    box-shadow:
+      var(--citation-depth-shadow),
+      -8px 0 22px 1px var(--citation-glow-blue),
+      0 -7px 18px var(--citation-glow-cyan),
+      8px 0 22px 1px var(--citation-glow-purple),
+      0 8px 20px var(--citation-glow-pink),
+      var(--citation-edge-highlight);
+  }
+  25% {
+    box-shadow:
+      var(--citation-depth-shadow),
+      -8px 0 22px 1px var(--citation-glow-pink),
+      0 -7px 18px var(--citation-glow-blue),
+      8px 0 22px 1px var(--citation-glow-cyan),
+      0 8px 20px var(--citation-glow-purple),
+      var(--citation-edge-highlight);
+  }
+  50% {
+    box-shadow:
+      var(--citation-depth-shadow),
+      -8px 0 22px 1px var(--citation-glow-purple),
+      0 -7px 18px var(--citation-glow-pink),
+      8px 0 22px 1px var(--citation-glow-blue),
+      0 8px 20px var(--citation-glow-cyan),
+      var(--citation-edge-highlight);
+  }
+  75% {
+    box-shadow:
+      var(--citation-depth-shadow),
+      -8px 0 22px 1px var(--citation-glow-cyan),
+      0 -7px 18px var(--citation-glow-purple),
+      8px 0 22px 1px var(--citation-glow-pink),
+      0 8px 20px var(--citation-glow-blue),
+      var(--citation-edge-highlight);
   }
 }
 
