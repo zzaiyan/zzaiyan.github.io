@@ -25,10 +25,10 @@
 .citation-modal__panel {
   --citation-depth-shadow: 0 24px 64px rgba(20, 35, 52, 0.24);
   --citation-edge-highlight: inset 0 1px rgba(255, 255, 255, 0.36);
-  --citation-glow-blue: rgba(65, 137, 255, 0.48);
-  --citation-glow-cyan: rgba(48, 195, 190, 0.29);
-  --citation-glow-purple: rgba(144, 105, 238, 0.39);
-  --citation-glow-pink: rgba(205, 107, 228, 0.29);
+  --citation-glow-blue: rgba(65, 137, 255, 0.75);
+  --citation-glow-cyan: rgba(48, 195, 190, 0.46);
+  --citation-glow-purple: rgba(144, 105, 238, 0.63);
+  --citation-glow-pink: rgba(205, 107, 228, 0.46);
   position: relative;
   z-index: 1;
   width: min(680px, 100%);
@@ -40,10 +40,10 @@
   border-radius: 16px;
   box-shadow:
     var(--citation-depth-shadow),
-    -8px 0 22px 1px var(--citation-glow-blue),
-    0 -7px 18px var(--citation-glow-cyan),
-    8px 0 22px 1px var(--citation-glow-purple),
-    0 8px 20px var(--citation-glow-pink),
+    -8px 0 11px var(--citation-glow-blue),
+    0 -7px 9px var(--citation-glow-cyan),
+    8px 0 11px var(--citation-glow-purple),
+    0 8px 10px var(--citation-glow-pink),
     var(--citation-edge-highlight);
   backdrop-filter: blur(16px) saturate(2) contrast(0.96);
   -webkit-backdrop-filter: blur(16px) saturate(2) contrast(0.96);
@@ -319,10 +319,10 @@ html[data-theme="dark"] {
   .citation-modal__panel {
     --citation-depth-shadow: 0 24px 72px rgba(0, 0, 0, 0.52);
     --citation-edge-highlight: inset 0 1px rgba(255, 255, 255, 0.12);
-    --citation-glow-blue: rgba(86, 151, 255, 0.4);
-    --citation-glow-cyan: rgba(67, 200, 196, 0.24);
-    --citation-glow-purple: rgba(154, 118, 239, 0.34);
-    --citation-glow-pink: rgba(207, 114, 229, 0.26);
+    --citation-glow-blue: rgba(86, 151, 255, 0.66);
+    --citation-glow-cyan: rgba(67, 200, 196, 0.4);
+    --citation-glow-purple: rgba(154, 118, 239, 0.56);
+    --citation-glow-pink: rgba(207, 114, 229, 0.43);
     background:
       linear-gradient(145deg, rgba(65, 76, 91, 0.3), rgba(22, 27, 34, 0.18)),
       rgba(28, 33, 40, 0.56);
@@ -473,37 +473,37 @@ html[data-theme="dark"] {
   0%, 100% {
     box-shadow:
       var(--citation-depth-shadow),
-      -8px 0 22px 1px var(--citation-glow-blue),
-      0 -7px 18px var(--citation-glow-cyan),
-      8px 0 22px 1px var(--citation-glow-purple),
-      0 8px 20px var(--citation-glow-pink),
+      -8px 0 11px var(--citation-glow-blue),
+      0 -7px 9px var(--citation-glow-cyan),
+      8px 0 11px var(--citation-glow-purple),
+      0 8px 10px var(--citation-glow-pink),
       var(--citation-edge-highlight);
   }
   25% {
     box-shadow:
       var(--citation-depth-shadow),
-      -8px 0 22px 1px var(--citation-glow-pink),
-      0 -7px 18px var(--citation-glow-blue),
-      8px 0 22px 1px var(--citation-glow-cyan),
-      0 8px 20px var(--citation-glow-purple),
+      -8px 0 11px var(--citation-glow-pink),
+      0 -7px 9px var(--citation-glow-blue),
+      8px 0 11px var(--citation-glow-cyan),
+      0 8px 10px var(--citation-glow-purple),
       var(--citation-edge-highlight);
   }
   50% {
     box-shadow:
       var(--citation-depth-shadow),
-      -8px 0 22px 1px var(--citation-glow-purple),
-      0 -7px 18px var(--citation-glow-pink),
-      8px 0 22px 1px var(--citation-glow-blue),
-      0 8px 20px var(--citation-glow-cyan),
+      -8px 0 11px var(--citation-glow-purple),
+      0 -7px 9px var(--citation-glow-pink),
+      8px 0 11px var(--citation-glow-blue),
+      0 8px 10px var(--citation-glow-cyan),
       var(--citation-edge-highlight);
   }
   75% {
     box-shadow:
       var(--citation-depth-shadow),
-      -8px 0 22px 1px var(--citation-glow-cyan),
-      0 -7px 18px var(--citation-glow-purple),
-      8px 0 22px 1px var(--citation-glow-pink),
-      0 8px 20px var(--citation-glow-blue),
+      -8px 0 11px var(--citation-glow-cyan),
+      0 -7px 9px var(--citation-glow-purple),
+      8px 0 11px var(--citation-glow-pink),
+      0 8px 10px var(--citation-glow-blue),
       var(--citation-edge-highlight);
   }
 }
