@@ -1,3 +1,8 @@
+<div class="pub-author-legend">
+  <span class="lang-en">&dagger; Equal contribution &middot; * Corresponding author</span>
+  <span class="lang-zh">&dagger; 共同贡献 &middot; * 通讯作者</span>
+</div>
+
 {% if site.data.pubs.journal.size > 0 %}
 ## <span class="lang-en">Journal Papers</span><span class="lang-zh">期刊论文</span>
 
@@ -26,6 +31,6 @@
 ## <span class="lang-en">Patents</span><span class="lang-zh">专利</span>
 
 {% for pat in site.data.pubs.patent %}
-- _{{ pat.date }}_, {{ pat.number }}, **{{ pat.title }}**, &ensp;{{ pat.authors }}.
+- _{{ pat.date }}_, {{ pat.number }}, **{{ pat.title }}**, &ensp;{% for author in pat.authors %}<span{% if author == site.author.name_zh %} class="pub-author--self"{% endif %}>{{ author }}</span>{% unless forloop.last %}, {% endunless %}{% endfor %}.
 {% endfor %}
 {% endif %}

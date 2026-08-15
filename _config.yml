@@ -40,6 +40,9 @@ baidu_site_verification: # get baidu_site_verification from https://ziyuan.baidu
 author:
   name: "Zaiyan Zhang (张再筵)"
   name_zh: "张再筵"
+  citation_name:
+    given: "Zaiyan"
+    family: "Zhang"
   avatar: "images/avatar.webp"
   bio: "Wuhan University | Shanghai AI Lab"
   bio_zh: "武汉大学 | 上海 AI Lab"
