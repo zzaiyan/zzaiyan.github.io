@@ -1,5 +1,5 @@
 {% for edu in site.data.education %}
-<div class='paper-box edu-box'><div class='paper-box-image'><div><img src='{{ edu.image }}' alt="{{ edu.school }}"></div></div>
+<div class='paper-box edu-box'><div class='paper-box-image'><div><img src='{{ edu.image | relative_url }}' alt="{{ edu.school }}"></div></div>
 <div class='paper-box-text' markdown="1">
 
 <a class="pub-title" href="{{ edu.url }}">{{ edu.school | replace: "|", "&#124;" }}</a>
