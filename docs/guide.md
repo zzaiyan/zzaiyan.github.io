@@ -51,7 +51,11 @@ It supports **bilingual (EN / ZH) switching** and **dark / light theme toggling*
 │   └── js/
 │       ├── lang-toggle.js   # Language toggle + theme toggle logic
 │       └── citation-dialog.js # Citation dialog
-├── images/                  # Image assets
+├── images/                  # Image assets grouped by purpose
+│   ├── profile/             # Avatar and profile images
+│   ├── institutions/        # Institution logos
+│   ├── publications/        # Publication figures
+│   └── site/                # Favicons and web app icons
 ├── scripts/
 │   ├── build-citations.mjs  # Offline citation format generator
 │   └── csl/                 # Local IEEE and GB/T 7714 styles
@@ -173,7 +177,7 @@ Supports bilingual fields `degree_zh`, `major_zh`, `advisors_zh`.
   {
     "school": "Wuhan University | 武汉大学",
     "url": "https://www.whu.edu.cn/",
-    "image": "images/whu.png",
+    "image": "images/institutions/whu.webp",
     "degree": "Master of Engineering",
     "degree_zh": "工学硕士",
     "major": "Photogrammetry and Remote Sensing",

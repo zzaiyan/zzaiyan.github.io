@@ -1,5 +1,5 @@
 {% for internship in site.data.internship %}
-<div class='paper-box edu-box'><div class='paper-box-image'><div><img src='{{ internship.image }}' alt="{{ internship.organization }}"></div></div>
+<div class='paper-box edu-box'><div class='paper-box-image'><div><img src='{{ internship.image | relative_url }}' alt="{{ internship.organization }}"></div></div>
 <div class='paper-box-text' markdown="1">
 
 <a class="pub-title" href="{{ internship.url }}">{{ internship.organization | replace: "|", "&#124;" }}</a>

@@ -50,7 +50,11 @@
 │   └── js/
 │       ├── lang-toggle.js   # 语言切换 + 主题切换逻辑
 │       └── citation-dialog.js # 多格式引用弹窗功能
-├── images/                  # 图片资源
+├── images/                  # 按用途分类的图片资源
+│   ├── profile/             # 头像与个人图片
+│   ├── institutions/        # 单位 Logo
+│   ├── publications/        # 论文插图
+│   └── site/                # Favicon 与 Web App 图标
 ├── scripts/
 │   ├── build-citations.mjs  # 离线引用格式生成器
 │   └── csl/                 # 本地 IEEE 与 GB/T 7714 样式
@@ -172,7 +176,7 @@ npm run citations:check
   {
     "school": "Wuhan University | 武汉大学",
     "url": "https://www.whu.edu.cn/",
-    "image": "images/whu.png",
+    "image": "images/institutions/whu.webp",
     "degree": "Master of Engineering",
     "degree_zh": "工学硕士",
     "major": "Photogrammetry and Remote Sensing",

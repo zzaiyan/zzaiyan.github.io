@@ -12,7 +12,7 @@
   <div class="paper-box-image">
     <div>
       {% if pub.badge %}<span class="badge">{{ pub.badge }}</span>{% endif %}
-      <img src="{{ pub.image }}" alt="{{ pub.title }}">
+      <img src="{{ pub.image | relative_url }}" alt="{{ pub.title }}">
     </div>
   </div>
 {% endunless %}

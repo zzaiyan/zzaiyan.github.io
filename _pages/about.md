@@ -18,7 +18,7 @@ redirect_from:
 
 - **<span style="color: #915fddff;">Remote Sensing Image Processing</span>**: Cloud Removal, Time-series Reconstruction, All-in-One Image Restoration.
 - **<span style="color: #4874dbff;">Multimodal Foundation Models</span>**: Open-world Remote Sensing Interpretation, Geospatial Embedding Models.
-- **<span style="color: #2bab8bff;">Remote Sensing Agents</span>**: Disaster Response Agent, Multimodal Perception Agent.
+- **<span style="color: #2bab8bff;">Remote Sensing Agents</span>**: Multi-Agent Systems, Self-Evolving Agents, Scientific Agents.
 
 🤝 I welcome collaboration and networking opportunities. Feel free to contact me via email {[1@zzaiyan.com](mailto:1@zzaiyan.com), [zzaiyan@whu.edu.cn](mailto:zzaiyan@whu.edu.cn)}!
 
@@ -32,7 +32,7 @@ redirect_from:
 
 - **<span style="color: #915fddff;">遥感图像处理</span>**：去云、时序重建、一体化图像复原。
 - **<span style="color: #4874dbff;">多模态基础模型</span>**：开放世界遥感解译、地理空间嵌入模型。
-- **<span style="color: #2bab8bff;">遥感智能体</span>**：灾害响应智能体、多模态感知智能体。
+- **<span style="color: #2bab8bff;">遥感智能体</span>**：多智能体系统、自演化智能体、科学智能体。
 
 🤝 欢迎合作与交流！您可以通过邮箱 {[1@zzaiyan.com](mailto:1@zzaiyan.com), [zzaiyan@whu.edu.cn](mailto:zzaiyan@whu.edu.cn)} 联系我。
 
