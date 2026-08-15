@@ -95,5 +95,40 @@
         "DOI": "10.5194/isprs-annals-XI-3-2026-307-2026",
         "URL": "https://doi.org/10.5194/isprs-annals-XI-3-2026-307-2026",
         "issued": { "date-parts": [[2026]] }
+    },
+    "liu2026geosegov": {
+        "id": "liu2026geosegov",
+        "type": "article-journal",
+        "title": "GeoSeg-OV: Bridging Geospatial Gaps with Structural Guidance for Open-Vocabulary Remote Sensing Segmentation",
+        "author": [
+            { "family": "Liu", "given": "Ruizhong" },
+            { "family": "Luo", "given": "Tingzhang" },
+            { "family": "Zhang", "given": "Zaiyan" },
+            { "family": "Chen", "given": "Jundong" },
+            { "family": "Chen", "given": "Hongruixuan" },
+            { "family": "Huang", "given": "Shaoguang" },
+            { "family": "Zhang", "given": "Hongyan" }
+        ],
+        "container-title": "arXiv",
+        "genre": "Preprint",
+        "URL": "https://arxiv.org/abs/2608.10426",
+        "issued": { "date-parts": [[2026, 8, 11]] }
+    },
+    "tong2026semdino": {
+        "id": "tong2026semdino",
+        "type": "article-journal",
+        "title": "SemDINO: Foundation Prior-Guided Cross-Temporal Semantic Alignment Network for Remote Sensing Change Detection",
+        "author": [
+            { "family": "Tong", "given": "Xinyu" },
+            { "family": "Zhou", "given": "Meihua" },
+            { "family": "Sun", "given": "Jinxiao" },
+            { "family": "Zhang", "given": "Zaiyan" },
+            { "family": "Chen", "given": "Hongruixuan" },
+            { "family": "Wang", "given": "Lei" }
+        ],
+        "container-title": "arXiv",
+        "genre": "Preprint",
+        "URL": "https://arxiv.org/abs/2606.09772",
+        "issued": { "date-parts": [[2026, 6, 8]] }
     }
 }
