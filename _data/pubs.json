@@ -126,7 +126,62 @@
             "referenceKey": "wan2026lad"
         }
     ],
-    "preprint": [],
+    "preprint": [
+        {
+            "id": "liu2026geosegov",
+            "layout": "compact",
+            "title": "GeoSeg-OV: Bridging Geospatial Gaps with Structural Guidance for Open-Vocabulary Remote Sensing Segmentation",
+            "authors": "Ruizhong Liu, Tingzhang Luo, <strong><u>Zaiyan Zhang</u></strong>, Jundong Chen, Hongruixuan Chen, Shaoguang Huang, Hongyan Zhang",
+            "venue": "arXiv",
+            "venueShort": "arXiv",
+            "year": 2026,
+            "badge": "arXiv",
+            "doi": null,
+            "note": "Open-Vocabulary Segmentation, Geospatial Generalization",
+            "links": [
+                {
+                    "name": "PDF",
+                    "url": "https://arxiv.org/pdf/2608.10426"
+                },
+                {
+                    "name": "arXiv",
+                    "url": "https://arxiv.org/abs/2608.10426"
+                },
+                {
+                    "name": "Code",
+                    "url": "https://github.com/zzaiyan/GeoSeg-OV"
+                }
+            ],
+            "referenceKey": "liu2026geosegov"
+        },
+        {
+            "id": "tong2026semdino",
+            "layout": "compact",
+            "title": "SemDINO: Foundation Prior-Guided Cross-Temporal Semantic Alignment Network for Remote Sensing Change Detection",
+            "authors": "Xinyu Tong, Meihua Zhou, Jinxiao Sun, <strong><u>Zaiyan Zhang</u></strong>, Hongruixuan Chen, Lei Wang",
+            "venue": "arXiv",
+            "venueShort": "arXiv",
+            "year": 2026,
+            "badge": "arXiv",
+            "doi": null,
+            "note": "Semantic Change Detection, Foundation Models",
+            "links": [
+                {
+                    "name": "PDF",
+                    "url": "https://arxiv.org/pdf/2606.09772"
+                },
+                {
+                    "name": "arXiv",
+                    "url": "https://arxiv.org/abs/2606.09772"
+                },
+                {
+                    "name": "Code",
+                    "url": "https://github.com/tonxycs/SemDINO"
+                }
+            ],
+            "referenceKey": "tong2026semdino"
+        }
+    ],
     "patent": [
         {
             "date": "2025.02",
