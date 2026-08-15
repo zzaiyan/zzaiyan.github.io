@@ -3,6 +3,9 @@
 {% if pub.layout == "compact" %}{% assign compact = true %}{% endif %}
 {% assign pub_url = pub.doi %}
 {% unless pub_url %}{% if pub.links.size > 0 %}{% assign pub_url = pub.links[0].url %}{% endif %}{% endunless %}
+{% assign reference = site.data.references[pub.referenceKey] %}
+{% assign equal_authors = pub.authorRoles.equalContribution %}
+{% assign corresponding_authors = pub.authorRoles.corresponding %}
 
 <article class="paper-box{% if compact %} paper-box--compact{% else %} paper-box--featured{% endif %}">
 {% unless compact %}
@@ -18,7 +21,14 @@
       {% if pub_url %}<a class="pub-title" href="{{ pub_url }}">{{ pub.title }}</a>{% else %}<span class="pub-title">{{ pub.title }}</span>{% endif %}
       {% if compact and pub.badge %}<span class="badge badge--inline">{{ pub.badge }}</span>{% endif %}
     </div>
-    {% if pub.authors %}<div class="pub-authors">{{ pub.authors }}</div>{% endif %}
+    {% if reference.author %}
+    <div class="pub-authors">
+      {%- for author in reference.author -%}
+        {%- assign author_index = forloop.index -%}
+        <span{% if author.given == site.author.citation_name.given and author.family == site.author.citation_name.family %} class="pub-author--self"{% endif %}>{{ author.given }} {{ author.family }}</span>{% if equal_authors contains author_index %}<sup class="pub-author-marker" title="Equal contribution">&dagger;</sup>{% endif %}{% if corresponding_authors contains author_index %}<sup class="pub-author-marker" title="Corresponding author">*</sup>{% endif %}{% unless forloop.last %}, {% endunless %}
+      {%- endfor -%}
+    </div>
+    {% endif %}
     <div class="pub-venue"><em>{{ pub.venue }}</em>, {{ pub.year }}</div>
     <div class="pub-footer">
       <div class="pub-details">

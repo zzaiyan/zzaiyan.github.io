@@ -252,6 +252,22 @@ $compact-card-padding-block: 0.9em;
   margin-top: 0.35em;
 }
 
+.pub-author--self {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.pub-author-marker {
+  margin-left: 0.08em;
+  font-weight: 700;
+}
+
+.pub-author-legend {
+  margin: 0.15em 0 1.25em;
+  font-size: 0.82em;
+  color: $gray;
+}
+
 .pub-footer {
   display: flex;
   flex-wrap: wrap;

@@ -3,7 +3,7 @@
         {
             "id": "zhang2026coreuir",
             "title": "CoRE-UIR: Prior-guided common and residual experts for efficient all-in-one remote sensing image restoration",
-            "authors": "<strong><u>Zaiyan Zhang</u></strong>, Qiangqiang Yuan, Jie Li, Ziyang Lihe, Yu Wan, Yuzeng Chen, Xin Su, Liangpei Zhang",
+            "authorRoles": {"corresponding": [2]},
             "venue": "ISPRS Journal of Photogrammetry and Remote Sensing",
             "venueShort": "ISPRS J PRS",
             "year": 2026,
@@ -31,7 +31,7 @@
         {
             "id": "zhang2026ecrformer",
             "title": "ECRformer: An efficient cloud removal Transformer with semantic-decoupled learning for multimodal satellite imagery",
-            "authors": "<strong><u>Zaiyan Zhang</u></strong>, Jie Li, Yuanqi Liang, Jining Yan, Yi Xiao, Xin Su, Qiangqiang Yuan",
+            "authorRoles": {"corresponding": [2, 7]},
             "venue": "ISPRS Journal of Photogrammetry and Remote Sensing",
             "venueShort": "ISPRS J PRS",
             "year": 2026,
@@ -55,7 +55,7 @@
         {
             "id": "zhang2025multi",
             "title": "Multiscale Restoration of Missing Data in Optical Time-Series Images With Masked Spatial-Temporal Attention Network",
-            "authors": "<strong><u>Zaiyan Zhang</u></strong>, Jining Yan, Yuanqi Liang, Jiaxin Feng, Haixu He, Li Cao",
+            "authorRoles": {"corresponding": [2]},
             "venue": "IEEE Transactions on Geoscience and Remote Sensing",
             "venueShort": "IEEE TGRS",
             "year": 2025,
@@ -85,7 +85,7 @@
         {
             "id": "zhang2026task",
             "title": "Task-Driven Prompt Learning: A Joint Framework for Multi-modal Cloud Removal and Segmentation",
-            "authors": "<strong><u>Zaiyan Zhang</u></strong>, Jie Li, Shaowei Shi, Qiangqiang Yuan",
+            "authorRoles": {"corresponding": [4]},
             "venue": "IEEE International Geoscience and Remote Sensing Symposium",
             "venueShort": "IGARSS",
             "year": 2026,
@@ -110,7 +110,7 @@
             "id": "wan2026lad",
             "layout": "compact",
             "title": "LAD-Enhancer: A Lightweight All in One Aerial Detection Enhancer Under Adverse Weather",
-            "authors": "Yu Wan, Jie Li, Liupeng Lin, <strong><u>Zaiyan Zhang</u></strong>, Qiangqiang Yuan, Huanfeng Shen",
+            "authorRoles": {"corresponding": [2]},
             "venue": "ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences",
             "venueShort": "ISPRS Congress",
             "year": 2026,
@@ -129,13 +129,13 @@
     "preprint": [
         {
             "id": "liu2026geosegov",
-            "layout": "compact",
             "title": "GeoSeg-OV: Bridging Geospatial Gaps with Structural Guidance for Open-Vocabulary Remote Sensing Segmentation",
-            "authors": "Ruizhong Liu, Tingzhang Luo, <strong><u>Zaiyan Zhang</u></strong>, Jundong Chen, Hongruixuan Chen, Shaoguang Huang, Hongyan Zhang",
+            "authorRoles": {"corresponding": [6]},
             "venue": "arXiv",
             "venueShort": "arXiv",
             "year": 2026,
             "badge": "arXiv",
+            "image": "images/geoseg-ov.webp",
             "doi": null,
             "note": "Open-Vocabulary Segmentation, Geospatial Generalization",
             "links": [
@@ -158,7 +158,7 @@
             "id": "tong2026semdino",
             "layout": "compact",
             "title": "SemDINO: Foundation Prior-Guided Cross-Temporal Semantic Alignment Network for Remote Sensing Change Detection",
-            "authors": "Xinyu Tong, Meihua Zhou, Jinxiao Sun, <strong><u>Zaiyan Zhang</u></strong>, Hongruixuan Chen, Lei Wang",
+            "authorRoles": {"equalContribution": [1, 2], "corresponding": [6]},
             "venue": "arXiv",
             "venueShort": "arXiv",
             "year": 2026,
@@ -187,7 +187,7 @@
             "date": "2025.02",
             "number": "ZL202410556414.6",
             "title": "遥感图像序列的修复方法、装置、电子设备及存储介质",
-            "authors": "阎继宁, <strong><u>张再筵</u></strong>, 王力哲, 李军, 韩伟, 王玥玮"
+            "authors": ["阎继宁", "张再筵", "王力哲", "李军", "韩伟", "王玥玮"]
         }
     ]
 }
