@@ -35,6 +35,18 @@
       "gb-t-7714": "[1] ZHANG Z, YAN J, LIANG Y, et al. Multiscale Restoration of Missing Data in Optical Time-Series Images With Masked Spatial-Temporal Attention Network[J/OL]. IEEE Transactions on Geoscience and Remote Sensing, 2025, 63: 1-15. https://doi.org/10.1109/TGRS.2025.3574799. DOI:10.1109/TGRS.2025.3574799."
     }
   },
+  "yang2026iegc": {
+    "key": "yang2026iegc",
+    "title": "IEGC-FSDN: Foggy Ship Detection Network with Integrating Edge and Global Constraints",
+    "formats": {
+      "bibtex": "@article{yang2026iegc,\n\tauthor = {Yang, Yi and Wan, Yu and Li, Jie and Lin, Liupeng and Zhang, Zaiyan},\n\tjournal = {IEEE Signal Processing Letters},\n\tdoi = {10.1109/LSP.2026.3724106},\n\tyear = {2026},\n\tpages = {1--5},\n\tpublisher = {IEEE},\n\ttitle = {{IEGC-FSDN: Foggy Ship Detection Network with Integrating Edge and Global Constraints}},\n\turl = {https://doi.org/10.1109/LSP.2026.3724106},\n}",
+      "ris": "TY  - JOUR\nAU  - Yang, Yi\nAU  - Wan, Yu\nAU  - Li, Jie\nAU  - Lin, Liupeng\nAU  - Zhang, Zaiyan\nDA  - 2026///\nPY  - 2026\nDO  - 10.1109/LSP.2026.3724106\nID  - yang2026iegc\nSP  - 1-5\nT2  - IEEE Signal Processing Letters\nTI  - IEGC-FSDN: Foggy Ship Detection Network with Integrating Edge and Glob\nal Constraints\nUR  - https://doi.org/10.1109/LSP.2026.3724106\nER  -",
+      "csl-json": "{\n  \"id\": \"yang2026iegc\",\n  \"type\": \"article-journal\",\n  \"title\": \"IEGC-FSDN: Foggy Ship Detection Network with Integrating Edge and Global Constraints\",\n  \"author\": [\n    {\n      \"family\": \"Yang\",\n      \"given\": \"Yi\"\n    },\n    {\n      \"family\": \"Wan\",\n      \"given\": \"Yu\"\n    },\n    {\n      \"family\": \"Li\",\n      \"given\": \"Jie\"\n    },\n    {\n      \"family\": \"Lin\",\n      \"given\": \"Liupeng\"\n    },\n    {\n      \"family\": \"Zhang\",\n      \"given\": \"Zaiyan\"\n    }\n  ],\n  \"container-title\": \"IEEE Signal Processing Letters\",\n  \"publisher\": \"IEEE\",\n  \"page\": \"1-5\",\n  \"DOI\": \"10.1109/LSP.2026.3724106\",\n  \"URL\": \"https://doi.org/10.1109/LSP.2026.3724106\",\n  \"issued\": {\n    \"date-parts\": [\n      [\n        2026\n      ]\n    ]\n  }\n}",
+      "ieee": "[1] Y. Yang, Y. Wan, J. Li, L. Lin, and Z. Zhang, “IEGC-FSDN: Foggy Ship Detection Network with Integrating Edge and Global Constraints,” IEEE Signal Processing Letters, pp. 1–5, 2026, doi: 10.1109/LSP.2026.3724106.",
+      "apa": "Yang, Y., Wan, Y., Li, J., Lin, L., & Zhang, Z. (2026). IEGC-FSDN: Foggy Ship Detection Network with Integrating Edge and Global Constraints. IEEE Signal Processing Letters, 1–5. https://doi.org/10.1109/LSP.2026.3724106",
+      "gb-t-7714": "[1] YANG Y, WAN Y, LI J, et al. IEGC-FSDN: Foggy Ship Detection Network with Integrating Edge and Global Constraints[J/OL]. IEEE Signal Processing Letters, 2026: 1-5. https://doi.org/10.1109/LSP.2026.3724106. DOI:10.1109/LSP.2026.3724106."
+    }
+  },
   "zhang2026task": {
     "key": "zhang2026task",
     "title": "Task-Driven Prompt Learning: A Joint Framework for Multi-modal Cloud Removal and Segmentation",
@@ -57,6 +69,18 @@
       "ieee": "[1] Y. Wan, J. Li, L. Lin, Z. Zhang, Q. Yuan, and H. Shen, “LAD-Enhancer: A Lightweight All in One Aerial Detection Enhancer Under Adverse Weather,” in ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences, 2026, pp. 307–313. doi: 10.5194/isprs-annals-XI-3-2026-307-2026.",
       "apa": "Wan, Y., Li, J., Lin, L., Zhang, Z., Yuan, Q., & Shen, H. (2026). LAD-Enhancer: A Lightweight All in One Aerial Detection Enhancer Under Adverse Weather. ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences, XI-3–2026, 307–313. https://doi.org/10.5194/isprs-annals-XI-3-2026-307-2026",
       "gb-t-7714": "[1] WAN Y, LI J, LIN L, et al. LAD-Enhancer: A Lightweight All in One Aerial Detection Enhancer Under Adverse Weather[C/OL]//ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences: XI-3-2026. 2026: 307-313. https://doi.org/10.5194/isprs-annals-XI-3-2026-307-2026. DOI:10.5194/isprs-annals-XI-3-2026-307-2026."
+    }
+  },
+  "wan2026adversemoe": {
+    "key": "wan2026adversemoe",
+    "title": "AdverseMoE: A Degradation-Semantic Information Fusion Framework for Weather-Invariant Aerial Object Detection",
+    "formats": {
+      "bibtex": "@article{wan2026adversemoe,\n\tauthor = {Wan, Yu and Li, Jie and Lin, Liupeng and Zhang, Zaiyan and Li, Yiliang and Yuan, Qiangqiang and Shen, Huanfeng and Zhang, Liangpei},\n\tjournal = {SSRN},\n\tdoi = {10.2139/ssrn.7284341},\n\tyear = {2026},\n\tpublisher = {Elsevier BV},\n\ttitle = {{AdverseMoE: A Degradation-Semantic Information Fusion Framework for Weather-Invariant Aerial Object Detection}},\n\ttype = {Preprint},\n\turl = {https://doi.org/10.2139/ssrn.7284341},\n}",
+      "ris": "TY  - JOUR\nAU  - Wan, Yu\nAU  - Li, Jie\nAU  - Lin, Liupeng\nAU  - Zhang, Zaiyan\nAU  - Li, Yiliang\nAU  - Yuan, Qiangqiang\nAU  - Shen, Huanfeng\nAU  - Zhang, Liangpei\nDA  - 2026///\nPY  - 2026\nDO  - 10.2139/ssrn.7284341\nID  - wan2026adversemoe\nM3  - Preprint\nT2  - SSRN\nTI  - AdverseMoE: A Degradation-Semantic Information Fusion Framework for We\nather-Invariant Aerial Object Detection\nUR  - https://doi.org/10.2139/ssrn.7284341\nER  -",
+      "csl-json": "{\n  \"id\": \"wan2026adversemoe\",\n  \"type\": \"article-journal\",\n  \"title\": \"AdverseMoE: A Degradation-Semantic Information Fusion Framework for Weather-Invariant Aerial Object Detection\",\n  \"author\": [\n    {\n      \"family\": \"Wan\",\n      \"given\": \"Yu\"\n    },\n    {\n      \"family\": \"Li\",\n      \"given\": \"Jie\"\n    },\n    {\n      \"family\": \"Lin\",\n      \"given\": \"Liupeng\"\n    },\n    {\n      \"family\": \"Zhang\",\n      \"given\": \"Zaiyan\"\n    },\n    {\n      \"family\": \"Li\",\n      \"given\": \"Yiliang\"\n    },\n    {\n      \"family\": \"Yuan\",\n      \"given\": \"Qiangqiang\"\n    },\n    {\n      \"family\": \"Shen\",\n      \"given\": \"Huanfeng\"\n    },\n    {\n      \"family\": \"Zhang\",\n      \"given\": \"Liangpei\"\n    }\n  ],\n  \"container-title\": \"SSRN\",\n  \"genre\": \"Preprint\",\n  \"publisher\": \"Elsevier BV\",\n  \"DOI\": \"10.2139/ssrn.7284341\",\n  \"URL\": \"https://doi.org/10.2139/ssrn.7284341\",\n  \"issued\": {\n    \"date-parts\": [\n      [\n        2026\n      ]\n    ]\n  }\n}",
+      "ieee": "[1] Y. Wan et al., “AdverseMoE: A Degradation-Semantic Information Fusion Framework for Weather-Invariant Aerial Object Detection,” SSRN, 2026, doi: 10.2139/ssrn.7284341.",
+      "apa": "Wan, Y., Li, J., Lin, L., Zhang, Z., Li, Y., Yuan, Q., Shen, H., & Zhang, L. (2026). AdverseMoE: A Degradation-Semantic Information Fusion Framework for Weather-Invariant Aerial Object Detection [Preprint]. SSRN. https://doi.org/10.2139/ssrn.7284341",
+      "gb-t-7714": "[1] WAN Y, LI J, LIN L, et al. AdverseMoE: A Degradation-Semantic Information Fusion Framework for Weather-Invariant Aerial Object Detection[J/OL]. SSRN, 2026. https://doi.org/10.2139/ssrn.7284341. DOI:10.2139/ssrn.7284341."
     }
   },
   "liu2026geosegov": {

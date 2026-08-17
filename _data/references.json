@@ -61,6 +61,24 @@
         "URL": "https://doi.org/10.1109/TGRS.2025.3574799",
         "issued": { "date-parts": [[2025]] }
     },
+    "yang2026iegc": {
+        "id": "yang2026iegc",
+        "type": "article-journal",
+        "title": "IEGC-FSDN: Foggy Ship Detection Network with Integrating Edge and Global Constraints",
+        "author": [
+            { "family": "Yang", "given": "Yi" },
+            { "family": "Wan", "given": "Yu" },
+            { "family": "Li", "given": "Jie" },
+            { "family": "Lin", "given": "Liupeng" },
+            { "family": "Zhang", "given": "Zaiyan" }
+        ],
+        "container-title": "IEEE Signal Processing Letters",
+        "publisher": "IEEE",
+        "page": "1-5",
+        "DOI": "10.1109/LSP.2026.3724106",
+        "URL": "https://doi.org/10.1109/LSP.2026.3724106",
+        "issued": { "date-parts": [[2026]] }
+    },
     "zhang2026task": {
         "id": "zhang2026task",
         "type": "article-journal",
@@ -94,6 +112,27 @@
         "page": "307-313",
         "DOI": "10.5194/isprs-annals-XI-3-2026-307-2026",
         "URL": "https://doi.org/10.5194/isprs-annals-XI-3-2026-307-2026",
+        "issued": { "date-parts": [[2026]] }
+    },
+    "wan2026adversemoe": {
+        "id": "wan2026adversemoe",
+        "type": "article-journal",
+        "title": "AdverseMoE: A Degradation-Semantic Information Fusion Framework for Weather-Invariant Aerial Object Detection",
+        "author": [
+            { "family": "Wan", "given": "Yu" },
+            { "family": "Li", "given": "Jie" },
+            { "family": "Lin", "given": "Liupeng" },
+            { "family": "Zhang", "given": "Zaiyan" },
+            { "family": "Li", "given": "Yiliang" },
+            { "family": "Yuan", "given": "Qiangqiang" },
+            { "family": "Shen", "given": "Huanfeng" },
+            { "family": "Zhang", "given": "Liangpei" }
+        ],
+        "container-title": "SSRN",
+        "genre": "Preprint",
+        "publisher": "Elsevier BV",
+        "DOI": "10.2139/ssrn.7284341",
+        "URL": "https://doi.org/10.2139/ssrn.7284341",
         "issued": { "date-parts": [[2026]] }
     },
     "liu2026geosegov": {
