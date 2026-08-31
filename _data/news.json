@@ -1,5 +1,11 @@
 [
     {
+        "date": "2026.09",
+        "emoji": "📄",
+        "content": "One co-authored paper was accepted by **ISPRS J PRS**.",
+        "content_zh": "一篇合作论文被 **ISPRS J PRS** 录用。"
+    },
+    {
         "date": "2026.08",
         "emoji": "📄",
         "content": "One co-authored paper was accepted by **IEEE SPL**.",
