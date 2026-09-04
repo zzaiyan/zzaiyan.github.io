@@ -81,6 +81,29 @@
             "referenceKey": "zhang2025multi"
         },
         {
+            "id": "wan2026tdre",
+            "title": "Bridging the domain gap: A transferable dynamic routing enhancer for robust aerial detection under adverse weather",
+            "authorRoles": {"corresponding": [2]},
+            "venue": "ISPRS Journal of Photogrammetry and Remote Sensing",
+            "venueShort": "ISPRS J PRS",
+            "year": 2026,
+            "badge": "ISPRS J PRS",
+            "image": "images/publications/tdre.webp",
+            "doi": "https://doi.org/10.1016/j.isprsjprs.2026.08.041",
+            "note": "Adverse Weather, Aerial Object Detection",
+            "links": [
+                {
+                    "name": "PDF",
+                    "url": "assets/pubs/TDRE.pdf"
+                },
+                {
+                    "name": "Code",
+                    "url": "https://github.com/KIKYOUWY/TDRE"
+                }
+            ],
+            "referenceKey": "wan2026tdre"
+        },
+        {
             "id": "yang2026iegc",
             "layout": "compact",
             "title": "IEGC-FSDN: Foggy Ship Detection Network with Integrating Edge and Global Constraints",
