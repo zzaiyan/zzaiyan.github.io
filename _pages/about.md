@@ -106,35 +106,59 @@ redirect_from:
 <details class="misc-collapse" markdown="1">
 <summary><span class="collapse-icon">▶</span> <span class="lang-en">Click to expand</span><span class="lang-zh">点击展开</span></summary>
 
-## <span class="lang-en">Open Source Tools</span><span class="lang-zh">开源工具</span>
+<h2><span class="lang-en">🤝 Collaborators</span><span class="lang-zh">🤝 合作者</span></h2>
+<p class="lang-en">Research collaborators I have worked with on recent projects.</p>
+<p class="lang-zh">近期科研项目中与我合作的伙伴。</p>
+<p class="misc-collaborators"><span class="lang-en"><a href="https://github.com/KIKYOUWY">Yu Wan</a>, <a href="https://orcid.org/0009-0000-8029-1140">Ruizhong Liu</a>, <a href="https://github.com/Clarence-CV">Tingzhang Luo</a>, <a href="https://xy-boy.github.io/">Yi Xiao</a>, <a href="https://orcid.org/0000-0001-6757-9051">Yuzeng Chen</a>, <a href="https://chrx97.com/">Hongruixuan Chen</a></span><span class="lang-zh"><a href="https://github.com/KIKYOUWY">万宇</a>、<a href="https://orcid.org/0009-0000-8029-1140">刘瑞仲</a>、<a href="https://github.com/Clarence-CV">罗庭璋</a>、<a href="https://xy-boy.github.io/">肖屹</a>、<a href="https://orcid.org/0000-0001-6757-9051">陈玉增</a>、<a href="https://chrx97.com/">陈洪瑞轩</a></span></p>
 
-<!-- In my spare time, I develop and maintain several open-source tools to facilitate research and development: -->
+<h2><span class="lang-en">🧰 Open Source Tools</span><span class="lang-zh">🧰 开源工具</span></h2>
+<p class="lang-en">A small collection of tools I build and maintain for research and everyday workflows.</p>
+<p class="lang-zh">这里整理了我为科研与日常工作开发和维护的一些工具。</p>
 
-<div class="lang-en" markdown="1">
+<div class="misc-project-grid">
+<article class="misc-project">
+<div class="misc-project__heading"><strong>PaperRevisionKit</strong><span class="lang-en">LaTeX revision toolkit</span><span class="lang-zh">LaTeX 返修工具包</span></div>
+<p class="lang-en">Build organized journal revision packages and response letters.</p>
+<p class="lang-zh">构建结构清晰的期刊返修材料与审稿意见回复信。</p>
+<div class="pub-links"><a class="pub-btn" href="https://github.com/zzaiyan/PaperRevisionKit"><i class="fab fa-github"></i> GitHub</a><span class="lang-en"><a class="pub-btn" href="https://github.com/zzaiyan/PaperRevisionKit#readme"><i class="fas fa-book"></i> Docs</a></span><span class="lang-zh"><a class="pub-btn" href="https://github.com/zzaiyan/PaperRevisionKit/blob/main/README_zh.md"><i class="fas fa-book"></i> 文档</a></span></div>
+</article>
 
-Perhaps your research field differs from mine, but may the open-source tools I've developed prove useful to your studies:
+<article class="misc-project">
+<div class="misc-project__heading"><strong>VisitorTrace</strong><span class="lang-en">Self-hosted visitor analytics</span><span class="lang-zh">自托管访客统计</span></div>
+<p class="lang-en">Run a lightweight visitor map and pageview tracker for small websites.</p>
+<p class="lang-zh">为个人网站提供轻量级访客地图与页面访问统计。</p>
+<div class="pub-links"><a class="pub-btn" href="https://github.com/zzaiyan/VisitorTrace"><i class="fab fa-github"></i> GitHub</a><span class="lang-en"><a class="pub-btn" href="https://github.com/zzaiyan/VisitorTrace#readme"><i class="fas fa-book"></i> Docs</a></span><span class="lang-zh"><a class="pub-btn" href="https://github.com/zzaiyan/VisitorTrace/blob/main/README.zh-CN.md"><i class="fas fa-book"></i> 文档</a></span></div>
+</article>
 
+<article class="misc-project">
+<div class="misc-project__heading"><strong>TorchHook</strong><span class="lang-en">PyTorch hooks manager</span><span class="lang-zh">PyTorch 钩子管理器</span></div>
+<p class="lang-en">Capture feature maps and inspect intermediate activations.</p>
+<p class="lang-zh">捕获特征图并检查模型的中间激活。</p>
+<div class="pub-links"><a class="pub-btn" href="https://github.com/zzaiyan/TorchHook"><i class="fab fa-github"></i> GitHub</a><span class="lang-en"><a class="pub-btn" href="https://github.com/zzaiyan/TorchHook/blob/main/BLOG.md"><i class="fas fa-book"></i> Docs</a></span><span class="lang-zh"><a class="pub-btn" href="https://github.com/zzaiyan/TorchHook/blob/main/BLOG_CN.md"><i class="fas fa-book"></i> 文档</a></span></div>
+</article>
+
+<article class="misc-project">
+<div class="misc-project__heading"><strong>AnyCapture</strong><span class="lang-en">Function-local variable capture</span><span class="lang-zh">局部变量提取工具</span></div>
+<p class="lang-en">Inspect local variables for debugging and visualization.</p>
+<p class="lang-zh">提取函数中的局部变量，用于调试与可视化。</p>
+<div class="pub-links"><a class="pub-btn" href="https://github.com/zzaiyan/AnyCapture"><i class="fab fa-github"></i> GitHub</a><span class="lang-en"><a class="pub-btn" href="https://github.com/zzaiyan/AnyCapture/blob/main/README.md"><i class="fas fa-book"></i> Docs</a></span><span class="lang-zh"><a class="pub-btn" href="https://github.com/zzaiyan/AnyCapture/blob/main/README.md"><i class="fas fa-book"></i> 文档</a></span></div>
+</article>
+
+<article class="misc-project">
+<div class="misc-project__heading"><strong>netcut</strong><span class="lang-en">Network clipboard</span><span class="lang-zh">网络剪贴板</span></div>
+<p class="lang-en">Share text across devices through a lightweight web application.</p>
+<p class="lang-zh">通过轻量级 Web 应用在不同设备间共享文本。</p>
+<div class="pub-links"><a class="pub-btn" href="https://github.com/zzaiyan/netcut"><i class="fab fa-github"></i> GitHub</a><a class="pub-btn" href="https://zzaiyan.github.io/netcut/"><i class="fas fa-desktop"></i> <span class="lang-en">Demo</span><span class="lang-zh">演示</span></a></div>
+</article>
+
+<article class="misc-project">
+<div class="misc-project__heading"><strong>zzaiyan.github.io</strong><span class="lang-en">Academic homepage</span><span class="lang-zh">学术主页</span></div>
+<p class="lang-en">An academic homepage for research and open-source work.</p>
+<p class="lang-zh">展示科研与开源项目的学术主页。</p>
+<div class="pub-links"><a class="pub-btn" href="https://github.com/zzaiyan/zzaiyan.github.io"><i class="fab fa-github"></i> GitHub</a><a class="pub-btn" href="https://zzaiyan.com/"><i class="fas fa-desktop"></i> <span class="lang-en">Demo</span><span class="lang-zh">演示</span></a></div>
+</article>
 </div>
-
-<div class="lang-zh" markdown="1">
-
-也许你的研究领域与我不同，但希望我开发的这些开源工具能对你的研究有所帮助：
-
-</div>
-
-- **TorchHook - 管理 PyTorch 钩子函数**: <span class="pub-links"><a class="pub-btn" href="https://github.com/zzaiyan/TorchHook"><i class="fab fa-github"></i> Repo</a> <a class="pub-btn" href="https://github.com/zzaiyan/TorchHook/blob/main/BLOG.md"><i class="fas fa-book"></i> Tutorial</a> <a class="pub-btn" href="https://github.com/zzaiyan/TorchHook/blob/main/BLOG_CN.md"><i class="fas fa-book"></i> 教程</a></span>
-
-  <span class="lang-en">A PyTorch hooks manager, providing convenient interfaces to capture feature maps and debug models.</span><span class="lang-zh">一个 PyTorch 钩子管理器，提供便捷的接口来捕获特征图和调试模型。</span>
-
-- **AnyCapture - 提取任意局部变量**: <span class="pub-links"><a class="pub-btn" href="https://github.com/zzaiyan/AnyCapture"><i class="fab fa-github"></i> Repo</a> <a class="pub-btn" href="https://github.com/zzaiyan/AnyCapture/blob/main/README.md"><i class="fas fa-book"></i> 教程</a></span>
-
-  <span class="lang-en">A tool to capture local variables from any function, especially useful for visualizing attention maps in deep learning models.</span><span class="lang-zh">一个从任意函数中提取局部变量的工具，特别适用于深度学习模型中注意力图的可视化。</span>
-
-- **netcut - 网络剪切板**: <span class="pub-links"><a class="pub-btn" href="https://github.com/zzaiyan/netcut"><i class="fab fa-github"></i> Repo</a> <a class="pub-btn" href="https://zzaiyan.github.io/netcut/"><i class="fas fa-desktop"></i> Demo</a></span>
-
-  <span class="lang-en">A simple network clipboard application. Perfect for quickly sharing text between different devices.</span><span class="lang-zh">一个简洁的网络剪贴板应用，适合在不同设备间快速分享文本。</span>
-
-<span class="lang-en">Feel free to visit my <a href="https://github.com/zzaiyan">GitHub</a> for more interesting projects.</span><span class="lang-zh">欢迎访问我的 <a href="https://github.com/zzaiyan">GitHub</a> 查看更多有趣的项目。</span>
+</details>
 
 <!-- ## Websites
 
@@ -143,5 +167,3 @@ During my studies of Computer Technologies, I operated several websites:
 - **Technical Blog (技术博客)**: [b.zzaiyan.com](http://b.zzaiyan.com) - Sharing technical insights and learning experiences.
 - **Personal Cloud Storage (个人网盘)**: [pan.zzaiyan.com](https://pan.zzaiyan.com/) - A personal cloud storage service (temporarily suspended due to network storage costs).
 - **URL Shortner (短链接生成器, 正在开发)**: [s.zzaiyan.com](https://s.zzaiyan.com/) - A simple and efficient short URL generator to quickly create and manage short links for easy sharing. -->
-
-</details>
