@@ -29,13 +29,14 @@ details.misc-collapse {
   summary {
     cursor: pointer;
     list-style: none;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 0.4em;
-    font-weight: 600;
-    color: $dark-gray;
+    font-weight: 500;
+    color: mix(#fff, $dark-gray, 15%);
     user-select: none;
-    padding: 0.3em 0;
+    padding: 0.2em 0;
+    font-size: 0.9em;
 
     &::-webkit-details-marker {
       display: none;
@@ -51,6 +52,72 @@ details.misc-collapse {
   &[open] summary .collapse-icon {
     transform: rotate(90deg);
   }
+}
+
+details.misc-collapse > p {
+  margin: 0.9em 0 0.8em;
+  color: mix(#fff, $dark-gray, 20%);
+  font-size: 0.9em;
+}
+
+.misc-project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
+  gap: 0.75em;
+}
+
+.misc-project {
+  display: flex;
+  flex-direction: column;
+  padding: 0.85em 1em;
+  border: 1px solid rgba($info-color, 0.14);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.045);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    border-color: #b8d4fe;
+    box-shadow: 0 4px 20px rgba(66, 133, 244, 0.18), 0 0 0 3px rgba(66, 133, 244, 0.06);
+    transform: translateY(-2px);
+  }
+
+  .misc-project__heading {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.25em 0.65em;
+
+    strong {
+      color: $info-color;
+    }
+
+    span {
+      color: mix(#fff, $dark-gray, 20%);
+      font-size: 0.9em;
+    }
+  }
+
+  p {
+    margin: 0.35em 0 0;
+    font-size: 0.9em;
+  }
+
+  .pub-links {
+    margin-top: auto;
+    padding-top: 0.65em;
+  }
+
+  .pub-btn {
+    min-height: 1.75em;
+    padding: 0.15em 0.62em;
+    font-size: 0.78em;
+  }
+}
+
+.misc-collaborators {
+  margin: 0.9em 0 0;
+  line-height: 2;
 }
 
 li .pub-links {
