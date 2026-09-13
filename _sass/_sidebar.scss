@@ -147,6 +147,21 @@
   }
 }
 
+.author__description {
+  margin-top: 10px;
+  font-family: $sans-serif;
+  font-size: $type-size-7;
+  line-height: 1.5;
+  white-space: normal;
+}
+
+.author__location {
+  margin-top: 5px;
+  color: $gray;
+  font-size: $type-size-7;
+  line-height: 1.5;
+}
+
 .author__urls-wrapper {
   position: relative;
   display: table-cell;

@@ -16,23 +16,21 @@ endif %}
     {% if author.bio %}
     <p class="author__bio"><span class="lang-en">{{ author.bio }}</span><span class="lang-zh">{{ author.bio_zh | default: author.bio }}</span></p>
     {% endif %}
+    {% if site.description and include.show_description != false %}
+    <div class="author__description"><span class="lang-en">{{ site.description }}</span><span class="lang-zh">{{ site.description_zh | default: site.description }}</span></div>
+    {% endif %}
+    {% if author.location %}
+    <div class="author__location">
+      <i class="fa fa-fw fa-map-marker" aria-hidden="true"></i>
+      <span class="lang-en">{{ author.location }}</span><span class="lang-zh">{{ author.location_zh | default: author.location }}</span>
+    </div>
+    {% endif %}
   </div>
 
   <div class="author__urls-wrapper">
     <!-- <button class="btn btn--inverse">More Info & Contact</button> -->
     <ul class="author__urls social-icons">
-      {% if site.description and include.show_description != false %}
-      <li>
-        <div style="white-space: normal; margin-bottom: 1em">
-          <span class="lang-en">{{ site.description }}</span><span class="lang-zh">{{ site.description_zh | default: site.description }}</span>
-        </div>
-      </li>
-      {% endif %} {% if author.location %}
-      <li class="author__location">
-        <i class="fa fa-fw fa-map-marker" aria-hidden="true"></i>
-        <span class="lang-en">{{ author.location }}</span><span class="lang-zh">{{ author.location_zh | default: author.location }}</span>
-      </li>
-      {% endif %} {% if author.employer %}
+      {% if author.employer %}
       <li>
         <i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> {{
         author.employer }}
