@@ -67,9 +67,8 @@ $about-gap: 3.5rem;
 }
 
 .about-section .author__description {
-  position: relative;
   margin-top: 0.65rem;
-  padding-left: 0.8rem;
+  font-style: italic;
   text-wrap: pretty;
 
   &::before,
@@ -77,19 +76,18 @@ $about-gap: 3.5rem;
     color: rgba($info-color, 0.38);
     font-family: $serif;
     font-size: 1.15rem;
+    font-style: normal;
     line-height: 1;
   }
 
   &::before {
     content: "“";
-    position: absolute;
-    top: -0.08em;
-    left: 0;
+    margin-right: 0.1em;
   }
 
   &::after {
     content: "”";
-    margin-left: 0.06em;
+    margin-left: 0.1em;
   }
 }
 
