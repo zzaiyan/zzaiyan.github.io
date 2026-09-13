@@ -9,13 +9,13 @@ layout: compress
     {% include head/custom.html %}
   </head>
 
-  <body>
+  <body class="{% if page.single_column %}page--single-column{% endif %}">
 
     {% include browser-upgrade.html %}
     {% include masthead.html %}
 
-    <div id="main" role="main">
-      {% include sidebar.html %}
+    <div id="main" class="{% if page.single_column %}main--single{% endif %}" role="main">
+      {% unless page.single_column %}{% include sidebar.html %}{% endunless %}
     
       <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
         {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
