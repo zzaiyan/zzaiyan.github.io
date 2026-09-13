@@ -121,6 +121,13 @@ html[data-theme="dark"] {
     color: #aaa !important;
   }
 
+  .about-section .author__description {
+    &::before,
+    &::after {
+      color: rgba(122, 176, 230, 0.52);
+    }
+  }
+
   .sidebar p,
   .sidebar li {
     color: #aaa;
