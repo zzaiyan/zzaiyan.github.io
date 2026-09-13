@@ -2,13 +2,20 @@
 permalink: /
 title: ""
 excerpt: ""
-author_profile: true
+author_profile: false
+single_column: true
 redirect_from:
   - /about/
   - /about.html
 ---
 
 <span class='anchor' id='about-me'></span>
+
+<div class="about-section">
+<div class="about-section__profile">
+{% include author-profile.html %}
+</div>
+<div class="about-section__content">
 
 <div class="lang-en" markdown="1">
 
@@ -36,6 +43,9 @@ redirect_from:
 
 🤝 欢迎合作与交流！您可以通过邮箱 {[1@zzaiyan.com](mailto:1@zzaiyan.com), [zzaiyan@whu.edu.cn](mailto:zzaiyan@whu.edu.cn)} 联系我。
 
+</div>
+
+</div>
 </div>
 
 # <span class="lang-en">🔥 News</span><span class="lang-zh">🔥 新闻动态</span>
