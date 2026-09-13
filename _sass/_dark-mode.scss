@@ -181,6 +181,36 @@ html[data-theme="dark"] {
     }
   }
 
+  .job-callout {
+    border-color: #3f4852;
+    background: rgba(122, 176, 230, 0.08);
+
+    &__marker {
+      background: #7ab0e6;
+    }
+
+    strong {
+      color: #9cc8ff;
+    }
+  }
+
+  .about-slogan {
+    color: #b7c2cc;
+
+    &::before,
+    &::after {
+      color: rgba(122, 176, 230, 0.34);
+    }
+  }
+
+  .about-section .author__urls a {
+    background: rgba(122, 176, 230, 0.1);
+
+    &:hover {
+      background: rgba(122, 176, 230, 0.2);
+    }
+  }
+
   table {
     color: #d4d4d4;
   }

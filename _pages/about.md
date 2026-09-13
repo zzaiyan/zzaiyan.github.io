@@ -13,9 +13,11 @@ redirect_from:
 
 <div class="about-section">
 <div class="about-section__profile">
-{% include author-profile.html %}
+{% include author-profile.html show_description=false %}
 </div>
 <div class="about-section__content">
+
+<div class="about-slogan"><span class="lang-en">{{ site.description }}</span><span class="lang-zh">{{ site.description_zh | default: site.description }}</span></div>
 
 <div class="lang-en" markdown="1">
 
@@ -44,6 +46,15 @@ redirect_from:
 🤝 欢迎合作与交流！您可以通过邮箱 {[1@zzaiyan.com](mailto:1@zzaiyan.com), [zzaiyan@whu.edu.cn](mailto:zzaiyan@whu.edu.cn)} 联系我。
 
 </div>
+
+<aside class="job-callout">
+<span class="job-callout__marker" aria-hidden="true"></span>
+<div>
+<strong><span class="lang-en">Seeking 28 Fall PhD Opportunities</span><span class="lang-zh">寻找 28 Fall 博士机会</span></strong>
+<p class="lang-en">I am looking for a PhD position starting in Fall 2028. Feel free to get in touch.</p>
+<p class="lang-zh">我正在寻找 2028 年秋季入学的博士岗位，欢迎与我联系。</p>
+</div>
+</aside>
 
 </div>
 </div>
