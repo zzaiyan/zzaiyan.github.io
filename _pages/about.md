@@ -13,11 +13,9 @@ redirect_from:
 
 <div class="about-section">
 <div class="about-section__profile">
-{% include author-profile.html show_description=false %}
+{% include author-profile.html %}
 </div>
 <div class="about-section__content">
-
-<div class="about-slogan"><span class="lang-en">{{ site.description }}</span><span class="lang-zh">{{ site.description_zh | default: site.description }}</span></div>
 
 <div class="lang-en" markdown="1">
 

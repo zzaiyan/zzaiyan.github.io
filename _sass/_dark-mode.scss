@@ -114,6 +114,8 @@ html[data-theme="dark"] {
   }
 
   .author__bio,
+  .author__description,
+  .author__location,
   .author__urls li,
   .author__urls a {
     color: #aaa !important;
@@ -191,15 +193,6 @@ html[data-theme="dark"] {
 
     strong {
       color: #9cc8ff;
-    }
-  }
-
-  .about-slogan {
-    color: #b7c2cc;
-
-    &::before,
-    &::after {
-      color: rgba(122, 176, 230, 0.34);
     }
   }
 
