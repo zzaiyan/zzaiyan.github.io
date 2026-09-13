@@ -21,14 +21,14 @@ endif %}
   <div class="author__urls-wrapper">
     <!-- <button class="btn btn--inverse">More Info & Contact</button> -->
     <ul class="author__urls social-icons">
-      {% if site.description %}
+      {% if site.description and include.show_description != false %}
       <li>
         <div style="white-space: normal; margin-bottom: 1em">
           <span class="lang-en">{{ site.description }}</span><span class="lang-zh">{{ site.description_zh | default: site.description }}</span>
         </div>
       </li>
       {% endif %} {% if author.location %}
-      <li>
+      <li class="author__location">
         <i class="fa fa-fw fa-map-marker" aria-hidden="true"></i>
         <span class="lang-en">{{ author.location }}</span><span class="lang-zh">{{ author.location_zh | default: author.location }}</span>
       </li>
@@ -125,7 +125,9 @@ endif %}
       {% endif %} {% if author.github %}
       <li>
         <a href="https://github.com/{{ author.github }}"
-          ><i class="fab fa-fw fa-github" aria-hidden="true"></i> Github</a
+          ><i class="fab fa-fw fa-github" aria-hidden="true"></i>
+          <span class="lang-en">GitHub</span
+          ><span class="lang-zh">GitHub</span></a
         >
       </li>
       {% endif %} {% if author.stackoverflow %}
