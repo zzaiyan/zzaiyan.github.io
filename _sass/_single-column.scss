@@ -8,7 +8,7 @@ $about-gap: 3.5rem;
   display: block;
   max-width: $single-column-width;
   margin: 0 auto;
-  padding: 3.25rem 1.75rem 4.5rem;
+  padding: 3.25rem 1.75rem 2.5rem;
 }
 
 .main--single .page {
@@ -274,6 +274,10 @@ $about-gap: 3.5rem;
   max-width: $single-column-width;
 }
 
+.page--single-column .page__footer {
+  margin-top: 2rem;
+}
+
 @include breakpoint($large) {
   .about-section {
     align-items: stretch;
@@ -331,7 +335,7 @@ $about-gap: 3.5rem;
 
 @include breakpoint(max-width $large - 1px) {
   #main.main--single {
-    padding: 2rem 1.25rem 3.5rem;
+    padding: 2rem 1.25rem 2rem;
   }
 
   .about-section {
@@ -389,7 +393,7 @@ $about-gap: 3.5rem;
 
 @include breakpoint(max-width $small) {
   #main.main--single {
-    padding: 1.5rem 1rem 3rem;
+    padding: 1.5rem 1rem 1.75rem;
   }
 
   .about-section .profile_box {
