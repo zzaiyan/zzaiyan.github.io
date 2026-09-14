@@ -279,15 +279,6 @@ $about-gap: 3.5rem;
     align-items: stretch;
   }
 
-  .about-section--measuring {
-    align-items: start;
-  }
-
-  .about-section--measuring .about-section__profile,
-  .about-section--measuring .about-section__content {
-    display: block;
-  }
-
   .about-section--profile-taller .about-section__content,
   .about-section--content-taller .about-section__profile {
     display: flex;

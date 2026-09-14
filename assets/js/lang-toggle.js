@@ -7,21 +7,38 @@
     if (!section) return;
 
     section.classList.remove(
-      "about-section--measuring",
       "about-section--profile-taller",
       "about-section--content-taller"
     );
 
-    if (window.innerWidth < 925) return;
+    var isWide =
+      window.matchMedia && window.matchMedia("(min-width: 925px)").matches;
+    if (!isWide) return;
 
     var profile = section.querySelector(".about-section__profile");
     var content = section.querySelector(".about-section__content");
     if (!profile || !content) return;
 
-    section.classList.add("about-section--measuring");
+    var previousAlignItems = section.style.alignItems;
+    var previousProfileDisplay = profile.style.display;
+    var previousProfileFlex = profile.style.flex;
+    var previousContentDisplay = content.style.display;
+    var previousContentFlex = content.style.flex;
+
+    section.style.alignItems = "start";
+    profile.style.display = "block";
+    profile.style.flex = "none";
+    content.style.display = "block";
+    content.style.flex = "none";
+
     var profileHeight = profile.getBoundingClientRect().height;
     var contentHeight = content.getBoundingClientRect().height;
-    section.classList.remove("about-section--measuring");
+
+    section.style.alignItems = previousAlignItems;
+    profile.style.display = previousProfileDisplay;
+    profile.style.flex = previousProfileFlex;
+    content.style.display = previousContentDisplay;
+    content.style.flex = previousContentFlex;
 
     if (profileHeight > contentHeight + 1) {
       section.classList.add("about-section--profile-taller");
@@ -84,6 +101,11 @@
     scheduleAboutBalance();
     if (document.fonts && document.fonts.ready) {
       document.fonts.ready.then(scheduleAboutBalance);
+    }
+
+    var avatar = document.querySelector(".about-section .author__avatar img");
+    if (avatar && !avatar.complete) {
+      avatar.addEventListener("load", scheduleAboutBalance);
     }
   });
 
