@@ -1,4 +1,43 @@
 (function () {
+  var aboutBalanceFrame = null;
+
+  // Stretch only the naturally shorter About column.
+  function balanceAboutSection() {
+    var section = document.querySelector(".about-section");
+    if (!section) return;
+
+    section.classList.remove(
+      "about-section--measuring",
+      "about-section--profile-taller",
+      "about-section--content-taller"
+    );
+
+    if (window.innerWidth < 925) return;
+
+    var profile = section.querySelector(".about-section__profile");
+    var content = section.querySelector(".about-section__content");
+    if (!profile || !content) return;
+
+    section.classList.add("about-section--measuring");
+    var profileHeight = profile.getBoundingClientRect().height;
+    var contentHeight = content.getBoundingClientRect().height;
+    section.classList.remove("about-section--measuring");
+
+    if (profileHeight > contentHeight + 1) {
+      section.classList.add("about-section--profile-taller");
+    } else if (contentHeight > profileHeight + 1) {
+      section.classList.add("about-section--content-taller");
+    }
+  }
+
+  function scheduleAboutBalance() {
+    if (aboutBalanceFrame) window.cancelAnimationFrame(aboutBalanceFrame);
+    aboutBalanceFrame = window.requestAnimationFrame(function () {
+      aboutBalanceFrame = null;
+      balanceAboutSection();
+    });
+  }
+
   /* ── Language toggle ── */
   function setLang(lang) {
     document.documentElement.setAttribute("data-lang", lang);
@@ -7,6 +46,7 @@
     if (btn) btn.textContent = lang === "en" ? "中文" : "EN";
     // Recalculate greedy-nav after text width changes
     if (window.resetGreedyNav) window.resetGreedyNav();
+    scheduleAboutBalance();
   }
 
   /* ── Theme toggle ── */
@@ -40,5 +80,13 @@
         setTheme(cur === "light" ? "dark" : "light");
       });
     }
+
+    scheduleAboutBalance();
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(scheduleAboutBalance);
+    }
   });
+
+  window.addEventListener("load", scheduleAboutBalance);
+  window.addEventListener("resize", scheduleAboutBalance);
 })();
