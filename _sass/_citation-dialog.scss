@@ -1,10 +1,4 @@
 /* Multi-format citation dialog */
-@property --citation-halo-angle {
-  syntax: "<angle>";
-  inherits: false;
-  initial-value: 0deg;
-}
-
 .citation-modal {
   position: fixed;
   inset: 0;
@@ -28,93 +22,21 @@
   animation: citationBackdropIn 0.2s ease-out both;
 }
 
-.citation-modal__frame {
-  --citation-depth-shadow: 0 24px 64px rgba(20, 35, 52, 0.24);
-  position: relative;
-  width: min(680px, 100%);
-  max-width: 100%;
-  min-width: 0;
-  isolation: isolate;
-  box-shadow: var(--citation-depth-shadow);
-}
-
-.citation-modal__halo {
-  --citation-halo-blue: #3b7cff;
-  --citation-halo-cyan: #18b8b0;
-  --citation-halo-purple: #7c4de8;
-  --citation-halo-pink: #d24fd2;
-  position: absolute;
-  inset: -48px;
-  z-index: 0;
-  pointer-events: none;
-  animation: citationHaloIn 0.28s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-
-.citation-modal__halo-layer {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.citation-modal__halo-layer::before {
-  content: "";
-  position: absolute;
-  box-sizing: border-box;
-  border: 3px solid transparent;
-  background: conic-gradient(
-    from var(--citation-halo-angle),
-    var(--citation-halo-blue),
-    var(--citation-halo-cyan),
-    var(--citation-halo-purple),
-    var(--citation-halo-pink),
-    var(--citation-halo-blue)
-  );
-  -webkit-mask:
-    linear-gradient(#000 0 0) padding-box,
-    linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-  mask:
-    linear-gradient(#000 0 0) padding-box,
-    linear-gradient(#000 0 0);
-  mask-composite: exclude;
-  animation: citationHaloSpin 8s linear infinite;
-  pointer-events: none;
-}
-
-.citation-modal__halo-layer--core {
-  filter: blur(2px);
-  opacity: 1;
-}
-
-.citation-modal__halo-layer--core::before {
-  inset: 45px;
-  border-radius: 19px;
-}
-
-.citation-modal__halo-layer--tail {
-  filter: blur(18px);
-  opacity: 0.78;
-}
-
-.citation-modal__halo-layer--tail::before {
-  inset: 44px;
-  border-width: 4px;
-  border-radius: 20px;
-}
-
 .citation-modal__panel {
+  --citation-depth-shadow: 0 24px 64px rgba(20, 35, 52, 0.24);
   --citation-edge-highlight: inset 0 1px rgba(255, 255, 255, 0.36);
   position: relative;
   z-index: 1;
   width: min(680px, 100%);
-  min-width: 0;
   max-height: min(82vh, 720px);
   overflow: hidden;
   background:
     linear-gradient(145deg, rgba(255, 255, 255, 0.36), rgba(218, 233, 246, 0.18)),
     rgba(235, 243, 250, 0.5);
   border-radius: 16px;
-  box-shadow: var(--citation-edge-highlight);
+  box-shadow:
+    var(--citation-depth-shadow),
+    var(--citation-edge-highlight);
   backdrop-filter: blur(16px) saturate(2) contrast(0.96);
   -webkit-backdrop-filter: blur(16px) saturate(2) contrast(0.96);
   animation: citationPanelIn 0.28s cubic-bezier(0.22, 1, 0.36, 1) both;
@@ -375,10 +297,6 @@
   animation: citationPanelOut 0.16s ease-in both;
 }
 
-.citation-modal.is-closing .citation-modal__halo {
-  animation: citationHaloOut 0.16s ease-in both;
-}
-
 html[data-theme="dark"] {
   .citation-modal {
     color: #d7e0ea;
@@ -388,11 +306,8 @@ html[data-theme="dark"] {
     background: rgba(0, 0, 0, 0.64);
   }
 
-  .citation-modal__frame {
-    --citation-depth-shadow: 0 24px 72px rgba(0, 0, 0, 0.52);
-  }
-
   .citation-modal__panel {
+    --citation-depth-shadow: 0 24px 72px rgba(0, 0, 0, 0.52);
     --citation-edge-highlight: inset 0 1px rgba(255, 255, 255, 0.12);
     background:
       linear-gradient(145deg, rgba(65, 76, 91, 0.3), rgba(22, 27, 34, 0.18)),
@@ -535,38 +450,8 @@ html[data-theme="dark"] {
 
 @media (prefers-reduced-motion: reduce) {
   .citation-modal::before,
-  .citation-modal__halo,
-  .citation-modal__halo-layer::before,
   .citation-modal__panel {
     animation: none !important;
-  }
-}
-
-@keyframes citationHaloSpin {
-  to {
-    --citation-halo-angle: 360deg;
-  }
-}
-
-@keyframes citationHaloIn {
-  from {
-    opacity: 0;
-    transform: translateY(12px) scale(0.985);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-@keyframes citationHaloOut {
-  from {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-  to {
-    opacity: 0;
-    transform: translateY(8px) scale(0.99);
   }
 }
 

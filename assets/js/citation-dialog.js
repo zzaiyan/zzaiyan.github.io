@@ -69,39 +69,33 @@
     modal.setAttribute("aria-modal", "true");
     modal.setAttribute("aria-labelledby", "citation-dialog-title");
     modal.innerHTML = `
-      <div class="citation-modal__frame">
-        <div class="citation-modal__halo" aria-hidden="true">
-          <span class="citation-modal__halo-layer citation-modal__halo-layer--core"></span>
-          <span class="citation-modal__halo-layer citation-modal__halo-layer--tail"></span>
-        </div>
-        <section class="citation-modal__panel" tabindex="-1">
-          <header class="citation-modal__header">
-            <div class="citation-modal__heading">
-              <h2 class="citation-modal__title" id="citation-dialog-title">
-                <span class="lang-en">Citation</span><span class="lang-zh">引用</span>
-              </h2>
-              <code class="citation-modal__key"></code>
-            </div>
-            <button class="citation-dismiss-btn" type="button" aria-label="Close citation dialog" title="Close">
-              <i class="fas fa-times" aria-hidden="true"></i>
-            </button>
-          </header>
-          <div class="citation-modal__body">
-            <nav class="citation-format-tabs" role="tablist" aria-label="Citation format"></nav>
-            <pre class="citation-code" tabindex="0"><code></code></pre>
+      <section class="citation-modal__panel" tabindex="-1">
+        <header class="citation-modal__header">
+          <div class="citation-modal__heading">
+            <h2 class="citation-modal__title" id="citation-dialog-title">
+              <span class="lang-en">Citation</span><span class="lang-zh">引用</span>
+            </h2>
+            <code class="citation-modal__key"></code>
           </div>
-          <footer class="citation-modal__footer">
-            <button class="citation-download-btn" type="button" hidden>
-              <i class="fas fa-download" aria-hidden="true"></i>
-              <span class="lang-en">Download</span><span class="lang-zh">下载</span>
-            </button>
-            <button class="citation-copy-btn" type="button" aria-live="polite">
-              <i class="fas fa-copy" aria-hidden="true"></i>
-              <span class="lang-en">Copy</span><span class="lang-zh">复制</span>
-            </button>
-          </footer>
-        </section>
-      </div>`;
+          <button class="citation-dismiss-btn" type="button" aria-label="Close citation dialog" title="Close">
+            <i class="fas fa-times" aria-hidden="true"></i>
+          </button>
+        </header>
+        <div class="citation-modal__body">
+          <nav class="citation-format-tabs" role="tablist" aria-label="Citation format"></nav>
+          <pre class="citation-code" tabindex="0"><code></code></pre>
+        </div>
+        <footer class="citation-modal__footer">
+          <button class="citation-download-btn" type="button" hidden>
+            <i class="fas fa-download" aria-hidden="true"></i>
+            <span class="lang-en">Download</span><span class="lang-zh">下载</span>
+          </button>
+          <button class="citation-copy-btn" type="button" aria-live="polite">
+            <i class="fas fa-copy" aria-hidden="true"></i>
+            <span class="lang-en">Copy</span><span class="lang-zh">复制</span>
+          </button>
+        </footer>
+      </section>`;
 
     const panel = modal.querySelector(".citation-modal__panel");
     const tabs = modal.querySelector(".citation-format-tabs");
