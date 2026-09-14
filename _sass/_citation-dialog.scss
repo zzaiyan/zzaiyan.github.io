@@ -29,18 +29,20 @@
 }
 
 .citation-modal__frame {
+  --citation-depth-shadow: 0 24px 64px rgba(20, 35, 52, 0.24);
   position: relative;
   width: min(680px, 100%);
   max-width: 100%;
   min-width: 0;
   isolation: isolate;
+  box-shadow: var(--citation-depth-shadow);
 }
 
 .citation-modal__halo {
-  --citation-halo-blue: rgba(65, 137, 255, 0.75);
-  --citation-halo-cyan: rgba(48, 195, 190, 0.46);
-  --citation-halo-purple: rgba(144, 105, 238, 0.63);
-  --citation-halo-pink: rgba(205, 107, 228, 0.46);
+  --citation-halo-blue: #3b7cff;
+  --citation-halo-cyan: #18b8b0;
+  --citation-halo-purple: #7c4de8;
+  --citation-halo-pink: #d24fd2;
   position: absolute;
   inset: 0;
   z-index: 0;
@@ -53,44 +55,37 @@
   content: "";
   position: absolute;
   box-sizing: border-box;
-  background: conic-gradient(
+  border-style: solid;
+  border-color: transparent;
+  border-image: conic-gradient(
     from var(--citation-halo-angle),
     var(--citation-halo-blue),
     var(--citation-halo-cyan),
     var(--citation-halo-purple),
     var(--citation-halo-pink),
     var(--citation-halo-blue)
-  );
-  -webkit-mask:
-    linear-gradient(#000 0 0) padding-box,
-    linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-  mask:
-    linear-gradient(#000 0 0) padding-box,
-    linear-gradient(#000 0 0);
-  mask-composite: exclude;
+  ) 1;
   animation: citationHaloSpin 8s linear infinite;
   pointer-events: none;
 }
 
 .citation-modal__halo::before {
   inset: 0;
-  border: 2px solid transparent;
+  border-width: 3px;
   border-radius: 16px;
   filter: blur(2px);
-  opacity: 0.9;
+  opacity: 1;
 }
 
 .citation-modal__halo::after {
   inset: 0;
-  border: 3px solid transparent;
+  border-width: 4px;
   border-radius: 16px;
-  filter: blur(24px);
-  opacity: 0.6;
+  filter: blur(18px);
+  opacity: 0.78;
 }
 
 .citation-modal__panel {
-  --citation-depth-shadow: 0 24px 64px rgba(20, 35, 52, 0.24);
   --citation-edge-highlight: inset 0 1px rgba(255, 255, 255, 0.36);
   position: relative;
   z-index: 1;
@@ -102,9 +97,7 @@
     linear-gradient(145deg, rgba(255, 255, 255, 0.36), rgba(218, 233, 246, 0.18)),
     rgba(235, 243, 250, 0.5);
   border-radius: 16px;
-  box-shadow:
-    var(--citation-depth-shadow),
-    var(--citation-edge-highlight);
+  box-shadow: var(--citation-edge-highlight);
   backdrop-filter: blur(16px) saturate(2) contrast(0.96);
   -webkit-backdrop-filter: blur(16px) saturate(2) contrast(0.96);
   animation: citationPanelIn 0.28s cubic-bezier(0.22, 1, 0.36, 1) both;
@@ -378,15 +371,11 @@ html[data-theme="dark"] {
     background: rgba(0, 0, 0, 0.64);
   }
 
-  .citation-modal__halo {
-    --citation-halo-blue: rgba(86, 151, 255, 0.66);
-    --citation-halo-cyan: rgba(67, 200, 196, 0.4);
-    --citation-halo-purple: rgba(154, 118, 239, 0.56);
-    --citation-halo-pink: rgba(207, 114, 229, 0.43);
+  .citation-modal__frame {
+    --citation-depth-shadow: 0 24px 72px rgba(0, 0, 0, 0.52);
   }
 
   .citation-modal__panel {
-    --citation-depth-shadow: 0 24px 72px rgba(0, 0, 0, 0.52);
     --citation-edge-highlight: inset 0 1px rgba(255, 255, 255, 0.12);
     background:
       linear-gradient(145deg, rgba(65, 76, 91, 0.3), rgba(22, 27, 34, 0.18)),
