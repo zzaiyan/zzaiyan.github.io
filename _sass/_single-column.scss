@@ -41,7 +41,7 @@ $about-gap: 3.5rem;
   grid-template-columns: $about-profile-width minmax(0, 1fr);
   gap: $about-gap;
   align-items: start;
-  margin-bottom: 3.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .about-section__profile,
@@ -340,7 +340,7 @@ $about-gap: 3.5rem;
 
   .about-section {
     display: block;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
   }
 
   .about-section__profile {
