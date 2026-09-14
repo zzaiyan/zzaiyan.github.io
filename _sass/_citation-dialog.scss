@@ -70,17 +70,17 @@
 }
 
 .citation-modal__halo::before {
-  inset: 0;
+  inset: -3px;
   border-width: 3px;
-  border-radius: 16px;
+  border-radius: 19px;
   filter: blur(2px);
   opacity: 1;
 }
 
 .citation-modal__halo::after {
-  inset: 0;
+  inset: -5px;
   border-width: 4px;
-  border-radius: 16px;
+  border-radius: 21px;
   filter: blur(18px);
   opacity: 0.78;
 }
