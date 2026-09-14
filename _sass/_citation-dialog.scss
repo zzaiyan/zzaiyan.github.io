@@ -62,11 +62,11 @@
     var(--citation-halo-blue)
   );
   -webkit-mask:
-    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0) padding-box,
     linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
   mask:
-    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0) padding-box,
     linear-gradient(#000 0 0);
   mask-composite: exclude;
   animation: citationHaloSpin 8s linear infinite;
@@ -74,19 +74,19 @@
 }
 
 .citation-modal__halo::before {
-  inset: -3px;
-  padding: 3px;
-  border-radius: 19px;
+  inset: 0;
+  border: 2px solid transparent;
+  border-radius: 16px;
   filter: blur(2px);
-  opacity: 0.72;
+  opacity: 0.9;
 }
 
 .citation-modal__halo::after {
-  inset: -24px;
-  padding: 24px;
-  border-radius: 40px;
-  filter: blur(16px);
-  opacity: 0.3;
+  inset: 0;
+  border: 3px solid transparent;
+  border-radius: 16px;
+  filter: blur(24px);
+  opacity: 0.6;
 }
 
 .citation-modal__panel {
