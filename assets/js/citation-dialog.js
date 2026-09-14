@@ -70,7 +70,10 @@
     modal.setAttribute("aria-labelledby", "citation-dialog-title");
     modal.innerHTML = `
       <div class="citation-modal__frame">
-        <div class="citation-modal__halo" aria-hidden="true"></div>
+        <div class="citation-modal__halo" aria-hidden="true">
+          <span class="citation-modal__halo-layer citation-modal__halo-layer--core"></span>
+          <span class="citation-modal__halo-layer citation-modal__halo-layer--tail"></span>
+        </div>
         <section class="citation-modal__panel" tabindex="-1">
           <header class="citation-modal__header">
             <div class="citation-modal__heading">
