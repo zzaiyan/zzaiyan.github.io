@@ -279,25 +279,36 @@ $about-gap: 3.5rem;
     align-items: stretch;
   }
 
-  .about-section__profile,
-  .about-section__content {
+  .about-section--measuring {
+    align-items: start;
+  }
+
+  .about-section--measuring .about-section__profile,
+  .about-section--measuring .about-section__content {
+    display: block;
+  }
+
+  .about-section--profile-taller .about-section__content,
+  .about-section--content-taller .about-section .profile_box {
     display: flex;
     flex-direction: column;
   }
 
-  .about-section__content {
+  .about-section--profile-taller .about-section__content {
     gap: 0.9rem;
   }
 
-  .about-section__content::before {
+  .about-section--profile-taller .about-section__content::before,
+  .about-section--content-taller .about-section .profile_box::before {
     content: "";
     order: 2;
     flex: 2 1 0;
     min-height: 0;
   }
 
-  .about-section__content > .lang-en,
-  .about-section__content > .lang-zh {
+  .about-section--profile-taller .about-section__content > .lang-en,
+  .about-section--profile-taller .about-section__content > .lang-zh,
+  .about-section--content-taller .about-section .author__content {
     display: flex;
     order: 1;
     flex: 1 1 auto;
@@ -305,41 +316,22 @@ $about-gap: 3.5rem;
     justify-content: space-between;
   }
 
-  .about-section .profile_box {
-    display: flex;
+  .about-section--profile-taller .job-callout,
+  .about-section--content-taller .about-section .author__urls-wrapper {
+    order: 3;
+    margin-top: 0;
+  }
+
+  .about-section--content-taller .about-section .profile_box {
     flex: 1;
-    flex-direction: column;
     align-items: stretch;
   }
 
-  .about-section .profile_box::before {
-    content: "";
-    order: 2;
-    flex: 1 1 0;
-    max-height: 1rem;
-    min-height: 0;
-  }
-
-  .about-section .author__avatar {
+  .about-section--content-taller .about-section .author__avatar {
     flex: 0 0 auto;
   }
 
-  .about-section .author__content {
-    display: flex;
-    order: 1;
-    flex: 1 1 auto;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .job-callout {
-    order: 3;
-    margin-top: 0;
-  }
-
-  .about-section .author__urls-wrapper {
-    order: 3;
-    margin-top: 0;
+  .about-section--content-taller .about-section .author__urls-wrapper {
     padding-top: 1rem;
   }
 }
