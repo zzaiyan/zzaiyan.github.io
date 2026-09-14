@@ -72,7 +72,8 @@
 .citation-modal__halo::before {
   inset: -3px;
   border-width: 3px;
-  border-radius: 19px;
+  -webkit-clip-path: inset(0 round 19px);
+  clip-path: inset(0 round 19px);
   filter: blur(2px);
   opacity: 1;
 }
@@ -80,7 +81,8 @@
 .citation-modal__halo::after {
   inset: -5px;
   border-width: 4px;
-  border-radius: 21px;
+  -webkit-clip-path: inset(0 round 21px);
+  clip-path: inset(0 round 21px);
   filter: blur(18px);
   opacity: 0.78;
 }
