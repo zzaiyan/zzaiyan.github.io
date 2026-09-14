@@ -44,47 +44,57 @@
   --citation-halo-purple: #7c4de8;
   --citation-halo-pink: #d24fd2;
   position: absolute;
-  inset: 0;
+  inset: -48px;
   z-index: 0;
   pointer-events: none;
   animation: citationHaloIn 0.28s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-.citation-modal__halo::before,
-.citation-modal__halo::after {
+.citation-modal__halo-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.citation-modal__halo-layer::before {
   content: "";
   position: absolute;
+  inset: 48px;
   box-sizing: border-box;
-  border-style: solid;
-  border-color: transparent;
-  border-image: conic-gradient(
+  border: 3px solid transparent;
+  border-radius: 16px;
+  background: conic-gradient(
     from var(--citation-halo-angle),
     var(--citation-halo-blue),
     var(--citation-halo-cyan),
     var(--citation-halo-purple),
     var(--citation-halo-pink),
     var(--citation-halo-blue)
-  ) 1;
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) padding-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) padding-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
   animation: citationHaloSpin 8s linear infinite;
   pointer-events: none;
 }
 
-.citation-modal__halo::before {
-  inset: -3px;
-  border-width: 3px;
-  -webkit-clip-path: inset(0 round 19px);
-  clip-path: inset(0 round 19px);
+.citation-modal__halo-layer--core {
   filter: blur(2px);
   opacity: 1;
 }
 
-.citation-modal__halo::after {
-  inset: -5px;
-  border-width: 4px;
-  -webkit-clip-path: inset(0 round 21px);
-  clip-path: inset(0 round 21px);
+.citation-modal__halo-layer--tail {
   filter: blur(18px);
   opacity: 0.78;
+}
+
+.citation-modal__halo-layer--tail::before {
+  border-width: 4px;
 }
 
 .citation-modal__panel {
@@ -521,8 +531,7 @@ html[data-theme="dark"] {
 @media (prefers-reduced-motion: reduce) {
   .citation-modal::before,
   .citation-modal__halo,
-  .citation-modal__halo::before,
-  .citation-modal__halo::after,
+  .citation-modal__halo-layer::before,
   .citation-modal__panel {
     animation: none !important;
   }
