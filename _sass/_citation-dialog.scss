@@ -59,10 +59,8 @@
 .citation-modal__halo-layer::before {
   content: "";
   position: absolute;
-  inset: 48px;
   box-sizing: border-box;
   border: 3px solid transparent;
-  border-radius: 16px;
   background: conic-gradient(
     from var(--citation-halo-angle),
     var(--citation-halo-blue),
@@ -88,13 +86,20 @@
   opacity: 1;
 }
 
+.citation-modal__halo-layer--core::before {
+  inset: 45px;
+  border-radius: 19px;
+}
+
 .citation-modal__halo-layer--tail {
   filter: blur(18px);
   opacity: 0.78;
 }
 
 .citation-modal__halo-layer--tail::before {
+  inset: 44px;
   border-width: 4px;
+  border-radius: 20px;
 }
 
 .citation-modal__panel {
