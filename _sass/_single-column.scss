@@ -315,7 +315,8 @@ $about-gap: 3.5rem;
   .about-section .profile_box::before {
     content: "";
     order: 2;
-    flex: 2 1 0;
+    flex: 1 1 0;
+    max-height: 1rem;
     min-height: 0;
   }
 
