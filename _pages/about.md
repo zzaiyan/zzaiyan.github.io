@@ -2,13 +2,20 @@
 permalink: /
 title: ""
 excerpt: ""
-author_profile: true
+author_profile: false
+single_column: true
 redirect_from:
   - /about/
   - /about.html
 ---
 
 <span class='anchor' id='about-me'></span>
+
+<div class="about-section">
+<div class="about-section__profile">
+{% include author-profile.html %}
+</div>
+<div class="about-section__content">
 
 <div class="lang-en" markdown="1">
 
@@ -36,6 +43,18 @@ redirect_from:
 
 🤝 欢迎合作与交流！您可以通过邮箱 {[1@zzaiyan.com](mailto:1@zzaiyan.com), [zzaiyan@whu.edu.cn](mailto:zzaiyan@whu.edu.cn)} 联系我。
 
+</div>
+
+<aside class="job-callout">
+<span class="job-callout__marker" aria-hidden="true"></span>
+<div>
+<strong><span class="lang-en">Seeking 28 Fall PhD Opportunities</span><span class="lang-zh">寻找 28 Fall 博士机会</span></strong>
+<p class="lang-en">I am looking for a PhD position starting in Fall 2028. Feel free to get in touch.</p>
+<p class="lang-zh">我正在寻找 2028 年秋季入学的博士岗位，欢迎与我联系。</p>
+</div>
+</aside>
+
+</div>
 </div>
 
 # <span class="lang-en">🔥 News</span><span class="lang-zh">🔥 新闻动态</span>

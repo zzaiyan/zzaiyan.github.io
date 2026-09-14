@@ -54,7 +54,7 @@ author:
   blog: "https://b.zzaiyan.com"
   email: "1@zzaiyan.com"
   researchgate: # e.g., "https://www.researchgate.net/profile/yourprofile"
-  uri: "https://zzaiyan.com"
+  uri:
   bitbucket:
   codepen:
   dribbble:

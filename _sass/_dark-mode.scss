@@ -114,9 +114,18 @@ html[data-theme="dark"] {
   }
 
   .author__bio,
+  .author__description,
+  .author__location,
   .author__urls li,
   .author__urls a {
     color: #aaa !important;
+  }
+
+  .about-section .author__description {
+    &::before,
+    &::after {
+      color: rgba(122, 176, 230, 0.52);
+    }
   }
 
   .sidebar p,
@@ -178,6 +187,27 @@ html[data-theme="dark"] {
 
     .misc-project__heading strong {
       color: #7ab0e6;
+    }
+  }
+
+  .job-callout {
+    border-color: #3f4852;
+    background: rgba(122, 176, 230, 0.08);
+
+    &__marker {
+      background: #7ab0e6;
+    }
+
+    strong {
+      color: #9cc8ff;
+    }
+  }
+
+  .about-section .author__urls a {
+    background: rgba(122, 176, 230, 0.1);
+
+    &:hover {
+      background: rgba(122, 176, 230, 0.2);
     }
   }
 
