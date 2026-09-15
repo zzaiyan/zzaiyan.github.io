@@ -207,7 +207,7 @@ npm run citations:check
   {
     "organization": "Shanghai AI Laboratory | 上海人工智能实验室",
     "url": "https://www.shlab.org.cn/",
-    "image": "images/institutions/ailab-logo.webp",
+    "image": "images/institutions/ailab.webp",
     "department": "AI4Science Center",
     "department_zh": "AI4Science 中心",
     "role": "Research Intern",
