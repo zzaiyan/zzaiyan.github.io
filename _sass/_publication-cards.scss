@@ -24,8 +24,11 @@ $compact-card-padding-block: 0.9em;
   transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 
   &:hover {
-    border-color: #b8d4fe;
-    box-shadow: 0 4px 20px rgba(66, 133, 244, 0.18), 0 0 0 3px rgba(66, 133, 244, 0.06);
+    border-color: transparent;
+    background:
+      linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.72)) padding-box,
+      linear-gradient(135deg, rgba(154, 123, 255, 0.3), rgba(90, 210, 255, 0.26), rgba(96, 226, 170, 0.22)) border-box;
+    box-shadow: 0 6px 20px rgba(31, 45, 61, 0.1), 0 0 0 3px rgba(122, 176, 230, 0.09);
     transform: translateY(-2px);
   }
 
@@ -158,15 +161,21 @@ $compact-card-padding-block: 0.9em;
   align-items: center;
   max-width: calc(100% - 1.3em);
   padding: 0.3em 0.72em;
-  color: #fff;
-  background: rgba(25, 65, 126, 0.88);
-  border: 1px solid rgba(255, 255, 255, 0.34);
-  border-radius: 999px;
-  box-shadow: 0 4px 12px rgba(18, 45, 88, 0.2);
-  backdrop-filter: blur(8px) saturate(1.25);
-  -webkit-backdrop-filter: blur(8px) saturate(1.25);
-  font-size: 0.72em;
-  font-weight: 700;
+  color: #1f2937;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.66)) padding-box,
+    linear-gradient(135deg, rgba(96, 141, 255, 0.95), rgba(90, 210, 255, 0.85)) border-box;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 1px 4px rgba(15, 23, 42, 0.1);
+  backdrop-filter: blur(16px) saturate(1.5);
+  -webkit-backdrop-filter: blur(16px) saturate(1.5);
+  font-size: 0.74em;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
   line-height: 1.2;
   z-index: 1;
   white-space: nowrap;
@@ -284,11 +293,12 @@ $compact-card-padding-block: 0.9em;
 .pub-metric-chip {
   display: inline-flex;
   align-items: center;
-  padding: 0.16em 0.62em;
-  font-size: 0.74em;
+  padding: 0.14em 0.62em;
+  font-size: 0.78em;
+  line-height: 1.5;
   font-weight: 600;
-  color: #fff;
-  background: rgba($info-color, 0.92);
+  color: #5148b8;
+  background: linear-gradient(135deg, rgba(154, 123, 255, 0.17), rgba(90, 210, 255, 0.14), rgba(96, 226, 170, 0.13));
   border-radius: 6px;
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
@@ -297,8 +307,8 @@ $compact-card-padding-block: 0.9em;
 .pub-tag {
   display: inline-flex;
   align-items: center;
-  padding: 0.12em 0.6em;
-  font-size: 0.8em;
+  padding: 0.14em 0.62em;
+  font-size: 0.78em;
   line-height: 1.5;
   color: $dark-gray;
   background: rgba(122, 130, 136, 0.12);

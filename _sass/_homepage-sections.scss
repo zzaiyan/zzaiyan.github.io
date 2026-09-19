@@ -148,8 +148,8 @@ li .pub-links {
     width: 0.4em;
     height: 0.4em;
     border-radius: 50%;
-    background: $info-color;
-    box-shadow: 0 0 0 3px rgba($info-color, 0.12);
+    background: linear-gradient(135deg, #9a7bff, #5ad2ff 55%, #60e2aa);
+    box-shadow: 0 0 0 3px rgba(122, 176, 230, 0.14);
   }
 
   &::after {
