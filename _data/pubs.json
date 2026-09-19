@@ -102,29 +102,6 @@
                 }
             ],
             "referenceKey": "wan2026tdre"
-        },
-        {
-            "id": "yang2026iegc",
-            "layout": "compact",
-            "title": "IEGC-FSDN: Foggy Ship Detection Network with Integrating Edge and Global Constraints",
-            "authorRoles": {"corresponding": [2]},
-            "venue": "IEEE Signal Processing Letters",
-            "venueShort": "IEEE SPL",
-            "year": 2026,
-            "badge": "IEEE SPL",
-            "doi": "https://doi.org/10.1109/LSP.2026.3724106",
-            "note": "Foggy Ship Detection, Edge and Global Constraints",
-            "links": [
-                {
-                    "name": "PDF",
-                    "url": "assets/pubs/IEGC-FSDN.pdf"
-                },
-                {
-                    "name": "Code",
-                    "url": "https://github.com/KIKYOUWY/IEGC-FSDN"
-                }
-            ],
-            "referenceKey": "yang2026iegc"
         }
     ],
     "conference": [
@@ -151,25 +128,6 @@
                 }
             ],
             "referenceKey": "zhang2026task"
-        },
-        {
-            "id": "wan2026lad",
-            "layout": "compact",
-            "title": "LAD-Enhancer: A Lightweight All in One Aerial Detection Enhancer Under Adverse Weather",
-            "authorRoles": {"corresponding": [2]},
-            "venue": "ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences",
-            "venueShort": "ISPRS Annals",
-            "year": 2026,
-            "badge": "ISPRS Annals",
-            "doi": "https://doi.org/10.5194/isprs-annals-XI-3-2026-307-2026",
-            "note": "Adverse Weather Enhancement, Object Detection",
-            "links": [
-                {
-                    "name": "PDF",
-                    "url": "assets/pubs/lad-enhancer.pdf"
-                }
-            ],
-            "referenceKey": "wan2026lad"
         }
     ],
     "preprint": [
@@ -221,6 +179,58 @@
                 }
             ],
             "referenceKey": "wan2026adversemoe"
+        }
+    ],
+    "patent": [
+        {
+            "date": "2025.02",
+            "number": "ZL202410556414.6",
+            "title": "遥感图像序列的修复方法、装置、电子设备及存储介质",
+            "authors": ["阎继宁", "张再筵", "王力哲", "李军", "韩伟", "王玥玮"]
+        }
+    ],
+"_disabled": [
+        {
+            "id": "yang2026iegc",
+            "layout": "compact",
+            "title": "IEGC-FSDN: Foggy Ship Detection Network with Integrating Edge and Global Constraints",
+            "authorRoles": {"corresponding": [2]},
+            "venue": "IEEE Signal Processing Letters",
+            "venueShort": "IEEE SPL",
+            "year": 2026,
+            "badge": "IEEE SPL",
+            "doi": "https://doi.org/10.1109/LSP.2026.3724106",
+            "note": "Foggy Ship Detection, Edge and Global Constraints",
+            "links": [
+                {
+                    "name": "PDF",
+                    "url": "assets/pubs/IEGC-FSDN.pdf"
+                },
+                {
+                    "name": "Code",
+                    "url": "https://github.com/KIKYOUWY/IEGC-FSDN"
+                }
+            ],
+            "referenceKey": "yang2026iegc"
+        },
+        {
+            "id": "wan2026lad",
+            "layout": "compact",
+            "title": "LAD-Enhancer: A Lightweight All in One Aerial Detection Enhancer Under Adverse Weather",
+            "authorRoles": {"corresponding": [2]},
+            "venue": "ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences",
+            "venueShort": "ISPRS Annals",
+            "year": 2026,
+            "badge": "ISPRS Annals",
+            "doi": "https://doi.org/10.5194/isprs-annals-XI-3-2026-307-2026",
+            "note": "Adverse Weather Enhancement, Object Detection",
+            "links": [
+                {
+                    "name": "PDF",
+                    "url": "assets/pubs/lad-enhancer.pdf"
+                }
+            ],
+            "referenceKey": "wan2026lad"
         },
         {
             "id": "tong2026semdino",
@@ -248,14 +258,6 @@
                 }
             ],
             "referenceKey": "tong2026semdino"
-        }
-    ],
-    "patent": [
-        {
-            "date": "2025.02",
-            "number": "ZL202410556414.6",
-            "title": "遥感图像序列的修复方法、装置、电子设备及存储介质",
-            "authors": ["阎继宁", "张再筵", "王力哲", "李军", "韩伟", "王玥玮"]
         }
     ]
 }

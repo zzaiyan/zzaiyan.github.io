@@ -67,8 +67,11 @@ html[data-theme="dark"] {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
 
     &:hover {
-      border-color: #5580b4;
-      box-shadow: 0 4px 20px rgba(66, 133, 244, 0.22), 0 0 0 3px rgba(66, 133, 244, 0.08);
+      border-color: transparent;
+      background:
+        linear-gradient(rgba(32, 34, 37, 0.78), rgba(32, 34, 37, 0.78)) padding-box,
+        linear-gradient(135deg, rgba(154, 123, 255, 0.3), rgba(90, 210, 255, 0.26), rgba(96, 226, 170, 0.22)) border-box;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.32), 0 0 0 3px rgba(122, 176, 230, 0.1);
     }
   }
 
@@ -99,8 +102,8 @@ html[data-theme="dark"] {
   }
 
   .pub-metric-chip {
-    color: #dbe7f8;
-    background: #2a5a99;
+    color: #b3a8f2;
+    background: linear-gradient(135deg, rgba(154, 123, 255, 0.22), rgba(90, 210, 255, 0.16), rgba(96, 226, 170, 0.14));
   }
 
   .pub-tag {
@@ -256,10 +259,6 @@ html[data-theme="dark"] {
     background-color: #222;
     color: #d4d4d4;
     border-color: #444;
-  }
-
-  .badge {
-    background-color: #2a5a99;
   }
 
   .badge--inline {
