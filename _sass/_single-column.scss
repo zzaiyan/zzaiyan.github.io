@@ -274,9 +274,25 @@ $about-gap: 3.5rem;
 }
 
 .page--single-column .masthead__inner-wrap {
-  max-width: $single-column-content-width;
-  padding-left: 0;
-  padding-right: 0;
+  max-width: calc(#{$single-column-content-width} + 3.5rem);
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
+}
+
+@include breakpoint(max-width $large - 1px) {
+  .page--single-column .masthead__inner-wrap {
+    max-width: calc(#{$single-column-content-width} + 2.5rem);
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+
+@include breakpoint(max-width $small) {
+  .page--single-column .masthead__inner-wrap {
+    max-width: calc(#{$single-column-content-width} + 2rem);
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
 
 .page--single-column .greedy-nav .visible-links > li:first-child > a {
