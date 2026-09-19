@@ -27,7 +27,7 @@
 │   ├── education.html       # 教育经历 Liquid 模板（双语）
 │   ├── internship.html      # 实习经历 Liquid 模板（双语）
 │   ├── honors.html          # 荣誉奖项 Liquid 模板
-│   ├── head.html            # <head> 标签（含防闪烁内联脚本）
+│   ├── head.html            # <head> 标签（SEO 元信息与样式）
 │   ├── scripts.html         # JS 脚本引入（含内联引用数据）
 │   ├── footer.html          # 页脚
 │   ├── sidebar.html         # 侧边栏
@@ -261,13 +261,12 @@ main:
 
 ## 双语切换
 
-页面右上角提供语言切换按钮（EN / 中文），偏好持久化于 `localStorage`。
+页面右上角提供语言切换按钮（EN / 中文）。每次访问默认英文，切换不做持久化。
 
 ### 实现原理
 
 - `<html>` 元素的 `data-lang` 属性在 `"en"` / `"zh"` 间切换
 - CSS `html[data-lang="en"] .lang-zh { display: none }` 控制显隐
-- `_includes/head.html` 含防闪烁内联脚本，在 CSS 加载前即设置 `data-lang`
 - `assets/js/lang-toggle.js` 管理切换逻辑并在切换后重算导航栏宽度
 
 ### 在 about.md 中添加双语内容
@@ -311,14 +310,13 @@ author:
 
 ## 深色/浅色主题切换
 
-页面右上角「语言切换」按钮旁提供主题切换按钮（🌙 / ☀），偏好持久化于 `localStorage`。
+页面右上角「语言切换」按钮旁提供主题切换按钮（🌙 / ☀）。每次访问默认浅色主题，切换不做持久化。
 
 ### 实现原理
 
 - `<html>` 元素的 `data-theme` 属性在 `"light"` / `"dark"` 间切换
 - `_sass/_dark-mode.scss` 中的 `html[data-theme="dark"] { ... }` 负责覆盖各组件颜色
-- `_includes/head.html` 含防闪烁内联脚本，在 CSS 加载前即设置 `data-theme`
-- `assets/js/lang-toggle.js` 同时管理语言和主题的切换与持久化
+- `assets/js/lang-toggle.js` 同时管理语言和主题切换
 
 ## 多格式引用弹窗
 
@@ -370,7 +368,7 @@ Google Scholar 对自动化访问有较严格的限制，因此爬虫保留在�
 | `$edu-box-image-width` | `_publication-cards.scss` | 240px | 教育/实习卡片的基础图片宽度 |
 | `--card-image-share` | `_publication-cards.scss` | 36% / 28% | 完整论文卡片 / 教育卡片的响应式图片栏比例 |
 
-多格式引用弹窗的材质透明度、背景滤镜、动态光环和响应式尺寸均在 `_sass/_citation-dialog.scss` 中定义；弹窗交互与焦点恢复逻辑位于 `assets/js/citation-dialog.js`。
+多格式引用弹窗的材质透明度、背景滤镜和响应式尺寸均在 `_sass/_citation-dialog.scss` 中定义；弹窗交互与焦点恢复逻辑位于 `assets/js/citation-dialog.js`。
 
 `assets/css/main.scss` 仅作为编译入口。站点定制 partial 在基础主题之后按依赖顺序导入：组件基础样式、主页区块、站点控件，最后是 `_dark-mode.scss`。深色主题必须保持最后导入，避免主题覆盖被后续基础组件规则反向覆盖。
 
@@ -420,4 +418,3 @@ SSH 部署使用 `server-production` Environment。需配置 `SSH_HOST`、`SSH_U
 | 统计分支已更新但网页仍显示旧数据 | 手动触发 `deploy.yml`；仅推送统计分支不会触发网站工作流 |
 | Markdown 未渲染 | 确认 JSON 中的引号已正确转义 |
 | 切换语言后导航项消失 | 检查 `jquery.greedy-navigation.js` 是否包含 `resetGreedyNav` 函数 |
-| 深色模式闪白 | 确认 `head.html` 中含防闪烁内联脚本 |

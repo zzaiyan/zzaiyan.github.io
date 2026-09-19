@@ -28,7 +28,7 @@ It supports **bilingual (EN / ZH) switching** and **dark / light theme toggling*
 │   ├── education.html       # Education Liquid template (bilingual)
 │   ├── internship.html      # Internship Liquid template (bilingual)
 │   ├── honors.html          # Honors Liquid template
-│   ├── head.html            # <head> tag (includes flash-prevention inline script)
+│   ├── head.html            # <head> tag (SEO meta, styles)
 │   ├── scripts.html         # JS includes (inlines generated citation data)
 │   ├── footer.html          # Footer
 │   ├── sidebar.html         # Sidebar
@@ -262,13 +262,12 @@ main:
 
 ## Bilingual (EN / ZH) Toggle
 
-A language toggle button (EN / 中文) is displayed in the top-right of the nav bar. The preference is persisted in `localStorage`.
+A language toggle button (EN / 中文) is displayed in the top-right of the nav bar. Every visit starts from the default English; the choice is not persisted.
 
 ### How it works
 
 - The `data-lang` attribute on `<html>` switches between `"en"` and `"zh"`
 - CSS rule `html[data-lang="en"] .lang-zh { display: none }` (and vice versa) controls visibility
-- `_includes/head.html` contains a flash-prevention inline script that sets `data-lang` before CSS loads
 - `assets/js/lang-toggle.js` handles the toggle logic and recalculates nav bar widths after switching
 
 ### Adding bilingual content in about.md
@@ -312,14 +311,13 @@ author:
 
 ## Dark / Light Theme Toggle
 
-A theme toggle button (🌙 / ☀) is displayed next to the language button. The preference is persisted in `localStorage`.
+A theme toggle button (🌙 / ☀) is displayed next to the language button. Every visit starts from the default light theme; the choice is not persisted.
 
 ### How it works
 
 - The `data-theme` attribute on `<html>` switches between `"light"` and `"dark"`
 - `_sass/_dark-mode.scss` contains the `html[data-theme="dark"] { ... }` overrides for component colors
-- `_includes/head.html` contains a flash-prevention inline script that sets `data-theme` before CSS loads
-- `assets/js/lang-toggle.js` handles both language and theme toggles and persistence
+- `assets/js/lang-toggle.js` handles both language and theme toggles
 
 ## Multi-Format Citation Dialog
 
@@ -371,7 +369,7 @@ Google Scholar applies strict limits to automated access, so the crawler intenti
 | `$edu-box-image-width` | `_publication-cards.scss` | 240px | Base education/internship image width |
 | `--card-image-share` | `_publication-cards.scss` | 36% / 28% | Responsive image-column share for featured / education cards |
 
-Citation dialog styles, including material transparency, backdrop filtering, the animated halo, and responsive sizing, are in `_sass/_citation-dialog.scss`. Dialog behavior and focus restoration are implemented in `assets/js/citation-dialog.js`.
+Citation dialog styles, including material transparency, backdrop filtering, and responsive sizing, are in `_sass/_citation-dialog.scss`. Dialog behavior and focus restoration are implemented in `assets/js/citation-dialog.js`.
 
 `assets/css/main.scss` is only the compilation entry. Site-specific partials are imported after the base theme in dependency order: component foundations, homepage sections, site controls, and finally `_dark-mode.scss`. Keep dark-mode rules in the final partial so theme overrides cannot be replaced by later base component rules.
 
@@ -421,4 +419,3 @@ Each artifact contains `deploy-version.json`. The SSH server job verifies this e
 | Stats branch updated but the website still shows old counts | Trigger `deploy.yml`; pushing the stats branch alone does not run the website workflow |
 | Markdown not rendering | Ensure quotes in JSON strings are properly escaped |
 | Nav items disappear after language switch | Confirm `jquery.greedy-navigation.js` exposes `resetGreedyNav` |
-| Dark mode flash on load | Confirm flash-prevention inline script exists in `head.html` |
