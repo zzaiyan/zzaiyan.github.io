@@ -252,14 +252,99 @@ $compact-card-padding-block: 0.9em;
   margin-top: 0.35em;
 }
 
+.pub-authors {
+  font-size: 0.95em;
+}
+
+.pub-venue {
+  .pub-venue-name {
+    font-weight: 500;
+    color: $darker-gray;
+  }
+
+  .pub-venue-year {
+    color: $gray;
+    font-variant-numeric: tabular-nums;
+
+    &::before {
+      content: "·";
+      margin: 0 0.45em;
+      color: $light-gray;
+    }
+  }
+}
+
+.pub-details {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4em 0.75em;
+}
+
+.pub-metric-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.16em 0.62em;
+  font-size: 0.74em;
+  font-weight: 600;
+  color: #fff;
+  background: rgba($info-color, 0.92);
+  border-radius: 6px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.pub-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.12em 0.6em;
+  font-size: 0.8em;
+  line-height: 1.5;
+  color: $dark-gray;
+  background: rgba(122, 130, 136, 0.12);
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.show_paper_citations {
+  &:not(:empty) {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.35em;
+    margin-left: auto;
+    font-size: 0.8em;
+    color: $gray;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+}
+
+.show_paper_citations strong {
+  font-weight: 500;
+  color: $dark-gray;
+}
+
+.field-label {
+  margin-right: 0.5em;
+  font-size: 0.74em;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: $gray;
+}
+
+.paper-box strong {
+  font-weight: 600;
+}
+
 .pub-author--self {
-  font-weight: 700;
+  font-weight: 600;
   text-decoration: underline;
 }
 
 .pub-author-marker {
   margin-left: 0.08em;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .pub-author-legend {
@@ -365,8 +450,8 @@ $compact-card-padding-block: 0.9em;
 }
 
 .pub-title {
-  font-size: 1.05em;
-  font-weight: 700;
+  font-size: 1.08em;
+  font-weight: 600;
   line-height: 1.35;
   color: $info-color !important;
   text-decoration-line: underline !important;
