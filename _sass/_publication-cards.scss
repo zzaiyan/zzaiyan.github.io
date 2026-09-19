@@ -325,12 +325,9 @@ $compact-card-padding-block: 0.9em;
 }
 
 .field-label {
-  margin-right: 0.5em;
-  font-size: 0.74em;
+  margin-right: 0.35em;
   font-weight: 500;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: $gray;
+  color: $darker-gray;
 }
 
 .paper-box strong {
