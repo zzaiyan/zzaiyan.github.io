@@ -27,7 +27,7 @@ $compact-card-padding-block: 0.9em;
     border-color: transparent;
     background:
       linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.72)) padding-box,
-      linear-gradient(135deg, rgba(154, 123, 255, 0.3), rgba(90, 210, 255, 0.26), rgba(96, 226, 170, 0.22)) border-box;
+      linear-gradient(135deg, rgba(154, 123, 255, 0.24), rgba(90, 210, 255, 0.21), rgba(96, 226, 170, 0.18)) border-box;
     box-shadow: 0 6px 20px rgba(31, 45, 61, 0.1), 0 0 0 3px rgba(122, 176, 230, 0.09);
     transform: translateY(-2px);
   }
@@ -355,6 +355,11 @@ $compact-card-padding-block: 0.9em;
 }
 
 .pub-author-legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.2em 1.5em;
   margin: 0.15em 0 1.25em;
   font-size: 0.82em;
   color: $gray;
