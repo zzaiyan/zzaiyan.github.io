@@ -90,6 +90,36 @@ html[data-theme="dark"] {
     }
   }
 
+  .pub-venue .pub-venue-name {
+    color: #e0e0e0;
+  }
+
+  .pub-venue .pub-venue-year {
+    color: #9aa0a6;
+  }
+
+  .pub-metric-chip {
+    color: #dbe7f8;
+    background: #2a5a99;
+  }
+
+  .pub-tag {
+    color: #c3c7cb;
+    background: rgba(255, 255, 255, 0.09);
+  }
+
+  .show_paper_citations {
+    color: #9aa0a6;
+  }
+
+  .show_paper_citations strong {
+    color: #c6cad0;
+  }
+
+  .field-label {
+    color: #9aa0a6;
+  }
+
   .google-scholar-badge {
     color: #9cc8ff !important;
     background: rgba(122, 176, 230, 0.12);

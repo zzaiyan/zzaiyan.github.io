@@ -37,7 +37,7 @@
       document.querySelectorAll('.show_paper_citations').forEach(function (element) {
         var paper = data.publications && data.publications[element.dataset.paperId];
         if (paper && paper.num_citations > 0) {
-          element.textContent = '| Citations: ' + paper.num_citations;
+          element.innerHTML = '<i class="ai ai-google-scholar" aria-hidden="true"></i>Citations: <strong>' + paper.num_citations + '</strong>';
         }
       });
     }
