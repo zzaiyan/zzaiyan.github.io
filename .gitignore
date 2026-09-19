@@ -1,4 +1,5 @@
 _site/
+.jekyll-metadata
 node_modules/
 push.sh
 .DS_Store
