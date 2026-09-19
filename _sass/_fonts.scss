@@ -1,0 +1,24 @@
+/* Self-hosted webfonts.
+   Source Sans 3 variable (latin subset): one roman + one italic file cover
+   the full 200-900 weight axis used across the site. CJK text falls through
+   to the system fonts declared in $sans-serif (_variables.scss). */
+
+$latin-unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("../fonts/source-sans-3-vf.woff2") format("woff2-variations");
+  font-weight: 200 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: $latin-unicode-range;
+}
+
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("../fonts/source-sans-3-vf-italic.woff2") format("woff2-variations");
+  font-weight: 200 900;
+  font-style: italic;
+  font-display: swap;
+  unicode-range: $latin-unicode-range;
+}
