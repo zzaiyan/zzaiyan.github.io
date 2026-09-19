@@ -13,6 +13,7 @@
 @import "vendor/breakpoint/breakpoint";
 @import "variables";
 @import "mixins";
+@import "fonts";
 @import "vendor/susy/susy";
 
 // Theme foundation
@@ -50,3 +51,4 @@
 // Theme and output overrides
 @import "dark-mode";
 @import "print";
+
