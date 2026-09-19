@@ -1,0 +1,31 @@
+<!-- TEMP: font preview selector — remove after the final font is chosen -->
+<div class="font-preview-panel">
+  <label for="font-preview-select">Font</label>
+  <select id="font-preview-select">
+    <option value="default">Default (Source Sans 3)</option>
+    <option value="system-stack">System font</option>
+    <option value="inter">Inter</option>
+    <option value="ibm-plex-sans">IBM Plex Sans</option>
+  </select>
+</div>
+<script>
+  (function () {
+    var select = document.getElementById("font-preview-select");
+    if (!select) return;
+    var saved = sessionStorage.getItem("previewFont");
+    if (saved) {
+      select.value = saved;
+      if (saved !== "default") {
+        document.documentElement.setAttribute("data-preview-font", saved);
+      }
+    }
+    select.addEventListener("change", function () {
+      if (select.value === "default") {
+        document.documentElement.removeAttribute("data-preview-font");
+      } else {
+        document.documentElement.setAttribute("data-preview-font", select.value);
+      }
+      sessionStorage.setItem("previewFont", select.value);
+    });
+  })();
+</script>
