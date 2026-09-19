@@ -44,8 +44,8 @@ author:
     given: "Zaiyan"
     family: "Zhang"
   avatar: "images/profile/avatar.webp"
-  bio: "Wuhan University | Shanghai AI Lab"
-  bio_zh: "武汉大学 | 上海 AI Lab"
+  bio: "Wuhan University · Shanghai AI Lab"
+  bio_zh: "武汉大学 · 上海 AI Lab"
   employer:
   pubmed:
   googlescholar: "https://scholar.google.com/citations?user=ZpxXejIAAAAJ&hl=en"
