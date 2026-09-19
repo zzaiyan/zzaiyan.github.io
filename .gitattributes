@@ -1,0 +1,20 @@
+# 统一换行符为 LF；二进制文件明确排除，避免误转换
+* text=auto eol=lf
+
+# 字体
+*.woff2 binary
+*.woff  binary
+*.ttf   binary
+*.eot   binary
+*.otf   binary
+
+# 图片
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.webp  binary
+*.gif   binary
+*.ico   binary
+
+# 文档
+*.pdf   binary
