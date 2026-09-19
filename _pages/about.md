@@ -66,7 +66,7 @@ redirect_from:
 
 </div>
 
-# <span class="lang-en">📝 Publications</span><span class="lang-zh">📝 论文发表</span>
+# <span class="lang-en">📝 Selected Publications</span><span class="lang-zh">📝 代表性论文</span>
 {: #publications}
 
 {% include publications.html %}
