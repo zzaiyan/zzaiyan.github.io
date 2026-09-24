@@ -334,7 +334,7 @@ author:
 ## Google Scholar 引用统计
 
 1. 在本地安装 `scholarly` 依赖，并准备可访问 GitHub 的 SSH 推送权限。
-2. Windows 执行 `google_scholar_crawler/git_update.bat`，WSL 执行 `google_scholar_crawler/git_update.sh`。WSL 脚本固定使用 `google_scholar_crawler/.venv/bin/python`；Windows 批处理使用当前 Windows 环境中的 `python`。
+2. Windows 执行 `google_scholar_crawler/git_update.bat`，WSL 执行 `google_scholar_crawler/git_update.sh`。两个脚本均使用当前环境中的 `python`/`python3`——运行前先激活装好爬虫依赖的环境。
 3. 脚本会校验抓取结果、更新本地 `results/` 快照，并仅在数据发生变化时推送到 `google-scholar-stats` 分支。
 4. 若已安装 GitHub CLI，脚本会触发 `deploy.yml`。若没有 `gh`，统计分支仍会成功更新，但网站不会立即重新构建；可手动运行 `gh workflow run deploy.yml --repo zzaiyan/zzaiyan.github.io --ref main`，或等待下一次 `main` 推送触发部署。
 5. `_data/pubs.json` 论文条目中填写 `scholarId` 字段。

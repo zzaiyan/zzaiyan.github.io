@@ -2,9 +2,9 @@
 
 *"Building AI for open-world Earth observation."*
 
-[![GitHub](https://img.shields.io/badge/GitHub-zzaiyan-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/zzaiyan)
-[![Google Scholar](https://img.shields.io/badge/Google_Scholar-Publications-4285f4?style=flat-square&logo=googlescholar&logoColor=white)](https://scholar.google.com/citations?user=ZpxXejIAAAAJ&hl=en)
-[![Website](https://img.shields.io/badge/Website-zzaiyan.com-0f766e?style=flat-square&logo=googlechrome&logoColor=white)](https://zzaiyan.com)
+[![Website](https://img.shields.io/badge/Website-zzaiyan.com-orange?style=flat-square\&logo=googlechrome\&logoColor=white)](https://zzaiyan.com)
+[![Google Scholar](https://img.shields.io/badge/Google-Scholar-4285F4?style=flat-square\&logo=googlescholar\&logoColor=white)](https://scholar.google.com/citations?user=ZpxXejIAAAAJ&hl=en)
+[![Email](https://img.shields.io/badge/Email-1%40zzaiyan.com-EA4335?style=flat-square\&logo=gmail\&logoColor=white)](mailto:1@zzaiyan.com)
 
 ---
 

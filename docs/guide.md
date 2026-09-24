@@ -335,7 +335,7 @@ The dialog panel uses a translucent Mica-like material with `backdrop-filter: bl
 ## Google Scholar Citation Stats
 
 1. Install the local `scholarly` dependencies and configure SSH push access to GitHub.
-2. Run `google_scholar_crawler/git_update.bat` on Windows or `google_scholar_crawler/git_update.sh` in WSL. The WSL script expects `google_scholar_crawler/.venv/bin/python`; the Windows batch file uses the `python` available in the active Windows environment.
+2. Run `google_scholar_crawler/git_update.bat` on Windows or `google_scholar_crawler/git_update.sh` in WSL. Both scripts use the `python`/`python3` available in the active environment — activate an environment with the crawler dependencies installed first.
 3. The scripts validate the result, update the local `results/` snapshot, and push it to the `google-scholar-stats` branch only when the data changes.
 4. If GitHub CLI is available, the script triggers `deploy.yml`. If it is unavailable, the statistics branch is still updated, but the website is not rebuilt until you manually run `gh workflow run deploy.yml --repo zzaiyan/zzaiyan.github.io --ref main` or push another `main` commit.
 5. Fill in the `scholarId` field for each paper entry in `_data/pubs.json`.
