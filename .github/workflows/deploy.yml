@@ -101,8 +101,6 @@ jobs:
     name: Deploy to SSH Server
     needs: build
     runs-on: ubuntu-latest
-    # 跨境全量 rsync（海外 runner → 国内服务器）可能超过 10 分钟，
-    # 预留 30 分钟避免上传中途被超时取消
     timeout-minutes: 30
     permissions:
       contents: read
