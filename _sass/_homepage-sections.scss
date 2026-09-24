@@ -77,8 +77,11 @@ details.misc-collapse > p {
   transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 
   &:hover {
-    border-color: #b8d4fe;
-    box-shadow: 0 4px 20px rgba(66, 133, 244, 0.18), 0 0 0 3px rgba(66, 133, 244, 0.06);
+    border-color: transparent;
+    background:
+      linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.72)) padding-box,
+      linear-gradient(135deg, rgba(154, 123, 255, 0.24), rgba(90, 210, 255, 0.21), rgba(96, 226, 170, 0.18)) border-box;
+    box-shadow: 0 6px 20px rgba(31, 45, 61, 0.1), 0 0 0 3px rgba(122, 176, 230, 0.09);
     transform: translateY(-2px);
   }
 
@@ -88,8 +91,12 @@ details.misc-collapse > p {
     align-items: baseline;
     gap: 0.25em 0.65em;
 
-    strong {
+    strong a {
       color: $info-color;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
 
     span {

@@ -177,7 +177,6 @@ $compact-card-padding-block: 0.9em;
   font-weight: 600;
   letter-spacing: -0.01em;
   line-height: 1.2;
-  line-height: 1.2;
   z-index: 1;
   white-space: nowrap;
   overflow: hidden;
@@ -455,7 +454,7 @@ $compact-card-padding-block: 0.9em;
 
 .google-scholar-badge__count {
   color: #174ea6;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .google-scholar-badge[data-state="loading"] .google-scholar-badge__count,
