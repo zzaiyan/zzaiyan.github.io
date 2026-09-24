@@ -136,42 +136,42 @@ redirect_from:
 
 <div class="misc-project-grid">
 <article class="misc-project">
-<div class="misc-project__heading"><strong>PaperRevisionKit</strong><span class="lang-en">LaTeX revision toolkit</span><span class="lang-zh">LaTeX 返修工具包</span></div>
+<div class="misc-project__heading"><strong><a href="https://github.com/zzaiyan/PaperRevisionKit">PaperRevisionKit</a></strong><span class="lang-en">LaTeX revision toolkit</span><span class="lang-zh">LaTeX 返修工具包</span></div>
 <p class="lang-en">Build organized journal revision packages and response letters.</p>
 <p class="lang-zh">构建结构清晰的期刊返修材料与审稿意见回复信。</p>
 <div class="pub-links"><a class="pub-btn" href="https://github.com/zzaiyan/PaperRevisionKit"><i class="fab fa-github"></i> GitHub</a><span class="lang-en"><a class="pub-btn" href="https://github.com/zzaiyan/PaperRevisionKit#readme"><i class="fas fa-book"></i> Docs</a></span><span class="lang-zh"><a class="pub-btn" href="https://github.com/zzaiyan/PaperRevisionKit/blob/main/README_zh.md"><i class="fas fa-book"></i> 文档</a></span></div>
 </article>
 
 <article class="misc-project">
-<div class="misc-project__heading"><strong>VisitorTrace</strong><span class="lang-en">Self-hosted visitor analytics</span><span class="lang-zh">自托管访客统计</span></div>
+<div class="misc-project__heading"><strong><a href="https://github.com/zzaiyan/VisitorTrace">VisitorTrace</a></strong><span class="lang-en">Self-hosted visitor analytics</span><span class="lang-zh">自托管访客统计</span></div>
 <p class="lang-en">Run a lightweight visitor map and pageview tracker for small websites.</p>
 <p class="lang-zh">为个人网站提供轻量级访客地图与页面访问统计。</p>
 <div class="pub-links"><a class="pub-btn" href="https://github.com/zzaiyan/VisitorTrace"><i class="fab fa-github"></i> GitHub</a><span class="lang-en"><a class="pub-btn" href="https://github.com/zzaiyan/VisitorTrace#readme"><i class="fas fa-book"></i> Docs</a></span><span class="lang-zh"><a class="pub-btn" href="https://github.com/zzaiyan/VisitorTrace/blob/main/README.zh-CN.md"><i class="fas fa-book"></i> 文档</a></span></div>
 </article>
 
 <article class="misc-project">
-<div class="misc-project__heading"><strong>TorchHook</strong><span class="lang-en">PyTorch hooks manager</span><span class="lang-zh">PyTorch 钩子管理器</span></div>
+<div class="misc-project__heading"><strong><a href="https://github.com/zzaiyan/TorchHook">TorchHook</a></strong><span class="lang-en">PyTorch hooks manager</span><span class="lang-zh">PyTorch 钩子管理器</span></div>
 <p class="lang-en">Capture feature maps and inspect intermediate activations.</p>
 <p class="lang-zh">捕获特征图并检查模型的中间激活。</p>
 <div class="pub-links"><a class="pub-btn" href="https://github.com/zzaiyan/TorchHook"><i class="fab fa-github"></i> GitHub</a><span class="lang-en"><a class="pub-btn" href="https://github.com/zzaiyan/TorchHook/blob/main/BLOG.md"><i class="fas fa-book"></i> Docs</a></span><span class="lang-zh"><a class="pub-btn" href="https://github.com/zzaiyan/TorchHook/blob/main/BLOG_CN.md"><i class="fas fa-book"></i> 文档</a></span></div>
 </article>
 
 <article class="misc-project">
-<div class="misc-project__heading"><strong>AnyCapture</strong><span class="lang-en">Function-local variable capture</span><span class="lang-zh">局部变量提取工具</span></div>
+<div class="misc-project__heading"><strong><a href="https://github.com/zzaiyan/AnyCapture">AnyCapture</a></strong><span class="lang-en">Function-local variable capture</span><span class="lang-zh">局部变量提取工具</span></div>
 <p class="lang-en">Inspect local variables for debugging and visualization.</p>
 <p class="lang-zh">提取函数中的局部变量，用于调试与可视化。</p>
 <div class="pub-links"><a class="pub-btn" href="https://github.com/zzaiyan/AnyCapture"><i class="fab fa-github"></i> GitHub</a><span class="lang-en"><a class="pub-btn" href="https://github.com/zzaiyan/AnyCapture/blob/main/README.md"><i class="fas fa-book"></i> Docs</a></span><span class="lang-zh"><a class="pub-btn" href="https://github.com/zzaiyan/AnyCapture/blob/main/README.md"><i class="fas fa-book"></i> 文档</a></span></div>
 </article>
 
 <article class="misc-project">
-<div class="misc-project__heading"><strong>netcut</strong><span class="lang-en">Network clipboard</span><span class="lang-zh">网络剪贴板</span></div>
+<div class="misc-project__heading"><strong><a href="https://github.com/zzaiyan/netcut">netcut</a></strong><span class="lang-en">Network clipboard</span><span class="lang-zh">网络剪贴板</span></div>
 <p class="lang-en">Share text across devices through a lightweight web application.</p>
 <p class="lang-zh">通过轻量级 Web 应用在不同设备间共享文本。</p>
 <div class="pub-links"><a class="pub-btn" href="https://github.com/zzaiyan/netcut"><i class="fab fa-github"></i> GitHub</a><a class="pub-btn" href="https://zzaiyan.github.io/netcut/"><i class="fas fa-desktop"></i> <span class="lang-en">Demo</span><span class="lang-zh">演示</span></a></div>
 </article>
 
 <article class="misc-project">
-<div class="misc-project__heading"><strong>zzaiyan.github.io</strong><span class="lang-en">Academic homepage</span><span class="lang-zh">学术主页</span></div>
+<div class="misc-project__heading"><strong><a href="https://github.com/zzaiyan/zzaiyan.github.io">zzaiyan.github.io</a></strong><span class="lang-en">Academic homepage</span><span class="lang-zh">学术主页</span></div>
 <p class="lang-en">An academic homepage for research and open-source work.</p>
 <p class="lang-zh">展示科研与开源项目的学术主页。</p>
 <div class="pub-links"><a class="pub-btn" href="https://github.com/zzaiyan/zzaiyan.github.io"><i class="fab fa-github"></i> GitHub</a><a class="pub-btn" href="https://zzaiyan.com/"><i class="fas fa-desktop"></i> <span class="lang-en">Demo</span><span class="lang-zh">演示</span></a></div>
