@@ -158,7 +158,7 @@ jobs:
 
           "${ssh_args[@]}" "$remote" "mkdir -p '$release'"
           RSYNC_RSH="ssh -i $HOME/.ssh/deploy_key -p $port -o BatchMode=yes -o ConnectTimeout=10 -o ServerAliveInterval=15 -o ServerAliveCountMax=3 -o StrictHostKeyChecking=yes" \
-            rsync -az --delete --delay-updates ./site/ "$remote:$release/"
+            rsync -az --delete --delay-updates --link-dest="${SSH_DEPLOY_PATH}/current" ./site/ "$remote:$release/"
 
           "${ssh_args[@]}" "$remote" bash -s -- \
             "$release" "$SSH_DEPLOY_PATH" "$GITHUB_SHA" <<'REMOTE_SCRIPT'
