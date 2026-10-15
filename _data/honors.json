@@ -1,30 +1,38 @@
 [
     {
+        "year": "2026",
+        "content": "**National Scholarship for Graduate Students**",
+        "content_zh": "**研究生国家奖学金**"
+    },
+    {
         "year": "2025",
-        "content": "**Outstanding Undergraduate Graduate** | **优秀本科毕业生**"
+        "content": "**Outstanding Undergraduate Graduate**",
+        "content_zh": "**优秀本科毕业生**"
     },
     {
         "year": "2024",
-        "content": "**National Encouragement Scholarship** | **国家励志奖学金**"
+        "content": "**National Encouragement Scholarship**",
+        "content_zh": "**国家励志奖学金**"
     },
     {
         "year": "2023",
-        "content": "**National Scholarship** | **国家奖学金**"
+        "content": "**National Scholarship**",
+        "content_zh": "**国家奖学金**"
     },
     {
         "year": "2023",
-        "content": "**Huawei Scholarship - Rising Star** | **华为奖学金 - 未来之星** [[link]](https://cs.cug.edu.cn/info/1019/6103.htm)"
+        "content": "**Huawei Scholarship - Rising Star**",
+        "content_zh": "**华为奖学金 - 未来之星**",
+        "url": "https://cs.cug.edu.cn/info/1019/6103.htm"
     },
     {
         "year": "2023",
-        "content": "**Chow Tai Fook Scholarship** | **周大福奖学金**"
-    },
-    {
-        "year": "2022, 2023, 2024",
-        "content": "**Outstanding Student Model** | **优秀学生标兵**"
+        "content": "**Chow Tai Fook Scholarship**",
+        "content_zh": "**周大福奖学金**"
     },
     {
         "year": "2022",
-        "content": "**Outstanding Student Scholarship** | **英才奖学金**"
+        "content": "**Outstanding Student Scholarship**",
+        "content_zh": "**英才奖学金**"
     }
 ]

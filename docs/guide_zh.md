@@ -222,12 +222,12 @@ npm run citations:check
 
 ### _data/honors.json — 荣誉奖项
 
-支持 Markdown 语法。
+支持 Markdown 语法，使用 `content_zh` 提供中文名称。中英文以 ` | ` 拼接并自然换行，缺少中文时仅显示英文。可选的 `url` 用于在中英文名称之后显示一份 `[link]` 来源链接。荣誉按四位年份倒序分组，同一年共用一个时间线节点；组内保留数据文件中的顺序。
 
 ```json
 [
-  { "year": "2023", "content": "**National Scholarship** | **国家奖学金**" },
-  { "year": "2023", "content": "**Huawei Scholarship** [[link]](url)" }
+  { "year": "2023", "content": "**National Scholarship**", "content_zh": "**国家奖学金**" },
+  { "year": "2023", "content": "**Huawei Scholarship**", "content_zh": "**华为奖学金**", "url": "https://example.com/award" }
 ]
 ```
 

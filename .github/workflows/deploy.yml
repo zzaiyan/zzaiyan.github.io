@@ -101,7 +101,7 @@ jobs:
     name: Deploy to SSH Server
     needs: build
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 10
     permissions:
       contents: read
     environment:
