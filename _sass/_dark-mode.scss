@@ -166,11 +166,13 @@ html[data-theme="dark"] {
     color: #aaa;
   }
 
-  .news-timeline__date {
+  .news-timeline__date,
+  .honors-timeline__year {
     color: #9aa6b2;
   }
 
-  .news-timeline__item::after {
+  .news-timeline__item::after,
+  .honors-timeline__year-group::after {
     background: rgba(122, 176, 230, 0.18);
   }
 

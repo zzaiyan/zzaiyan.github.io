@@ -1,3 +1,15 @@
-{% for item in site.data.honors %}
-- _{{ item.year }}_,&ensp;{{ item.content | replace: "|", "&#124;" }}.
+{% assign honor_years = site.data.honors | group_by: "year" | sort: "name" | reverse %}
+<ol class="honors-timeline" role="list">
+{% for year in honor_years %}
+  <li class="honors-timeline__year-group">
+    <time class="honors-timeline__year" datetime="{{ year.name }}">{{ year.name }}</time>
+    <ul class="honors-timeline__awards" role="list">
+    {% for item in year.items %}
+      <li class="honors-timeline__award">
+        <span class="honors-timeline__title" lang="en">{{ item.content | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip }}</span>{% if item.content_zh %} &#124; <span class="honors-timeline__translation" lang="zh-CN">{{ item.content_zh | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip }}</span>{% endif %}{% if item.url %} <a href="{{ item.url | escape }}">[link]</a>{% endif %}
+      </li>
+    {% endfor %}
+    </ul>
+  </li>
 {% endfor %}
+</ol>

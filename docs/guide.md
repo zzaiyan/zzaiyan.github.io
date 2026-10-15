@@ -223,12 +223,12 @@ Internship cards use the same image layout as education cards and support biling
 
 ### _data/honors.json — Honors & Awards
 
-Markdown syntax supported.
+Markdown syntax is supported. Use `content_zh` for Chinese text. English and Chinese are joined with ` | ` and wrap naturally. Entries without a translation show only English. An optional `url` adds a single `[link]` source link after both names. Entries are grouped by four-digit year in descending order, sharing one timeline node per year. Awards within each year retain their data-file order.
 
 ```json
 [
-  { "year": "2023", "content": "**National Scholarship** | **国家奖学金**" },
-  { "year": "2023", "content": "**Huawei Scholarship** [[link]](url)" }
+  { "year": "2023", "content": "**National Scholarship**", "content_zh": "**国家奖学金**" },
+  { "year": "2023", "content": "**Huawei Scholarship**", "content_zh": "**华为奖学金**", "url": "https://example.com/award" }
 ]
 ```
 

@@ -97,6 +97,7 @@ redirect_from:
 
 - IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI).
 - IEEE Transactions on Geoscience and Remote Sensing (TGRS).
+- IEEE Transactions on Industrial Informatics (TII).
 - ISPRS Journal of Photogrammetry and Remote Sensing (ISPRS).
 
 ## Program Committee
@@ -111,6 +112,7 @@ redirect_from:
 
 - IEEE 模式分析与机器智能汇刊 (TPAMI)。
 - IEEE 地球科学与遥感汇刊 (TGRS)。
+- IEEE 工业信息学汇刊 (TII)。
 - ISPRS 摄影测量与遥感期刊 (ISPRS)。
 
 ## 程序委员会
