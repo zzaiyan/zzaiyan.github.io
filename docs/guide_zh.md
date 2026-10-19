@@ -17,6 +17,7 @@
 │   ├── education.json       # 教育经历（含 degree_zh/major_zh 等双语字段）
 │   ├── internship.json      # 实习经历（含双语字段）
 │   ├── honors.json          # 荣誉奖项
+│   ├── services.json        # 学术服务分组与双语名单
 │   ├── venues.json          # 期刊/会议分区与影响因子
 │   └── navigation.yml       # 导航菜单（含 title_zh 双语字段）
 ├── _layouts/
@@ -27,6 +28,7 @@
 │   ├── education.html       # 教育经历 Liquid 模板（双语）
 │   ├── internship.html      # 实习经历 Liquid 模板（双语）
 │   ├── honors.html          # 荣誉奖项 Liquid 模板
+│   ├── services.html        # 学术服务 Liquid 模板（双语）
 │   ├── head.html            # <head> 标签（SEO 元信息与样式）
 │   ├── scripts.html         # JS 脚本引入（含内联引用数据）
 │   ├── footer.html          # 页脚
@@ -76,6 +78,7 @@
 | 教育 | `_data/education.json` | `_includes/education.html` |
 | 实习 | `_data/internship.json` | `_includes/internship.html` |
 | 荣誉 | `_data/honors.json` | `_includes/honors.html` |
+| 学术服务 | `_data/services.json` | `_includes/services.html` |
 | 期刊分区 | `_data/venues.json` | `_includes/publications.html` 中引用 |
 
 ## 各数据文件格式
@@ -228,6 +231,27 @@ npm run citations:check
 [
   { "year": "2023", "content": "**National Scholarship**", "content_zh": "**国家奖学金**" },
   { "year": "2023", "content": "**Huawei Scholarship**", "content_zh": "**华为奖学金**", "url": "https://example.com/award" }
+]
+```
+
+### _data/services.json — 学术服务
+
+按数据文件中的顺序显示分组及条目，空分组自动隐藏。`title` / `title_zh` 定义分组标题，`items` 中的 `name` / `name_zh` 定义服务名称。中英文跟随全站语言切换，中文缺失时回退到英文。名称填写纯文本，不带末尾句号，模板统一添加标点。
+
+与 Patents 一样使用原生 Markdown 二级标题和单列列表，圆点、缩进和行距统一继承站点基础样式。
+
+```json
+[
+  {
+    "title": "Reviewer",
+    "title_zh": "审稿人",
+    "items": [
+      {
+        "name": "IEEE Transactions on Industrial Informatics (TII)",
+        "name_zh": "IEEE 工业信息学汇刊 (TII)"
+      }
+    ]
+  }
 ]
 ```
 

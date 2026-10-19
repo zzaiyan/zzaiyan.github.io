@@ -18,6 +18,7 @@ It supports **bilingual (EN / ZH) switching** and **dark / light theme toggling*
 │   ├── education.json       # Education history (with degree_zh / major_zh bilingual fields)
 │   ├── internship.json      # Internship history (with bilingual fields)
 │   ├── honors.json          # Honors & awards
+│   ├── services.json        # Academic service groups and bilingual entries
 │   ├── venues.json          # Journal/conference rankings & IF
 │   └── navigation.yml       # Nav menu (with title_zh bilingual field)
 ├── _layouts/
@@ -28,6 +29,7 @@ It supports **bilingual (EN / ZH) switching** and **dark / light theme toggling*
 │   ├── education.html       # Education Liquid template (bilingual)
 │   ├── internship.html      # Internship Liquid template (bilingual)
 │   ├── honors.html          # Honors Liquid template
+│   ├── services.html        # Academic service Liquid template (bilingual)
 │   ├── head.html            # <head> tag (SEO meta, styles)
 │   ├── scripts.html         # JS includes (inlines generated citation data)
 │   ├── footer.html          # Footer
@@ -77,6 +79,7 @@ All content sections are defined by JSON files in `_data/`. Liquid templates in 
 | Education | `_data/education.json` | `_includes/education.html` |
 | Internship | `_data/internship.json` | `_includes/internship.html` |
 | Honors | `_data/honors.json` | `_includes/honors.html` |
+| Services | `_data/services.json` | `_includes/services.html` |
 | Venues | `_data/venues.json` | Referenced in `_includes/publications.html` |
 
 ## Data File Formats
@@ -229,6 +232,27 @@ Markdown syntax is supported. Use `content_zh` for Chinese text. English and Chi
 [
   { "year": "2023", "content": "**National Scholarship**", "content_zh": "**国家奖学金**" },
   { "year": "2023", "content": "**Huawei Scholarship**", "content_zh": "**华为奖学金**", "url": "https://example.com/award" }
+]
+```
+
+### _data/services.json — Academic Service
+
+Groups and entries follow their data-file order; empty groups are hidden. Use `title` / `title_zh` for group headings and `name` / `name_zh` within `items` for service names. Text follows the site language toggle, with missing Chinese translations falling back to English. Names are plain text without trailing periods; the template adds punctuation.
+
+Like Patents, Services uses native Markdown level-two headings and single-column lists. Bullets, indentation, and spacing inherit the site's base styles.
+
+```json
+[
+  {
+    "title": "Reviewer",
+    "title_zh": "审稿人",
+    "items": [
+      {
+        "name": "IEEE Transactions on Industrial Informatics (TII)",
+        "name_zh": "IEEE 工业信息学汇刊 (TII)"
+      }
+    ]
+  }
 ]
 ```
 
