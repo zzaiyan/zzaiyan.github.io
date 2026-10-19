@@ -1,0 +1,9 @@
+{% for group in site.data.services %}
+{% if group.items.size > 0 %}
+## <span class="lang-en">{{ group.title | escape }}</span><span class="lang-zh">{{ group.title_zh | default: group.title | escape }}</span>
+
+{% for item in group.items -%}
+- <span class="lang-en">{{ item.name | escape }}.</span><span class="lang-zh">{{ item.name_zh | default: item.name | escape }}。</span>
+{% endfor %}
+{% endif %}
+{% endfor %}

@@ -91,35 +91,7 @@ redirect_from:
 # <span class="lang-en">📋 Services</span><span class="lang-zh">📋 学术服务</span>
 {: #services}
 
-<div class="lang-en" markdown="1">
-
-## Reviewer
-
-- IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI).
-- IEEE Transactions on Geoscience and Remote Sensing (TGRS).
-- IEEE Transactions on Industrial Informatics (TII).
-- ISPRS Journal of Photogrammetry and Remote Sensing (ISPRS).
-
-## Program Committee
-
-- AAAI Conference on Artificial Intelligence.
-
-</div>
-
-<div class="lang-zh" markdown="1">
-
-## 审稿人
-
-- IEEE 模式分析与机器智能汇刊 (TPAMI)。
-- IEEE 地球科学与遥感汇刊 (TGRS)。
-- IEEE 工业信息学汇刊 (TII)。
-- ISPRS 摄影测量与遥感期刊 (ISPRS)。
-
-## 程序委员会
-
-- AAAI 人工智能大会。
-
-</div>
+{% include services.html %}
 
 # <span class="lang-en">📚 Misc</span><span class="lang-zh">📚 其他</span>
 {: #misc}
