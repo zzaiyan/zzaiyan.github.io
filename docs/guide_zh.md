@@ -18,6 +18,7 @@
 │   ├── internship.json      # 实习经历（含双语字段）
 │   ├── honors.json          # 荣誉奖项
 │   ├── services.json        # 学术服务分组与双语名单
+│   ├── github_stars.json    # 开源项目 star 数量与采集时间快照
 │   ├── venues.json          # 期刊/会议分区与影响因子
 │   └── navigation.yml       # 导航菜单（含 title_zh 双语字段）
 ├── _layouts/
@@ -29,6 +30,7 @@
 │   ├── internship.html      # 实习经历 Liquid 模板（双语）
 │   ├── honors.html          # 荣誉奖项 Liquid 模板
 │   ├── services.html        # 学术服务 Liquid 模板（双语）
+│   ├── github-repo-button.html # 带 star 数量的 GitHub 按钮
 │   ├── head.html            # <head> 标签（SEO 元信息与样式）
 │   ├── scripts.html         # JS 脚本引入（含内联引用数据）
 │   ├── footer.html          # 页脚
@@ -61,6 +63,7 @@
 │   └── site/                # Favicon 与 Web App 图标
 ├── scripts/
 │   ├── build-citations.mjs  # 离线引用格式生成器
+│   ├── fetch-github-stars.mjs # GitHub star 快照采集器
 │   └── csl/                 # 本地 IEEE 与 GB/T 7714 样式
 ├── package.json             # 引用生成开发依赖
 └── google_scholar_crawler/  # Google Scholar 爬虫
@@ -79,6 +82,7 @@
 | 实习 | `_data/internship.json` | `_includes/internship.html` |
 | 荣誉 | `_data/honors.json` | `_includes/honors.html` |
 | 学术服务 | `_data/services.json` | `_includes/services.html` |
+| GitHub stars | `_data/github_stars.json` | `_includes/github-repo-button.html` |
 | 期刊分区 | `_data/venues.json` | `_includes/publications.html` 中引用 |
 
 ## 各数据文件格式
@@ -366,6 +370,32 @@ author:
 引用数由 `fetch_google_scholar_stats.html` 在 DOM 就绪后异步获取并填充。加载器首先读取带构建版本号的同源快照；本地预览或快照暂时不可用时，再按配置顺序尝试 CDN，最后回退到 GitHub Raw。每个地址最多等待四秒，整个过程不阻塞页面渲染。
 
 Google Scholar 对自动化访问有较严格的限制，因此爬虫保留在本地运行。抓取失败时不会覆盖上一次有效数据；网站仍会继续使用上一次成功部署的快照。
+
+## GitHub Star 统计
+
+开源项目的 GitHub 按钮使用 `GitHub ★ 数量` 样式，点击仍跳转仓库。数字在 Jekyll 构建时从 `_data/github_stars.json` 渲染，页面无需请求 GitHub API。按钮悬停提示最近成功采集的 UTC 时间，颜色跟随浅色/深色主题。
+
+本地使用 Node.js 24 运行与部署相同的采集命令，无需安装额外依赖：
+
+```bash
+npm run stars:fetch
+```
+
+脚本读取快照中的仓库列表，调用 GitHub REST API 的 `stargazers_count` 字段。可通过环境变量 `GITHUB_TOKEN` 或 `GH_TOKEN` 提供认证；未配置时匿名请求。命令遵循现有代理环境变量，Token 仅用于采集，不写入快照或网页。Jekyll 服务运行时会自动重建，无需重启。
+
+真实的零星标显示 `0`，`stars: null` 表示尚无数据，仅显示 GitHub 按钮。超时、无效响应或 API 限流均保留对应仓库已有快照；认证失败或限流时停止后续请求。所有请求失败时不会改写文件。
+
+新增项目时，在 `_data/github_stars.json` 增加以下条目，并在项目卡片内使用共享按钮：
+
+```json
+"owner/repo": { "stars": null, "updated_at": null }
+```
+
+```liquid
+{% raw %}{% include github-repo-button.html repo="owner/repo" %}{% endraw %}
+```
+
+每次部署会通过 Actions 内置 `GITHUB_TOKEN` 刷新数据，再构建静态站点。部署时生成的快照随站点产物发布；仓库中的快照作为失败回退，可在本地采集后随代码提交更新。
 
 ## 静态资源加载
 

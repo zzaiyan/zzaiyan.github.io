@@ -19,6 +19,7 @@ It supports **bilingual (EN / ZH) switching** and **dark / light theme toggling*
 │   ├── internship.json      # Internship history (with bilingual fields)
 │   ├── honors.json          # Honors & awards
 │   ├── services.json        # Academic service groups and bilingual entries
+│   ├── github_stars.json    # Repository star counts and fetch timestamps
 │   ├── venues.json          # Journal/conference rankings & IF
 │   └── navigation.yml       # Nav menu (with title_zh bilingual field)
 ├── _layouts/
@@ -30,6 +31,7 @@ It supports **bilingual (EN / ZH) switching** and **dark / light theme toggling*
 │   ├── internship.html      # Internship Liquid template (bilingual)
 │   ├── honors.html          # Honors Liquid template
 │   ├── services.html        # Academic service Liquid template (bilingual)
+│   ├── github-repo-button.html # GitHub button with star count
 │   ├── head.html            # <head> tag (SEO meta, styles)
 │   ├── scripts.html         # JS includes (inlines generated citation data)
 │   ├── footer.html          # Footer
@@ -62,6 +64,7 @@ It supports **bilingual (EN / ZH) switching** and **dark / light theme toggling*
 │   └── site/                # Favicons and web app icons
 ├── scripts/
 │   ├── build-citations.mjs  # Offline citation format generator
+│   ├── fetch-github-stars.mjs # GitHub star snapshot collector
 │   └── csl/                 # Local IEEE and GB/T 7714 styles
 ├── package.json             # Citation generation dev dependencies
 └── google_scholar_crawler/  # Google Scholar crawler
@@ -80,6 +83,7 @@ All content sections are defined by JSON files in `_data/`. Liquid templates in 
 | Internship | `_data/internship.json` | `_includes/internship.html` |
 | Honors | `_data/honors.json` | `_includes/honors.html` |
 | Services | `_data/services.json` | `_includes/services.html` |
+| GitHub stars | `_data/github_stars.json` | `_includes/github-repo-button.html` |
 | Venues | `_data/venues.json` | Referenced in `_includes/publications.html` |
 
 ## Data File Formats
@@ -367,6 +371,32 @@ The dialog panel uses a translucent Mica-like material with `backdrop-filter: bl
 Citation counts are fetched asynchronously by `fetch_google_scholar_stats.html` after the DOM is ready. The loader first requests the same-origin snapshot with a build-version query, then tries the configured CDN URLs and raw GitHub source as fallbacks. Each URL has a four-second timeout, so rendering is never blocked.
 
 Google Scholar applies strict limits to automated access, so the crawler intentionally runs locally. Failed crawls never replace the last valid result; the website continues serving the last successfully deployed snapshot.
+
+## GitHub Star Counts
+
+Open-source project buttons display `GitHub ★ count` and link to the repository. Jekyll renders counts from `_data/github_stars.json` at build time, so visitors make no GitHub API requests. The tooltip shows the last successful fetch time in UTC, and the button follows the site's light/dark theme.
+
+Use Node.js 24 to run the same collector locally and in deployment, with no extra dependencies:
+
+```bash
+npm run stars:fetch
+```
+
+The snapshot keys define the repositories to fetch. The collector reads `stargazers_count` from the GitHub REST API. Set `GITHUB_TOKEN` or `GH_TOKEN` in the environment for authentication, or leave them unset for anonymous requests. The command honors existing proxy environment variables. Tokens stay in the collector and never enter the snapshot or page. A running Jekyll server rebuilds automatically when the snapshot changes.
+
+A genuine zero displays `0`; `stars: null` means no data yet and shows only the GitHub button. Timeouts, invalid responses, and rate limits retain each repository's existing snapshot. Authentication failures and rate limits stop further requests. If every request fails, the file is left untouched.
+
+To add a project, add an entry to `_data/github_stars.json` and use the shared button in its card:
+
+```json
+"owner/repo": { "stars": null, "updated_at": null }
+```
+
+```liquid
+{% raw %}{% include github-repo-button.html repo="owner/repo" %}{% endraw %}
+```
+
+Each deployment refreshes counts with the built-in Actions `GITHUB_TOKEN` before building the site. Refreshed snapshots ship with the site artifact; the committed snapshot serves as the fallback and can be refreshed and committed locally.
 
 ## Resource Loading
 
