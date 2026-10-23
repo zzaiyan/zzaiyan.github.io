@@ -28,7 +28,9 @@
     <div class="pub-authors">
       {%- for author in reference.author -%}
         {%- assign author_index = forloop.index -%}
-        <span{% if author.given == site.author.citation_name.given and author.family == site.author.citation_name.family %} class="pub-author--self"{% endif %}>{{ author.given }} {{ author.family }}</span>{% if equal_authors contains author_index %}<sup class="pub-author-marker" title="Equal contribution">&dagger;</sup>{% endif %}{% if corresponding_authors contains author_index %}<sup class="pub-author-marker" title="Corresponding author">*</sup>{% endif %}{% unless forloop.last %}, {% endunless %}
+        {%- assign family_name = author[0] | strip -%}
+        {%- assign given_name = author[1] | strip -%}
+        <span{% if given_name == site.author.citation_name.given and family_name == site.author.citation_name.family %} class="pub-author--self"{% endif %}>{{ given_name }} {{ family_name }}</span>{% if equal_authors contains author_index %}<sup class="pub-author-marker" title="Equal contribution">&dagger;</sup>{% endif %}{% if corresponding_authors contains author_index %}<sup class="pub-author-marker" title="Corresponding author">*</sup>{% endif %}{% unless forloop.last %}, {% endunless %}
       {%- endfor -%}
     </div>
     {% endif %}

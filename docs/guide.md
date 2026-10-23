@@ -12,7 +12,6 @@ It supports **bilingual (EN / ZH) switching** and **dark / light theme toggling*
 ├── _config.yml              # Jekyll global config (title, author info, bilingual fields, etc.)
 ├── _data/
 │   ├── publications.json    # CSL metadata, display settings, and Scholar mapping
-│   ├── patents.json         # Patents
 │   ├── generated/
 │   │   └── citations.json   # Generated citation formats
 │   ├── metrics/
@@ -69,6 +68,8 @@ It supports **bilingual (EN / ZH) switching** and **dark / light theme toggling*
 │   ├── build-citations.mjs  # Offline citation format generator
 │   ├── fetch-github-stars.mjs # GitHub star snapshot collector
 │   ├── fetch-google-scholar.py # Scholar profile citation collector
+│   ├── fetch-google-scholar.sh # One-command local fetch on Linux/macOS
+│   ├── fetch-google-scholar.bat # One-click local fetch on Windows
 │   ├── refresh-site-data.py # Shared local/deployment refresh entry
 │   ├── scholar_snapshot.py  # Scholar validation and atomic writes
 │   ├── requirements-scholar.txt # Scholar Python dependencies
@@ -83,7 +84,6 @@ All content sections are defined by JSON files in `_data/`. Liquid templates in 
 | Section | Data file | Template |
 |---------|-----------|----------|
 | Publications | `_data/publications.json` | `_includes/publications.html` |
-| Patents | `_data/patents.json` | `_includes/publications.html` |
 | Citations | `_data/publications.json` → `_data/generated/citations.json` | Inlined via `_includes/scripts.html` |
 | News | `_data/news.json` | `_includes/news.html` |
 | Education | `_data/education.json` | `_includes/education.html` |
@@ -98,7 +98,7 @@ All content sections are defined by JSON files in `_data/`. Liquid templates in 
 
 ### _data/publications.json — Single Manually Maintained Publication Source
 
-Group papers into `journal`, `conference`, and `preprint`. Each record contains a stable `id`, standard CSL-JSON `citation`, website-specific `display`, and an optional `scholar_id`. Do not duplicate titles, authors, years, or DOIs, and do not maintain a separate citation key.
+Group papers into `journal`, `conference`, and `preprint`. Each record contains a stable `id`, CSL-field-based `citation` (with author-pair shorthand), website-specific `display`, and an optional `scholar_id`. Do not duplicate titles, authors, years, or DOIs, and do not maintain a separate citation key.
 
 ```json
 {
@@ -109,42 +109,21 @@ Group papers into `journal`, `conference`, and `preprint`. Each record contains 
         "type": "article-journal",
         "title": "Example paper",
         "author": [
-          {
-            "family": "Zhang",
-            "given": "Zaiyan"
-          },
-          {
-            "family": "Li",
-            "given": "Jie"
-          }
+          ["Zhang", "Zaiyan"],
+          ["Li", "Jie"]
         ],
         "container-title": "Journal Name",
-        "issued": {
-          "date-parts": [
-            [
-              2025
-            ]
-          ]
-        },
+        "issued": {"date-parts": [[2025]]},
         "URL": "https://example.com/paper"
       },
       "display": {
         "venue_key": "Journal",
         "badge": "Journal",
         "image": "images/publications/teaser.webp",
-        "tags": [
-          "Image Restoration"
-        ],
-        "author_roles": {
-          "corresponding": [
-            2
-          ]
-        },
+        "tags": ["Image Restoration"],
+        "author_roles": {"corresponding": [2]},
         "links": [
-          {
-            "name": "PDF",
-            "url": "assets/pubs/example.pdf"
-          }
+          {"name": "PDF", "url": "assets/pubs/example.pdf"}
         ]
       }
     }
@@ -158,13 +137,12 @@ The page and citation generator share `citation`. Titles, author order, and year
 
 Set `display.venue` only when the display name differs from the formal citation venue; otherwise it defaults to `citation.container-title`. `venue_key` selects rank/IF data, `tags` is an array, and `links` defines the buttons.
 
+Write each author as a `[family, given]` pair, such as `["Zhang", "Zaiyan"]` or `["de la Cruz", "Juan Carlos"]`. Each pair must contain exactly two nonempty strings. Only leading/trailing whitespace is stripped; internal spaces, hyphens, case, and author order are preserved. Do not combine a name into one string or add `*`/`†` markers. The page displays given name followed by family name. The generator converts pairs to standard `{ "family": "Zhang", "given": "Zaiyan" }` objects for every citation export. Invalid pairs are rejected without guessing name parts.
+
 Positions in `display.author_roles` are 1-based: `equal_contribution` adds `†`, and `corresponding` adds `*`. The author matching `_config.yml`'s `author.citation_name` is underlined automatically. `display.layout: "compact"` selects an imageless card; omitting it selects a featured card. `display.visible: false` hides a paper while preserving its category, metadata, and generated citations.
 
-The optional `scholar_id` is the full `authorID:paperID` used to join `_data/metrics/google_scholar.json`; a paper need not already appear in the snapshot. Custom fields use `snake_case`; CSL fields keep their standard spelling. Use two-space JSON indentation.
+The optional `scholar_id` is the full `authorID:paperID` used to join `_data/metrics/google_scholar.json`; a paper need not already appear in the snapshot. Custom fields use `snake_case`; CSL fields keep their standard spelling. Use two-space indentation. Keep author pairs, short arrays, link objects, `issued`, and `author_roles` on single lines for easier manual editing.
 
-### _data/patents.json — Patents
-
-Patents are a separate array of records with `date`, `number`, `title`, and `authors`, without publication citation metadata.
 
 ### Citation Format Generation
 
@@ -176,7 +154,7 @@ npm run data:build
 npm run citations:check
 ```
 
-The generator validates categories, unique IDs, required citation fields, author-role positions, and Scholar ID syntax/uniqueness. It writes BibTeX, RIS, CSL-JSON, IEEE, APA, and GB/T 7714 to `_data/generated/citations.json`. This is a reproducible snapshot, not a manually edited source. `npm run citations:build` remains an alias of `data:build`.
+The generator validates categories, unique IDs, required citation fields, author pairs, author-role positions, and Scholar ID syntax/uniqueness. It writes BibTeX, RIS, CSL-JSON, IEEE, APA, and GB/T 7714 to `_data/generated/citations.json`. This is a reproducible snapshot, not a manually edited source. `npm run citations:build` remains an alias of `data:build`.
 
 Deployment regenerates citations before building Jekyll. `npm run serve` does the same before starting local preview; after editing papers during preview, rerun `npm run data:build` to refresh the citation dialog. Generation is offline, and browsers need no citation library or CDN.
 
@@ -260,7 +238,7 @@ Markdown syntax is supported. Use `content_zh` for Chinese text. English and Chi
 
 Groups and entries follow their data-file order; empty groups are hidden. Use `title` / `title_zh` for group headings and `name` / `name_zh` within `items` for service names. Text follows the site language toggle, with missing Chinese translations falling back to English. Names are plain text without trailing periods; the template adds punctuation.
 
-Like Patents, Services uses native Markdown level-two headings and single-column lists. Bullets, indentation, and spacing inherit the site's base styles.
+Services uses native Markdown level-two headings and single-column lists. Bullets, indentation, and spacing inherit the site's base styles.
 
 ```json
 [
@@ -396,11 +374,27 @@ Refreshed data ships with the static site artifact. Committed snapshots provide 
 
 ### Local Scholar Fallback Snapshot
 
-To update Scholar alone, use the standalone entry point; no GitHub token is required:
+Install Python 3 (3.12 recommended), then use either one-command script. Node.js, Ruby, and GitHub tokens are not required.
+
+Linux/macOS:
 
 ```bash
-python -m pip install -r scripts/requirements-scholar.txt
-npm run scholar:fetch
+bash scripts/fetch-google-scholar.sh
+```
+
+Windows: double-click `scripts\fetch-google-scholar.bat`, or run this in a terminal at the project root:
+
+```bat
+scripts\fetch-google-scholar.bat
+```
+
+Both scripts locate the project relative to themselves, so they work from any current directory. On first use they create a project-local `.venv-scholar/` and install `scripts/requirements-scholar.txt`. Later runs reuse the environment and check dependencies. This environment is Git-ignored and does not change system or other Python environments. Windows prefers `py -3.12`, then another Python 3 or `python`. Its result window waits for a key; pass `--no-pause` for terminal automation.
+
+When first creating the environment, optionally set `SCHOLAR_PYTHON` to a Python executable path: for example, `SCHOLAR_PYTHON=/path/to/python bash scripts/fetch-google-scholar.sh` on Linux/macOS, or `set "SCHOLAR_PYTHON=C:\Python312\python.exe"` on Windows. With dependencies already installed in the active environment, `npm run scholar:fetch` remains available.
+
+After a successful fetch, review and commit `_data/metrics/google_scholar.json` to update the Actions fallback:
+
+```bash
 git add _data/metrics/google_scholar.json
 git commit -m "Update Scholar citation snapshot"
 git push origin main

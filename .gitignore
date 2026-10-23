@@ -8,6 +8,7 @@ push.sh
 vendor/bundle/
 __pycache__/
 *.py[cod]
+.venv-scholar/
 
 # AI config files
 .claude/

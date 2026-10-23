@@ -37,4 +37,7 @@ npm ci
 npm run serve
 ```
 
-编辑 `_config.yml` 填写个人信息。论文只维护 `_data/publications.json`，专利维护 `_data/patents.json`；`_data/generated/` 为自动生成的引用格式，`_data/metrics/` 为在线统计快照。
+编辑 `_config.yml` 填写个人信息。论文只维护 `_data/publications.json`，作者按 `[姓, 名]` 二元数组填写；`_data/generated/` 为自动生成的引用格式，`_data/metrics/` 为在线统计快照。
+
+
+本地获取 Scholar 兜底快照：安装 Python 3（推荐 3.12），Linux/macOS 运行 `bash scripts/fetch-google-scholar.sh`，Windows 双击 `scripts\fetch-google-scholar.bat`。脚本自动准备独立 Python 环境，将结果写入 `_data/metrics/google_scholar.json`；检查后提交推送该文件即可更新远程兜底。
