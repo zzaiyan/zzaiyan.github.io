@@ -1,6 +1,6 @@
 # Academic Homepage Template — User Guide
 
-This project is a personal academic homepage built with Jekyll + GitHub Pages. Structured content is centrally stored as JSON files in `_data/`, then rendered to static HTML at build time via Liquid templates. Citation counts and visitor statistics are optional asynchronous enhancements.
+This project is a personal academic homepage built with Jekyll + GitHub Pages. Structured content and citation snapshots are centrally stored as JSON files in `_data/`, then rendered to static HTML at build time via Liquid templates. Visitor statistics load asynchronously.
 It supports **bilingual (EN / ZH) switching** and **dark / light theme toggling**.
 
 > 📖 [中文版文档](guide_zh.md)
@@ -20,6 +20,7 @@ It supports **bilingual (EN / ZH) switching** and **dark / light theme toggling*
 │   ├── honors.json          # Honors & awards
 │   ├── services.json        # Academic service groups and bilingual entries
 │   ├── github_stars.json    # Repository star counts and fetch timestamps
+│   ├── google_scholar.json  # Scholar profile total and per-paper citations
 │   ├── venues.json          # Journal/conference rankings & IF
 │   └── navigation.yml       # Nav menu (with title_zh bilingual field)
 ├── _layouts/
@@ -40,7 +41,7 @@ It supports **bilingual (EN / ZH) switching** and **dark / light theme toggling*
 │   ├── masthead.html        # Top nav bar (includes lang/theme toggle buttons)
 │   ├── seo.html             # SEO meta tags
 │   ├── analytics.html       # Google Analytics
-│   └── fetch_google_scholar_stats.html  # Google Scholar citation stats
+│   └── google-scholar-badge.html # Build-time Scholar citation badge
 ├── _pages/
 │   └── about.md             # Homepage content (bilingual div blocks + Liquid includes)
 ├── _sass/                   # SCSS source files
@@ -65,9 +66,12 @@ It supports **bilingual (EN / ZH) switching** and **dark / light theme toggling*
 ├── scripts/
 │   ├── build-citations.mjs  # Offline citation format generator
 │   ├── fetch-github-stars.mjs # GitHub star snapshot collector
+│   ├── fetch-google-scholar.py # Scholar profile citation collector
+│   ├── refresh-site-data.py # Shared local/deployment refresh entry
+│   ├── scholar_snapshot.py  # Scholar validation and atomic writes
+│   ├── requirements-scholar.txt # Scholar Python dependencies
 │   └── csl/                 # Local IEEE and GB/T 7714 styles
-├── package.json             # Citation generation dev dependencies
-└── google_scholar_crawler/  # Google Scholar crawler
+└── package.json             # Data refresh commands and citation dependencies
 ```
 
 ## Data-Driven Architecture
@@ -84,6 +88,7 @@ All content sections are defined by JSON files in `_data/`. Liquid templates in 
 | Honors | `_data/honors.json` | `_includes/honors.html` |
 | Services | `_data/services.json` | `_includes/services.html` |
 | GitHub stars | `_data/github_stars.json` | `_includes/github-repo-button.html` |
+| Scholar citations | `_data/google_scholar.json` | `_includes/google-scholar-badge.html`, `_includes/publication-card.html` |
 | Venues | `_data/venues.json` | Referenced in `_includes/publications.html` |
 
 ## Data File Formats
@@ -360,29 +365,36 @@ A theme toggle button (🌙 / ☀) is displayed next to the language button. Eve
 
 The dialog panel uses a translucent Mica-like material with `backdrop-filter: blur(16px) saturate(2) contrast(0.96)`. Its panel and code-area backgrounds remain semi-transparent so the blurred page structure is visible through the dialog. Scrolling over the citation content scrolls that content first; scrolling over the surrounding backdrop continues to scroll the page.
 
+## Unified Statistics Refresh
+
+Deployment refreshes Google Scholar citations and GitHub stars into `_data/google_scholar.json` and `_data/github_stars.json` before Jekyll renders the page. All snapshots live in `_data/`. The `google-scholar-stats` branch remains as history and is no longer read or written by the refresh or deployment flow.
+
+Use the same entry point locally. Prepare Node.js 24 and Python 3.12, then install dependencies in the active Python environment:
+
+```bash
+python -m pip install -r scripts/requirements-scholar.txt
+npm run data:refresh
+```
+
+`refresh-site-data.py` runs both collectors in sequence. Scholar has a 120-second timeout; star collection has a 75-second timeout. A failed source keeps its existing snapshot while the other source still runs. Both snapshots are validated afterward; the build stops only if valid fallback data is unavailable. A running Jekyll server rebuilds when `_data` changes.
+
+Deployment installs the Python dependencies and uses the built-in Actions `GITHUB_TOKEN` for GitHub requests. Locally, set `GITHUB_TOKEN` or `GH_TOKEN` for authentication if needed. Existing proxy environment variables are honored. Tokens remain in the collectors and never enter snapshots or pages.
+
+Refreshed data ships with the static site artifact. Committed snapshots provide the fallback and can also be refreshed and committed locally.
+
 ## Google Scholar Citation Stats
 
-1. Install the local `scholarly` dependencies and configure SSH push access to GitHub.
-2. Run `google_scholar_crawler/git_update.bat` on Windows or `google_scholar_crawler/git_update.sh` in WSL. Both scripts use the `python`/`python3` available in the active environment — activate an environment with the crawler dependencies installed first.
-3. The scripts validate the result, update the local `results/` snapshot, and push it to the `google-scholar-stats` branch only when the data changes.
-4. If GitHub CLI is available, the script triggers `deploy.yml`. If it is unavailable, the statistics branch is still updated, but the website is not rebuilt until you manually run `gh workflow run deploy.yml --repo zzaiyan/zzaiyan.github.io --ref main` or push another `main` commit.
-5. Fill in the `scholarId` field for each paper entry in `_data/pubs.json`.
+The total comes directly from the Google Scholar author's profile `citedby`, including citations to papers not displayed on this website. It is never calculated by summing individual papers. `citedby_source: "profile"` identifies this contract; legacy summed snapshots are rejected.
 
-Citation counts are fetched asynchronously by `fetch_google_scholar_stats.html` after the DOM is ready. The loader first requests the same-origin snapshot with a build-version query, then tries the configured CDN URLs and raw GitHub source as fallbacks. Each URL has a four-second timeout, so rendering is never blocked.
+`fetch-google-scholar.py` writes only `_data/google_scholar.json`: the Scholar ID, total, fetch timestamp, and citation counts for all returned publications. It creates no separate results or badge-data copies. The author ID defaults to the snapshot's ID and can be overridden with `GOOGLE_SCHOLAR_ID`.
 
-Google Scholar applies strict limits to automated access, so the crawler intentionally runs locally. Failed crawls never replace the last valid result; the website continues serving the last successfully deployed snapshot.
+Badges and paper cards read the snapshot at build time. Papers match through `scholarId` in `_data/pubs.json`. Zero or missing paper counts stay hidden. An unavailable total displays `...`, while a genuine zero total displays `0`. Browsers make no statistics JSON, CDN, or GitHub Raw requests.
 
 ## GitHub Star Counts
 
 Open-source project buttons display `GitHub ★ count` and link to the repository. Jekyll renders counts from `_data/github_stars.json` at build time, so visitors make no GitHub API requests. The tooltip shows the last successful fetch time in UTC, and the button follows the site's light/dark theme.
 
-Use Node.js 24 to run the same collector locally and in deployment, with no extra dependencies:
-
-```bash
-npm run stars:fetch
-```
-
-The snapshot keys define the repositories to fetch. The collector reads `stargazers_count` from the GitHub REST API. Set `GITHUB_TOKEN` or `GH_TOKEN` in the environment for authentication, or leave them unset for anonymous requests. The command honors existing proxy environment variables. Tokens stay in the collector and never enter the snapshot or page. A running Jekyll server rebuilds automatically when the snapshot changes.
+Star counts refresh through the shared `npm run data:refresh` entry point described above. The collector reads the repository list from the snapshot and fetches `stargazers_count` from the GitHub REST API.
 
 A genuine zero displays `0`; `stars: null` means no data yet and shows only the GitHub button. Timeouts, invalid responses, and rate limits retain each repository's existing snapshot. Authentication failures and rate limits stop further requests. If every request fails, the file is left untouched.
 
@@ -395,8 +407,6 @@ To add a project, add an entry to `_data/github_stars.json` and use the shared b
 ```liquid
 {% raw %}{% include github-repo-button.html repo="owner/repo" %}{% endraw %}
 ```
-
-Each deployment refreshes counts with the built-in Actions `GITHUB_TOKEN` before building the site. Refreshed snapshots ship with the site artifact; the committed snapshot serves as the fallback and can be refreshed and committed locally.
 
 ## Resource Loading
 
@@ -436,8 +446,7 @@ Citation dialog styles, including material transparency, backdrop filtering, and
 | `description` / `description_zh` | Site description (bilingual) |
 | `seo_title` / `seo_description` | Search and social metadata |
 | `repository` | GitHub repo (`user/repo`) |
-| `google_scholar_stats_use_cdn` | Enable CDN fallbacks after the same-origin Scholar snapshot |
-| `google_scholar.*` | Scholar ID, stats branch/file, CDN list, and raw GitHub fallback |
+| `google_scholar.id` | Scholar author ID used to match the snapshot to the badge |
 | `visitor_trace.base_url` / `visitor_trace.site_id` | VisitorTrace widget endpoint and site identifier |
 | `google_analytics_id` | Google Analytics ID |
 | `author.name` / `author.name_zh` | Author name (bilingual) |
@@ -469,7 +478,7 @@ Each artifact contains `deploy-version.json`. The SSH server job verifies this e
 |---------|-------|
 | Publication cards not showing | Validate `_data/pubs.json` JSON syntax |
 | Citation dialog not opening | Verify the key exists in `_data/citation_outputs.json` and run `npm run citations:build` |
-| Citation counts missing | Confirm `google-scholar-stats` branch has data |
-| Stats branch updated but the website still shows old counts | Trigger `deploy.yml`; pushing the stats branch alone does not run the website workflow |
+| Citation counts missing | Check `_data/google_scholar.json` and the author ID; a successful crawl synchronizes the local snapshot |
+| Statistics are stale | Inspect the deployment Refresh site data logs to see whether a fallback snapshot was used |
 | Markdown not rendering | Ensure quotes in JSON strings are properly escaped |
 | Nav items disappear after language switch | Confirm `jquery.greedy-navigation.js` exposes `resetGreedyNav` |

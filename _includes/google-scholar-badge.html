@@ -1,5 +1,10 @@
 {%- assign scholar_config = site.google_scholar -%}
 {%- assign scholar_id = include.scholar_id | default: scholar_config.id -%}
+{%- assign scholar_stats = site.data.google_scholar -%}
+{%- assign total_citations = nil -%}
+{%- if scholar_stats.scholar_id == scholar_id -%}
+  {%- assign total_citations = scholar_stats.citedby -%}
+{%- endif -%}
 {%- assign scholar_url = include.url | default: site.author.googlescholar -%}
 {%- unless scholar_url -%}
   {%- assign scholar_url = "https://scholar.google.com/citations?user=" | append: scholar_id -%}
@@ -8,4 +13,4 @@
 {%- if include.inline -%}
   {%- assign badge_class = badge_class | append: " google-scholar-badge--inline" -%}
 {%- endif -%}
-<a class="{{ badge_class }}" href="{{ scholar_url }}" target="_blank" rel="noopener" data-state="loading" aria-label="Google Scholar citations"><i class="ai ai-google-scholar" aria-hidden="true"></i><span class="google-scholar-badge__label">Citations</span><strong class="google-scholar-badge__count">...</strong></a>
+<a class="{{ badge_class }}" href="{{ scholar_url }}" target="_blank" rel="noopener" data-state="{% if total_citations != nil %}ready{% else %}unavailable{% endif %}" aria-label="Google Scholar citations"{% if total_citations != nil %} title="Citations updated {{ scholar_stats.updated | date: '%Y-%m-%d %H:%M %z' }}"{% endif %}><i class="ai ai-google-scholar" aria-hidden="true"></i><span class="google-scholar-badge__label">Citations</span><strong class="google-scholar-badge__count">{% if total_citations != nil %}{{ total_citations }}{% else %}...{% endif %}</strong></a>

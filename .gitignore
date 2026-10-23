@@ -6,6 +6,8 @@ push.sh
 .bundle/
 .sass-cache/
 vendor/bundle/
+__pycache__/
+*.py[cod]
 
 # AI config files
 .claude/

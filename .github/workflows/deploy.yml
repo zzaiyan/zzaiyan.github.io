@@ -22,20 +22,23 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
-      - name: Include Google Scholar snapshot
-        run: |
-          set -euo pipefail
-          git fetch --no-tags origin google-scholar-stats --depth=1
-          mkdir -p assets/data
-          git show FETCH_HEAD:gs_data.json > assets/data/google-scholar.json
-          test -s assets/data/google-scholar.json
-          jq empty assets/data/google-scholar.json
-
       - name: Set up Node.js
         uses: actions/setup-node@v6
         with:
           node-version: 24
           cache: npm
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: scripts/requirements-scholar.txt
+
+      - name: Install Scholar dependencies
+        continue-on-error: true
+        timeout-minutes: 3
+        run: python -m pip install -r scripts/requirements-scholar.txt
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
@@ -48,10 +51,10 @@ jobs:
           npm ci
           npm run citations:check
 
-      - name: Refresh GitHub stars
+      - name: Refresh site data
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npm run stars:fetch
+        run: npm run data:refresh
 
       - name: Configure GitHub Pages
         id: pages
