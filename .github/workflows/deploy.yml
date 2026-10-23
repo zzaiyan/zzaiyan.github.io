@@ -48,6 +48,11 @@ jobs:
           npm ci
           npm run citations:check
 
+      - name: Refresh GitHub stars
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm run stars:fetch
+
       - name: Configure GitHub Pages
         id: pages
         uses: actions/configure-pages@v5
