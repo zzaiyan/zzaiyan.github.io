@@ -2,42 +2,41 @@
 
 *"Building AI for open-world Earth observation."*
 
-[![Website](https://img.shields.io/badge/Website-zzaiyan.com-orange?style=flat-square\&logo=googlechrome\&logoColor=white)](https://zzaiyan.com)
-[![Google Scholar](https://img.shields.io/badge/Google-Scholar-4285F4?style=flat-square\&logo=googlescholar\&logoColor=white)](https://scholar.google.com/citations?user=ZpxXejIAAAAJ&hl=en)
-[![Email](https://img.shields.io/badge/Email-1%40zzaiyan.com-EA4335?style=flat-square\&logo=gmail\&logoColor=white)](mailto:1@zzaiyan.com)
+[![Website](https://img.shields.io/badge/Website-zzaiyan.com-orange?style=flat-square&logo=googlechrome&logoColor=white)](https://zzaiyan.com)
+[![Google Scholar](https://img.shields.io/badge/Google-Scholar-4285F4?style=flat-square&logo=googlescholar&logoColor=white)](https://scholar.google.com/citations?user=ZpxXejIAAAAJ&hl=en)
+[![Email](https://img.shields.io/badge/Email-1%40zzaiyan.com-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:1@zzaiyan.com)
 
 ---
 
-这是我的学术个人主页源码，基于 Jekyll 构建，参考了 [Yi Ren](https://rayeren.github.io/) 等多人的源代码，并加入了一系列新特性。主站部署于 [zzaiyan.com](https://zzaiyan.com)，同时发布至 [GitHub Pages](https://zzaiyan.github.io) 作为镜像。
+这是我的学术个人主页源码，基于 Jekyll 构建，参考了 [Yi Ren](https://rayeren.github.io/) 等人的开源实现。主站部署于 [zzaiyan.com](https://zzaiyan.com)，[GitHub Pages](https://zzaiyan.github.io) 提供镜像访问。
 
 ## ✨ 特性
 
-- **数据驱动**：论文、新闻、教育经历、荣誉等均通过 `_data/` 目录下的 JSON/YAML 文件管理，无需直接编辑 HTML
-- **多格式引用**：支持 BibTeX、RIS、CSL-JSON、IEEE、APA 和 GB/T 7714 的展示、复制与下载
-- **双语切换**：支持中英文一键切换，默认英文
-- **深色/浅色主题**：内置主题切换，默认浅色
-- **响应式布局**：移动端友好，导航栏自适应折叠
-- **统一统计刷新**：部署时更新 Google Scholar 引用量和 GitHub stars，快照统一存放于 `_data/metrics/`，本地可运行 `npm run data:refresh` 或 `npm run scholar:fetch`
+- **学术展示**：论文、教育与实习经历、荣誉、学术服务及开源项目。
+- **阅读体验**：中英文切换、深浅色主题，以及适配桌面和移动端的布局。
+- **论文引用**：支持 BibTeX、IEEE、APA、GB/T 7714、RIS 和 CSL-JSON 的展示、复制与下载。
+- **统计信息**：展示 Google Scholar 引用量、GitHub stars 和访客统计。
+- **内容管理**：通过结构化数据维护论文、新闻和个人经历等内容。
+- **自动部署**：通过 GitHub Actions 发布到 GitHub Pages 和 SSH 站点。
 
-## 📖 文档
+## 📖 使用向导
 
 | 语言 | 链接 |
 |------|------|
-| English | [docs/guide.md](docs/guide.md) |
 | 中文 | [docs/guide_zh.md](docs/guide_zh.md) |
+| English | [docs/guide.md](docs/guide.md) |
 
 ## 🛠️ 快速开始
+
+准备 Ruby 3.2 和 Node.js 24：
 
 ```bash
 # 安装依赖
 bundle install
 npm ci
 
-# 生成引用数据并启动本地预览
+# 启动本地预览
 npm run serve
 ```
 
-编辑 `_config.yml` 填写个人信息。论文只维护 `_data/publications.json`，作者按 `[姓, 名]` 二元数组填写；`_data/generated/` 为自动生成的引用格式，`_data/metrics/` 为在线统计快照。
-
-
-本地获取 Scholar 兜底快照：安装 Python 3（推荐 3.12），Linux/macOS 运行 `bash scripts/fetch-google-scholar.sh`，Windows 双击 `scripts\fetch-google-scholar.bat`。脚本自动准备独立 Python 环境，将结果写入 `_data/metrics/google_scholar.json`；检查后提交推送该文件即可更新远程兜底。
+访问 http://127.0.0.1:4000。内容更新、统计刷新和发布步骤见使用向导。
