@@ -36,7 +36,7 @@ def main() -> None:
 
     scholar = json.loads(SITE_SNAPSHOT.read_text(encoding="utf-8"))
     validate_author(scholar)
-    stars = json.loads((ROOT / "_data" / "github_stars.json").read_text(encoding="utf-8"))
+    stars = json.loads((ROOT / "_data" / "metrics" / "github_stars.json").read_text(encoding="utf-8"))
     if not isinstance(stars, dict) or not stars:
         raise ValueError("Missing GitHub stars snapshot")
     for repo, entry in stars.items():

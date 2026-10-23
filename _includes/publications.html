@@ -3,34 +3,37 @@
   <a href="{{ site.author.googlescholar }}"><i class="ai ai-google-scholar" aria-hidden="true"></i> <span class="lang-en">Full list on Google Scholar</span><span class="lang-zh">完整列表见谷歌学术</span></a>
 </div>
 
-{% if site.data.pubs.journal.size > 0 %}
+{% assign journal_papers = site.data.publications.journal | where_exp: "pub", "pub.display.visible != false" %}
+{% assign conference_papers = site.data.publications.conference | where_exp: "pub", "pub.display.visible != false" %}
+{% assign preprints = site.data.publications.preprint | where_exp: "pub", "pub.display.visible != false" %}
+{% if journal_papers.size > 0 %}
 ## <span class="lang-en">Journal Papers</span><span class="lang-zh">期刊论文</span>
 
-{% for pub in site.data.pubs.journal %}
+{% for pub in journal_papers %}
 {% include publication-card.html pub=pub show_venue_info=true %}
 {% endfor %}
 {% endif %}
 
-{% if site.data.pubs.conference.size > 0 %}
+{% if conference_papers.size > 0 %}
 ## <span class="lang-en">Conference Papers</span><span class="lang-zh">会议论文</span>
 
-{% for pub in site.data.pubs.conference %}
+{% for pub in conference_papers %}
 {% include publication-card.html pub=pub show_venue_info=true %}
 {% endfor %}
 {% endif %}
 
-{% if site.data.pubs.preprint.size > 0 %}
+{% if preprints.size > 0 %}
 ## <span class="lang-en">Preprints</span><span class="lang-zh">预印本</span>
 
-{% for pub in site.data.pubs.preprint %}
+{% for pub in preprints %}
 {% include publication-card.html pub=pub show_venue_info=false %}
 {% endfor %}
 {% endif %}
 
-{% if site.data.pubs.patent.size > 0 %}
+{% if site.data.patents.size > 0 %}
 ## <span class="lang-en">Patents</span><span class="lang-zh">专利</span>
 
-{% for pat in site.data.pubs.patent %}
+{% for pat in site.data.patents %}
 - _{{ pat.date }}_, {{ pat.number }}, **{{ pat.title }}**, &ensp;{% for author in pat.authors %}<span{% if author == site.author.name_zh %} class="pub-author--self"{% endif %}>{{ author }}</span>{% unless forloop.last %}, {% endunless %}{% endfor %}.
 {% endfor %}
 {% endif %}

@@ -1,0 +1,733 @@
+{
+  "journal": [
+    {
+      "id": "zhang2026coreuir",
+      "citation": {
+        "type": "article-journal",
+        "title": "CoRE-UIR: Prior-guided common and residual experts for efficient all-in-one remote sensing image restoration",
+        "author": [
+          {
+            "family": "Zhang",
+            "given": "Zaiyan"
+          },
+          {
+            "family": "Yuan",
+            "given": "Qiangqiang"
+          },
+          {
+            "family": "Li",
+            "given": "Jie"
+          },
+          {
+            "family": "Lihe",
+            "given": "Ziyang"
+          },
+          {
+            "family": "Wan",
+            "given": "Yu"
+          },
+          {
+            "family": "Chen",
+            "given": "Yuzeng"
+          },
+          {
+            "family": "Su",
+            "given": "Xin"
+          },
+          {
+            "family": "Zhang",
+            "given": "Liangpei"
+          }
+        ],
+        "container-title": "ISPRS Journal of Photogrammetry and Remote Sensing",
+        "volume": "240",
+        "page": "410-429",
+        "publisher": "Elsevier",
+        "DOI": "10.1016/j.isprsjprs.2026.07.028",
+        "issued": {
+          "date-parts": [
+            [
+              2026,
+              10
+            ]
+          ]
+        }
+      },
+      "display": {
+        "venue_key": "ISPRS J PRS",
+        "badge": "ISPRS J PRS",
+        "image": "images/publications/core-uir.webp",
+        "tags": [
+          "All-in-One Image Restoration"
+        ],
+        "author_roles": {
+          "corresponding": [
+            2
+          ]
+        },
+        "links": [
+          {
+            "name": "PDF",
+            "url": "assets/pubs/coreuir.pdf"
+          },
+          {
+            "name": "arXiv",
+            "url": "https://arxiv.org/abs/2607.27898"
+          },
+          {
+            "name": "Code",
+            "url": "https://github.com/zzaiyan/CoRE-UIR"
+          }
+        ]
+      },
+      "scholar_id": "ZpxXejIAAAAJ:qjMakFHDy7sC"
+    },
+    {
+      "id": "zhang2026ecrformer",
+      "citation": {
+        "type": "article-journal",
+        "title": "ECRformer: An efficient cloud removal Transformer with semantic-decoupled learning for multimodal satellite imagery",
+        "author": [
+          {
+            "family": "Zhang",
+            "given": "Zaiyan"
+          },
+          {
+            "family": "Li",
+            "given": "Jie"
+          },
+          {
+            "family": "Liang",
+            "given": "Yuanqi"
+          },
+          {
+            "family": "Yan",
+            "given": "Jining"
+          },
+          {
+            "family": "Xiao",
+            "given": "Yi"
+          },
+          {
+            "family": "Su",
+            "given": "Xin"
+          },
+          {
+            "family": "Yuan",
+            "given": "Qiangqiang"
+          }
+        ],
+        "container-title": "ISPRS Journal of Photogrammetry and Remote Sensing",
+        "volume": "237",
+        "page": "323-338",
+        "publisher": "Elsevier",
+        "DOI": "10.1016/j.isprsjprs.2026.04.009",
+        "issued": {
+          "date-parts": [
+            [
+              2026
+            ]
+          ]
+        }
+      },
+      "display": {
+        "venue_key": "ISPRS J PRS",
+        "badge": "ISPRS J PRS",
+        "image": "images/publications/ecrformer.webp",
+        "tags": [
+          "Cloud Removal",
+          "Multimodal Fusion"
+        ],
+        "author_roles": {
+          "corresponding": [
+            2,
+            7
+          ]
+        },
+        "links": [
+          {
+            "name": "PDF",
+            "url": "assets/pubs/ecrformer.pdf"
+          },
+          {
+            "name": "Code",
+            "url": "https://github.com/zzaiyan/ECRformer"
+          }
+        ]
+      },
+      "scholar_id": "ZpxXejIAAAAJ:9yKSN-GCB0IC"
+    },
+    {
+      "id": "zhang2025multi",
+      "citation": {
+        "type": "article-journal",
+        "title": "Multiscale Restoration of Missing Data in Optical Time-Series Images With Masked Spatial-Temporal Attention Network",
+        "author": [
+          {
+            "family": "Zhang",
+            "given": "Zaiyan"
+          },
+          {
+            "family": "Yan",
+            "given": "Jining"
+          },
+          {
+            "family": "Liang",
+            "given": "Yuanqi"
+          },
+          {
+            "family": "Feng",
+            "given": "Jiaxin"
+          },
+          {
+            "family": "He",
+            "given": "Haixu"
+          },
+          {
+            "family": "Cao",
+            "given": "Li"
+          }
+        ],
+        "container-title": "IEEE Transactions on Geoscience and Remote Sensing",
+        "volume": "63",
+        "page": "1-15",
+        "DOI": "10.1109/TGRS.2025.3574799",
+        "issued": {
+          "date-parts": [
+            [
+              2025
+            ]
+          ]
+        }
+      },
+      "display": {
+        "venue_key": "IEEE TGRS",
+        "badge": "IEEE TGRS",
+        "image": "images/publications/ms2tan.webp",
+        "tags": [
+          "Time Series Reconstruction"
+        ],
+        "author_roles": {
+          "corresponding": [
+            2
+          ]
+        },
+        "links": [
+          {
+            "name": "PDF",
+            "url": "assets/pubs/ms2tan.pdf"
+          },
+          {
+            "name": "arXiv",
+            "url": "https://arxiv.org/abs/2406.13358"
+          },
+          {
+            "name": "Code",
+            "url": "https://github.com/CUG-BEODL/MS2TAN"
+          }
+        ]
+      },
+      "scholar_id": "ZpxXejIAAAAJ:u-x6o8ySG0sC"
+    },
+    {
+      "id": "wan2026tdre",
+      "citation": {
+        "type": "article-journal",
+        "title": "Bridging the domain gap: A transferable dynamic routing enhancer for robust aerial detection under adverse weather",
+        "author": [
+          {
+            "family": "Wan",
+            "given": "Yu"
+          },
+          {
+            "family": "Li",
+            "given": "Jie"
+          },
+          {
+            "family": "Lin",
+            "given": "Liupeng"
+          },
+          {
+            "family": "Lv",
+            "given": "Zhaowen"
+          },
+          {
+            "family": "Zhang",
+            "given": "Zaiyan"
+          },
+          {
+            "family": "Yuan",
+            "given": "Qiangqiang"
+          },
+          {
+            "family": "Shen",
+            "given": "Huanfeng"
+          }
+        ],
+        "container-title": "ISPRS Journal of Photogrammetry and Remote Sensing",
+        "volume": "242",
+        "page": "1-18",
+        "publisher": "Elsevier",
+        "DOI": "10.1016/j.isprsjprs.2026.08.041",
+        "issued": {
+          "date-parts": [
+            [
+              2026
+            ]
+          ]
+        }
+      },
+      "display": {
+        "venue_key": "ISPRS J PRS",
+        "badge": "ISPRS J PRS",
+        "image": "images/publications/tdre.webp",
+        "tags": [
+          "Adverse Weather",
+          "Aerial Object Detection"
+        ],
+        "author_roles": {
+          "corresponding": [
+            2
+          ]
+        },
+        "links": [
+          {
+            "name": "PDF",
+            "url": "assets/pubs/TDRE.pdf"
+          },
+          {
+            "name": "Code",
+            "url": "https://github.com/KIKYOUWY/TDRE"
+          }
+        ]
+      }
+    },
+    {
+      "id": "yang2026iegc",
+      "citation": {
+        "type": "article-journal",
+        "title": "IEGC-FSDN: Foggy Ship Detection Network with Integrating Edge and Global Constraints",
+        "author": [
+          {
+            "family": "Yang",
+            "given": "Yi"
+          },
+          {
+            "family": "Wan",
+            "given": "Yu"
+          },
+          {
+            "family": "Li",
+            "given": "Jie"
+          },
+          {
+            "family": "Lin",
+            "given": "Liupeng"
+          },
+          {
+            "family": "Zhang",
+            "given": "Zaiyan"
+          }
+        ],
+        "container-title": "IEEE Signal Processing Letters",
+        "publisher": "IEEE",
+        "page": "1-5",
+        "DOI": "10.1109/LSP.2026.3724106",
+        "issued": {
+          "date-parts": [
+            [
+              2026
+            ]
+          ]
+        }
+      },
+      "display": {
+        "visible": false,
+        "layout": "compact",
+        "venue_key": "IEEE SPL",
+        "badge": "IEEE SPL",
+        "tags": [
+          "Foggy Ship Detection",
+          "Edge and Global Constraints"
+        ],
+        "author_roles": {
+          "corresponding": [
+            2
+          ]
+        },
+        "links": [
+          {
+            "name": "PDF",
+            "url": "assets/pubs/IEGC-FSDN.pdf"
+          },
+          {
+            "name": "Code",
+            "url": "https://github.com/KIKYOUWY/IEGC-FSDN"
+          }
+        ]
+      }
+    }
+  ],
+  "conference": [
+    {
+      "id": "zhang2026task",
+      "citation": {
+        "type": "paper-conference",
+        "title": "Task-Driven Prompt Learning: A Joint Framework for Multi-Modal Cloud Removal and Segmentation",
+        "author": [
+          {
+            "family": "Zhang",
+            "given": "Zaiyan"
+          },
+          {
+            "family": "Li",
+            "given": "Jie"
+          },
+          {
+            "family": "Shi",
+            "given": "Shaowei"
+          },
+          {
+            "family": "Yuan",
+            "given": "Qiangqiang"
+          }
+        ],
+        "container-title": "IGARSS 2026 - 2026 IEEE International Geoscience and Remote Sensing Symposium",
+        "event-title": "IGARSS 2026 - 2026 IEEE International Geoscience and Remote Sensing Symposium",
+        "event-place": "Washington DC, DC, USA",
+        "publisher": "IEEE",
+        "page": "1979-1982",
+        "DOI": "10.1109/IGARSS60577.2026.11730342",
+        "issued": {
+          "date-parts": [
+            [
+              2026,
+              8
+            ]
+          ]
+        }
+      },
+      "display": {
+        "venue": "IEEE International Geoscience and Remote Sensing Symposium",
+        "venue_key": "IGARSS",
+        "badge": "IGARSS 2026",
+        "image": "images/publications/task-driven.webp",
+        "tags": [
+          "Optical-SAR Fusion",
+          "Cloud Removal",
+          "Segmentation"
+        ],
+        "author_roles": {
+          "corresponding": [
+            4
+          ]
+        },
+        "links": [
+          {
+            "name": "PDF",
+            "url": "https://arxiv.org/pdf/2601.12052"
+          },
+          {
+            "name": "arXiv",
+            "url": "https://arxiv.org/abs/2601.12052"
+          }
+        ]
+      },
+      "scholar_id": "ZpxXejIAAAAJ:d1gkVwhDpl0C"
+    },
+    {
+      "id": "wan2026lad",
+      "citation": {
+        "type": "paper-conference",
+        "title": "LAD-Enhancer: A Lightweight All in One Aerial Detection Enhancer Under Adverse Weather",
+        "author": [
+          {
+            "family": "Wan",
+            "given": "Yu"
+          },
+          {
+            "family": "Li",
+            "given": "Jie"
+          },
+          {
+            "family": "Lin",
+            "given": "Liupeng"
+          },
+          {
+            "family": "Zhang",
+            "given": "Zaiyan"
+          },
+          {
+            "family": "Yuan",
+            "given": "Qiangqiang"
+          },
+          {
+            "family": "Shen",
+            "given": "Huanfeng"
+          }
+        ],
+        "container-title": "ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences",
+        "event-title": "XXV ISPRS Congress 2026",
+        "volume": "XI-3-2026",
+        "page": "307-313",
+        "DOI": "10.5194/isprs-annals-XI-3-2026-307-2026",
+        "issued": {
+          "date-parts": [
+            [
+              2026
+            ]
+          ]
+        }
+      },
+      "display": {
+        "visible": false,
+        "layout": "compact",
+        "venue_key": "ISPRS Annals",
+        "badge": "ISPRS Annals",
+        "tags": [
+          "Adverse Weather Enhancement",
+          "Object Detection"
+        ],
+        "author_roles": {
+          "corresponding": [
+            2
+          ]
+        },
+        "links": [
+          {
+            "name": "PDF",
+            "url": "assets/pubs/lad-enhancer.pdf"
+          }
+        ]
+      }
+    }
+  ],
+  "preprint": [
+    {
+      "id": "liu2026geosegov",
+      "citation": {
+        "type": "article-journal",
+        "title": "GeoSeg-OV: Bridging Geospatial Gaps with Structural Guidance for Open-Vocabulary Remote Sensing Segmentation",
+        "author": [
+          {
+            "family": "Liu",
+            "given": "Ruizhong"
+          },
+          {
+            "family": "Luo",
+            "given": "Tingzhang"
+          },
+          {
+            "family": "Zhang",
+            "given": "Zaiyan"
+          },
+          {
+            "family": "Chen",
+            "given": "Jundong"
+          },
+          {
+            "family": "Chen",
+            "given": "Hongruixuan"
+          },
+          {
+            "family": "Huang",
+            "given": "Shaoguang"
+          },
+          {
+            "family": "Zhang",
+            "given": "Hongyan"
+          }
+        ],
+        "container-title": "arXiv",
+        "genre": "Preprint",
+        "URL": "https://arxiv.org/abs/2608.10426",
+        "issued": {
+          "date-parts": [
+            [
+              2026,
+              8,
+              11
+            ]
+          ]
+        }
+      },
+      "display": {
+        "venue_key": "arXiv",
+        "badge": "arXiv",
+        "image": "images/publications/geoseg-ov.webp",
+        "tags": [
+          "Open-Vocabulary Segmentation",
+          "Geospatial Generalization"
+        ],
+        "author_roles": {
+          "corresponding": [
+            6
+          ]
+        },
+        "links": [
+          {
+            "name": "PDF",
+            "url": "https://arxiv.org/pdf/2608.10426"
+          },
+          {
+            "name": "arXiv",
+            "url": "https://arxiv.org/abs/2608.10426"
+          },
+          {
+            "name": "Code",
+            "url": "https://github.com/zzaiyan/GeoSeg-OV"
+          }
+        ]
+      }
+    },
+    {
+      "id": "wan2026adversemoe",
+      "citation": {
+        "type": "article-journal",
+        "title": "AdverseMoE: A Degradation-Semantic Information Fusion Framework for Weather-Invariant Aerial Object Detection",
+        "author": [
+          {
+            "family": "Wan",
+            "given": "Yu"
+          },
+          {
+            "family": "Li",
+            "given": "Jie"
+          },
+          {
+            "family": "Lin",
+            "given": "Liupeng"
+          },
+          {
+            "family": "Zhang",
+            "given": "Zaiyan"
+          },
+          {
+            "family": "Li",
+            "given": "Yiliang"
+          },
+          {
+            "family": "Yuan",
+            "given": "Qiangqiang"
+          },
+          {
+            "family": "Shen",
+            "given": "Huanfeng"
+          },
+          {
+            "family": "Zhang",
+            "given": "Liangpei"
+          }
+        ],
+        "container-title": "SSRN",
+        "genre": "Preprint",
+        "publisher": "Elsevier BV",
+        "DOI": "10.2139/ssrn.7284341",
+        "issued": {
+          "date-parts": [
+            [
+              2026
+            ]
+          ]
+        }
+      },
+      "display": {
+        "venue_key": "SSRN",
+        "badge": "SSRN",
+        "image": "images/publications/adversemoe.webp",
+        "tags": [
+          "Adverse-Weather Aerial Object Detection",
+          "Mixture of Experts"
+        ],
+        "links": [
+          {
+            "name": "SSRN",
+            "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7284341"
+          },
+          {
+            "name": "Code",
+            "url": "https://github.com/KIKYOUWY/AdverseMoE"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tong2026semdino",
+      "citation": {
+        "type": "article-journal",
+        "title": "SemDINO: Foundation Prior-Guided Cross-Temporal Semantic Alignment Network for Remote Sensing Change Detection",
+        "author": [
+          {
+            "family": "Tong",
+            "given": "Xinyu"
+          },
+          {
+            "family": "Zhou",
+            "given": "Meihua"
+          },
+          {
+            "family": "Sun",
+            "given": "Jinxiao"
+          },
+          {
+            "family": "Zhang",
+            "given": "Zaiyan"
+          },
+          {
+            "family": "Chen",
+            "given": "Hongruixuan"
+          },
+          {
+            "family": "Wang",
+            "given": "Lei"
+          }
+        ],
+        "container-title": "arXiv",
+        "genre": "Preprint",
+        "URL": "https://arxiv.org/abs/2606.09772",
+        "issued": {
+          "date-parts": [
+            [
+              2026,
+              6,
+              8
+            ]
+          ]
+        }
+      },
+      "display": {
+        "visible": false,
+        "layout": "compact",
+        "venue_key": "arXiv",
+        "badge": "arXiv",
+        "tags": [
+          "Semantic Change Detection",
+          "Foundation Models"
+        ],
+        "author_roles": {
+          "equal_contribution": [
+            1,
+            2
+          ],
+          "corresponding": [
+            6
+          ]
+        },
+        "links": [
+          {
+            "name": "PDF",
+            "url": "https://arxiv.org/pdf/2606.09772"
+          },
+          {
+            "name": "arXiv",
+            "url": "https://arxiv.org/abs/2606.09772"
+          },
+          {
+            "name": "Code",
+            "url": "https://github.com/tonxycs/SemDINO"
+          }
+        ]
+      }
+    }
+  ]
+}

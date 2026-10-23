@@ -11,16 +11,18 @@ It supports **bilingual (EN / ZH) switching** and **dark / light theme toggling*
 .
 ├── _config.yml              # Jekyll global config (title, author info, bilingual fields, etc.)
 ├── _data/
-│   ├── pubs.json            # Publications & patents
-│   ├── references.json      # Canonical CSL-JSON citation metadata
-│   ├── citation_outputs.json # Generated citation formats
+│   ├── publications.json    # CSL metadata, display settings, and Scholar mapping
+│   ├── patents.json         # Patents
+│   ├── generated/
+│   │   └── citations.json   # Generated citation formats
+│   ├── metrics/
+│   │   ├── github_stars.json # Star snapshots
+│   │   └── google_scholar.json # Profile total and paper counts
 │   ├── news.json            # News items (with content_zh bilingual field)
 │   ├── education.json       # Education history (with degree_zh / major_zh bilingual fields)
 │   ├── internship.json      # Internship history (with bilingual fields)
 │   ├── honors.json          # Honors & awards
 │   ├── services.json        # Academic service groups and bilingual entries
-│   ├── github_stars.json    # Repository star counts and fetch timestamps
-│   ├── google_scholar.json  # Scholar profile total and per-paper citations
 │   ├── venues.json          # Journal/conference rankings & IF
 │   └── navigation.yml       # Nav menu (with title_zh bilingual field)
 ├── _layouts/
@@ -80,93 +82,103 @@ All content sections are defined by JSON files in `_data/`. Liquid templates in 
 
 | Section | Data file | Template |
 |---------|-----------|----------|
-| Publications | `_data/pubs.json` | `_includes/publications.html` |
-| Citations | `_data/references.json` + `_data/citation_outputs.json` | Inlined via `_includes/scripts.html` |
+| Publications | `_data/publications.json` | `_includes/publications.html` |
+| Patents | `_data/patents.json` | `_includes/publications.html` |
+| Citations | `_data/publications.json` → `_data/generated/citations.json` | Inlined via `_includes/scripts.html` |
 | News | `_data/news.json` | `_includes/news.html` |
 | Education | `_data/education.json` | `_includes/education.html` |
 | Internship | `_data/internship.json` | `_includes/internship.html` |
 | Honors | `_data/honors.json` | `_includes/honors.html` |
 | Services | `_data/services.json` | `_includes/services.html` |
-| GitHub stars | `_data/github_stars.json` | `_includes/github-repo-button.html` |
-| Scholar citations | `_data/google_scholar.json` | `_includes/google-scholar-badge.html`, `_includes/publication-card.html` |
+| GitHub stars | `_data/metrics/github_stars.json` | `_includes/github-repo-button.html` |
+| Scholar citations | `_data/metrics/google_scholar.json` | `_includes/google-scholar-badge.html`, `_includes/publication-card.html` |
 | Venues | `_data/venues.json` | Referenced in `_includes/publications.html` |
 
 ## Data File Formats
 
-### _data/pubs.json — Publications & Patents
+### _data/publications.json — Single Manually Maintained Publication Source
 
-Supports four categories: `journal`, `conference`, `preprint`, `patent`. A section is automatically hidden if its array is empty.
+Group papers into `journal`, `conference`, and `preprint`. Each record contains a stable `id`, standard CSL-JSON `citation`, website-specific `display`, and an optional `scholar_id`. Do not duplicate titles, authors, years, or DOIs, and do not maintain a separate citation key.
 
 ```json
 {
   "journal": [
     {
-      "id": "zhang2024multi",
-      "title": "Paper Title",
-      "venue": "Full Journal Name",
-      "venueShort": "Abbrev.",
-      "year": 2025,
-      "badge": "Badge text shown top-left of card",
-      "image": "images/publications/teaser.webp",
-      "doi": "DOI URL (or null)",
-      "note": "Notes (quartile, IF, keywords, etc.)",
-      "scholarId": "Google Scholar Paper ID (for citation count)",
-      "links": [
-        { "name": "PDF", "url": "assets/pubs/xxx.pdf" },
-        { "name": "Code", "url": "https://github.com/xxx" }
-      ],
-      "referenceKey": "key matching references.json",
-      "authorRoles": {
-        "equalContribution": [1, 2],
-        "corresponding": [2]
+      "id": "zhang2025example",
+      "citation": {
+        "type": "article-journal",
+        "title": "Example paper",
+        "author": [
+          {
+            "family": "Zhang",
+            "given": "Zaiyan"
+          },
+          {
+            "family": "Li",
+            "given": "Jie"
+          }
+        ],
+        "container-title": "Journal Name",
+        "issued": {
+          "date-parts": [
+            [
+              2025
+            ]
+          ]
+        },
+        "URL": "https://example.com/paper"
+      },
+      "display": {
+        "venue_key": "Journal",
+        "badge": "Journal",
+        "image": "images/publications/teaser.webp",
+        "tags": [
+          "Image Restoration"
+        ],
+        "author_roles": {
+          "corresponding": [
+            2
+          ]
+        },
+        "links": [
+          {
+            "name": "PDF",
+            "url": "assets/pubs/example.pdf"
+          }
+        ]
       }
     }
   ],
-  "conference": [ ... ],
-  "preprint": [ ... ],
-  "patent": [
-    {
-      "date": "2025.02",
-      "number": "ZL202410556414.6",
-      "title": "Patent Title",
-      "authors": ["Inventor One", "Inventor Two"]
-    }
-  ]
+  "conference": [],
+  "preprint": []
 }
 ```
 
-### _data/references.json — Canonical Citation Metadata
+The page and citation generator share `citation`. Titles, author order, and years come from `title`, `author`, and `issued.date-parts`. Title links prefer `DOI`, then `URL`. Store bare DOIs beginning with `10.`, without the `https://doi.org/` prefix. Their DOI URLs are derived automatically, so do not duplicate them in `URL`. Omit `citation.id`; the generator injects the top-level publication ID.
 
-```json
-{
-  "zhang2024multi": {
-    "id": "zhang2024multi",
-    "type": "article-journal",
-    "title": "Paper Title",
-    "author": [{ "family": "Zhang", "given": "Zaiyan" }],
-    "container-title": "Journal Name",
-    "issued": { "date-parts": [[2025]] }
-  }
-}
-```
+Set `display.venue` only when the display name differs from the formal citation venue; otherwise it defaults to `citation.container-title`. `venue_key` selects rank/IF data, `tags` is an array, and `links` defines the buttons.
 
-Each key must match the `referenceKey` field in `pubs.json`. Generated formats must not be edited by hand.
+Positions in `display.author_roles` are 1-based: `equal_contribution` adds `†`, and `corresponding` adds `*`. The author matching `_config.yml`'s `author.citation_name` is underlined automatically. `display.layout: "compact"` selects an imageless card; omitting it selects a featured card. `display.visible: false` hides a paper while preserving its category, metadata, and generated citations.
 
-Publication author names and order come from `references.json`. Positions in `authorRoles` are 1-based: `equalContribution` adds `†`, and `corresponding` adds `*`. The author matching `author.citation_name` in `_config.yml` is underlined automatically and does not need a manual marker in `pubs.json`.
+The optional `scholar_id` is the full `authorID:paperID` used to join `_data/metrics/google_scholar.json`; a paper need not already appear in the snapshot. Custom fields use `snake_case`; CSL fields keep their standard spelling. Use two-space JSON indentation.
 
-Omit `layout` for a full card with a teaser image. Set `"layout": "compact"` for a smaller card without an image.
+### _data/patents.json — Patents
+
+Patents are a separate array of records with `date`, `number`, `title`, and `authors`, without publication citation metadata.
 
 ### Citation Format Generation
 
-Run the local generator after changing `references.json`:
+Edit only `publications.json`, then run:
 
 ```bash
-npm install
-npm run citations:build
+npm ci
+npm run data:build
 npm run citations:check
 ```
 
-The generator writes BibTeX, RIS, CSL-JSON, IEEE, APA, and GB/T 7714 output to `_data/citation_outputs.json`. The browser only reads this generated static file, so no citation library or CDN is required at runtime.
+The generator validates categories, unique IDs, required citation fields, author-role positions, and Scholar ID syntax/uniqueness. It writes BibTeX, RIS, CSL-JSON, IEEE, APA, and GB/T 7714 to `_data/generated/citations.json`. This is a reproducible snapshot, not a manually edited source. `npm run citations:build` remains an alias of `data:build`.
+
+Deployment regenerates citations before building Jekyll. `npm run serve` does the same before starting local preview; after editing papers during preview, rerun `npm run data:build` to refresh the citation dialog. Generation is offline, and browsers need no citation library or CDN.
 
 ### _data/news.json — News Items
 
@@ -267,7 +279,7 @@ Like Patents, Services uses native Markdown level-two headings and single-column
 
 ### _data/venues.json — Journal/Conference Rankings
 
-Each key is the venue abbreviation used in `venueShort` field of `pubs.json`. The rank and IF are displayed inline in journal/conference paper entries.
+Each key is the venue abbreviation used in `display.venue_key` in `publications.json`. The rank and IF are displayed inline in journal/conference paper entries.
 
 ```json
 {
@@ -354,7 +366,7 @@ A theme toggle button (🌙 / ☀) is displayed next to the language button. Eve
 
 ## Multi-Format Citation Dialog
 
-`_data/citation_outputs.json` is inlined into a `<script>` tag at build time (via `scripts.html`). `citation-dialog.js` binds all `#citation-*` links on page load. Clicking a `Cite` link opens a dialog supporting:
+`_data/generated/citations.json` is inlined into a `<script>` tag at build time (via `scripts.html`). `citation-dialog.js` binds all `#citation-*` links on page load. Clicking a `Cite` link opens a dialog supporting:
 
 - BibTeX, RIS, CSL-JSON, IEEE, APA, and GB/T 7714 formats
 - One-click copy to clipboard
@@ -367,7 +379,7 @@ The dialog panel uses a translucent Mica-like material with `backdrop-filter: bl
 
 ## Unified Statistics Refresh
 
-Deployment refreshes Google Scholar citations and GitHub stars into `_data/google_scholar.json` and `_data/github_stars.json` before Jekyll renders the page. All snapshots live in `_data/`. The `google-scholar-stats` branch remains as history and is no longer read or written by the refresh or deployment flow.
+Deployment refreshes Google Scholar citations and GitHub stars into `_data/metrics/google_scholar.json` and `_data/metrics/github_stars.json` before Jekyll renders the page. All snapshots live in `_data/`. The `google-scholar-stats` branch remains as history and is no longer read or written by the refresh or deployment flow.
 
 Use the same entry point locally. Prepare Node.js 24 and Python 3.12, then install dependencies in the active Python environment:
 
@@ -382,23 +394,38 @@ Deployment installs the Python dependencies and uses the built-in Actions `GITHU
 
 Refreshed data ships with the static site artifact. Committed snapshots provide the fallback and can also be refreshed and committed locally.
 
+### Local Scholar Fallback Snapshot
+
+To update Scholar alone, use the standalone entry point; no GitHub token is required:
+
+```bash
+python -m pip install -r scripts/requirements-scholar.txt
+npm run scholar:fetch
+git add _data/metrics/google_scholar.json
+git commit -m "Update Scholar citation snapshot"
+git push origin main
+```
+
+The snapshot is replaced atomically only after successful collection and validation. Failure returns a nonzero status and leaves the existing file intact. The script does not run Git or access the historical stats branch. Committing the successful local snapshot to `main` gives Actions a checkout fallback if its refresh fails, without resetting counts or fabricating an update time.
+
+
 ## Google Scholar Citation Stats
 
 The total comes directly from the Google Scholar author's profile `citedby`, including citations to papers not displayed on this website. It is never calculated by summing individual papers. `citedby_source: "profile"` identifies this contract; legacy summed snapshots are rejected.
 
-`fetch-google-scholar.py` writes only `_data/google_scholar.json`: the Scholar ID, total, fetch timestamp, and citation counts for all returned publications. It creates no separate results or badge-data copies. The author ID defaults to the snapshot's ID and can be overridden with `GOOGLE_SCHOLAR_ID`.
+`fetch-google-scholar.py` writes only `_data/metrics/google_scholar.json`: the Scholar ID, total, fetch timestamp, and citation counts for all returned publications. It creates no separate results or badge-data copies. The author ID defaults to the snapshot's ID and can be overridden with `GOOGLE_SCHOLAR_ID`.
 
-Badges and paper cards read the snapshot at build time. Papers match through `scholarId` in `_data/pubs.json`. Zero or missing paper counts stay hidden. An unavailable total displays `...`, while a genuine zero total displays `0`. Browsers make no statistics JSON, CDN, or GitHub Raw requests.
+Badges and paper cards read the snapshot at build time. Papers match through `scholar_id` in `_data/publications.json`. Zero or missing paper counts stay hidden. An unavailable total displays `...`, while a genuine zero total displays `0`. Browsers make no statistics JSON, CDN, or GitHub Raw requests.
 
 ## GitHub Star Counts
 
-Open-source project buttons display `GitHub ★ count` and link to the repository. Jekyll renders counts from `_data/github_stars.json` at build time, so visitors make no GitHub API requests. The tooltip shows the last successful fetch time in UTC, and the button follows the site's light/dark theme.
+Open-source project buttons display `GitHub ★ count` and link to the repository. Jekyll renders counts from `_data/metrics/github_stars.json` at build time, so visitors make no GitHub API requests. The tooltip shows the last successful fetch time in UTC, and the button follows the site's light/dark theme.
 
 Star counts refresh through the shared `npm run data:refresh` entry point described above. The collector reads the repository list from the snapshot and fetches `stargazers_count` from the GitHub REST API.
 
 A genuine zero displays `0`; `stars: null` means no data yet and shows only the GitHub button. Timeouts, invalid responses, and rate limits retain each repository's existing snapshot. Authentication failures and rate limits stop further requests. If every request fails, the file is left untouched.
 
-To add a project, add an entry to `_data/github_stars.json` and use the shared button in its card:
+To add a project, add an entry to `_data/metrics/github_stars.json` and use the shared button in its card:
 
 ```json
 "owner/repo": { "stars": null, "updated_at": null }
@@ -418,11 +445,10 @@ To add a project, add an entry to `_data/github_stars.json` and use the shared b
 
 ## Adding a New Paper — Full Workflow
 
-1. Add an entry to the appropriate category (`journal` / `conference` / `preprint`) in `_data/pubs.json`
-2. Add structured citation metadata to `_data/references.json` (key must match `referenceKey`)
-3. Run `npm run citations:build && npm run citations:check`
-4. Optionally place the PDF in `assets/pubs/`
-5. Push to GitHub
+1. Add one record to the appropriate category in `_data/publications.json`, with `id`, `citation`, `display`, and an optional `scholar_id`
+2. Place the PDF in `assets/pubs/` if needed
+3. Run `npm run data:build` and review the page and generated citations
+4. Commit and push; deployment regenerates citations and refreshes online statistics
 
 ## Style Customization
 
@@ -459,7 +485,8 @@ Citation dialog styles, including material transparency, backdrop filtering, and
 
 ```bash
 bundle install
-bundle exec jekyll serve --livereload
+npm ci
+npm run serve -- --livereload
 ```
 
 Open http://127.0.0.1:4000 in your browser. Remove `--livereload` if browser auto-refresh is not needed.
@@ -476,9 +503,9 @@ Each artifact contains `deploy-version.json`. The SSH server job verifies this e
 
 | Problem | Check |
 |---------|-------|
-| Publication cards not showing | Validate `_data/pubs.json` JSON syntax |
-| Citation dialog not opening | Verify the key exists in `_data/citation_outputs.json` and run `npm run citations:build` |
-| Citation counts missing | Check `_data/google_scholar.json` and the author ID; a successful crawl synchronizes the local snapshot |
+| Publication cards not showing | Validate `_data/publications.json` JSON syntax |
+| Citation dialog not opening | Verify the key exists in `_data/generated/citations.json` and run `npm run data:build` |
+| Citation counts missing | Check `_data/metrics/google_scholar.json` and the author ID; a successful crawl synchronizes the local snapshot |
 | Statistics are stale | Inspect the deployment Refresh site data logs to see whether a fallback snapshot was used |
 | Markdown not rendering | Ensure quotes in JSON strings are properly escaped |
 | Nav items disappear after language switch | Confirm `jquery.greedy-navigation.js` exposes `resetGreedyNav` |

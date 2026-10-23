@@ -10,16 +10,18 @@
 .
 ├── _config.yml              # Jekyll 全局配置（站点标题、作者信息、双语描述等）
 ├── _data/
-│   ├── pubs.json            # 论文与专利数据
-│   ├── references.json    # CSL-JSON 规范引用元数据
-│   ├── citation_outputs.json # 生成的多格式引用
+│   ├── publications.json    # 论文：CSL 元数据、展示信息与 Scholar 映射
+│   ├── patents.json         # 专利
+│   ├── generated/
+│   │   └── citations.json   # 自动生成的多格式引用
+│   ├── metrics/
+│   │   ├── github_stars.json # star 快照
+│   │   └── google_scholar.json # Scholar 总引用量与单篇计数
 │   ├── news.json            # 新闻动态（含 content_zh 双语字段）
 │   ├── education.json       # 教育经历（含 degree_zh/major_zh 等双语字段）
 │   ├── internship.json      # 实习经历（含双语字段）
 │   ├── honors.json          # 荣誉奖项
 │   ├── services.json        # 学术服务分组与双语名单
-│   ├── github_stars.json    # 开源项目 star 数量与采集时间快照
-│   ├── google_scholar.json  # Scholar 官方总引用量与论文引用明细
 │   ├── venues.json          # 期刊/会议分区与影响因子
 │   └── navigation.yml       # 导航菜单（含 title_zh 双语字段）
 ├── _layouts/
@@ -79,93 +81,103 @@
 
 | 板块 | 数据文件 | 模板文件 |
 |------|----------|----------|
-| 论文 | `_data/pubs.json` | `_includes/publications.html` |
-| 多格式引用 | `_data/references.json` + `_data/citation_outputs.json` | 内联至 `_includes/scripts.html` |
+| 论文 | `_data/publications.json` | `_includes/publications.html` |
+| 专利 | `_data/patents.json` | `_includes/publications.html` |
+| 多格式引用 | `_data/publications.json` → `_data/generated/citations.json` | 内联至 `_includes/scripts.html` |
 | 新闻 | `_data/news.json` | `_includes/news.html` |
 | 教育 | `_data/education.json` | `_includes/education.html` |
 | 实习 | `_data/internship.json` | `_includes/internship.html` |
 | 荣誉 | `_data/honors.json` | `_includes/honors.html` |
 | 学术服务 | `_data/services.json` | `_includes/services.html` |
-| GitHub stars | `_data/github_stars.json` | `_includes/github-repo-button.html` |
-| Scholar 引用统计 | `_data/google_scholar.json` | `_includes/google-scholar-badge.html`、`_includes/publication-card.html` |
+| GitHub stars | `_data/metrics/github_stars.json` | `_includes/github-repo-button.html` |
+| Scholar 引用统计 | `_data/metrics/google_scholar.json` | `_includes/google-scholar-badge.html`、`_includes/publication-card.html` |
 | 期刊分区 | `_data/venues.json` | `_includes/publications.html` 中引用 |
 
 ## 各数据文件格式
 
-### _data/pubs.json — 论文与专利
+### _data/publications.json — 论文的唯一人工数据源
 
-支持 `journal`、`conference`、`preprint`、`patent` 四个分类，任一分类无数据则对应板块自动隐藏。
+按 `journal`、`conference`、`preprint` 分组。每篇记录只包含稳定的 `id`、标准 CSL-JSON `citation`、网站专用 `display`，以及可选的 `scholar_id`。不要重复保存标题、作者、年份或 DOI，不需要维护独立的引用 key。
 
 ```json
 {
   "journal": [
     {
-      "id": "zhang2024multi",
-      "title": "论文标题",
-      "venue": "期刊全称",
-      "venueShort": "缩写",
-      "year": 2025,
-      "badge": "卡片左上角徽章文字",
-      "image": "images/publications/teaser.webp",
-      "doi": "DOI 链接（可为 null）",
-      "note": "备注信息（分区、IF、关键词等）",
-      "scholarId": "Google Scholar Paper ID（用于引用统计）",
-      "links": [
-        { "name": "PDF", "url": "assets/pubs/xxx.pdf" },
-        { "name": "Code", "url": "https://github.com/xxx" }
-      ],
-      "referenceKey": "references.json 中对应的 key",
-      "authorRoles": {
-        "equalContribution": [1, 2],
-        "corresponding": [2]
+      "id": "zhang2025example",
+      "citation": {
+        "type": "article-journal",
+        "title": "Example paper",
+        "author": [
+          {
+            "family": "Zhang",
+            "given": "Zaiyan"
+          },
+          {
+            "family": "Li",
+            "given": "Jie"
+          }
+        ],
+        "container-title": "Journal Name",
+        "issued": {
+          "date-parts": [
+            [
+              2025
+            ]
+          ]
+        },
+        "URL": "https://example.com/paper"
+      },
+      "display": {
+        "venue_key": "Journal",
+        "badge": "Journal",
+        "image": "images/publications/teaser.webp",
+        "tags": [
+          "Image Restoration"
+        ],
+        "author_roles": {
+          "corresponding": [
+            2
+          ]
+        },
+        "links": [
+          {
+            "name": "PDF",
+            "url": "assets/pubs/example.pdf"
+          }
+        ]
       }
     }
   ],
-  "conference": [ ... ],
-  "preprint": [ ... ],
-  "patent": [
-    {
-      "date": "2025.02",
-      "number": "ZL202410556414.6",
-      "title": "专利标题",
-      "authors": ["发明人甲", "发明人乙"]
-    }
-  ]
+  "conference": [],
+  "preprint": []
 }
 ```
 
-### _data/references.json — 规范引用元数据
+网页和引用生成器共用 `citation`。标题、作者顺序、年份分别来自 `title`、`author`、`issued.date-parts`；标题链接优先使用 `DOI`，否则使用 `URL`。DOI 保存为 `10.…`，不包含 `https://doi.org/`；同一 DOI 的跳转 URL 自动派生，不必重复填写 `URL`。`citation` 不保存 `id`，生成器从论文顶层注入。
 
-```json
-{
-  "zhang2024multi": {
-    "id": "zhang2024multi",
-    "type": "article-journal",
-    "title": "论文标题",
-    "author": [{ "family": "Zhang", "given": "Zaiyan" }],
-    "container-title": "期刊名称",
-    "issued": { "date-parts": [[2025]] }
-  }
-}
-```
+`display.venue` 仅在需要与正式文献名称不同的展示名时填写，默认使用 `citation.container-title`。`venue_key` 用于查询分区/IF，`tags` 为标签数组，`links` 为按钮列表。
 
-key 必须与 `pubs.json` 中的 `referenceKey` 一致。生成后的格式不应手动修改。
+`display.author_roles` 使用从 1 开始的作者位置：`equal_contribution` 添加 `†`，`corresponding` 添加 `*`。与 `_config.yml` 中 `author.citation_name` 匹配的作者自动加下划线。`display.layout: "compact"` 显示无图紧凑卡片，省略时为带图卡片；`display.visible: false` 隐藏论文，但保留分类、元数据和生成的引用。
 
-论文作者的姓名和顺序来自 `references.json`。`authorRoles` 中的位置从 1 开始计数：`equalContribution` 添加 `†`，`corresponding` 添加 `*`。与 `_config.yml` 中 `author.citation_name` 匹配的作者会自动加下划线，不需要在 `pubs.json` 中手动标记。
+可选的 `scholar_id` 保存完整的 `作者ID:论文ID`，用于关联 `_data/metrics/google_scholar.json`，不要求 Scholar 已收录该论文。网站自定义字段使用 `snake_case`，CSL 字段保留其标准命名。JSON 统一使用两空格缩进。
 
-省略 `layout` 时显示带插图的完整卡片；设置 `"layout": "compact"` 时显示不含插图的紧凑卡片。
+### _data/patents.json — 专利
+
+专利为独立数组，每条记录包含 `date`、`number`、`title`、`authors`，不套用论文引用结构。
 
 ### 引用格式生成
 
-修改 `references.json` 后运行本地生成器：
+仅编辑 `publications.json`，随后运行：
 
 ```bash
-npm install
-npm run citations:build
+npm ci
+npm run data:build
 npm run citations:check
 ```
 
-生成器会将 BibTeX、RIS、CSL-JSON、IEEE、APA 和 GB/T 7714 写入 `_data/citation_outputs.json`。浏览器运行时只读取生成后的静态文件，不依赖引用库或 CDN。
+生成器校验分类、唯一 ID、必要文献字段、作者角色位置和 Scholar ID 格式/唯一性，将 BibTeX、RIS、CSL-JSON、IEEE、APA、GB/T 7714 写入 `_data/generated/citations.json`。该文件是可重建快照，不应手工编辑；`npm run citations:build` 是 `data:build` 的兼容别名。
+
+部署会在 Jekyll 构建前自动重新生成。`npm run serve` 在启动本地预览前执行相同生成步骤；预览期间修改论文后，可再运行 `npm run data:build` 刷新引用弹窗。生成过程完全离线，浏览器无需引用库或 CDN。
 
 ### _data/news.json — 新闻动态
 
@@ -266,7 +278,7 @@ npm run citations:check
 
 ### _data/venues.json — 期刊/会议分区
 
-每个 key 为 `pubs.json` 中 `venueShort` 字段对应的缩写，分区和影响因子会显示在期刊/会议论文条目中。
+每个 key 为 `publications.json` 中 `display.venue_key` 对应的缩写，分区和影响因子会显示在期刊/会议论文条目中。
 
 ```json
 {
@@ -353,7 +365,7 @@ author:
 
 ## 多格式引用弹窗
 
-`_data/citation_outputs.json` 在构建时通过 Liquid 内联到页面的 `<script>` 标签中（见 `scripts.html`），`citation-dialog.js` 在页面加载后自动绑定所有 `#citation-*` 链接。点击 `Cite` 后弹出窗口，支持：
+`_data/generated/citations.json` 在构建时通过 Liquid 内联到页面的 `<script>` 标签中（见 `scripts.html`），`citation-dialog.js` 在页面加载后自动绑定所有 `#citation-*` 链接。点击 `Cite` 后弹出窗口，支持：
 
 - BibTeX、RIS、CSL-JSON、IEEE、APA 和 GB/T 7714
 - 一键复制到剪贴板
@@ -366,7 +378,7 @@ author:
 
 ## 统计数据统一刷新
 
-部署流程统一刷新 Google Scholar 引用量与 GitHub stars，分别写入 `_data/google_scholar.json` 和 `_data/github_stars.json`，再由 Jekyll 渲染页面。所有快照保存在 `_data/`，`google-scholar-stats` 分支仅作为历史保留，已退出读写和部署链路。
+部署流程统一刷新 Google Scholar 引用量与 GitHub stars，分别写入 `_data/metrics/google_scholar.json` 和 `_data/metrics/github_stars.json`，再由 Jekyll 渲染页面。所有快照保存在 `_data/`，`google-scholar-stats` 分支仅作为历史保留，已退出读写和部署链路。
 
 本地使用与部署相同的入口。准备 Node.js 24 和 Python 3.12，并在当前 Python 环境安装依赖：
 
@@ -381,23 +393,38 @@ npm run data:refresh
 
 部署时刷新后的数据随静态站点产物发布；仓库中的快照用于失败回退，本地刷新后也可提交更新。
 
+### 本地更新 Scholar 兜底快照
+
+只更新 Scholar 时运行独立入口，不需要 GitHub Token：
+
+```bash
+python -m pip install -r scripts/requirements-scholar.txt
+npm run scholar:fetch
+git add _data/metrics/google_scholar.json
+git commit -m "Update Scholar citation snapshot"
+git push origin main
+```
+
+只有采集与校验成功后才原子替换快照；失败时命令返回非零并保留原文件。脚本不操作 Git，也不访问历史 stats 分支。上述提交把本地成功采集的数据保存到 `main`；Actions 刷新失败时直接使用 checkout 中的这份快照，不将引用量重置为零，也不伪造更新时间。
+
+
 ## Google Scholar 引用统计
 
 总引用量直接使用 Google Scholar 作者主页返回的 `citedby`，包含当前网站未展示论文的引用，不对论文引用量求和。`citedby_source: "profile"` 标识这一口径，旧版求和快照会被拒绝。
 
-`fetch-google-scholar.py` 只写入 `_data/google_scholar.json`，保存 Scholar ID、总引用量、采集时间和全部返回论文的引用明细，不再产生独立的 results 或徽章数据副本。作者 ID 默认取自这份快照，也可通过 `GOOGLE_SCHOLAR_ID` 环境变量指定。
+`fetch-google-scholar.py` 只写入 `_data/metrics/google_scholar.json`，保存 Scholar ID、总引用量、采集时间和全部返回论文的引用明细，不再产生独立的 results 或徽章数据副本。作者 ID 默认取自这份快照，也可通过 `GOOGLE_SCHOLAR_ID` 环境变量指定。
 
-徽章和论文卡片在构建时直接读取数据，单篇通过 `_data/pubs.json` 的 `scholarId` 匹配。零引用或缺失的单篇计数保持隐藏；缺少可用总数时显示 `...`，真实的零总引用量显示 `0`。浏览器无需请求统计 JSON、CDN 或 GitHub Raw。
+徽章和论文卡片在构建时直接读取数据，单篇通过 `_data/publications.json` 的 `scholar_id` 匹配。零引用或缺失的单篇计数保持隐藏；缺少可用总数时显示 `...`，真实的零总引用量显示 `0`。浏览器无需请求统计 JSON、CDN 或 GitHub Raw。
 
 ## GitHub Star 统计
 
-开源项目的 GitHub 按钮使用 `GitHub ★ 数量` 样式，点击仍跳转仓库。数字在 Jekyll 构建时从 `_data/github_stars.json` 渲染，页面无需请求 GitHub API。按钮悬停提示最近成功采集的 UTC 时间，颜色跟随浅色/深色主题。
+开源项目的 GitHub 按钮使用 `GitHub ★ 数量` 样式，点击仍跳转仓库。数字在 Jekyll 构建时从 `_data/metrics/github_stars.json` 渲染，页面无需请求 GitHub API。按钮悬停提示最近成功采集的 UTC 时间，颜色跟随浅色/深色主题。
 
 star 数据由上述 `npm run data:refresh` 统一刷新。采集器读取快照中的仓库列表，并从 GitHub REST API 获取 `stargazers_count`。
 
 真实的零星标显示 `0`，`stars: null` 表示尚无数据，仅显示 GitHub 按钮。超时、无效响应或 API 限流均保留对应仓库已有快照；认证失败或限流时停止后续请求。所有请求失败时不会改写文件。
 
-新增项目时，在 `_data/github_stars.json` 增加以下条目，并在项目卡片内使用共享按钮：
+新增项目时，在 `_data/metrics/github_stars.json` 增加以下条目，并在项目卡片内使用共享按钮：
 
 ```json
 "owner/repo": { "stars": null, "updated_at": null }
@@ -417,11 +444,10 @@ star 数据由上述 `npm run data:refresh` 统一刷新。采集器读取快照
 
 ## 添加新论文的完整流程
 
-1. 在 `_data/pubs.json` 对应分类（`journal` / `conference` / `preprint`）中添加论文条目
-2. 在 `_data/references.json` 中添加结构化引用元数据（key 与 `referenceKey` 一致）
-3. 运行 `npm run citations:build && npm run citations:check`
-4. 将 PDF 放入 `assets/pubs/` 目录（可选）
-5. 推送到 GitHub
+1. 在 `_data/publications.json` 对应分类中添加一条记录，填写 `id`、`citation`、`display`，按需填写 `scholar_id`
+2. 将 PDF 放入 `assets/pubs/` 目录（可选）
+3. 运行 `npm run data:build`，检查页面与生成的引用
+4. 提交并推送；部署会自动重新生成引用和刷新在线统计
 
 ## 样式自定义
 
@@ -458,7 +484,8 @@ star 数据由上述 `npm run data:refresh` 统一刷新。采集器读取快照
 
 ```bash
 bundle install
-bundle exec jekyll serve --livereload
+npm ci
+npm run serve -- --livereload
 ```
 
 访问 http://127.0.0.1:4000 预览；不需要浏览器自动刷新时可以移除 `--livereload`。
@@ -475,9 +502,9 @@ SSH 部署使用 `server-production` Environment。需配置 `SSH_HOST`、`SSH_U
 
 | 问题 | 排查方法 |
 |------|----------|
-| 论文卡片不显示 | 检查 `_data/pubs.json` JSON 语法 |
-| 引用弹窗无反应 | 检查 `_data/citation_outputs.json` 中对应 key 是否存在，并运行 `npm run citations:build` |
-| 引用数不显示 | 检查 `_data/google_scholar.json` 与作者 ID；重新采集后会自动同步本地快照 |
+| 论文卡片不显示 | 检查 `_data/publications.json` JSON 语法 |
+| 引用弹窗无反应 | 检查 `_data/generated/citations.json` 中对应 key 是否存在，并运行 `npm run data:build` |
+| 引用数不显示 | 检查 `_data/metrics/google_scholar.json` 与作者 ID；重新采集后会自动同步本地快照 |
 | 网页统计未更新 | 查看部署中的 Refresh site data 日志，确认是否使用了失败回退快照 |
 | Markdown 未渲染 | 确认 JSON 中的引号已正确转义 |
 | 切换语言后导航项消失 | 检查 `jquery.greedy-navigation.js` 是否包含 `resetGreedyNav` 函数 |

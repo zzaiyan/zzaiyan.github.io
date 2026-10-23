@@ -1,7 +1,7 @@
 <script src="assets/js/lang-toggle.js" defer></script>
 <script src="assets/js/main.min.js" defer></script>
 <script>
-  window.CitationDatabase = {{ site.data.citation_outputs | jsonify }};
+  window.CitationDatabase = {{ site.data.generated.citations | jsonify }};
 </script>
 <script src="assets/js/citation-dialog.js" defer></script>
 {% if site.visitor_trace.base_url and site.visitor_trace.site_id %}

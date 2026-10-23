@@ -1,6 +1,6 @@
 {%- assign scholar_config = site.google_scholar -%}
 {%- assign scholar_id = include.scholar_id | default: scholar_config.id -%}
-{%- assign scholar_stats = site.data.google_scholar -%}
+{%- assign scholar_stats = site.data.metrics.google_scholar -%}
 {%- assign total_citations = nil -%}
 {%- if scholar_stats.scholar_id == scholar_id -%}
   {%- assign total_citations = scholar_stats.citedby -%}
