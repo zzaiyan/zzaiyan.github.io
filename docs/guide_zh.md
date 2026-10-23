@@ -1,6 +1,6 @@
 # 学术主页模板使用指南
 
-本项目是一个基于 Jekyll + GitHub Pages 的个人学术主页。结构化内容集中存储在 `_data/` 目录的 JSON 文件中，通过 Liquid 模板在构建时渲染为 HTML。论文引用数和访客统计属于可选的异步增强功能。支持中英文双语切换与深色/浅色主题切换。
+本项目是一个基于 Jekyll + GitHub Pages 的个人学术主页。结构化内容和引用量快照集中存储在 `_data/` 目录的 JSON 文件中，通过 Liquid 模板在构建时渲染为 HTML。访客统计通过异步脚本加载。支持中英文双语切换与深色/浅色主题切换。
 
 > 📖 [English version](guide.md)
 
@@ -19,6 +19,7 @@
 │   ├── honors.json          # 荣誉奖项
 │   ├── services.json        # 学术服务分组与双语名单
 │   ├── github_stars.json    # 开源项目 star 数量与采集时间快照
+│   ├── google_scholar.json  # Scholar 官方总引用量与论文引用明细
 │   ├── venues.json          # 期刊/会议分区与影响因子
 │   └── navigation.yml       # 导航菜单（含 title_zh 双语字段）
 ├── _layouts/
@@ -39,7 +40,7 @@
 │   ├── masthead.html        # 顶部导航栏（含语言/主题切换按钮）
 │   ├── seo.html             # SEO meta 标签
 │   ├── analytics.html       # Google Analytics
-│   └── fetch_google_scholar_stats.html  # Google Scholar 引用统计
+│   └── google-scholar-badge.html # 构建时渲染 Scholar 总引用量
 ├── _pages/
 │   └── about.md             # 主页内容（双语 div 块 + Liquid include）
 ├── _sass/                   # 样式源文件
@@ -64,9 +65,12 @@
 ├── scripts/
 │   ├── build-citations.mjs  # 离线引用格式生成器
 │   ├── fetch-github-stars.mjs # GitHub star 快照采集器
+│   ├── fetch-google-scholar.py # Scholar 官方引用量采集器
+│   ├── refresh-site-data.py # 本地和部署共用的统计刷新入口
+│   ├── scholar_snapshot.py  # Scholar 数据校验与原子写入
+│   ├── requirements-scholar.txt # Scholar Python 依赖
 │   └── csl/                 # 本地 IEEE 与 GB/T 7714 样式
-├── package.json             # 引用生成开发依赖
-└── google_scholar_crawler/  # Google Scholar 爬虫
+└── package.json             # 数据刷新命令与引用生成开发依赖
 ```
 
 ## 数据驱动架构
@@ -83,6 +87,7 @@
 | 荣誉 | `_data/honors.json` | `_includes/honors.html` |
 | 学术服务 | `_data/services.json` | `_includes/services.html` |
 | GitHub stars | `_data/github_stars.json` | `_includes/github-repo-button.html` |
+| Scholar 引用统计 | `_data/google_scholar.json` | `_includes/google-scholar-badge.html`、`_includes/publication-card.html` |
 | 期刊分区 | `_data/venues.json` | `_includes/publications.html` 中引用 |
 
 ## 各数据文件格式
@@ -359,29 +364,36 @@ author:
 
 弹窗面板使用半透明云母片风格，滤镜为 `backdrop-filter: blur(16px) saturate(2) contrast(0.96)`。面板与代码区均保留半透明背景，可透出经过模糊处理的主页轮廓。鼠标位于引用内容区域时优先滚动该区域，位于外围遮罩时仍可继续滚动主页。
 
+## 统计数据统一刷新
+
+部署流程统一刷新 Google Scholar 引用量与 GitHub stars，分别写入 `_data/google_scholar.json` 和 `_data/github_stars.json`，再由 Jekyll 渲染页面。所有快照保存在 `_data/`，`google-scholar-stats` 分支仅作为历史保留，已退出读写和部署链路。
+
+本地使用与部署相同的入口。准备 Node.js 24 和 Python 3.12，并在当前 Python 环境安装依赖：
+
+```bash
+python -m pip install -r scripts/requirements-scholar.txt
+npm run data:refresh
+```
+
+`refresh-site-data.py` 依次调用两个采集器。Scholar 抓取最多等待 120 秒，star 采集最多等待 75 秒；单个数据源失败时保留已有快照，并继续处理另一个数据源。刷新结束后校验两份快照，缺少有效回退数据时才中断构建。运行中的 Jekyll 会随 `_data` 变化自动重建。
+
+部署自动准备 Python 依赖，并通过 Actions 内置 `GITHUB_TOKEN` 获取 star 数据。本地可通过环境变量 `GITHUB_TOKEN` 或 `GH_TOKEN` 提供 GitHub 认证，命令遵循现有代理环境变量。Token 仅用于采集，不写入快照或网页。
+
+部署时刷新后的数据随静态站点产物发布；仓库中的快照用于失败回退，本地刷新后也可提交更新。
+
 ## Google Scholar 引用统计
 
-1. 在本地安装 `scholarly` 依赖，并准备可访问 GitHub 的 SSH 推送权限。
-2. Windows 执行 `google_scholar_crawler/git_update.bat`，WSL 执行 `google_scholar_crawler/git_update.sh`。两个脚本均使用当前环境中的 `python`/`python3`——运行前先激活装好爬虫依赖的环境。
-3. 脚本会校验抓取结果、更新本地 `results/` 快照，并仅在数据发生变化时推送到 `google-scholar-stats` 分支。
-4. 若已安装 GitHub CLI，脚本会触发 `deploy.yml`。若没有 `gh`，统计分支仍会成功更新，但网站不会立即重新构建；可手动运行 `gh workflow run deploy.yml --repo zzaiyan/zzaiyan.github.io --ref main`，或等待下一次 `main` 推送触发部署。
-5. `_data/pubs.json` 论文条目中填写 `scholarId` 字段。
+总引用量直接使用 Google Scholar 作者主页返回的 `citedby`，包含当前网站未展示论文的引用，不对论文引用量求和。`citedby_source: "profile"` 标识这一口径，旧版求和快照会被拒绝。
 
-引用数由 `fetch_google_scholar_stats.html` 在 DOM 就绪后异步获取并填充。加载器首先读取带构建版本号的同源快照；本地预览或快照暂时不可用时，再按配置顺序尝试 CDN，最后回退到 GitHub Raw。每个地址最多等待四秒，整个过程不阻塞页面渲染。
+`fetch-google-scholar.py` 只写入 `_data/google_scholar.json`，保存 Scholar ID、总引用量、采集时间和全部返回论文的引用明细，不再产生独立的 results 或徽章数据副本。作者 ID 默认取自这份快照，也可通过 `GOOGLE_SCHOLAR_ID` 环境变量指定。
 
-Google Scholar 对自动化访问有较严格的限制，因此爬虫保留在本地运行。抓取失败时不会覆盖上一次有效数据；网站仍会继续使用上一次成功部署的快照。
+徽章和论文卡片在构建时直接读取数据，单篇通过 `_data/pubs.json` 的 `scholarId` 匹配。零引用或缺失的单篇计数保持隐藏；缺少可用总数时显示 `...`，真实的零总引用量显示 `0`。浏览器无需请求统计 JSON、CDN 或 GitHub Raw。
 
 ## GitHub Star 统计
 
 开源项目的 GitHub 按钮使用 `GitHub ★ 数量` 样式，点击仍跳转仓库。数字在 Jekyll 构建时从 `_data/github_stars.json` 渲染，页面无需请求 GitHub API。按钮悬停提示最近成功采集的 UTC 时间，颜色跟随浅色/深色主题。
 
-本地使用 Node.js 24 运行与部署相同的采集命令，无需安装额外依赖：
-
-```bash
-npm run stars:fetch
-```
-
-脚本读取快照中的仓库列表，调用 GitHub REST API 的 `stargazers_count` 字段。可通过环境变量 `GITHUB_TOKEN` 或 `GH_TOKEN` 提供认证；未配置时匿名请求。命令遵循现有代理环境变量，Token 仅用于采集，不写入快照或网页。Jekyll 服务运行时会自动重建，无需重启。
+star 数据由上述 `npm run data:refresh` 统一刷新。采集器读取快照中的仓库列表，并从 GitHub REST API 获取 `stargazers_count`。
 
 真实的零星标显示 `0`，`stars: null` 表示尚无数据，仅显示 GitHub 按钮。超时、无效响应或 API 限流均保留对应仓库已有快照；认证失败或限流时停止后续请求。所有请求失败时不会改写文件。
 
@@ -394,8 +406,6 @@ npm run stars:fetch
 ```liquid
 {% raw %}{% include github-repo-button.html repo="owner/repo" %}{% endraw %}
 ```
-
-每次部署会通过 Actions 内置 `GITHUB_TOKEN` 刷新数据，再构建静态站点。部署时生成的快照随站点产物发布；仓库中的快照作为失败回退，可在本地采集后随代码提交更新。
 
 ## 静态资源加载
 
@@ -435,8 +445,7 @@ npm run stars:fetch
 | `description` / `description_zh` | 站点描述（双语） |
 | `seo_title` / `seo_description` | 搜索引擎与社交分享元信息 |
 | `repository` | GitHub 仓库名（`user/repo`） |
-| `google_scholar_stats_use_cdn` | 同源 Scholar 快照失败后是否启用 CDN 回退 |
-| `google_scholar.*` | Scholar ID、统计分支/文件、CDN 列表与 GitHub Raw 回退地址 |
+| `google_scholar.id` | Scholar 作者 ID，用于验证引用量快照与徽章匹配 |
 | `visitor_trace.base_url` / `visitor_trace.site_id` | VisitorTrace 组件地址与站点标识 |
 | `google_analytics_id` | Google Analytics ID |
 | `author.name` / `author.name_zh` | 作者姓名（双语） |
@@ -468,7 +477,7 @@ SSH 部署使用 `server-production` Environment。需配置 `SSH_HOST`、`SSH_U
 |------|----------|
 | 论文卡片不显示 | 检查 `_data/pubs.json` JSON 语法 |
 | 引用弹窗无反应 | 检查 `_data/citation_outputs.json` 中对应 key 是否存在，并运行 `npm run citations:build` |
-| 引用数不显示 | 确认 `google-scholar-stats` 分支有数据 |
-| 统计分支已更新但网页仍显示旧数据 | 手动触发 `deploy.yml`；仅推送统计分支不会触发网站工作流 |
+| 引用数不显示 | 检查 `_data/google_scholar.json` 与作者 ID；重新采集后会自动同步本地快照 |
+| 网页统计未更新 | 查看部署中的 Refresh site data 日志，确认是否使用了失败回退快照 |
 | Markdown 未渲染 | 确认 JSON 中的引号已正确转义 |
 | 切换语言后导航项消失 | 检查 `jquery.greedy-navigation.js` 是否包含 `resetGreedyNav` 函数 |

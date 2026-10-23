@@ -6,6 +6,8 @@
 {% assign reference = site.data.references[pub.referenceKey] %}
 {% assign equal_authors = pub.authorRoles.equalContribution %}
 {% assign corresponding_authors = pub.authorRoles.corresponding %}
+{% assign paper_citations = 0 %}
+{% if pub.scholarId %}{% assign paper_citations = site.data.google_scholar.publications[pub.scholarId].num_citations | default: 0 %}{% endif %}
 
 <article class="paper-box{% if compact %} paper-box--compact{% else %} paper-box--featured{% endif %}">
 {% unless compact %}
@@ -35,7 +37,7 @@
         {% if include.show_venue_info %}{% assign venue_info = site.data.venues[pub.venueShort] %}{% if venue_info %}<span class="pub-metric-chip">{{ venue_info.rank }} &middot; IF {{ venue_info.IF }}</span>{% endif %}{% endif %}{% if pub.note %}{% assign note_tags = pub.note | replace: "|", "&#124;" | split: ", " %}{% for tag in note_tags %}<span class="pub-tag">{{ tag }}</span>{% endfor %}{% endif %}
       </div>
       <div class="pub-links">
-        {% for link in pub.links %}<a class="pub-btn" href="{{ link.url }}">{% if link.url contains 'github.com' %}<i class="fab fa-github"></i>{% elsif link.name == 'PDF' %}<i class="fas fa-file-pdf"></i>{% elsif link.name == 'arXiv' %}<i class="ai ai-arxiv"></i>{% else %}<i class="fas fa-link"></i>{% endif %} {{ link.name }}</a>{% endfor %}{% if pub.referenceKey %}<a class="pub-btn" href="#citation-{{ pub.referenceKey }}"><i class="fas fa-quote-right"></i> Cite</a>{% endif %}{% if pub.scholarId %}<span class="show_paper_citations" data-paper-id="{{ pub.scholarId }}"></span>{% endif %}
+        {% for link in pub.links %}<a class="pub-btn" href="{{ link.url }}">{% if link.url contains 'github.com' %}<i class="fab fa-github"></i>{% elsif link.name == 'PDF' %}<i class="fas fa-file-pdf"></i>{% elsif link.name == 'arXiv' %}<i class="ai ai-arxiv"></i>{% else %}<i class="fas fa-link"></i>{% endif %} {{ link.name }}</a>{% endfor %}{% if pub.referenceKey %}<a class="pub-btn" href="#citation-{{ pub.referenceKey }}"><i class="fas fa-quote-right"></i> Cite</a>{% endif %}{% if paper_citations > 0 %}<span class="show_paper_citations"><i class="ai ai-google-scholar" aria-hidden="true"></i>Citations: <strong>{{ paper_citations }}</strong></span>{% endif %}
       </div>
     </div>
   </div>

@@ -14,15 +14,8 @@ description_zh: "构建面向开放世界地球观测的人工智能。"
 seo_title: "Zaiyan Zhang (张再筵) | Intelligent Earth Observation"
 seo_description: "Academic homepage of Zaiyan Zhang (张再筵), focusing on remote sensing image processing, open-world interpretation, multimodal foundation models, and AI agents for scientific discovery."
 repository: "zzaiyan/zzaiyan.github.io"
-google_scholar_stats_use_cdn: true
 google_scholar:
   id: "ZpxXejIAAAAJ"
-  stats_branch: "google-scholar-stats"
-  stats_file: "gs_data.json"
-  stats_cdn_base_urls:
-    - "https://cdn.jsdmirror.com/gh"
-    - "https://cdn.jsdelivr.net/gh"
-  raw_base_url: "https://raw.githubusercontent.com"
 
 visitor_trace:
   base_url: "https://stats.zzaiyan.com"
@@ -87,7 +80,7 @@ include:
   - files
 exclude:
   - docs
-  - google_scholar_crawler
+  - scripts
   - "*.sublime-project"
   - "*.sublime-workspace"
   - .asset-cache

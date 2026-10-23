@@ -3,6 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "data:refresh": "python scripts/refresh-site-data.py",
     "stars:fetch": "node --use-env-proxy scripts/fetch-github-stars.mjs",
     "citations:build": "node scripts/build-citations.mjs",
     "citations:check": "node scripts/build-citations.mjs --check"
