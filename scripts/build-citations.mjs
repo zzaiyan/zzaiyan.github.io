@@ -140,11 +140,11 @@ function buildOutputs() {
         title: reference.title,
         formats: {
           bibtex: formatBibtex(reference),
-          ris: cite.format("ris").trim(),
-          "csl-json": JSON.stringify(reference, null, 2),
           ieee: formatBibliography(cite, "ieee-local"),
           apa: formatBibliography(cite, "apa"),
           "gb-t-7714": formatBibliography(cite, "gbt7714-local"),
+          ris: cite.format("ris").trim(),
+          "csl-json": JSON.stringify(reference, null, 2),
         },
       }];
     }),
