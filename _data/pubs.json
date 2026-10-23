@@ -107,14 +107,14 @@
     "conference": [
         {
             "id": "zhang2026task",
-            "title": "Task-Driven Prompt Learning: A Joint Framework for Multi-modal Cloud Removal and Segmentation",
+            "title": "Task-Driven Prompt Learning: A Joint Framework for Multi-Modal Cloud Removal and Segmentation",
             "authorRoles": {"corresponding": [4]},
             "venue": "IEEE International Geoscience and Remote Sensing Symposium",
             "venueShort": "IGARSS",
             "year": 2026,
             "badge": "IGARSS 2026",
             "image": "images/publications/task-driven.webp",
-            "doi": null,
+            "doi": "https://doi.org/10.1109/IGARSS60577.2026.11730342",
             "note": "Optical-SAR Fusion, Cloud Removal, Segmentation",
             "scholarId": "ZpxXejIAAAAJ:d1gkVwhDpl0C",
             "links": [

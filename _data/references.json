@@ -102,18 +102,22 @@
     },
     "zhang2026task": {
         "id": "zhang2026task",
-        "type": "article-journal",
-        "title": "Task-Driven Prompt Learning: A Joint Framework for Multi-modal Cloud Removal and Segmentation",
+        "type": "paper-conference",
+        "title": "Task-Driven Prompt Learning: A Joint Framework for Multi-Modal Cloud Removal and Segmentation",
         "author": [
             { "family": "Zhang", "given": "Zaiyan" },
             { "family": "Li", "given": "Jie" },
             { "family": "Shi", "given": "Shaowei" },
             { "family": "Yuan", "given": "Qiangqiang" }
         ],
-        "container-title": "arXiv",
-        "genre": "Preprint",
-        "URL": "https://arxiv.org/abs/2601.12052",
-        "issued": { "date-parts": [[2026]] }
+        "container-title": "IGARSS 2026 - 2026 IEEE International Geoscience and Remote Sensing Symposium",
+        "event-title": "IGARSS 2026 - 2026 IEEE International Geoscience and Remote Sensing Symposium",
+        "event-place": "Washington DC, DC, USA",
+        "publisher": "IEEE",
+        "page": "1979-1982",
+        "DOI": "10.1109/IGARSS60577.2026.11730342",
+        "URL": "https://doi.org/10.1109/IGARSS60577.2026.11730342",
+        "issued": { "date-parts": [[2026, 8]] }
     },
     "wan2026lad": {
         "id": "wan2026lad",
