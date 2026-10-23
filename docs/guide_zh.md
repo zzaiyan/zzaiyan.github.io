@@ -11,7 +11,6 @@
 ├── _config.yml              # Jekyll 全局配置（站点标题、作者信息、双语描述等）
 ├── _data/
 │   ├── publications.json    # 论文：CSL 元数据、展示信息与 Scholar 映射
-│   ├── patents.json         # 专利
 │   ├── generated/
 │   │   └── citations.json   # 自动生成的多格式引用
 │   ├── metrics/
@@ -68,6 +67,8 @@
 │   ├── build-citations.mjs  # 离线引用格式生成器
 │   ├── fetch-github-stars.mjs # GitHub star 快照采集器
 │   ├── fetch-google-scholar.py # Scholar 官方引用量采集器
+│   ├── fetch-google-scholar.sh # Linux/macOS 本地一键采集
+│   ├── fetch-google-scholar.bat # Windows 本地一键采集
 │   ├── refresh-site-data.py # 本地和部署共用的统计刷新入口
 │   ├── scholar_snapshot.py  # Scholar 数据校验与原子写入
 │   ├── requirements-scholar.txt # Scholar Python 依赖
@@ -82,7 +83,6 @@
 | 板块 | 数据文件 | 模板文件 |
 |------|----------|----------|
 | 论文 | `_data/publications.json` | `_includes/publications.html` |
-| 专利 | `_data/patents.json` | `_includes/publications.html` |
 | 多格式引用 | `_data/publications.json` → `_data/generated/citations.json` | 内联至 `_includes/scripts.html` |
 | 新闻 | `_data/news.json` | `_includes/news.html` |
 | 教育 | `_data/education.json` | `_includes/education.html` |
@@ -97,7 +97,7 @@
 
 ### _data/publications.json — 论文的唯一人工数据源
 
-按 `journal`、`conference`、`preprint` 分组。每篇记录只包含稳定的 `id`、标准 CSL-JSON `citation`、网站专用 `display`，以及可选的 `scholar_id`。不要重复保存标题、作者、年份或 DOI，不需要维护独立的引用 key。
+按 `journal`、`conference`、`preprint` 分组。每篇记录只包含稳定的 `id`、采用 CSL 字段的 `citation`（作者使用二元数组简写）、网站专用 `display`，以及可选的 `scholar_id`。不要重复保存标题、作者、年份或 DOI，不需要维护独立的引用 key。
 
 ```json
 {
@@ -108,42 +108,21 @@
         "type": "article-journal",
         "title": "Example paper",
         "author": [
-          {
-            "family": "Zhang",
-            "given": "Zaiyan"
-          },
-          {
-            "family": "Li",
-            "given": "Jie"
-          }
+          ["Zhang", "Zaiyan"],
+          ["Li", "Jie"]
         ],
         "container-title": "Journal Name",
-        "issued": {
-          "date-parts": [
-            [
-              2025
-            ]
-          ]
-        },
+        "issued": {"date-parts": [[2025]]},
         "URL": "https://example.com/paper"
       },
       "display": {
         "venue_key": "Journal",
         "badge": "Journal",
         "image": "images/publications/teaser.webp",
-        "tags": [
-          "Image Restoration"
-        ],
-        "author_roles": {
-          "corresponding": [
-            2
-          ]
-        },
+        "tags": ["Image Restoration"],
+        "author_roles": {"corresponding": [2]},
         "links": [
-          {
-            "name": "PDF",
-            "url": "assets/pubs/example.pdf"
-          }
+          {"name": "PDF", "url": "assets/pubs/example.pdf"}
         ]
       }
     }
@@ -157,13 +136,12 @@
 
 `display.venue` 仅在需要与正式文献名称不同的展示名时填写，默认使用 `citation.container-title`。`venue_key` 用于查询分区/IF，`tags` 为标签数组，`links` 为按钮列表。
 
+作者必须写成 `[姓, 名]` 二元数组，例如 `["Zhang", "Zaiyan"]`、`["de la Cruz", "Juan Carlos"]`。每项恰好包含两个非空字符串，只去除首尾空白，保留内部空格、连字符、大小写和署名顺序。不要把姓名拼为一个字符串，也不要混入 `*`、`†`。网页按“名 姓”展示；生成器将二元组转换为标准 `{ "family": "Zhang", "given": "Zaiyan" }`，所有引用导出仍为标准 CSL 作者结构。格式不合法时直接报错，不猜测姓和名。
+
 `display.author_roles` 使用从 1 开始的作者位置：`equal_contribution` 添加 `†`，`corresponding` 添加 `*`。与 `_config.yml` 中 `author.citation_name` 匹配的作者自动加下划线。`display.layout: "compact"` 显示无图紧凑卡片，省略时为带图卡片；`display.visible: false` 隐藏论文，但保留分类、元数据和生成的引用。
 
-可选的 `scholar_id` 保存完整的 `作者ID:论文ID`，用于关联 `_data/metrics/google_scholar.json`，不要求 Scholar 已收录该论文。网站自定义字段使用 `snake_case`，CSL 字段保留其标准命名。JSON 统一使用两空格缩进。
+可选的 `scholar_id` 保存完整的 `作者ID:论文ID`，用于关联 `_data/metrics/google_scholar.json`，不要求 Scholar 已收录该论文。网站自定义字段使用 `snake_case`，CSL 字段保留其标准命名。JSON 使用两空格缩进；作者二元组、短数组、链接小对象及 `issued`、`author_roles` 保持单行，方便手工维护。
 
-### _data/patents.json — 专利
-
-专利为独立数组，每条记录包含 `date`、`number`、`title`、`authors`，不套用论文引用结构。
 
 ### 引用格式生成
 
@@ -175,7 +153,7 @@ npm run data:build
 npm run citations:check
 ```
 
-生成器校验分类、唯一 ID、必要文献字段、作者角色位置和 Scholar ID 格式/唯一性，将 BibTeX、RIS、CSL-JSON、IEEE、APA、GB/T 7714 写入 `_data/generated/citations.json`。该文件是可重建快照，不应手工编辑；`npm run citations:build` 是 `data:build` 的兼容别名。
+生成器校验分类、唯一 ID、必要文献字段、作者二元组、作者角色位置和 Scholar ID 格式/唯一性，将 BibTeX、RIS、CSL-JSON、IEEE、APA、GB/T 7714 写入 `_data/generated/citations.json`。该文件是可重建快照，不应手工编辑；`npm run citations:build` 是 `data:build` 的兼容别名。
 
 部署会在 Jekyll 构建前自动重新生成。`npm run serve` 在启动本地预览前执行相同生成步骤；预览期间修改论文后，可再运行 `npm run data:build` 刷新引用弹窗。生成过程完全离线，浏览器无需引用库或 CDN。
 
@@ -259,7 +237,7 @@ npm run citations:check
 
 按数据文件中的顺序显示分组及条目，空分组自动隐藏。`title` / `title_zh` 定义分组标题，`items` 中的 `name` / `name_zh` 定义服务名称。中英文跟随全站语言切换，中文缺失时回退到英文。名称填写纯文本，不带末尾句号，模板统一添加标点。
 
-与 Patents 一样使用原生 Markdown 二级标题和单列列表，圆点、缩进和行距统一继承站点基础样式。
+使用原生 Markdown 二级标题和单列列表，圆点、缩进和行距统一继承站点基础样式。
 
 ```json
 [
@@ -395,11 +373,27 @@ npm run data:refresh
 
 ### 本地更新 Scholar 兜底快照
 
-只更新 Scholar 时运行独立入口，不需要 GitHub Token：
+安装 Python 3（推荐 3.12）后，即可使用一键脚本，不需要 Node.js、Ruby 或 GitHub Token。
+
+Linux/macOS：
 
 ```bash
-python -m pip install -r scripts/requirements-scholar.txt
-npm run scholar:fetch
+bash scripts/fetch-google-scholar.sh
+```
+
+Windows：双击 `scripts\fetch-google-scholar.bat`，或在项目目录的终端运行：
+
+```bat
+scripts\fetch-google-scholar.bat
+```
+
+两个脚本均从自身位置定位项目，支持从任意工作目录调用。首次运行自动创建项目内的 `.venv-scholar/` 并安装 `scripts/requirements-scholar.txt` 中的依赖；后续复用该环境并检查依赖。环境已被 Git 忽略，不影响系统或其他 Python 环境。Windows 默认优先使用 `py -3.12`，其次为其他 Python 3 或 `python`；脚本完成后等待按键，终端自动化可加 `--no-pause`。
+
+首次创建环境时可通过 `SCHOLAR_PYTHON` 指定 Python 可执行文件路径，例如 Linux/macOS 的 `SCHOLAR_PYTHON=/path/to/python bash scripts/fetch-google-scholar.sh`，或 Windows 先执行 `set "SCHOLAR_PYTHON=C:\Python312\python.exe"`。已有依赖环境也可继续使用 `npm run scholar:fetch`。
+
+采集成功后，快照位于 `_data/metrics/google_scholar.json`。检查数据并将该文件提交到远程，即可更新 Actions 的失败兜底：
+
+```bash
 git add _data/metrics/google_scholar.json
 git commit -m "Update Scholar citation snapshot"
 git push origin main

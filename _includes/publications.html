@@ -29,11 +29,3 @@
 {% include publication-card.html pub=pub show_venue_info=false %}
 {% endfor %}
 {% endif %}
-
-{% if site.data.patents.size > 0 %}
-## <span class="lang-en">Patents</span><span class="lang-zh">专利</span>
-
-{% for pat in site.data.patents %}
-- _{{ pat.date }}_, {{ pat.number }}, **{{ pat.title }}**, &ensp;{% for author in pat.authors %}<span{% if author == site.author.name_zh %} class="pub-author--self"{% endif %}>{{ author }}</span>{% unless forloop.last %}, {% endunless %}{% endfor %}.
-{% endfor %}
-{% endif %}

@@ -46,9 +46,9 @@ for (const group of groups) {
     }
     if (
       !Array.isArray(citation.author) || citation.author.length === 0 ||
-      citation.author.some((author) => !isObject(author) || !isText(author.family) || !isText(author.given))
+      citation.author.some((author) => !Array.isArray(author) || author.length !== 2 || !author.every(isText))
     ) {
-      reject("Missing author names");
+      reject("Each author must be a [family, given] pair of nonempty strings");
     }
     if (!Number.isInteger(citation.issued?.["date-parts"]?.[0]?.[0])) {
       reject("Missing publication year");
@@ -91,7 +91,11 @@ for (const group of groups) {
       }
       scholarIds.add(scholarId);
     }
-    const reference = { id, ...citation };
+    const reference = {
+      id,
+      ...citation,
+      author: citation.author.map(([family, given]) => ({ family: family.trim(), given: given.trim() })),
+    };
     if (reference.DOI && !reference.URL) reference.URL = `https://doi.org/${reference.DOI}`;
     references[id] = reference;
   }
