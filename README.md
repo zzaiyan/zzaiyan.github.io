@@ -17,7 +17,7 @@
 - **双语切换**：支持中英文一键切换，默认英文
 - **深色/浅色主题**：内置主题切换，默认浅色
 - **响应式布局**：移动端友好，导航栏自适应折叠
-- **统一统计刷新**：部署时更新 Google Scholar 引用量和 GitHub stars，快照统一存放于 `_data/`，本地可运行 `npm run data:refresh`
+- **统一统计刷新**：部署时更新 Google Scholar 引用量和 GitHub stars，快照统一存放于 `_data/metrics/`，本地可运行 `npm run data:refresh` 或 `npm run scholar:fetch`
 
 ## 📖 文档
 
@@ -31,9 +31,10 @@
 ```bash
 # 安装依赖
 bundle install
+npm ci
 
-# 本地预览
-bundle exec jekyll serve
+# 生成引用数据并启动本地预览
+npm run serve
 ```
 
-编辑 `_config.yml` 填写个人信息，修改 `_data/` 下的 JSON 文件更新内容，即可完成定制。
+编辑 `_config.yml` 填写个人信息。论文只维护 `_data/publications.json`，专利维护 `_data/patents.json`；`_data/generated/` 为自动生成的引用格式，`_data/metrics/` 为在线统计快照。

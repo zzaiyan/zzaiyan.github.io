@@ -3,10 +3,13 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "data:build": "node scripts/build-citations.mjs",
     "data:refresh": "python scripts/refresh-site-data.py",
+    "scholar:fetch": "python scripts/fetch-google-scholar.py",
     "stars:fetch": "node --use-env-proxy scripts/fetch-github-stars.mjs",
     "citations:build": "node scripts/build-citations.mjs",
-    "citations:check": "node scripts/build-citations.mjs --check"
+    "citations:check": "node scripts/build-citations.mjs --check",
+    "serve": "npm run data:build && bundle exec jekyll serve"
   },
   "devDependencies": {
     "@citation-js/core": "0.8.2",

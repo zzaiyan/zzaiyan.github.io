@@ -3,7 +3,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const snapshotPath = path.join(root, "_data", "github_stars.json");
+const snapshotPath = path.join(root, "_data", "metrics", "github_stars.json");
 const snapshot = JSON.parse(fs.readFileSync(snapshotPath, "utf8"));
 const repositories = Object.keys(snapshot);
 const token = process.env.GITHUB_TOKEN || process.env.GH_TOKEN;

@@ -5,7 +5,7 @@ from pathlib import Path
 import tempfile
 
 
-SITE_SNAPSHOT = Path(__file__).resolve().parent.parent / "_data" / "google_scholar.json"
+SITE_SNAPSHOT = Path(__file__).resolve().parent.parent / "_data" / "metrics" / "google_scholar.json"
 
 
 def validate_author(author: dict) -> None:
