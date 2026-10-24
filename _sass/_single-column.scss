@@ -53,6 +53,31 @@ $about-gap: 3.5rem;
   > .lang-zh {
     line-height: 1.65;
   }
+
+  // Original hues and HSL saturation; contrast ~4.6:1 on white, ~7:1 on #181818.
+  .research-purple {
+    color: #8d58dc;
+
+    html[data-theme="dark"] & {
+      color: #b493e8;
+    }
+  }
+
+  .research-blue {
+    color: #4370da;
+
+    html[data-theme="dark"] & {
+      color: #84a2e7;
+    }
+  }
+
+  .research-teal {
+    color: #21846b;
+
+    html[data-theme="dark"] & {
+      color: #2eb794;
+    }
+  }
 }
 
 .about-section .author__bio,
