@@ -2,14 +2,6 @@
    MIXINS
    ========================================================================== */
 
-%tab-focus {
-  /* Default*/
-  outline: thin dotted $warning-color;
-  /* Webkit*/
-  outline: 5px auto $warning-color;
-  outline-offset: -2px;
-}
-
 /*
    em function
    ========================================================================== */

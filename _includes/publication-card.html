@@ -13,7 +13,7 @@
 <article class="paper-box{% if compact %} paper-box--compact{% else %} paper-box--featured{% endif %}">
 {% unless compact %}
   <div class="paper-box-image">
-    <div>
+    <div class="publication-figure" style="--figure-image: url('{{ display.image | relative_url }}');">
       {% if display.badge %}<span class="badge">{{ display.badge }}</span>{% endif %}
       <img src="{{ display.image | relative_url }}" alt="{{ reference.title }}">
     </div>

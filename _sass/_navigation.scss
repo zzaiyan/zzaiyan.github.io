@@ -183,14 +183,42 @@
   background: $background-color;
 
   a {
+    position: relative;
+    isolation: isolate;
     display: block;
     margin: 0 1rem;
     padding: 0.5rem 0;
     color: $masthead-link-color;
     text-decoration: none;
+    border-radius: 999px;
+    transition: color 0.18s ease;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 4px -8px;
+      z-index: -1;
+      border-radius: inherit;
+      background: rgba($info-color, 0.06);
+      opacity: 0;
+      transform: scale(0.94);
+      transition: opacity 0.18s ease, transform 0.18s ease, background-color 0.18s ease;
+      pointer-events: none;
+    }
 
     &:hover {
       color: $masthead-link-color-hover;
+    }
+
+    &.is-nav-hint {
+      color: $info-color;
+
+      &::before {
+        opacity: 1;
+        transform: scale(1);
+        background: rgba($info-color, 0.12);
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+      }
     }
   }
 
@@ -201,20 +229,32 @@
   }
 
   .greedy-nav__more {
+    position: relative;
     flex-shrink: 0;
     padding: 0.5rem 0;
     margin: 0 1rem;
     border: 0;
-    outline: none;
     background: transparent;
     color: $masthead-link-color;
     cursor: pointer;
     font-size: 1em;
     line-height: 1;
+    border-radius: 4px;
     transition: color 0.2s;
 
     &:hover {
       color: $masthead-link-color-hover;
+    }
+
+    &[data-current-section]::after {
+      content: "";
+      position: absolute;
+      top: 1px;
+      right: -6px;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: $info-color;
     }
 
     &.open i {
@@ -246,31 +286,6 @@
         a {
           margin-right: 0;
         }
-      }
-    }
-
-    a {
-      position: relative;
-
-      &:before {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        height: 4px;
-        background: mix(#fff, $primary-color, 50%);
-        width: 100%;
-        -webkit-transition: $global-transition;
-        transition: $global-transition;
-        -webkit-transform: scaleX(0);
-            -ms-transform: scaleX(0);
-                transform: scaleX(0); /* hide*/
-      }
-
-      &:hover:before {
-        -webkit-transform: scaleX(1);
-            -ms-transform: scaleX(1);
-                transform: scaleX(1); /* reveal*/
       }
     }
   }
@@ -313,10 +328,14 @@
       margin: 0;
       padding: 10px 20px;
       font-size: $type-size-5;
+      border-radius: 6px;
+
+      &::before {
+        inset: 0;
+      }
 
       &:hover {
         color: $masthead-link-color-hover;
-        background: mix(#fff, $primary-color, 75%);
       }
     }
 
@@ -328,6 +347,14 @@
         border-bottom: none;
       }
     }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .greedy-nav a,
+  .greedy-nav a::before,
+  .greedy-nav__more i {
+    transition: none;
   }
 }
 
