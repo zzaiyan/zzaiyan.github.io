@@ -15,7 +15,7 @@
   height: auto;
   /* sticky footer fix end */
   margin-top: 5em;
-  color: mix(#fff, $gray, 25%);
+  color: $gray;
   -webkit-animation: intro 0.3s both;
           animation: intro 0.3s both;
   -webkit-animation-delay: 0.45s;
@@ -38,11 +38,18 @@
   }
 
   a {
-    color: inherit;
+    color: #63758b;
+    font-weight: 500;
     text-decoration: none;
+    border-radius: 3px;
+    transition: color 0.18s ease;
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
+      color: #496b91;
       text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.17em;
     }
   }
 
@@ -50,7 +57,7 @@
   .fab,
   .far,
   .fal {
-    color: mix(#fff, $gray, 25%);
+    color: inherit;
   }
 }
 
@@ -77,7 +84,6 @@
     padding-bottom: 5px;
     font-family: $sans-serif-narrow;
     font-size: $type-size-6;
-    text-transform: uppercase;
   }
 
   li + li:before {
@@ -87,7 +93,6 @@
 
   a {
     padding-right: 10px;
-    font-weight: 600;
   }
 
   .social-icons {

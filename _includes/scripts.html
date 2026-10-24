@@ -1,5 +1,8 @@
 <script src="assets/js/lang-toggle.js" defer></script>
 <script src="assets/js/main.min.js" defer></script>
+{% if page.permalink == '/' %}
+<script src="{{ '/assets/js/navigation-hints.js' | relative_url }}" defer></script>
+{% endif %}
 <script>
   window.CitationDatabase = {{ site.data.generated.citations | jsonify }};
 </script>

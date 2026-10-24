@@ -39,6 +39,29 @@ html[data-theme="dark"] {
     color: #ccc !important;
   }
 
+  .masthead .greedy-nav a {
+    &::before {
+      background: rgba(122, 176, 230, 0.09);
+    }
+
+    &.is-nav-hint {
+      color: #9cc8ff !important;
+
+      &::before {
+        background: rgba(122, 176, 230, 0.17);
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.09);
+      }
+    }
+
+    &:hover {
+      color: #9cc8ff !important;
+    }
+  }
+
+  .greedy-nav__more[data-current-section]::after {
+    background: #9cc8ff;
+  }
+
   .toolbar-btn {
     color: #7ab0e6;
     background: rgba(122, 176, 230, 0.1);
@@ -180,6 +203,15 @@ html[data-theme="dark"] {
     background-color: #141414;
     border-top-color: #333;
     color: #888;
+
+    a {
+      color: #9aa9bc;
+
+      &:hover,
+      &:focus-visible {
+        color: #bed0e5;
+      }
+    }
   }
 
   code,

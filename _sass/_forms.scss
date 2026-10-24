@@ -222,8 +222,6 @@ textarea[readonly] {
 input:focus,
 textarea:focus {
   border-color: $primary-color;
-  outline: 0;
-  outline: thin dotted \9;
 }
 
 input[type="file"]:focus,

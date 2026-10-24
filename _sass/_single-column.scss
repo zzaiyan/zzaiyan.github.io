@@ -206,6 +206,12 @@ $about-gap: 3.5rem;
   box-shadow: none;
   pointer-events: auto;
   z-index: auto;
+
+  // This is an inline social grid, not the legacy dropdown.
+  &::before,
+  &::after {
+    content: none;
+  }
 }
 
 .about-section .author__urls_sm {

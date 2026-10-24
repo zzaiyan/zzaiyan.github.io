@@ -120,20 +120,6 @@ blockquote {
   }
 }
 
-/* links */
-
-a {
-  
-  &:focus {
-    @extend %tab-focus;
-  }
-
-  &:hover,
-  &:active {
-    outline: 0;
-  }
-}
-
 /* code */
 
 tt, code, kbd, samp, pre {
