@@ -88,7 +88,7 @@
       border-radius: 0;
 
       &:hover {
-        color: $link-color-hover;
+        color: var(--color-link-hover);
       }
 
       &.current {
@@ -136,7 +136,7 @@
     border-radius: $border-radius;
 
     &:hover {
-      color: $link-color-hover;
+      color: var(--color-link-hover);
     }
 
     &:first-child {
@@ -164,7 +164,7 @@
 .page__comments + .pagination {
   margin-top: 2em;
   padding-top: 2em;
-  border-top: 1px solid $border-color;
+  border-top: 1px solid var(--color-border);
 }
 
 
@@ -188,7 +188,7 @@
     display: block;
     margin: 0 1rem;
     padding: 0.5rem 0;
-    color: $masthead-link-color;
+    color: var(--color-nav-text);
     text-decoration: none;
     border-radius: 999px;
     transition: color 0.18s ease;
@@ -199,7 +199,7 @@
       inset: 4px -8px;
       z-index: -1;
       border-radius: inherit;
-      background: rgba($info-color, 0.06);
+      background: theme-alpha("color-link", 0.06);
       opacity: 0;
       transform: scale(0.94);
       transition: opacity 0.18s ease, transform 0.18s ease, background-color 0.18s ease;
@@ -207,17 +207,17 @@
     }
 
     &:hover {
-      color: $masthead-link-color-hover;
+      color: var(--color-nav-hover);
     }
 
     &.is-nav-hint {
-      color: $info-color;
+      color: var(--color-nav-current);
 
       &::before {
         opacity: 1;
         transform: scale(1);
-        background: rgba($info-color, 0.12);
-        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+        background: theme-alpha("color-link", var(--nav-hint-tint));
+        box-shadow: inset 0 0 0 1px theme-alpha("color-white", var(--nav-rim-opacity));
       }
     }
   }
@@ -235,7 +235,7 @@
     margin: 0 1rem;
     border: 0;
     background: transparent;
-    color: $masthead-link-color;
+    color: var(--color-nav-text);
     cursor: pointer;
     font-size: 1em;
     line-height: 1;
@@ -243,7 +243,7 @@
     transition: color 0.2s;
 
     &:hover {
-      color: $masthead-link-color-hover;
+      color: var(--color-nav-hover);
     }
 
     &[data-current-section]::after {
@@ -254,7 +254,7 @@
       width: 5px;
       height: 5px;
       border-radius: 50%;
-      background: $info-color;
+      background: var(--color-link);
     }
 
     &.open i {
@@ -296,9 +296,9 @@
     right: 0;
     margin-top: 15px;
     padding: 5px;
-    border: 1px solid $border-color;
+    border: 1px solid var(--color-border);
     border-radius: $border-radius;
-    background: #fff;
+    background: var(--color-menu-surface);
     box-shadow: 0 4px 12px rgba(#000, 0.15);
     min-width: 10rem;
     z-index: 3;
@@ -311,7 +311,7 @@
       right: 10px;
       border-left: 8px solid transparent;
       border-right: 8px solid transparent;
-      border-bottom: 8px solid $border-color;
+      border-bottom: 8px solid var(--color-border);
     }
 
     &::after {
@@ -321,7 +321,7 @@
       right: 11px;
       border-left: 7px solid transparent;
       border-right: 7px solid transparent;
-      border-bottom: 7px solid #fff;
+      border-bottom: 7px solid var(--color-menu-surface);
     }
 
     a {
@@ -335,13 +335,13 @@
       }
 
       &:hover {
-        color: $masthead-link-color-hover;
+        color: var(--color-nav-hover);
       }
     }
 
     li {
       display: block;
-      border-bottom: 1px solid $border-color;
+      border-bottom: 1px solid var(--color-border);
 
       &:last-child {
         border-bottom: none;
@@ -411,7 +411,7 @@
   font-size: $type-size-6;
   font-weight: 600;
   text-transform: uppercase;
-  border-bottom: 1px solid $border-color;
+  border-bottom: 1px solid var(--color-border);
 }
 
 
@@ -425,7 +425,7 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   background-color: #fff;
-  border: 1px solid $border-color;
+  border: 1px solid var(--color-border);
   border-radius: $border-radius;
   box-shadow: $box-shadow;
 
@@ -452,7 +452,7 @@
     font-size: $type-size-7;
     font-weight: 600;
     line-height: 1.5;
-    border-bottom: 1px solid $border-color;
+    border-bottom: 1px solid var(--color-border);
 
     &:hover {
       color: #000;

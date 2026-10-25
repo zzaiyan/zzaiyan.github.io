@@ -1,13 +1,9 @@
 /* Shared keyboard focus for links, controls, and disclosure widgets. */
 :root :where(a[href], button, input, select, textarea, summary, [role="button"], [role="tab"], [tabindex]:not([tabindex="-1"])):focus-visible {
-  outline: 2px solid #607fa8;
+  outline: 2px solid var(--color-focus);
   outline-offset: 3px;
 }
 
 :root :where(a[href], button, input, select, textarea, summary, [role="button"], [role="tab"], [tabindex]:not([tabindex="-1"])):focus:not(:focus-visible) {
   outline: none;
-}
-
-html[data-theme="dark"] :where(a[href], button, input, select, textarea, summary, [role="button"], [role="tab"], [tabindex]:not([tabindex="-1"])):focus-visible {
-  outline-color: #94afd3;
 }

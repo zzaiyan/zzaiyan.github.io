@@ -1,0 +1,111 @@
+/* Palette -> theme roles -> component recipes. Keep actual color values here. */
+@mixin theme-colors($dark: false) {
+  $link: if($dark, palette("blue", glow-dark), palette("blue", ink));
+  $roles: (
+    color-canvas: if($dark, neutral(canvas-dark), neutral(canvas)),
+    color-surface: if($dark, neutral(surface-dark), neutral(surface)),
+    color-text: if($dark, neutral(text-dark), neutral(text)),
+    color-heading: if($dark, neutral(heading-dark), neutral(heading)),
+    color-secondary: if($dark, neutral(secondary-dark), mix(neutral(white), neutral(text), 15%)),
+    color-muted: if($dark, neutral(muted-dark), neutral(muted)),
+    color-border: if($dark, neutral(border-dark), neutral(border)),
+    color-code: if($dark, neutral(code-dark), neutral(code)),
+    color-link: $link,
+    color-link-hover: if($dark, palette("blue", highlight), mix(neutral(black), $link, 25%)),
+    color-action-text: if($dark, neutral(canvas-dark), neutral(white)),
+    color-focus: if($dark, #94afd3, #607fa8),
+    color-nav-text: if($dark, #ccc, neutral(muted)),
+    color-nav-hover: if($dark, palette("blue", highlight), mix(neutral(black), neutral(gray), 25%)),
+    color-nav-current: if($dark, palette("blue", highlight), $link),
+    color-nav-surface: if($dark, #14161a, #d2eef4),
+    color-menu-surface: if($dark, #1e1e1e, neutral(white)),
+    color-footer-surface: if($dark, #141414, mix(neutral(white), neutral(gray), 90%)),
+    color-footer-text: if($dark, #888, mix(neutral(black), neutral(muted), 8%)),
+    color-footer-link: if($dark, #9aa9bc, #5e7086),
+    color-footer-hover: if($dark, #bed0e5, #496b91),
+    color-timeline-date: if($dark, #9aa6b2, neutral(muted)),
+    color-tag: if($dark, #c3c7cb, neutral(text)),
+    color-tag-surface: if($dark, neutral(white), neutral(gray)),
+    color-metric: if($dark, #b3a8f2, #5148b8),
+    color-card-border: if($dark, #a0b8d4, #7b91ad),
+    color-card-surface: if($dark, #202225, neutral(white)),
+    color-card-outline: if($dark, #333, rgba(palette("blue", ink), 0.14)),
+    color-shadow: if($dark, neutral(black), #1f2d3d),
+    color-scrollbar: if($dark, #555, #ccc),
+    color-scholar: if($dark, palette("blue", highlight), #2764b1),
+    color-scholar-count: if($dark, #cfe6ff, #174ea6),
+    color-scholar-surface: if($dark, rgba($link, 0.12), #eef5ff),
+    color-scholar-hover: if($dark, rgba($link, 0.2), #dcecff),
+    color-dialog-text: if($dark, #d7e0ea, #263443),
+    color-dialog-heading: if($dark, #edf4fb, #24364b),
+    color-dialog-muted: if($dark, #aebccc, #667585),
+    color-dialog-code: if($dark, #cfdae5, #344456),
+    color-dialog-action: if($dark, #86b8eb, $link),
+    color-dialog-action-hover: if($dark, #a1caf3, mix(neutral(black), $link, 20%)),
+    color-dialog-action-text: if($dark, #17202a, neutral(white)),
+    color-dialog-backdrop: if($dark, neutral(black), #0f161f),
+    color-dialog-top: if($dark, #414c5b, neutral(white)),
+    color-dialog-bottom: if($dark, #161b22, #dae9f6),
+    color-dialog-surface: if($dark, #1c2128, #ebf3fa),
+    color-dialog-code-surface: if($dark, #101216, #f4f8fc),
+    color-dialog-scrollbar: if($dark, #aebfd0, #586c82),
+    color-selection: if($dark, #5b9bd5, #3478c7),
+    color-error: if($dark, #b65b5b, #a34b4b)
+  );
+  @each $role, $value in $roles {
+    @include color-token($role, $value);
+  }
+
+  --control-tint: #{if($dark, 0.1, 0.07)};
+  --nav-hint-tint: #{if($dark, 0.17, 0.12)};
+  --nav-rim-opacity: #{if($dark, 0.09, 0.5)};
+  --nav-surface-opacity: #{if($dark, 0.24, 0.36)};
+  --menu-surface-opacity: #{if($dark, 0.97, 0.95)};
+  --card-fill: #{theme-alpha("color-card-surface", if($dark, 0.78, 0.72))};
+  --card-shadow: 0 2px 8px #{rgba(neutral(black), if($dark, 0.35, 0.06))};
+  --card-project-shadow: 0 1px 5px #{rgba(neutral(black), if($dark, 0.3, 0.045))};
+  --card-compact-shadow: #{if($dark, "var(--card-shadow)", "var(--card-project-shadow)")};
+  --card-hover-shadow: 0 6px 20px #{theme-alpha("color-shadow", if($dark, 0.32, 0.1))}, 0 0 0 3px #{rgba(palette("blue", glow-dark), if($dark, 0.1, 0.09))};
+  --card-compact-hover-shadow: #{if($dark, "var(--card-hover-shadow)", "0 4px 20px rgba(66, 133, 244, 0.18), 0 0 0 3px rgba(66, 133, 244, 0.06)")};
+  --tag-tint: #{if($dark, 0.09, 0.12)};
+  --dialog-backdrop-opacity: #{if($dark, 0.64, 0.48)};
+  --dialog-top-opacity: #{if($dark, 0.3, 0.36)};
+  --dialog-surface-opacity: #{if($dark, 0.56, 0.5)};
+  --dialog-code-opacity: #{if($dark, 0.56, 0.62)};
+  --dialog-shadow-opacity: #{if($dark, 0.52, 0.24)};
+  --dialog-rim-opacity: #{if($dark, 0.12, 0.36)};
+}
+
+:root {
+  @include color-token(color-white, neutral(white));
+  @include color-token(color-black, neutral(black));
+  @include color-token(color-image-surface, #f7f8fa);
+  @include color-token(color-image-text, #1f2937);
+  --card-edge-gradient: linear-gradient(135deg, #{rgba(palette("violet"), 0.24)}, #{rgba(palette("cyan"), 0.21)}, #{rgba(palette("teal"), 0.18)});
+
+  @each $family, $tones in $site-palette {
+    $glow: map-get($tones, glow);
+    @include color-token(palette-#{$family}-glow, $glow);
+    @if map-has-key($tones, text) {
+      --palette-#{$family}-text: #{map-get($tones, text)};
+    }
+    --palette-#{$family}-soft: color-mix(in oklab, var(--palette-#{$family}-glow) 12%, transparent);
+    --palette-#{$family}-border: color-mix(in oklab, var(--palette-#{$family}-glow) 30%, transparent);
+    --palette-#{$family}-surface: color-mix(in oklab, var(--palette-#{$family}-glow) 8%, var(--color-surface));
+
+  }
+
+  @include theme-colors;
+}
+
+html[data-theme="dark"] {
+  @include theme-colors(true);
+  @each $family, $tones in $site-palette {
+    @if map-has-key($tones, text-dark) {
+      --palette-#{$family}-text: #{map-get($tones, text-dark)};
+    }
+    @if map-has-key($tones, glow-dark) {
+      @include color-token(palette-#{$family}-glow, map-get($tones, glow-dark));
+    }
+  }
+}
