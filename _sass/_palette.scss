@@ -1,0 +1,42 @@
+/* Existing colors are anchors; components use the theme roles below. */
+$site-palette: (
+  "blue": (ink: #224b8d, text: #4370da, text-dark: #84a2e7, glow: #608dff, glow-dark: #7ab0e6, highlight: #9cc8ff),
+  "violet": (text: #8d58dc, text-dark: #b493e8, glow: #9a7bff, glow-dark: #896dff),
+  "cyan": (glow: #5ad2ff),
+  "teal": (text: #21846b, text-dark: #2eb794, glow: #60e2aa, glow-dark: #48ca9c),
+  "amber": (glow: #ffbe76)
+);
+
+$site-neutral: (
+  white: #fff, black: #000,
+  gray: #7a8288, muted: #70777d,
+  text: #494e52, heading: #313437,
+  canvas: #fff, canvas-dark: #181818,
+  surface: #fff, surface-dark: #20232a,
+  text-dark: #d4d4d4, heading-dark: #e0e0e0,
+  secondary-dark: #aaa, muted-dark: #9aa0a6,
+  border: #e9ebec, border-dark: #444,
+  code: #fafafa, code-dark: #222
+);
+
+@function palette($family, $tone: glow) {
+  @return map-get(map-get($site-palette, $family), $tone);
+}
+
+@function neutral($tone) {
+  @return map-get($site-neutral, $tone);
+}
+
+@function color-channels($color) {
+  @return unquote("#{red($color)}, #{green($color)}, #{blue($color)}");
+}
+
+// Alpha is a material/interaction setting, separate from the color identity.
+@function theme-alpha($token, $opacity) {
+  @return unquote("rgba(var(--#{$token}-rgb), #{$opacity})");
+}
+
+@mixin color-token($name, $color) {
+  --#{$name}: #{$color};
+  --#{$name}-rgb: #{color-channels($color)};
+}

@@ -54,30 +54,9 @@ $about-gap: 3.5rem;
     line-height: 1.65;
   }
 
-  // Original hues and HSL saturation; contrast ~4.6:1 on white, ~7:1 on #181818.
-  .research-purple {
-    color: #8d58dc;
-
-    html[data-theme="dark"] & {
-      color: #b493e8;
-    }
-  }
-
-  .research-blue {
-    color: #4370da;
-
-    html[data-theme="dark"] & {
-      color: #84a2e7;
-    }
-  }
-
-  .research-teal {
-    color: #21846b;
-
-    html[data-theme="dark"] & {
-      color: #2eb794;
-    }
-  }
+  .research-purple { color: var(--palette-violet-text); }
+  .research-blue { color: var(--palette-blue-text); }
+  .research-teal { color: var(--palette-teal-text); }
 }
 
 .about-section .author__bio,
@@ -95,13 +74,13 @@ $about-gap: 3.5rem;
   margin-top: 0.65rem;
   font-size: 0.9em;
   line-height: 1.6;
-  color: $gray;
+  color: var(--color-muted);
   font-style: italic;
   text-wrap: balance;
 
   &::before,
   &::after {
-    color: rgba($info-color, 0.38);
+    color: theme-alpha("color-link", 0.38);
     font-family: $serif;
     font-size: 1.15rem;
     font-style: normal;
@@ -146,12 +125,12 @@ $about-gap: 3.5rem;
     max-width: 100%;
     height: auto;
     padding: 4px;
-    border: 1px solid rgba(31, 45, 61, 0.14);
+    border: 1px solid theme-alpha("color-card-border", 0.14);
     border-radius: 26px;
-    background: #fff;
+    background: var(--color-surface);
     box-shadow:
-      0 1px 2px rgba(15, 23, 42, 0.05),
-      0 8px 24px rgba(15, 23, 42, 0.08);
+      0 1px 2px theme-alpha("color-shadow", 0.05),
+      0 8px 24px theme-alpha("color-shadow", 0.08);
   }
 }
 
@@ -167,7 +146,7 @@ $about-gap: 3.5rem;
   font-size: 1.25rem;
   font-weight: 600;
   line-height: 1.25;
-  color: $darker-gray;
+  color: var(--color-heading);
   white-space: normal;
   overflow-wrap: break-word;
 }
@@ -177,7 +156,7 @@ $about-gap: 3.5rem;
   font-size: 0.92rem;
   font-weight: 500;
   line-height: 1.55;
-  color: $dark-gray;
+  color: var(--color-secondary);
   text-wrap: balance;
 }
 
@@ -237,16 +216,16 @@ $about-gap: 3.5rem;
   margin: 0;
   padding: 0;
   border-radius: 50%;
-  background: rgba($info-color, 0.065);
-  color: $text-color;
+  background: theme-alpha("color-link", var(--control-tint));
+  color: var(--color-text);
   font-size: 0.95rem;
   line-height: 1;
   text-decoration: none;
   pointer-events: auto;
 
   &:hover {
-    background: linear-gradient(135deg, rgba(154, 123, 255, 0.16), rgba(90, 210, 255, 0.14), rgba(96, 226, 170, 0.12));
-    color: $link-color-hover;
+    background: linear-gradient(135deg, theme-alpha("palette-violet-glow", 0.16), theme-alpha("palette-cyan-glow", 0.14), theme-alpha("palette-teal-glow", 0.12));
+    color: var(--color-link-hover);
   }
 }
 
@@ -277,21 +256,21 @@ $about-gap: 3.5rem;
   align-items: flex-start;
   margin-top: 1.35rem;
   padding: 0.9rem 1rem;
-  border: 1px solid rgba($info-color, 0.14);
+  border: 1px solid theme-alpha("color-link", 0.14);
   border-radius: 8px;
-  background: rgba($info-color, 0.055);
+  background: theme-alpha("color-link", 0.055);
 
   &__marker {
     width: 3px;
     flex: 0 0 3px;
     align-self: stretch;
     border-radius: 2px;
-    background: $info-color;
+    background: var(--color-link);
   }
 
   strong {
     display: block;
-    color: $info-color;
+    color: var(--color-link);
     font-size: 0.94rem;
     line-height: 1.35;
   }

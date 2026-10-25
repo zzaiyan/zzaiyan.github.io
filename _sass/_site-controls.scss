@@ -21,8 +21,8 @@ html:not([data-lang]) .lang-zh {
   padding: 0.25em 0.55em;
   font-size: 0.82em;
   font-weight: 600;
-  color: $info-color;
-  background: rgba($info-color, 0.07);
+  color: var(--color-link);
+  background: theme-alpha("color-link", var(--control-tint));
   border: none;
   border-radius: 6px;
   transition: background 0.2s, color 0.2s;
@@ -30,7 +30,7 @@ html:not([data-lang]) .lang-zh {
   line-height: 1.4;
 
   &:hover {
-    background: $info-color;
-    color: #fff;
+    background: var(--color-link);
+    color: var(--color-action-text);
   }
 }

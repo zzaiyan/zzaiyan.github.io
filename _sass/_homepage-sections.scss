@@ -16,7 +16,7 @@ h1,
   }
 
   &::-webkit-scrollbar-thumb {
-    background: #ccc;
+    background: var(--color-scrollbar);
     border-radius: 3px;
   }
 
@@ -33,7 +33,7 @@ details.misc-collapse {
     align-items: center;
     gap: 0.4em;
     font-weight: 500;
-    color: mix(#fff, $dark-gray, 15%);
+    color: var(--color-secondary);
     user-select: none;
     padding: 0.2em 0;
     font-size: 0.9em;
@@ -56,7 +56,7 @@ details.misc-collapse {
 
 details.misc-collapse > p {
   margin: 0.9em 0 0.8em;
-  color: mix(#fff, $dark-gray, 20%);
+  color: var(--color-secondary);
   font-size: 0.9em;
 }
 
@@ -70,21 +70,6 @@ details.misc-collapse > p {
   display: flex;
   flex-direction: column;
   padding: 0.85em 1em;
-  border: 1px solid rgba($info-color, 0.14);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.72);
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.045);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
-
-  &:hover {
-    border-color: transparent;
-    background:
-      linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.72)) padding-box,
-      linear-gradient(135deg, rgba(154, 123, 255, 0.24), rgba(90, 210, 255, 0.21), rgba(96, 226, 170, 0.18)) border-box;
-    box-shadow: 0 6px 20px rgba(31, 45, 61, 0.1), 0 0 0 3px rgba(122, 176, 230, 0.09);
-    transform: translateY(-2px);
-  }
-
   .misc-project__heading {
     display: flex;
     flex-wrap: wrap;
@@ -92,7 +77,7 @@ details.misc-collapse > p {
     gap: 0.25em 0.65em;
 
     strong a {
-      color: $info-color;
+      color: var(--color-link);
 
       &:hover {
         text-decoration: underline;
@@ -100,7 +85,7 @@ details.misc-collapse > p {
     }
 
     span {
-      color: mix(#fff, $dark-gray, 20%);
+      color: var(--color-secondary);
       font-size: 0.9em;
     }
   }
@@ -173,8 +158,8 @@ li .pub-links {
     width: 0.4em;
     height: 0.4em;
     border-radius: 50%;
-    background: linear-gradient(135deg, #9a7bff, #5ad2ff 55%, #60e2aa);
-    box-shadow: 0 0 0 3px rgba(122, 176, 230, 0.14);
+    background: linear-gradient(135deg, var(--palette-violet-glow), var(--palette-cyan-glow) 55%, var(--palette-teal-glow));
+    box-shadow: 0 0 0 3px var(--palette-blue-soft);
   }
 
   &::after {
@@ -184,7 +169,7 @@ li .pub-links {
     top: 1.45em;
     bottom: 0;
     width: 1px;
-    background: rgba($info-color, 0.14);
+    background: theme-alpha("color-link", 0.14);
   }
 
   &:last-child::after {
@@ -201,7 +186,7 @@ li .pub-links {
 }
 
 .news-timeline__date {
-  color: mix(#fff, $dark-gray, 30%);
+  color: var(--color-timeline-date);
   font-style: italic;
   white-space: nowrap;
 }
@@ -244,8 +229,8 @@ li .pub-links {
     width: 0.4em;
     height: 0.4em;
     border-radius: 50%;
-    background: linear-gradient(135deg, #9a7bff, #5ad2ff 55%, #60e2aa);
-    box-shadow: 0 0 0 3px rgba(122, 176, 230, 0.14);
+    background: linear-gradient(135deg, var(--palette-violet-glow), var(--palette-cyan-glow) 55%, var(--palette-teal-glow));
+    box-shadow: 0 0 0 3px var(--palette-blue-soft);
     z-index: 1;
   }
 
@@ -256,7 +241,7 @@ li .pub-links {
     top: 0.825em;
     bottom: -0.825em;
     width: 1px;
-    background: rgba($info-color, 0.14);
+    background: theme-alpha("color-link", 0.14);
   }
 
   &:last-child {
@@ -269,7 +254,7 @@ li .pub-links {
 }
 
 .honors-timeline__year {
-  color: mix(#fff, $dark-gray, 30%);
+  color: var(--color-timeline-date);
   font-weight: 600;
   font-variant-numeric: tabular-nums;
   text-align: right;

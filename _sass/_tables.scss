@@ -16,7 +16,7 @@ table {
 }
 
 thead {
-  background-color: $lighter-gray;
+  background-color: var(--color-code);
   // border-bottom: 1px solid $light-gray;
 }
 
@@ -32,7 +32,7 @@ tr {
 }
 td {
   padding: .5em;
-  border-bottom: 1px solid $light-gray;
+  border-bottom: 1px solid var(--color-border);
   // border-right: 1px solid $light-gray;
 }
 

@@ -17,9 +17,9 @@ form {
     margin-bottom: 5px * 2;
     *margin-left: -7px;
     padding: 0;
-    color: $text-color;
+    color: var(--color-text);
     border: 0;
-    border-bottom: 1px solid mix(#fff, #000, 80%);
+    border-bottom: 1px solid var(--color-border);
     white-space: normal;
   }
 
@@ -58,7 +58,7 @@ textarea {
 label {
   display: block;
   margin-bottom: 0.25em;
-  color: $text-color;
+  color: var(--color-text);
   cursor: pointer;
 
   small {
@@ -79,9 +79,9 @@ select {
   width: 100%;
   padding: 0.25em;
   margin-bottom: 0.5em;
-  color: $text-color;
-  background-color: #fff;
-  border: 1px solid mix(#fff, #000, 80%);
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
   border-radius: $border-radius;
   box-shadow: $box-shadow;
 
@@ -151,7 +151,7 @@ input[type="file"] {
 
 select {
   width: auto;
-  background-color: #fff;
+  background-color: var(--color-surface);
 }
 
 select[multiple],
@@ -376,7 +376,7 @@ select:focus {
   padding: 8px 20px;
   display: inline-block;
   font-size: $type-size-6;
-  background-color: #fff;
+  background-color: var(--color-surface);
   color: #000;
   border-width: 2px !important;
   border-style: solid !important;

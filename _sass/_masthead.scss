@@ -7,11 +7,11 @@
   top: 0;
   overflow: visible;
   isolation: isolate;
-  background: rgba(210, 238, 244, 0.36) !important;
+  background: theme-alpha("color-nav-surface", var(--nav-surface-opacity)) !important;
   -webkit-backdrop-filter: blur(24px) saturate(1.55);
   backdrop-filter: blur(24px) saturate(1.55);
   border-bottom: 0;
-  box-shadow: 0 4px 12px rgba(31, 45, 61, 0.12), inset 0 0 rgba(31, 45, 61, 0.08);
+  box-shadow: 0 4px 12px theme-alpha("color-shadow", 0.12), inset 0 0 theme-alpha("color-shadow", 0.08);
   z-index: 1000;
 
   &::before,
@@ -26,10 +26,10 @@
   &::before {
     z-index: -2;
     background:
-      radial-gradient(circle at 12% 35%, rgba(154, 123, 255, 0.38), transparent 28%),
-      radial-gradient(circle at 45% 18%, rgba(90, 210, 255, 0.34), transparent 30%),
-      radial-gradient(circle at 72% 45%, rgba(96, 226, 170, 0.34), transparent 28%),
-      radial-gradient(circle at 90% 24%, rgba(255, 190, 118, 0.34), transparent 26%);
+      radial-gradient(circle at 12% 35%, theme-alpha("palette-violet-glow", 0.38), transparent 28%),
+      radial-gradient(circle at 45% 18%, theme-alpha("palette-cyan-glow", 0.34), transparent 30%),
+      radial-gradient(circle at 72% 45%, theme-alpha("palette-teal-glow", 0.34), transparent 28%),
+      radial-gradient(circle at 90% 24%, theme-alpha("palette-amber-glow", 0.34), transparent 26%);
     background-size: 220% 220%;
     filter: blur(12px);
     opacity: 0.64;
@@ -127,15 +127,15 @@
 
 /* More dropdown button */
 .masthead .greedy-nav__more {
-  color: #555;
+  color: var(--color-secondary);
 }
 
 /* Hidden links dropdown with semi-transparent background */
 .masthead .greedy-nav .hidden-links {
-  background: rgba(255, 255, 255, 0.95) !important;
+  background: theme-alpha("color-menu-surface", var(--menu-surface-opacity)) !important;
 
   &::after {
-    border-bottom-color: rgba(255, 255, 255, 0.95) !important;
+    border-bottom-color: theme-alpha("color-menu-surface", var(--menu-surface-opacity)) !important;
   }
 
   a:hover {

@@ -1,0 +1,42 @@
+/* Published card appearance, shared by all content types. */
+.paper-box,
+.misc-project {
+  border: 1px solid var(--color-card-outline);
+  border-radius: 8px;
+  background: var(--card-fill);
+  box-shadow: var(--card-shadow);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.paper-box--compact {
+  box-shadow: var(--card-compact-shadow);
+}
+
+.misc-project {
+  box-shadow: var(--card-project-shadow);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .paper-box:hover,
+  .misc-project:hover {
+    border-color: transparent;
+    background:
+      linear-gradient(var(--card-fill), var(--card-fill)) padding-box,
+      var(--card-edge-gradient) border-box;
+    box-shadow: var(--card-hover-shadow);
+    transform: translateY(-2px);
+  }
+
+  .paper-box--compact:hover {
+    box-shadow: var(--card-compact-hover-shadow);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .paper-box,
+  .misc-project {
+    transition: none;
+
+    &:hover { transform: none; }
+  }
+}
