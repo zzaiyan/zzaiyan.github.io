@@ -112,6 +112,8 @@ npm run data:refresh
 
 如果要调整排版，从 `_sass/` 中对应的样式文件开始；页面结构在 `_includes/` 和 `_layouts/` 中修改。保存后在预览中确认效果。
 
+调整配色时，在 [`_sass/_palette.scss`](../_sass/_palette.scss) 修改基础色族，在 [`_sass/_theme.scss`](../_sass/_theme.scss) 调整浅深主题的用途颜色。卡片使用统一底色，悬停时显示固定的紫—青—青绿渐变边缘与阴影；插图保留原图模糊填充。保存后分别检查浅色和深色主题。
+
 ## 6. 提交并发布
 
 首次发布时，先在 GitHub 仓库设置中启用 GitHub Pages 的 **GitHub Actions** 构建来源，并为 `server-production` Environment 填写 SSH 部署配置；已有配置可直接提交。
