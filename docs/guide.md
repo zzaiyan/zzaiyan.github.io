@@ -112,6 +112,8 @@ Switch between English and Chinese and between light and dark themes. Check the 
 
 For layout changes, start with the relevant styles in `_sass/`; edit page structure in `_includes/` and `_layouts/`. Save and confirm the result in the preview.
 
+To adjust colors, edit the base families in [`_sass/_palette.scss`](../_sass/_palette.scss) and light/dark color roles in [`_sass/_theme.scss`](../_sass/_theme.scss). Cards use a consistent surface, with a fixed violet–cyan–teal gradient edge and shadow on hover; publication images retain their blurred image fill. Check both themes after saving.
+
 ## 6. Commit and publish
 
 For the first deployment, select **GitHub Actions** as the GitHub Pages build source in the repository settings and configure SSH deployment in the `server-production` environment. If deployment is already configured, proceed to the commit.
