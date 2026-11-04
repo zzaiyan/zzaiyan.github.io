@@ -1,20 +1,23 @@
 {
   "scholar_id": "ZpxXejIAAAAJ",
-  "citedby": 35,
+  "citedby": 37,
   "citedby_source": "profile",
-  "updated": "2026-11-01T12:02:33.084351+00:00",
+  "updated": "2026-11-04T16:42:45.102691+00:00",
   "publications": {
     "ZpxXejIAAAAJ:u-x6o8ySG0sC": {
       "num_citations": 18
     },
     "ZpxXejIAAAAJ:9yKSN-GCB0IC": {
-      "num_citations": 12
+      "num_citations": 13
     },
     "ZpxXejIAAAAJ:YsMSGLbcyi4C": {
       "num_citations": 3
     },
     "ZpxXejIAAAAJ:qjMakFHDy7sC": {
       "num_citations": 2
+    },
+    "ZpxXejIAAAAJ:IjCSPb-OGe4C": {
+      "num_citations": 1
     },
     "ZpxXejIAAAAJ:W7OEmFMy1HYC": {
       "num_citations": 0
@@ -29,9 +32,6 @@
       "num_citations": 0
     },
     "ZpxXejIAAAAJ:2osOgNQ5qMEC": {
-      "num_citations": 0
-    },
-    "ZpxXejIAAAAJ:IjCSPb-OGe4C": {
       "num_citations": 0
     }
   }
