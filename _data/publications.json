@@ -319,10 +319,9 @@
         "issued": {"date-parts": [[2026, 6, 8]]}
       },
       "display": {
-        "visible": false,
-        "layout": "compact",
         "venue_key": "arXiv",
         "badge": "arXiv",
+        "image": "images/publications/semdino.png",
         "tags": ["Semantic Change Detection", "Foundation Models"],
         "author_roles": {"equal_contribution": [1, 2], "corresponding": [6]},
         "links": [
