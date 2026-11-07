@@ -104,6 +104,37 @@
       "scholar_id": "ZpxXejIAAAAJ:u-x6o8ySG0sC"
     },
     {
+      "id": "wan2026vidamtf",
+      "citation": {
+        "type": "article-journal",
+        "title": "An Asymmetric Multi-Task Framework with Spatial Alignment and Gaussian Soft Detection-Oriented Fusion for Visible-Infrared Object Detection",
+        "author": [
+          ["Wan", "Yu"],
+          ["Li", "Jie"],
+          ["Lin", "Liupeng"],
+          ["Li", "Yiliang"],
+          ["Chen", "Yuzeng"],
+          ["Zhang", "Zaiyan"],
+          ["Yuan", "Qiangqiang"],
+          ["Zhang", "Liangpei"]
+        ],
+        "container-title": "IEEE Transactions on Geoscience and Remote Sensing",
+        "publisher": "IEEE",
+        "DOI": "10.1109/TGRS.2026.3750106",
+        "issued": {"date-parts": [[2026]]}
+      },
+      "display": {
+        "venue_key": "IEEE TGRS",
+        "badge": "IEEE TGRS",
+        "image": "images/publications/vid-amtf.webp",
+        "tags": ["Visible-Infrared Object Detection", "Multi-Task Learning"],
+        "links": [
+          {"name": "PDF", "url": "assets/pubs/VID-AMTF.pdf"},
+          {"name": "Code", "url": "https://github.com/KIKYOUWY/VID-AMTF"}
+        ]
+      }
+    },
+    {
       "id": "wan2026tdre",
       "citation": {
         "type": "article-journal",
@@ -321,7 +352,7 @@
       "display": {
         "venue_key": "arXiv",
         "badge": "arXiv",
-        "image": "images/publications/semdino.png",
+        "image": "images/publications/semdino.webp",
         "tags": ["Semantic Change Detection", "Foundation Models"],
         "author_roles": {"equal_contribution": [1, 2], "corresponding": [6]},
         "links": [
