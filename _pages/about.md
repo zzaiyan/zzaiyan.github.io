@@ -49,8 +49,8 @@ redirect_from:
 <span class="job-callout__marker" aria-hidden="true"></span>
 <div>
 <strong><span class="lang-en">Seeking 28 Fall PhD Opportunities</span><span class="lang-zh">寻找 28 Fall 博士机会</span></strong>
-<p class="lang-en">I am looking for a PhD position starting in Fall 2028. Feel free to get in touch.</p>
-<p class="lang-zh">我正在寻找 2028 年秋季入学的博士岗位，欢迎与我联系。</p>
+<p class="lang-en">I am looking for a PhD position in Computer Science, Artificial Intelligence, or Remote Sensing, starting in Fall 2028. Feel free to get in touch.</p>
+<p class="lang-zh">我正在寻找计算机科学、人工智能或遥感方向的博士机会，计划于 2028 年秋季入学，欢迎与我联系。</p>
 </div>
 </aside>
 
@@ -102,7 +102,7 @@ redirect_from:
 <h2><span class="lang-en">🤝 Collaborators</span><span class="lang-zh">🤝 合作者</span></h2>
 <p class="lang-en">Research collaborators I have worked with on recent projects.</p>
 <p class="lang-zh">近期科研项目中与我合作的伙伴。</p>
-<p class="misc-collaborators"><span class="lang-en"><a href="https://kikyouwy.github.io/">Yu Wan</a>, <a href="https://orcid.org/0009-0000-8029-1140">Ruizhong Liu</a>, <a href="https://github.com/Clarence-CV">Tingzhang Luo</a>, <a href="https://tonxycs.github.io">Xinyu Tong</a>, <a href="https://xy-boy.github.io/">Yi Xiao</a>, <a href="https://orcid.org/0000-0001-6757-9051">Yuzeng Chen</a>, <a href="https://chrx97.com/">Hongruixuan Chen</a></span><span class="lang-zh"><a href="https://kikyouwy.github.io/">万宇</a>、<a href="https://orcid.org/0009-0000-8029-1140">刘瑞仲</a>、<a href="https://github.com/Clarence-CV">罗庭璋</a>、<a href="https://tonxycs.github.io">童新宇</a>、<a href="https://xy-boy.github.io/">肖屹</a>、<a href="https://orcid.org/0000-0001-6757-9051">陈玉增</a>、<a href="https://chrx97.com/">陈洪瑞轩</a></span></p>
+<p class="misc-collaborators"><span class="lang-en"><a href="https://kikyouwy.github.io/">Yu Wan</a>, <a href="https://orcid.org/0009-0000-8029-1140">Ruizhong Liu</a>, <a href="https://github.com/Clarence-CV">Tingzhang Luo</a>, <a href="https://tonxycs.github.io">Xinyu Tong</a>, <a href="https://xy-boy.github.io/">Yi Xiao</a>, <a href="https://orcid.org/0000-0001-6757-9051">Yuzeng Chen</a>, <a href="https://chrx97.com/">Hongruixuan Chen</a>, <a href="https://scholar.google.com/citations?user=aFoCI3MAAAAJ&amp;hl">Wenke Huang</a></span><span class="lang-zh"><a href="https://kikyouwy.github.io/">万宇</a>、<a href="https://orcid.org/0009-0000-8029-1140">刘瑞仲</a>、<a href="https://github.com/Clarence-CV">罗庭璋</a>、<a href="https://tonxycs.github.io">童新宇</a>、<a href="https://xy-boy.github.io/">肖屹</a>、<a href="https://orcid.org/0000-0001-6757-9051">陈玉增</a>、<a href="https://chrx97.com/">陈洪瑞轩</a>、<a href="https://scholar.google.com/citations?user=aFoCI3MAAAAJ&amp;hl">黄文柯</a></span></p>
 
 <h2><span class="lang-en">🧰 Open Source Tools</span><span class="lang-zh">🧰 开源工具</span></h2>
 <p class="lang-en">A small collection of tools I build and maintain for research and everyday workflows.</p>
