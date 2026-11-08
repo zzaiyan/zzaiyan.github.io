@@ -5,9 +5,16 @@
         "content_zh": "**研究生国家奖学金**"
     },
     {
+        "year": "2026",
+        "content": "**First-Class Academic Scholarship**",
+        "content_zh": "**一等学业奖学金**",
+        "institution": "WHU"
+    },
+    {
         "year": "2025",
-        "content": "**Outstanding Undergraduate Graduate**",
-        "content_zh": "**优秀本科毕业生**"
+        "content": "**Outstanding Graduate**",
+        "content_zh": "**优秀毕业生**",
+        "institution": "CUG"
     },
     {
         "year": "2024",
@@ -16,8 +23,8 @@
     },
     {
         "year": "2023",
-        "content": "**National Scholarship**",
-        "content_zh": "**国家奖学金**"
+        "content": "**National Scholarship for Undergraduate Students**",
+        "content_zh": "**本科生国家奖学金**"
     },
     {
         "year": "2023",
@@ -32,7 +39,8 @@
     },
     {
         "year": "2022",
-        "content": "**Outstanding Student Scholarship**",
-        "content_zh": "**英才奖学金**"
+        "content": "**Yingcai Scholarship**",
+        "content_zh": "**英才奖学金**",
+        "institution": "CUG"
     }
 ]
